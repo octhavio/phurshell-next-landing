@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'seu-wordpress-url.com', // Substituir quando tiver o domínio
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 }

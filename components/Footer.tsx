@@ -1,124 +1,117 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import TransitionLink from './TransitionLink'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-dark/10 bg-gray-50">
-      <div className="container mx-auto max-w-screen-2xl px-6 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+    <footer className="w-full px-4 py-4 sm:px-6 lg:px-8">
+      <div className="w-full rounded-button border border-white/10 bg-dark/95 px-6 py-16 backdrop-blur-xl sm:px-8 lg:px-12">
+        <div>
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <TransitionLink href="/" className="inline-block">
-              <div className="mb-4 text-2xl font-black tracking-tight text-dark">phurshell</div>
+          <div>
+            {/* Navigation Links */}
+            <nav className="flex flex-wrap items-center gap-6">
+              <TransitionLink
+                href="/sobre"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Sobre
+              </TransitionLink>
+              <TransitionLink
+                href="/servicos"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Serviços
+              </TransitionLink>
+              <TransitionLink
+                href="/servicos/mobile-app-development"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Desenvolvimento Mobile
+              </TransitionLink>
+              <TransitionLink
+                href="/servicos/web-development"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Desenvolvimento Web
+              </TransitionLink>
+              <TransitionLink
+                href="/industrias/healthtech"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Healthtech
+              </TransitionLink>
+              <TransitionLink
+                href="/industrias"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Segmentos
+              </TransitionLink>
+              <TransitionLink
+                href="/cases"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Cases
+              </TransitionLink>
+              <TransitionLink
+                href="/contato"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Contato
+              </TransitionLink>
+            </nav>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-white/5 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <TransitionLink href="/" className="group">
+              <Image
+                src="/logos/img-navbar-logo-light.svg"
+                alt="Phurshell"
+                width={180}
+                height={40}
+                className="h-8 w-auto transition-smooth group-hover:opacity-80"
+              />
             </TransitionLink>
-            <p className="mb-6 max-w-md text-sm leading-relaxed text-dark/60">
-              Fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida.
-              Transformamos ideias em produtos digitais de alta performance.
+            <p className="text-xl text-white/50">
+              © 2015-{currentYear} Phurshell. Todos os direitos reservados.
             </p>
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-6">
               <a
                 href="https://linkedin.com/company/phurshell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-button border border-dark/10 bg-dark/5 text-dark/60 transition-smooth hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange"
+                className="text-white/60 transition-smooth hover:text-brand-orange"
                 aria-label="LinkedIn"
               >
-                <i className="fa-brands fa-linkedin fa-lg"></i>
+                <i className="fa-brands fa-linkedin fa-xl"></i>
               </a>
               <a
                 href="https://github.com/phurshell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-button border border-dark/10 bg-dark/5 text-dark/60 transition-smooth hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange"
+                className="text-white/60 transition-smooth hover:text-brand-orange"
                 aria-label="GitHub"
               >
-                <i className="fa-brands fa-github fa-lg"></i>
+                <i className="fa-brands fa-github fa-xl"></i>
               </a>
               <a
                 href="https://instagram.com/phurshell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-button border border-dark/10 bg-dark/5 text-dark/60 transition-smooth hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange"
+                className="text-white/60 transition-smooth hover:text-brand-orange"
                 aria-label="Instagram"
               >
-                <i className="fa-brands fa-instagram fa-lg"></i>
+                <i className="fa-brands fa-instagram fa-xl"></i>
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 text-sm font-black tracking-wider text-dark">
-              Links Rápidos
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <TransitionLink
-                  href="/sobre"
-                  className="text-sm text-dark/60 transition-colors hover:text-brand-orange"
-                >
-                  Sobre Nós
-                </TransitionLink>
-              </li>
-              <li>
-                <TransitionLink
-                  href="/servicos"
-                  className="text-sm text-dark/60 transition-colors hover:text-brand-orange"
-                >
-                  Serviços
-                </TransitionLink>
-              </li>
-              <li>
-                <TransitionLink
-                  href="/cases"
-                  className="text-sm text-dark/60 transition-colors hover:text-brand-orange"
-                >
-                  Cases
-                </TransitionLink>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="mb-4 text-sm font-black tracking-wider text-dark">
-              Contato
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="mailto:contato@phurshell.com"
-                  className="text-sm text-dark/60 transition-colors hover:text-brand-orange"
-                >
-                  contato@phurshell.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+5511999999999"
-                  className="text-sm text-dark/60 transition-colors hover:text-brand-orange"
-                >
-                  +55 (11) 99999-9999
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 border-t border-dark/5 pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-sm text-dark/50">
-              © {currentYear} Phurshell. Todos os direitos reservados.
-            </p>
-            <p className="text-xs text-dark/40">
-              Desenvolvido com tecnologia de ponta
-            </p>
           </div>
         </div>
       </div>

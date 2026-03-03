@@ -15,10 +15,10 @@ export default function Header() {
 
   const servicosDropdown = [
     {
-      label: 'Desenvolvimento Mobile',
+      label: 'Desenvolvimento de Apps',
       href: '/servicos/mobile-app-development',
       description: 'Apps nativos e cross-platform para iOS e Android',
-      icon: 'mobile-screen',
+      icon: 'mobile',
     },
     {
       label: 'Desenvolvimento Web',
@@ -101,10 +101,10 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <TransitionLink
             href="/contato"
-            className="hidden items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-xl md:inline-flex"
+            className="group hidden items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light md:inline-flex"
           >
             Contato
-            <i className="fa-jelly fa-envelope"></i>
+            <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
           </TransitionLink>
 
           {/* Mobile Menu Button */}
@@ -289,10 +289,10 @@ export default function Header() {
             <TransitionLink
               href="/contato"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+              className="group mt-6 flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
             >
               Contato
-              <i className="fa-jelly fa-envelope"></i>
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
             </TransitionLink>
           </div>
         </div>
