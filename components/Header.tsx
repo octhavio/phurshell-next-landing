@@ -103,7 +103,7 @@ export default function Header() {
             href="/contato"
             className="group hidden items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light md:inline-flex"
           >
-            Contato
+            Solicitar proposta
             <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
           </TransitionLink>
 
@@ -291,7 +291,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="group mt-6 flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
             >
-              Contato
+              Solicitar proposta
               <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
             </TransitionLink>
           </div>

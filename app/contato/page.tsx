@@ -1,6 +1,9 @@
+import MultiStepForm from '@/components/MultiStepForm'
+
 export const metadata = {
-  title: 'Contato - Entre em contato conosco',
-  description: 'Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia.',
+  title: 'Contato - Entre em contato conosco | Phurshell',
+  description:
+    'Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia. Desenvolvimento de apps mobile, web e soluções customizadas.',
 }
 
 export default function ContatoPage() {
@@ -12,11 +15,11 @@ export default function ContatoPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-6 inline-block rounded-button border border-brand-orange/30 bg-brand-orange/10 px-4 py-2">
               <span className="text-sm font-black tracking-wider text-brand-orange">
-                Contato
+                SOLICITAR PROPOSTA
               </span>
             </div>
 
-            <h1 className="mb-6 text-balance text-6xl font-black leading-[0.95] tracking-tight text-dark sm:text-7xl lg:text-8xl">
+            <h1 className="mb-6 text-balance text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
               Vamos{' '}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange bg-clip-text text-transparent">
@@ -26,79 +29,72 @@ export default function ContatoPage() {
             </h1>
 
             <p className="mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed text-dark/70">
-              Estamos prontos para transformar sua ideia em realidade. Entre em contato e vamos
-              discutir como podemos ajudar seu negócio.
+              Responda algumas perguntas rápidas e receba uma proposta personalizada para seu
+              projeto. Leva menos de 2 minutos.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Multi-Step Form Section */}
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="container mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
-          <div className="rounded-button border border-dark/10 bg-white p-8 shadow-xl sm:p-12">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className="mb-2 block text-sm font-black text-dark">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                    placeholder="Seu nome"
-                  />
-                </div>
+          <MultiStepForm />
+        </div>
+      </section>
 
-                <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-black text-dark">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-              </div>
+      {/* Additional Contact Info */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-6 text-4xl font-black text-dark sm:text-5xl">
+              Outras formas de contato
+            </h2>
+            <p className="mb-12 text-xl text-dark/70">
+              Prefere falar diretamente? Entre em contato pelos nossos canais
+            </p>
 
-              <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-black text-dark">
-                  Telefone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                  placeholder="(00) 00000-0000"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-black text-dark">
-                  Mensagem
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                  placeholder="Conte-nos sobre seu projeto..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-button bg-brand-orange px-8 py-4 text-sm font-bold tracking-wider text-white shadow-xl shadow-brand-orange/30 transition-smooth hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-2xl sm:w-auto"
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
               >
-                Enviar Mensagem
-              </button>
-            </form>
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
+                  <i className="fa-brands fa-whatsapp text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
+                </div>
+                <h3 className="mb-2 text-xl font-black text-dark">WhatsApp</h3>
+                <p className="text-dark/60">Converse com a gente</p>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:contato@phurshell.com"
+                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
+              >
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
+                  <i className="fa-solid fa-envelope text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
+                </div>
+                <h3 className="mb-2 text-xl font-black text-dark">Email</h3>
+                <p className="text-dark/60">contato@phurshell.com</p>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/phurshell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
+              >
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
+                  <i className="fa-brands fa-linkedin text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
+                </div>
+                <h3 className="mb-2 text-xl font-black text-dark">LinkedIn</h3>
+                <p className="text-dark/60">Siga nossa empresa</p>
+              </a>
+            </div>
           </div>
         </div>
       </section>

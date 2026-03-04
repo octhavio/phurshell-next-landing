@@ -16,11 +16,13 @@ interface ProcessStage {
   description: string
   color?: 'red' | 'blue' | 'teal' | 'green'
   icon?: string
+  iconType?: string
 }
 
 interface ProcessCarouselProps {
   items: ProcessStage[]
   label?: string
+  labelIcon?: string
   title?: string
   description?: string
   bgColor?: 'white' | 'gray'
@@ -30,6 +32,7 @@ interface ProcessCarouselProps {
 export default function ProcessCarousel({
   items: stages,
   label,
+  labelIcon,
   title = 'Processo',
   description = 'Fornecemos serviços de desenvolvimento mobile específicos para iOS e Android e consultoria de desenvolvimento de apps. Colaboramos com você para refinar sua ideia e garantir o sucesso do projeto desde o primeiro conceito até um app totalmente funcional. Seu desenvolvimento mobile está em mãos capazes quando você trabalha conosco.',
   bgColor = 'gray',
@@ -65,7 +68,8 @@ export default function ProcessCarousel({
     <section className={`${bgClass} py-12 sm:py-16`}>
       <div className="container mx-auto mb-8 max-w-screen-2xl px-6 sm:px-8 lg:px-12">
         {label && (
-          <h3 className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+          <h3 className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+            {labelIcon && <i className={`fa-jelly fa-${labelIcon} fa-xl`}></i>}
             {label}
           </h3>
         )}
@@ -179,10 +183,12 @@ export default function ProcessCarousel({
                       // Service Card Style
                       <div className="h-full rounded-button border border-dark/10 bg-white p-6">
                         <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
-                          <i className={`fa-jelly fa-${stage.icon} fa-xl text-brand-orange`}></i>
+                          <i
+                            className={`fa-${stage.iconType || 'jelly'} fa-${stage.icon} fa-xl text-brand-orange`}
+                          ></i>
                         </div>
                         <h3 className="mb-3 text-xl font-black text-dark">{stage.title}</h3>
-                        <p className="text-base leading-relaxed text-dark/60">{stage.description}</p>
+                        <p className="text-xl leading-relaxed text-dark/60">{stage.description}</p>
                       </div>
                     ) : (
                       // Process Card Style

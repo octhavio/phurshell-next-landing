@@ -32,7 +32,7 @@ export default function MobileAppDevelopmentPage() {
       name: 'Psiapp',
       icon: '/img-icon-psiapp.svg',
       description:
-        'O aplicativo que conecta psicólogos a pacientes. Criamos todo fluxo e o desenvolvimento completo de todos os produtos.',
+        'O aplicativo que conecta psicólogos a pacientes. Desenvolvimento completo dos aplicativos para pacientes e psicólogos, criação do backoffice para gestão e suporte dos atendimentos. Análise de dados para crescimento do projeto e manutenção contínua.',
       screenshot: '/img-screenshot-psiapp.png',
       tags: [
         'IDENTIDADE VISUAL',
@@ -64,17 +64,17 @@ export default function MobileAppDevelopmentPage() {
       name: 'Autoday',
       icon: '/img-icon_autoday.png',
       description:
-        'O melhor seguro para seu carro. O aplicativo que ajuda você a proteger seu carro com um seguro intermitente revolucionário.',
+        'É uma insurtech especializada no desenvolvimento de soluções de seguros de mobilidade inovadores e acessíveis. O aplicativo que ajuda você a proteger seu carro com um seguro intermitente revolucionário.',
       screenshot: '/img-screenshot-autoday.png',
-      tags: ['IOS', 'ANDROID'],
+      tags: ['BACKOFFICE', 'WIREFRAME', 'IDENTIDADE VISUAL', 'INFRAESTRUTURA', 'LANDING PAGE', 'IOS', 'ANDROID'],
     },
     {
       name: 'Bluu',
       icon: '/img-icon_bluu.png',
       description:
-        'A rede aplicativo que ajuda donos de pet a encontrar lugares e outros donos, trazendo interação social entre donos e seus pets.',
+        'Aplicativo de saúde preventiva para pets, ajudando tutores a melhorar a saúde de seus bichinhos com atividades e práticas diárias. Além de atendimento veterinário para casos emergenciais.',
       screenshot: '/img-screenshot-bluu.png',
-      tags: ['MOCKUP', 'BACKEND', 'IOS', 'ANDROID'],
+      tags: ['WIREFRAME', 'BACKOFFICE', 'LANDING PAGE', 'IDENTIDADE VISUAL', 'IOS', 'ANDROID'],
     },
     {
       name: 'Devotee',
@@ -82,7 +82,7 @@ export default function MobileAppDevelopmentPage() {
       description:
         'Tivemos a honra de tirar do papel o único aplicativo de relacionamento exclusivo para deficientes físicos. Desde a concepção da ideia até o desenvolvimento do iOS e Android.',
       screenshot: '/img-screenshot-devotee.png',
-      tags: ['MOCKUP', 'BACKEND', 'WEB', 'IOS', 'ANDROID', 'SISTEMA ADMINISTRATIVO'],
+      tags: ['WIREFRAME', 'BACKEND', 'WEB', 'IOS', 'ANDROID', 'BACKOFFICE', 'IDENTIDADE VISUAL'],
     },
   ]
 
@@ -105,67 +105,6 @@ export default function MobileAppDevelopmentPage() {
     const newIndex = currentCaseIndex === cases.length - 1 ? 0 : currentCaseIndex + 1
     handleCaseChange(newIndex)
   }
-  const benefits = [
-    {
-      icon: 'mobile-screen',
-      title: 'Cross-Platform',
-      description: 'Apps que funcionam perfeitamente em iOS e Android com código compartilhado.',
-    },
-    {
-      icon: 'bolt',
-      title: 'Alta Performance',
-      description: 'Otimização extrema garantindo experiência fluida mesmo em dispositivos mais antigos.',
-    },
-    {
-      icon: 'shield',
-      title: 'Segurança',
-      description: 'Implementação de melhores práticas de segurança e proteção de dados sensíveis.',
-    },
-    {
-      icon: 'palette',
-      title: 'Design Responsivo',
-      description: 'Interfaces adaptáveis que se ajustam perfeitamente a qualquer tamanho de tela.',
-    },
-  ]
-
-  const process = [
-    {
-      step: '01',
-      title: 'Discovery & Planning',
-      description:
-        'Entendemos seu negócio, objetivos e público-alvo para definir a estratégia ideal.',
-    },
-    {
-      step: '02',
-      title: 'Design & Prototipagem',
-      description:
-        'Criamos wireframes e protótipos interativos para validar a experiência do usuário.',
-    },
-    {
-      step: '03',
-      title: 'Desenvolvimento',
-      description:
-        'Codificamos o app com as melhores práticas, testes contínuos e code reviews.',
-    },
-    {
-      step: '04',
-      title: 'Testes & QA',
-      description:
-        'Testamos em múltiplos dispositivos garantindo qualidade e performance impecáveis.',
-    },
-    {
-      step: '05',
-      title: 'Deploy & Lançamento',
-      description:
-        'Publicamos nas App Store e Google Play e monitoramos o lançamento de perto.',
-    },
-    {
-      step: '06',
-      title: 'Manutenção & Suporte',
-      description:
-        'Suporte contínuo, atualizações e melhorias baseadas no feedback dos usuários.',
-    },
-  ]
 
   const processStages = [
     {
@@ -235,70 +174,82 @@ export default function MobileAppDevelopmentPage() {
   ]
 
   const services = [
-    'Arquitetura e Estratégia Mobile',
-    'Desenvolvimento iOS',
-    'Desenvolvimento Android',
-    'Desenvolvimento Cross-Platform',
-    'Backend & Integração de APIs',
-    'CI/CD & DevOps',
-    'Design UX e UI',
-    'Testes de Segurança para Apps',
+    {
+      title: 'iOS',
+      description: 'Aplicativos para iPhone e iPad com design intuitivo e integração com o ecossistema Apple.',
+      icon: 'apple',
+      iconType: 'brands',
+    },
+    {
+      title: 'Android',
+      description: 'Aplicativos para smartphones e tablets com interface moderna e otimizados para diferentes dispositivos.',
+      icon: 'android',
+      iconType: 'brands',
+    },
+    {
+      title: 'Web',
+      description: 'Aplicações web responsivas, dashboards interativos e plataformas SaaS completas.',
+      icon: 'desktop',
+      iconType: 'jelly',
+    },
+    {
+      title: 'PWA',
+      description: 'Progressive Web Apps com experiência mobile completa e capacidade de instalação.',
+      icon: 'mobile',
+      iconType: 'jelly',
+    },
   ]
 
   const solutions = [
     {
-      title: 'Desenvolvimento Mobile',
-      description:
-        'Aplicativos nativos e cross-platform para iOS e Android com alta performance e design intuitivo.',
-      icon: 'mobile-screen',
+      title: 'Arquitetura e Estratégia Mobile',
+      description: 'Planejamento estratégico e arquitetura escalável para aplicações mobile.',
+      icon: 'city',
     },
     {
-      title: 'UI/UX Design',
-      description:
-        'Interfaces modernas e experiências de usuário otimizadas para maximizar engajamento e conversão.',
+      title: 'Backend & Integração de APIs',
+      description: 'Desenvolvimento de APIs robustas e integração com serviços externos.',
+      icon: 'wrench',
+    },
+    {
+      title: 'CI/CD & DevOps',
+      description: 'Automação de deploy e infraestrutura para entrega contínua.',
+      icon: 'arrow-up-from-line',
+    },
+    {
+      title: 'Design UX e UI',
+      description: 'Interfaces modernas e experiências de usuário otimizadas para maximizar engajamento.',
       icon: 'palette',
     },
     {
-      title: 'APIs RESTful',
-      description:
-        'Desenvolvimento de APIs escaláveis e documentadas para integração perfeita entre aplicativo e backend.',
-      icon: 'code',
-    },
-    {
-      title: 'Integrações de Sistemas',
-      description:
-        'Conexão com sistemas de pagamento, ERPs, CRMs e serviços de terceiros de forma segura.',
-      icon: 'plug',
+      title: 'Testes de Segurança para Apps',
+      description: 'Análise de vulnerabilidades e testes de penetração em aplicações mobile.',
+      icon: 'shield-halved',
     },
     {
       title: 'Banco de Dados',
-      description:
-        'Modelagem e implementação de bancos de dados otimizados para performance e escalabilidade.',
+      description: 'Modelagem e implementação de bancos de dados otimizados para performance.',
       icon: 'database',
     },
     {
       title: 'Autenticação & Segurança',
-      description:
-        'Implementação de autenticação robusta, criptografia de dados e proteção contra vulnerabilidades.',
+      description: 'Implementação de autenticação robusta, criptografia e proteção de dados.',
       icon: 'shield',
     },
     {
       title: 'Cloud Infrastructure',
-      description:
-        'Configuração de infraestrutura em nuvem escalável com AWS, Google Cloud ou Azure.',
+      description: 'Configuração de infraestrutura em nuvem escalável com AWS, Google Cloud ou Azure.',
       icon: 'cloud',
     },
     {
-      title: 'CI/CD Pipeline',
-      description:
-        'Automação de testes, builds e deploys para entregas rápidas e confiáveis.',
-      icon: 'arrows-rotate',
+      title: 'Testes Automatizados',
+      description: 'Testes unitários, de integração e end-to-end para garantir qualidade.',
+      icon: 'gauge',
     },
     {
-      title: 'Testes Automatizados',
-      description:
-        'Testes unitários, de integração e end-to-end para garantir qualidade e estabilidade.',
-      icon: 'gauge',
+      title: 'Integrações de Sistemas',
+      description: 'Conexão com sistemas de pagamento, ERPs, CRMs e serviços de terceiros.',
+      icon: 'link',
     },
   ]
 
@@ -316,7 +267,7 @@ export default function MobileAppDevelopmentPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pb-12 pt-24 sm:pb-16 sm:pt-32">
+      <section className="relative overflow-hidden bg-white pt-12 sm:pt-16">
         <style jsx>{`
           @keyframes fadeInUp {
             from {
@@ -368,70 +319,101 @@ export default function MobileAppDevelopmentPage() {
           </p>
 
           {/* CTA */}
-          <div className="cta-animate mb-12 flex items-center justify-between gap-6 rounded-button bg-brand-orange/10 p-6">
-            <div className="flex items-center gap-4">
-              {/* Team avatars */}
-              <div className="flex -space-x-3">
-                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white bg-gradient-to-br from-blue-500 to-blue-600">
-                  <div className="flex h-full w-full items-center justify-center text-sm font-black text-white">
-                    A
-                  </div>
-                </div>
-                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white bg-gradient-to-br from-purple-500 to-purple-600">
-                  <div className="flex h-full w-full items-center justify-center text-sm font-black text-white">
-                    B
-                  </div>
-                </div>
-                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white bg-gradient-to-br from-green-500 to-green-600">
-                  <div className="flex h-full w-full items-center justify-center text-sm font-black text-white">
-                    C
-                  </div>
-                </div>
-                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white bg-gradient-to-br from-red-500 to-red-600">
-                  <div className="flex h-full w-full items-center justify-center text-sm font-black text-white">
-                    D
-                  </div>
-                </div>
-              </div>
-              <p className="text-lg font-bold text-dark">
-                Trabalhe com nossos especialistas em desenvolvimento de apps.
-              </p>
-            </div>
+          <div className="cta-animate mb-12 flex items-center gap-6">
             <a
               href="#contato"
-              className="inline-flex flex-shrink-0 items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-sm font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-xl"
+              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
             >
-              Falar com especialista
-              <i className="fa-jelly fa-arrow-right"></i>
+              Solicitar proposta
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
             </a>
+            <div className="flex items-center gap-4">
+              {/* Team photo */}
+              <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                <Image
+                  src="/img-cta-especialist.png"
+                  alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
+                  width={120}
+                  height={48}
+                  sizes="120px"
+                  loading="lazy"
+                  className="h-12 w-auto object-cover"
+                />
+              </div>
+              <p className="text-lg font-bold text-dark">
+                Fale com um especialista agora
+              </p>
+            </div>
           </div>
 
           {/* Image */}
           <div className="image-animate relative aspect-[21/9] overflow-hidden rounded-button">
             <Image
               src="/img-hero.png"
-              alt="Desenvolvimento de apps"
+              alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
               fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
               priority
             />
+
+            {/* Overlay Content */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white lg:p-12">
+              <div className="max-w-full space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
+                {/* Logo e Nome */}
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/img-icon-psiapp.svg"
+                    alt="Logo do aplicativo Psiapp"
+                    width={36}
+                    height={36}
+                    sizes="36px"
+                    loading="lazy"
+                    className="h-9 w-9 rounded-xl"
+                  />
+                  <span className="text-xl font-black text-white sm:text-2xl">Psiapp</span>
+                </div>
+
+                {/* Info Text */}
+                <div>
+                  <p className="text-base leading-relaxed text-white/90">
+                    Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
+                    <br />
+                    <span className="font-bold">São quase 100 mil downloads</span>
+                  </p>
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-black text-white">4.8</span>
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <i key={star} className="fa-solid fa-star text-white"></i>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Clients */}
-      <section className="mb-12 bg-gray-50/50 py-8 sm:mb-16">
+      <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <p className="mb-6 text-xl leading-relaxed text-dark/60">
-            Empresas que confiam na gente
+          <p className="mb-16 text-center text-xl leading-relaxed text-dark/70">
+            Empresas que confiam no nosso trabalho
           </p>
-          <div className="flex flex-wrap items-center gap-8 opacity-50 grayscale sm:gap-12">
+          <div className="flex flex-wrap items-center justify-between gap-y-8">
             {[2, 1, 3, 4, 5, 6].map((num) => (
               <div key={num} className="relative h-12 w-32 sm:h-16 sm:w-40">
                 <Image
                   src={`/clients/img-partner-${num}.png`}
-                  alt={`Cliente ${num}`}
+                  alt={`Logo de cliente parceiro da Phurshell no desenvolvimento de aplicativos mobile`}
                   fill
+                  sizes="(max-width: 640px) 80px, 120px"
+                  loading="lazy"
                   className="object-contain"
                 />
               </div>
@@ -440,63 +422,50 @@ export default function MobileAppDevelopmentPage() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="bg-white py-12 sm:py-16">
+      {/* Divider */}
+      <div className="bg-white">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            {/* Left Column */}
-            <div>
-              <h2 className="mb-6 text-5xl font-black leading-tight tracking-tight text-dark">
-                Não importa o que você está construindo, nós podemos ajudar.
-              </h2>
-              <p className="mb-8 text-xl leading-relaxed text-dark/70">
-                Nossos serviços de desenvolvimento mobile abrangem todo o ciclo de vida do produto,
-                desde estratégia e design até implantação e suporte pós-lançamento. De UI e backend
-                até arquitetura e workflows de release, mantemos o desenvolvimento em movimento sem
-                introduzir riscos de entrega.
+          <hr className="border-dark/10" />
+        </div>
+      </div>
+
+      {/* Services Overview */}
+      <ProcessCarousel
+        items={services}
+        label="Principais Serviços"
+        labelIcon="suitcase"
+        title="Não importa o que você quer construir, nós podemos ajudar."
+        description="Nossos serviços de desenvolvimento mobile abrangem todo o ciclo de vida do produto, desde estratégia e design até implantação e suporte pós-lançamento. De UI e backend até arquitetura e workflows de release, mantemos o desenvolvimento em movimento sem introduzir riscos de entrega."
+        bgColor="white"
+        cardStyle="service"
+      />
+
+      {/* CTA Button */}
+      <section className="bg-white pb-12 sm:pb-16">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="flex items-center gap-6">
+            <TransitionLink
+              href="/contato"
+              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+            >
+              Solicitar proposta
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+            </TransitionLink>
+            <div className="flex items-center gap-4">
+              <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                <Image
+                  src="/img-cta-especialist.png"
+                  alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
+                  width={120}
+                  height={48}
+                  sizes="120px"
+                  loading="lazy"
+                  className="h-12 w-auto object-cover"
+                />
+              </div>
+              <p className="text-lg font-bold text-dark">
+                Fale com um especialista agora
               </p>
-
-              {/* Stats */}
-              <div className="mb-8 flex flex-wrap gap-8">
-                <div>
-                  <div className="mb-2 flex items-baseline gap-2">
-                    <i className="fa-solid fa-check text-2xl text-brand-orange"></i>
-                    <span className="text-3xl font-black text-dark">100+</span>
-                  </div>
-                  <p className="text-base font-bold text-dark/60">Apps desenvolvidos</p>
-                </div>
-                <div>
-                  <div className="mb-2 flex items-baseline gap-2">
-                    <i className="fa-solid fa-check text-2xl text-brand-orange"></i>
-                    <span className="text-3xl font-black text-dark">10+</span>
-                  </div>
-                  <p className="text-base font-bold text-dark/60">Anos de mercado</p>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <TransitionLink
-                href="/contato"
-                className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-sm font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-              >
-                Entrar em Contato
-                <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-              </TransitionLink>
-            </div>
-
-            {/* Right Column - Services List */}
-            <div>
-              <div className="space-y-4">
-                {services.map((service) => (
-                  <div
-                    key={service}
-                    className="flex items-center gap-4 border-b border-dark/10 pb-4 last:border-0"
-                  >
-                    <i className="fa-solid fa-check text-xl text-brand-orange"></i>
-                    <span className="text-xl font-bold text-dark">{service}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -507,9 +476,10 @@ export default function MobileAppDevelopmentPage() {
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
           {/* Header */}
           <div className="mb-12">
-            <h3 className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+            <p className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+              <i className="fa-jelly fa-mobile fa-xl"></i>
               Cases de sucesso
-            </h3>
+            </p>
             <h2 className="mb-6 text-5xl font-black tracking-tight text-white sm:text-6xl">
               Projetos que transformamos em realidade
             </h2>
@@ -534,6 +504,8 @@ export default function MobileAppDevelopmentPage() {
                       alt={currentCase.name}
                       width={80}
                       height={80}
+                      sizes="80px"
+                      loading="lazy"
                       className="h-20 w-20 rounded-2xl border border-white/20"
                     />
                     <h2 className="text-4xl font-black leading-tight text-white sm:text-5xl">
@@ -569,10 +541,12 @@ export default function MobileAppDevelopmentPage() {
               >
                 <Image
                   src={currentCase.screenshot}
-                  alt={`Screenshot ${currentCase.name}`}
+                  alt={`Tela do aplicativo ${currentCase.name} desenvolvido pela Phurshell`}
                   width={600}
                   height={800}
-                  className="h-auto w-full max-w-md"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  loading="lazy"
+                  className="h-auto w-full max-w-md cursor-pointer transition-transform duration-500 hover:scale-110"
                 />
               </div>
             </div>
@@ -632,9 +606,11 @@ export default function MobileAppDevelopmentPage() {
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <Image
                   src="/img-testimonial-autoday.png"
-                  alt="Alec Maia"
+                  alt="Foto de Alec Maia, fundador da AutoDay"
                   width={80}
                   height={80}
+                  sizes="80px"
+                  loading="lazy"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -651,9 +627,10 @@ export default function MobileAppDevelopmentPage() {
       <section className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
           <div className="mb-8">
-            <h3 className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+            <p className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+              <i className="fa-jelly fa-clipboard fa-xl"></i>
               Nosso processo
-            </h3>
+            </p>
             <h2 className="mb-6 text-5xl font-black tracking-tight text-dark sm:text-6xl">
               Da ideia ao lançamento
             </h2>
@@ -664,22 +641,27 @@ export default function MobileAppDevelopmentPage() {
 
           <div className="relative mt-16">
             {processStages.map((stage, index) => (
-              <div key={stage.stage} className="relative flex gap-6 pb-12 last:pb-0">
+              <div key={stage.stage} className="relative flex items-center gap-6 pb-12 last:pb-0">
                 {/* Timeline Line & Circle */}
-                <div className="relative flex flex-col items-center">
-                  {/* Circle with icon */}
-                  <div className="z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-orange shadow-lg">
-                    {stage.icon && <i className={`fa-jelly fa-${stage.icon} text-white`}></i>}
-                  </div>
-                  {/* Vertical Line */}
+                <div className="relative flex flex-col items-center self-stretch justify-center">
+                  {/* Continuous Line Behind */}
                   {index !== processStages.length - 1 && (
-                    <div className="absolute top-12 h-full w-0.5 bg-brand-orange/30"></div>
+                    <div className="absolute left-1/2 top-1/2 h-[calc(100%+3rem-1.5rem)] w-0.5 -translate-x-1/2 bg-brand-orange/30"></div>
                   )}
+                  {/* Circle with number */}
+                  <div className="z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-orange shadow-lg">
+                    <span className="text-lg font-black text-white">{index + 1}</span>
+                  </div>
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 rounded-button border border-dark/10 bg-white p-6 transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg">
-                  <h3 className="mb-3 text-xl font-black text-dark">{stage.title}</h3>
+                <div className="flex-1 rounded-button bg-white p-6">
+                  <div className="mb-3 flex items-center gap-3">
+                    {stage.icon && (
+                      <i className={`fa-jelly fa-${stage.icon} fa-xl text-brand-orange`}></i>
+                    )}
+                    <h3 className="text-xl font-black text-dark">{stage.title}</h3>
+                  </div>
                   <p className="text-xl leading-relaxed text-dark/70">{stage.description}</p>
                 </div>
               </div>
@@ -688,72 +670,163 @@ export default function MobileAppDevelopmentPage() {
         </div>
       </section>
 
-      {/* Nossas Soluções */}
+      {/* Outros Serviços */}
       <ProcessCarousel
         items={solutions}
-        label="Nossas soluções"
-        title="Serviços que fazem parte do processo"
+        label="Outros Serviços"
+        labelIcon="suitcase"
+        title="Serviços que também fazem parte do processo"
         description="Oferecemos um conjunto completo de serviços especializados para transformar sua ideia em um aplicativo de sucesso. Cada serviço é cuidadosamente integrado ao processo de desenvolvimento, garantindo qualidade, segurança e performance em todas as etapas do projeto."
         bgColor="white"
         cardStyle="service"
       />
 
-      {/* About Phurshell */}
-      <section className="bg-white py-16 sm:py-24">
+      {/* CTA */}
+      <section className="bg-white pb-12 sm:pb-16">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <h3 className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
-            SOBRE A PHURSHELL
-          </h3>
-          <h2 className="mb-6 max-w-4xl text-5xl font-black tracking-tight text-dark sm:text-6xl">
-            Por que trabalhar com a Phurshell? Somos confiados pelas melhores equipes de tecnologia.
-          </h2>
-          <p className="mb-16 max-w-4xl text-xl leading-relaxed text-dark/60">
-            A Phurshell é uma empresa brasileira especializada em desenvolvimento de software. Desde
-            2015, construímos software para empresas de todos os tamanhos—desde startups em
-            crescimento até grandes corporações. Somos uma das empresas de desenvolvimento de
-            software de mais rápido crescimento. Se você busca qualidade e inovação, somos o
-            parceiro ideal para você.
-          </p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {/* Stat 1 */}
-            <div>
-              <div className="mb-2 text-5xl font-black text-brand-orange sm:text-6xl">50+</div>
-              <div className="text-lg font-bold text-dark/70">
-                Projetos
-                <br />
-                Entregues
+          <div className="flex items-center gap-6">
+            <TransitionLink
+              href="/contato"
+              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+            >
+              Solicitar proposta
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+            </TransitionLink>
+            <div className="flex items-center gap-4">
+              <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                <Image
+                  src="/img-cta-especialist.png"
+                  alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
+                  width={120}
+                  height={48}
+                  sizes="120px"
+                  loading="lazy"
+                  className="h-12 w-auto object-cover"
+                />
               </div>
+              <p className="text-lg font-bold text-dark">
+                Fale com um especialista agora
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Excellence Section */}
+      <section className="relative bg-dark py-16 sm:py-24 overflow-hidden">
+        {/* Orange Gradient Shadow */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-l from-brand-orange/20 via-brand-orange/5 to-transparent"></div>
+
+        {/* Background Logo */}
+        <div className="absolute bottom-0 right-0 z-0 opacity-20">
+          <Image
+            src="/img-background-logo.png"
+            alt=""
+            width={800}
+            height={800}
+            sizes="(max-width: 640px) 500px, 700px"
+            className="h-auto w-[500px] sm:w-[700px]"
+            priority
+          />
+        </div>
+
+        <div className="container relative z-10 mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div>
+            {/* Top - Text */}
+            <div className="mb-16">
+              <p className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+                <i className="fa-jelly fa-circle-check fa-xl"></i>
+                SOBRE A PHURSHELL
+              </p>
+              <h2 className="mb-6 text-5xl font-black text-white sm:text-6xl">
+                Porque trabalhar com a Phurshell?
+              </h2>
+              <p className="mb-12 max-w-5xl text-xl leading-relaxed text-white/70">
+                A Phurshell é uma empresa brasileira especializada em desenvolvimento de software. Desde 2015, construímos software para empresas de todos os tamanhos—desde startups em crescimento até grandes corporações. Somos uma das empresas de desenvolvimento de software de mais rápido crescimento. Se você busca qualidade e inovação, somos o parceiro ideal para você.
+              </p>
             </div>
 
-            {/* Stat 2 */}
-            <div>
-              <div className="mb-2 text-5xl font-black text-brand-orange sm:text-6xl">20+</div>
-              <div className="text-lg font-bold text-dark/70">
-                Desenvolvedores
-                <br />
-                no Time
-              </div>
-            </div>
+            {/* Circular Stats - Three Circles Side by Side */}
+            <div className="mb-16 flex flex-wrap justify-start gap-8 sm:gap-12 lg:gap-16">
+              {/* Projects Circle */}
+              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
+                {/* Decorative circular text */}
+                <div className="absolute inset-0">
+                  <svg className="h-full w-full animate-spin-slow" viewBox="0 0 256 256">
+                    <defs>
+                      <path
+                        id="projectsCircle"
+                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
+                      />
+                    </defs>
+                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      <textPath href="#projectsCircle" startOffset="0%">
+                        projetos · qualidade · sucesso · entregues ·
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
 
-            {/* Stat 3 */}
-            <div>
-              <div className="mb-2 text-5xl font-black text-brand-orange sm:text-6xl">95%</div>
-              <div className="text-lg font-bold text-dark/70">
-                Taxa de Retenção
-                <br />
-                de Clientes
+                {/* Center Content */}
+                <div className="relative z-10 text-center">
+                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">50+</div>
+                  <div className="text-lg text-brand-orange">projetos</div>
+                  <div className="text-lg text-brand-orange">entregues</div>
+                </div>
               </div>
-            </div>
 
-            {/* Stat 4 */}
-            <div>
-              <div className="mb-2 text-5xl font-black text-brand-orange sm:text-6xl">30+</div>
-              <div className="text-lg font-bold text-dark/70">
-                Clientes
-                <br />
-                Ativos
+              {/* Apps Circle */}
+              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
+                {/* Decorative circular text */}
+                <div className="absolute inset-0">
+                  <svg className="h-full w-full animate-spin-slow" viewBox="0 0 256 256">
+                    <defs>
+                      <path
+                        id="appsCircle"
+                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
+                      />
+                    </defs>
+                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      <textPath href="#appsCircle" startOffset="0%">
+                        apps mobile · apps web · plataformas · soluções ·
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
+                {/* Center Content */}
+                <div className="relative z-10 text-center">
+                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">100+</div>
+                  <div className="text-lg text-brand-orange">apps</div>
+                  <div className="text-lg text-brand-orange">desenvolvidos</div>
+                </div>
+              </div>
+
+              {/* Years Circle */}
+              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
+                {/* Decorative circular text */}
+                <div className="absolute inset-0">
+                  <svg className="h-full w-full animate-spin-slow-reverse" viewBox="0 0 256 256">
+                    <defs>
+                      <path
+                        id="yearsCircle"
+                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
+                      />
+                    </defs>
+                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      <textPath href="#yearsCircle" startOffset="0%">
+                        experiência · excelência · inovação · qualidade ·
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
+                {/* Center Content */}
+                <div className="relative z-10 text-center">
+                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">10+</div>
+                  <div className="text-lg text-brand-orange">anos de</div>
+                  <div className="text-lg text-brand-orange">mercado</div>
+                </div>
               </div>
             </div>
           </div>
@@ -761,105 +834,56 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
           {/* Card Container */}
-          <div className="rounded-button bg-brand-orange/10 p-8 sm:p-12 lg:p-16">
-            {/* Timeline Section */}
-            <div className="mb-12">
-              <h2 className="mb-16 text-4xl font-black tracking-tight text-dark sm:text-5xl">
-                Inicie projetos de desenvolvimento de aplicativos mobile em 2-4 semanas.
-              </h2>
-            </div>
-
+          <div className="rounded-button bg-brand-orange/10 p-8 shadow-sm sm:p-12 lg:p-16">
             {/* Content Grid */}
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            {/* Image */}
-            <div className="hidden lg:block">
-              <div className="mx-auto max-w-sm">
-                <Image
-                  src="/img-cta.png"
-                  alt="Gustavo Bittar"
-                  width={400}
-                  height={533}
-                  className="h-auto w-full"
-                />
-                <p className="mt-4 text-center text-lg font-bold text-dark">Gustavo Bittar</p>
-              </div>
-            </div>
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_350px]">
+              {/* Left Column - Content */}
+              <div className="space-y-6">
+                <p className="flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+                  <i className="fa-jelly fa-comments fa-xl"></i>
+                  ENTRAR EM CONTATO
+                </p>
+                <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
+                  Receba sua proposta hoje mesmo
+                </h2>
+                <p className="text-xl leading-relaxed text-dark/70">
+                  Assim que você enviar o formulário de solicitação de proposta, o Gustavo entrará em contato para agendar uma conversa e entender melhor as necessidades do seu projeto. Com base nesse primeiro contato, geramos uma proposta inicial personalizada para você ter uma visão clara dos investimentos envolvidos e do escopo do trabalho. Dessa forma, podemos iniciar rapidamente o processo de desenvolvimento e transformar sua ideia em realidade.
+                </p>
 
-            {/* Timeline Steps */}
-            <div className="space-y-8">
-            {/* Step 1 */}
-            <div className="flex items-start gap-6">
-              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-brand-orange">
-                <i className="fa-solid fa-phone fa-xl text-white"></i>
+                {/* CTA Button */}
+                <div className="pt-4">
+                  <TransitionLink
+                    href="/contato"
+                    className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+                  >
+                    Solicitar proposta
+                    <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                  </TransitionLink>
+                </div>
               </div>
-              <div>
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-dark/50">
-                  STEP 1
-                </p>
-                <h3 className="mb-2 text-2xl font-black text-dark">
-                  Participe de uma chamada exploratória.
-                </h3>
-                <p className="text-lg leading-relaxed text-dark/70">
-                  Conte-nos mais sobre seu negócio em uma chamada de descoberta. Discutiremos
-                  estrutura de time e abordagem, critérios de sucesso, cronograma, orçamento e
-                  habilidades necessárias para ver como podemos ajudar.
-                </p>
-              </div>
-            </div>
 
-            {/* Step 2 */}
-            <div className="flex items-start gap-6">
-              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-brand-orange">
-                <i className="fa-solid fa-users fa-xl text-white"></i>
+              {/* Right Column - Image */}
+              <div className="order-first lg:order-last">
+                <div className="relative overflow-hidden rounded-button">
+                  <Image
+                    src="/img-cta.png"
+                    alt="Gustavo Bittar, fundador e líder de desenvolvimento mobile da Phurshell"
+                    width={350}
+                    height={466}
+                    sizes="(max-width: 1024px) 100vw, 350px"
+                    loading="lazy"
+                    className="h-auto w-full"
+                  />
+                  {/* Overlay with Name */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-2xl font-black text-white">Gustavo Bittar</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-dark/50">
-                  STEP 2
-                </p>
-                <h3 className="mb-2 text-2xl font-black text-dark">
-                  Discuta a solução e a estrutura do time.
-                </h3>
-                <p className="text-lg leading-relaxed text-dark/70">
-                  Em questão de dias, finalizaremos as especificações do seu projeto, acordaremos um
-                  modelo de engajamento, selecionaremos e integraremos seu time.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="flex items-start gap-6">
-              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-brand-orange">
-                <i className="fa-solid fa-arrow-up fa-xl text-white"></i>
-              </div>
-              <div>
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-dark/50">
-                  STEP 3
-                </p>
-                <h3 className="mb-2 text-2xl font-black text-dark">
-                  Comece e acompanhe o desempenho.
-                </h3>
-                <p className="text-lg leading-relaxed text-dark/70">
-                  Assim que acordarmos os marcos, começaremos imediatamente o trabalho.
-                  Acompanharemos o progresso, reportaremos atualizações e nos adaptaremos
-                  continuamente às suas necessidades.
-                </p>
-              </div>
-            </div>
-            </div>
-          </div>
-
-            {/* CTA Button */}
-            <div className="mt-12 text-center">
-              <a
-                href="#contato"
-                className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-              >
-                Agendar uma conversa
-                <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-              </a>
             </div>
           </div>
         </div>
@@ -881,7 +905,7 @@ export default function MobileAppDevelopmentPage() {
               </summary>
               <div className="mt-4">
                 <p className="text-xl leading-relaxed text-dark/70">
-                  O prazo varia de acordo com a complexidade e escopo do projeto. Projetos simples podem levar de 2 a 3 meses, enquanto aplicativos mais complexos podem levar de 4 a 8 meses. Durante o Discovery, mapeamos todas as funcionalidades e criamos um cronograma detalhado com marcos e entregas específicas.
+                  O prazo varia de acordo com a complexidade e escopo do projeto. Projetos simples podem levar de 2 a 3 meses, enquanto aplicativos mais complexos podem levar de 4 a 8 meses. Durante a reunião de validação da ideia, mapeamos todas as funcionalidades e criamos um cronograma detalhado com marcos e entregas específicas.
                 </p>
               </div>
             </details>
@@ -894,7 +918,7 @@ export default function MobileAppDevelopmentPage() {
               </summary>
               <div className="mt-4">
                 <p className="text-xl leading-relaxed text-dark/70">
-                  Para iniciar, precisamos entender sua visão e objetivos de negócio. Começamos com reuniões de Discovery para mapear requisitos, definir funcionalidades prioritárias e entender seu público-alvo. Você não precisa ter especificações técnicas detalhadas - nossa equipe ajuda a transformar sua ideia em um plano de desenvolvimento estruturado.
+                  Para iniciar, precisamos entender sua visão e objetivos de negócio. Começamos com uma reunião de validação da ideia para mapear requisitos, definir funcionalidades prioritárias e entender seu público-alvo. Você não precisa ter especificações técnicas detalhadas - nossa equipe ajuda a transformar sua ideia em um plano de desenvolvimento estruturado.
                 </p>
               </div>
             </details>
@@ -907,7 +931,7 @@ export default function MobileAppDevelopmentPage() {
               </summary>
               <div className="mt-4">
                 <p className="text-xl leading-relaxed text-dark/70">
-                  Trabalhamos com comunicação transparente e constante. Realizamos reuniões semanais para apresentar o progresso, tirar dúvidas e alinhar próximos passos. Utilizamos ferramentas como Slack para comunicação diária, Jira para acompanhamento de tarefas e demos quinzenais para você visualizar o aplicativo em desenvolvimento.
+                  Realizamos uma reunião em cada etapa do nosso processo para apresentar o progresso, tirar dúvidas e alinhar próximos passos. Além disso, criamos um grupo no WhatsApp dedicado ao projeto para facilitar a comunicação rápida em caso de dúvidas ou qualquer outro assunto relacionado ao desenvolvimento.
                 </p>
               </div>
             </details>
