@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import ConditionalLayout from '@/components/ConditionalLayout'
 import PageTransition from '@/components/PageTransition'
 import { TransitionProvider } from '@/components/TransitionContext'
 
@@ -101,9 +100,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col overflow-x-hidden bg-white text-dark antialiased">
         <TransitionProvider>
           <PageTransition>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <ConditionalLayout>{children}</ConditionalLayout>
           </PageTransition>
         </TransitionProvider>
       </body>

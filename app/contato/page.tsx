@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import MultiStepForm from '@/components/MultiStepForm'
+import TransitionLink from '@/components/TransitionLink'
 
 export const metadata = {
   title: 'Contato - Entre em contato conosco | Phurshell',
@@ -8,96 +10,120 @@ export const metadata = {
 
 export default function ContatoPage() {
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pb-16 pt-24 sm:pt-32">
-        <div className="container relative z-10 mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-block rounded-button border border-brand-orange/30 bg-brand-orange/10 px-4 py-2">
-              <span className="text-sm font-black tracking-wider text-brand-orange">
-                SOLICITAR PROPOSTA
-              </span>
+    <div className="flex min-h-screen">
+      {/* Left Side - Image */}
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+        <Image
+          src="/img-contact-side.jpg"
+          alt="Phurshell - Entre em contato"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col justify-end p-12 text-white">
+          {/* Bottom Content */}
+          <div className="space-y-8">
+            <div>
+              <h1 className="mb-6 text-5xl font-black leading-tight xl:text-6xl">
+                Transforme<br />
+                sua ideia em<br />
+                <span className="text-brand-orange">realidade</span>
+              </h1>
+              <p className="text-lg text-white/90 max-w-md">
+                Conte-nos sobre seu projeto e receba uma proposta personalizada em até 24 horas.
+              </p>
             </div>
 
-            <h1 className="mb-6 text-balance text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
-              Vamos{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange bg-clip-text text-transparent">
-                  conversar
-                </span>
-              </span>
-            </h1>
-
-            <p className="mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed text-dark/70">
-              Responda algumas perguntas rápidas e receba uma proposta personalizada para seu
-              projeto. Leva menos de 2 minutos.
-            </p>
+            {/* Client Logos */}
+            <div>
+              <p className="mb-6 text-sm font-bold uppercase tracking-wider text-white/70">
+                Empresas que confiam em nós
+              </p>
+              <div className="grid grid-cols-3 gap-8 max-w-md">
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-1.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-2.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-3.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-4.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-5.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/clients/img-partner-6.png"
+                    alt="Cliente"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Multi-Step Form Section */}
-      <section className="bg-gray-50 py-16 sm:py-24">
-        <div className="container mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
+      {/* Right Side - Form */}
+      <div className="w-full lg:w-1/2 flex flex-col p-12">
+        {/* Logo */}
+        <div className="mb-12">
+          <TransitionLink href="/" className="inline-block">
+            <Image
+              src="/logos/img-navbar-logo-dark.svg"
+              alt="Phurshell"
+              width={150}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </TransitionLink>
+        </div>
+
+        {/* Form Content */}
+        <div className="flex-1 flex flex-col">
           <MultiStepForm />
         </div>
-      </section>
-
-      {/* Additional Contact Info */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-6 text-4xl font-black text-dark sm:text-5xl">
-              Outras formas de contato
-            </h2>
-            <p className="mb-12 text-xl text-dark/70">
-              Prefere falar diretamente? Entre em contato pelos nossos canais
-            </p>
-
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
-              >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
-                  <i className="fa-brands fa-whatsapp text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
-                </div>
-                <h3 className="mb-2 text-xl font-black text-dark">WhatsApp</h3>
-                <p className="text-dark/60">Converse com a gente</p>
-              </a>
-
-              {/* Email */}
-              <a
-                href="mailto:contato@phurshell.com"
-                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
-              >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
-                  <i className="fa-solid fa-envelope text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
-                </div>
-                <h3 className="mb-2 text-xl font-black text-dark">Email</h3>
-                <p className="text-dark/60">contato@phurshell.com</p>
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/company/phurshell"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group rounded-button border border-dark/10 bg-white p-8 transition-smooth hover:-translate-y-2 hover:border-brand-orange hover:shadow-xl"
-              >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:bg-brand-orange">
-                  <i className="fa-brands fa-linkedin text-3xl text-brand-orange transition-colors group-hover:text-white"></i>
-                </div>
-                <h3 className="mb-2 text-xl font-black text-dark">LinkedIn</h3>
-                <p className="text-dark/60">Siga nossa empresa</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   )
 }

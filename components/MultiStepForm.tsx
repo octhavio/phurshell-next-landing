@@ -4,16 +4,18 @@ import { useState, useEffect } from 'react'
 
 interface FormData {
   // Step 1
-  serviceType: string
+  projectType: string
   // Step 2
-  projectScope: string
+  projectStage: string
   // Step 3
-  platforms: string[]
+  teamHelp: string[]
   // Step 4
   budget: string
   // Step 5
   timeline: string
   // Step 6
+  howHeard: string
+  // Step 7
   name: string
   email: string
   phone: string
@@ -22,11 +24,12 @@ interface FormData {
 }
 
 const initialFormData: FormData = {
-  serviceType: '',
-  projectScope: '',
-  platforms: [],
+  projectType: '',
+  projectStage: '',
+  teamHelp: [],
   budget: '',
   timeline: '',
+  howHeard: '',
   name: '',
   email: '',
   phone: '',
@@ -39,24 +42,26 @@ export default function MultiStepForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const totalSteps = 6
+  const totalSteps = 7
 
   // Load saved data from localStorage
-  useEffect(() => {
-    const savedData = localStorage.getItem('phurshell_form_software')
-    if (savedData) {
-      try {
-        setFormData(JSON.parse(savedData))
-      } catch (e) {
-        console.error('Error loading saved form data:', e)
-      }
-    }
-  }, [])
+  // useEffect(() => {
+  //   const savedData = localStorage.getItem('phurshell_form_software')
+  //   if (savedData) {
+  //     try {
+  //       setFormData(JSON.parse(savedData))
+  //     } catch (e) {
+  //       console.error('Error loading saved form data:', e)
+  //     }
+  //   }
+  // }, [])
 
   // Save data to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('phurshell_form_software', JSON.stringify(formData))
-  }, [formData])
+  // useEffect(() => {
+  //   if (currentStep > 1) {
+  //     localStorage.setItem('phurshell_form_software', JSON.stringify(formData))
+  //   }
+  // }, [formData, currentStep])
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
@@ -71,16 +76,18 @@ export default function MultiStepForm() {
   const validateStep = (step: number): boolean => {
     switch (step) {
       case 1:
-        return formData.serviceType !== ''
+        return formData.projectType !== ''
       case 2:
-        return formData.projectScope !== ''
+        return formData.projectStage !== ''
       case 3:
-        return formData.platforms.length > 0
+        return formData.teamHelp.length > 0
       case 4:
         return formData.budget !== ''
       case 5:
         return formData.timeline !== ''
       case 6:
+        return formData.howHeard !== ''
+      case 7:
         return formData.name !== '' && formData.email !== '' && formData.phone !== ''
       default:
         return true
@@ -89,7 +96,7 @@ export default function MultiStepForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateStep(6)) return
+    if (!validateStep(7)) return
 
     setIsSubmitting(true)
 
@@ -110,21 +117,21 @@ export default function MultiStepForm() {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const togglePlatform = (platform: string) => {
+  const toggleTeamHelp = (help: string) => {
     setFormData((prev) => ({
       ...prev,
-      platforms: prev.platforms.includes(platform)
-        ? prev.platforms.filter((p) => p !== platform)
-        : [...prev.platforms, platform],
+      teamHelp: prev.teamHelp.includes(help)
+        ? prev.teamHelp.filter((h) => h !== help)
+        : [...prev.teamHelp, help],
     }))
   }
 
   const progressPercentage = (currentStep / totalSteps) * 100
 
   return (
-    <div className="rounded-button border border-dark/10 bg-white shadow-xl">
+    <div>
       {/* Progress Bar */}
-      <div className="relative h-2 overflow-hidden rounded-t-button bg-gray-200">
+      <div className="relative mb-8 h-2 overflow-hidden rounded-full bg-gray-200">
         <div
           className="h-full bg-gradient-to-r from-brand-orange to-brand-orange-light transition-all duration-500 ease-out"
           style={{ width: `${progressPercentage}%` }}
@@ -132,7 +139,7 @@ export default function MultiStepForm() {
       </div>
 
       {/* Form Content */}
-      <div className="p-8 sm:p-12">
+      <div>
         <div className="mb-8">
           <div className="mb-2 text-sm font-black uppercase tracking-wider text-brand-orange">
             Etapa {currentStep} de {totalSteps}
@@ -140,88 +147,89 @@ export default function MultiStepForm() {
         </div>
 
         <form onSubmit={handleSubmit}>
-          {/* Step 1: Service Type */}
+          {/* Step 1: Project Type */}
           {currentStep === 1 && (
             <div className="space-y-6">
               <h2 className="mb-6 text-3xl font-black text-dark">
-                Que tipo de serviço você precisa?
+                Que tipo de produto você quer construir?
               </h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
-                  { id: 'app-mobile', label: 'App Mobile', icon: 'mobile-screen' },
-                  { id: 'web-app', label: 'Aplicação Web', icon: 'globe' },
-                  { id: 'api-backend', label: 'API/Backend', icon: 'server' },
-                  { id: 'ecommerce', label: 'E-commerce', icon: 'cart-shopping' },
-                  { id: 'mvp', label: 'MVP/Prototipo', icon: 'lightbulb' },
-                  { id: 'consultoria', label: 'Consultoria', icon: 'users' },
-                ].map((service) => (
+                  { id: 'mobile-app', label: 'Aplicativo Mobile', icon: 'mobile-screen', desc: 'iOS, Android ou ambos' },
+                  { id: 'web-app', label: 'Aplicação Web', icon: 'globe', desc: 'Web app ou plataforma' },
+                  { id: 'both', label: 'Mobile + Web', icon: 'layer-group', desc: 'Presença em múltiplas plataformas' },
+                  { id: 'other', label: 'Outro tipo', icon: 'lightbulb', desc: 'API, sistema interno, etc.' },
+                ].map((type) => (
                   <button
-                    key={service.id}
+                    key={type.id}
                     type="button"
-                    onClick={() => updateFormData('serviceType', service.id)}
+                    onClick={() => updateFormData('projectType', type.id)}
                     className={`flex items-center gap-4 rounded-button border-2 p-6 text-left transition-all ${
-                      formData.serviceType === service.id
+                      formData.projectType === type.id
                         ? 'border-brand-orange bg-brand-orange/5'
                         : 'border-dark/10 hover:border-brand-orange/50'
                     }`}
                   >
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
-                      <i className={`fa-solid fa-${service.icon} text-xl text-brand-orange`}></i>
+                      <i className={`fa-solid fa-${type.icon} text-xl text-brand-orange`}></i>
                     </div>
-                    <span className="font-black text-dark">{service.label}</span>
+                    <div>
+                      <div className="font-black text-dark">{type.label}</div>
+                      <div className="text-sm text-dark/60">{type.desc}</div>
+                    </div>
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Step 2: Project Scope */}
+          {/* Step 2: Project Stage */}
           {currentStep === 2 && (
             <div className="space-y-6">
-              <h2 className="mb-6 text-3xl font-black text-dark">Qual o escopo do projeto?</h2>
+              <h2 className="mb-6 text-3xl font-black text-dark">Em que estágio está seu produto?</h2>
               <div className="grid grid-cols-1 gap-4">
                 {[
                   {
-                    id: 'novo',
-                    label: 'Criar do zero',
-                    desc: 'Projeto completamente novo',
+                    id: 'idea',
+                    label: 'Ainda é uma ideia',
+                    desc: 'Estou começando e preciso validar o conceito',
+                    icon: 'lightbulb',
+                  },
+                  {
+                    id: 'design',
+                    label: 'Tenho designs ou protótipos',
+                    desc: 'Já tenho a visão visual e preciso desenvolver',
+                    icon: 'pen-ruler',
+                  },
+                  {
+                    id: 'mvp',
+                    label: 'Tenho um MVP funcionando',
+                    desc: 'Já existe algo construído que precisa evoluir',
                     icon: 'rocket',
                   },
                   {
-                    id: 'existente',
-                    label: 'Melhorar existente',
-                    desc: 'Adicionar funcionalidades ou otimizar',
-                    icon: 'wrench',
+                    id: 'scale',
+                    label: 'Produto em produção',
+                    desc: 'Preciso escalar, adicionar features ou melhorar',
+                    icon: 'chart-line',
                   },
-                  {
-                    id: 'manutencao',
-                    label: 'Manutenção',
-                    desc: 'Suporte e correções',
-                    icon: 'screwdriver-wrench',
-                  },
-                  {
-                    id: 'migracao',
-                    label: 'Migração',
-                    desc: 'Migrar de uma tecnologia para outra',
-                    icon: 'rotate',
-                  },
-                ].map((scope) => (
+                ].map((stage) => (
                   <button
-                    key={scope.id}
+                    key={stage.id}
                     type="button"
-                    onClick={() => updateFormData('projectScope', scope.id)}
+                    onClick={() => updateFormData('projectStage', stage.id)}
                     className={`flex items-center gap-4 rounded-button border-2 p-6 text-left transition-all ${
-                      formData.projectScope === scope.id
+                      formData.projectStage === stage.id
                         ? 'border-brand-orange bg-brand-orange/5'
                         : 'border-dark/10 hover:border-brand-orange/50'
                     }`}
                   >
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
-                      <i className={`fa-solid fa-${scope.icon} text-xl text-brand-orange`}></i>
+                      <i className={`fa-solid fa-${stage.icon} text-xl text-brand-orange`}></i>
                     </div>
                     <div>
-                      <div className="font-black text-dark">{scope.label}</div>
-                      <div className="text-sm text-dark/60">{scope.desc}</div>
+                      <div className="font-black text-dark">{stage.label}</div>
+                      <div className="text-sm text-dark/60">{stage.desc}</div>
                     </div>
                   </button>
                 ))}
@@ -229,40 +237,41 @@ export default function MultiStepForm() {
             </div>
           )}
 
-          {/* Step 3: Platforms */}
+          {/* Step 3: Team Help */}
           {currentStep === 3 && (
             <div className="space-y-6">
               <h2 className="mb-6 text-3xl font-black text-dark">
-                Quais plataformas você precisa?
+                Com o que você precisa de ajuda?
               </h2>
-              <p className="mb-6 text-dark/70">Você pode selecionar mais de uma opção</p>
+              <p className="mb-6 text-dark/70">Selecione todas as opções que se aplicam</p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
-                  { id: 'ios', label: 'iOS', icon: 'apple' },
-                  { id: 'android', label: 'Android', icon: 'android' },
-                  { id: 'web', label: 'Web', icon: 'globe' },
-                  { id: 'desktop', label: 'Desktop', icon: 'desktop' },
-                  { id: 'api', label: 'API/Backend', icon: 'server' },
-                  { id: 'admin', label: 'Painel Admin', icon: 'gauge' },
-                ].map((platform) => (
+                  { id: 'strategy', label: 'Estratégia de Produto', icon: 'chess', desc: 'Definir roadmap e prioridades' },
+                  { id: 'design', label: 'Design UX/UI', icon: 'pen-ruler', desc: 'Interface e experiência do usuário' },
+                  { id: 'development', label: 'Desenvolvimento', icon: 'code', desc: 'Construir o produto' },
+                  { id: 'team', label: 'Aumentar o Time', icon: 'users', desc: 'Reforçar equipe existente' },
+                  { id: 'maintenance', label: 'Manutenção', icon: 'screwdriver-wrench', desc: 'Suporte e melhorias contínuas' },
+                  { id: 'consulting', label: 'Consultoria', icon: 'lightbulb', desc: 'Orientação técnica' },
+                ].map((help) => (
                   <button
-                    key={platform.id}
+                    key={help.id}
                     type="button"
-                    onClick={() => togglePlatform(platform.id)}
+                    onClick={() => toggleTeamHelp(help.id)}
                     className={`flex items-center gap-4 rounded-button border-2 p-6 text-left transition-all ${
-                      formData.platforms.includes(platform.id)
+                      formData.teamHelp.includes(help.id)
                         ? 'border-brand-orange bg-brand-orange/5'
                         : 'border-dark/10 hover:border-brand-orange/50'
                     }`}
                   >
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
-                      <i
-                        className={`fa-brands fa-${platform.icon} text-xl text-brand-orange`}
-                      ></i>
+                      <i className={`fa-solid fa-${help.icon} text-xl text-brand-orange`}></i>
                     </div>
-                    <span className="font-black text-dark">{platform.label}</span>
-                    {formData.platforms.includes(platform.id) && (
-                      <i className="fa-solid fa-check ml-auto text-brand-orange"></i>
+                    <div className="flex-1">
+                      <div className="font-black text-dark">{help.label}</div>
+                      <div className="text-sm text-dark/60">{help.desc}</div>
+                    </div>
+                    {formData.teamHelp.includes(help.id) && (
+                      <i className="fa-solid fa-check text-brand-orange"></i>
                     )}
                   </button>
                 ))}
@@ -273,15 +282,18 @@ export default function MultiStepForm() {
           {/* Step 4: Budget */}
           {currentStep === 4 && (
             <div className="space-y-6">
-              <h2 className="mb-6 text-3xl font-black text-dark">Qual seu orçamento estimado?</h2>
-              <div className="grid grid-cols-1 gap-4">
+              <h2 className="mb-6 text-3xl font-black text-dark">Qual o orçamento estimado?</h2>
+              <p className="mb-6 text-dark/70">
+                Isso nos ajuda a criar uma proposta mais adequada às suas necessidades
+              </p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
-                  { id: 'ate-30k', label: 'Até R$ 30 mil' },
-                  { id: '30k-60k', label: 'R$ 30 - 60 mil' },
-                  { id: '60k-100k', label: 'R$ 60 - 100 mil' },
+                  { id: 'ate-50k', label: 'Até R$ 50 mil' },
+                  { id: '50k-100k', label: 'R$ 50 - 100 mil' },
                   { id: '100k-200k', label: 'R$ 100 - 200 mil' },
-                  { id: 'acima-200k', label: 'Acima de R$ 200 mil' },
-                  { id: 'nao-sei', label: 'Não tenho certeza ainda' },
+                  { id: '200k-500k', label: 'R$ 200 - 500 mil' },
+                  { id: 'acima-500k', label: 'Acima de R$ 500 mil' },
+                  { id: 'nao-definido', label: 'Ainda não tenho definido' },
                 ].map((budget) => (
                   <button
                     key={budget.id}
@@ -303,14 +315,33 @@ export default function MultiStepForm() {
           {/* Step 5: Timeline */}
           {currentStep === 5 && (
             <div className="space-y-6">
-              <h2 className="mb-6 text-3xl font-black text-dark">Qual o prazo desejado?</h2>
+              <h2 className="mb-6 text-3xl font-black text-dark">Quando você quer começar?</h2>
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { id: '1-mes', label: 'Até 1 mês', icon: 'bolt' },
-                  { id: '1-3-meses', label: '1 a 3 meses', icon: 'calendar' },
-                  { id: '3-6-meses', label: '3 a 6 meses', icon: 'calendar-days' },
-                  { id: '6-meses', label: 'Mais de 6 meses', icon: 'calendar-week' },
-                  { id: 'flexivel', label: 'Flexível', icon: 'clock' },
+                  {
+                    id: 'asap',
+                    label: 'O quanto antes',
+                    desc: 'Tenho urgência e quero começar já',
+                    icon: 'bolt'
+                  },
+                  {
+                    id: '1-month',
+                    label: 'Nas próximas semanas',
+                    desc: 'Pronto para começar em breve',
+                    icon: 'calendar-days'
+                  },
+                  {
+                    id: '2-3-months',
+                    label: 'Em 2-3 meses',
+                    desc: 'Planejando para médio prazo',
+                    icon: 'calendar'
+                  },
+                  {
+                    id: 'flexible',
+                    label: 'Ainda estou explorando',
+                    desc: 'Quero conversar sobre o projeto primeiro',
+                    icon: 'compass'
+                  },
                 ].map((timeline) => (
                   <button
                     key={timeline.id}
@@ -325,17 +356,59 @@ export default function MultiStepForm() {
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
                       <i className={`fa-solid fa-${timeline.icon} text-xl text-brand-orange`}></i>
                     </div>
-                    <span className="font-black text-dark">{timeline.label}</span>
+                    <div>
+                      <div className="font-black text-dark">{timeline.label}</div>
+                      <div className="text-sm text-dark/60">{timeline.desc}</div>
+                    </div>
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Step 6: Contact Info */}
+          {/* Step 6: How Heard */}
           {currentStep === 6 && (
             <div className="space-y-6">
-              <h2 className="mb-6 text-3xl font-black text-dark">Seus dados de contato</h2>
+              <h2 className="mb-6 text-3xl font-black text-dark">Como você conheceu a Phurshell?</h2>
+              <p className="mb-6 text-dark/70">
+                Isso nos ajuda a entender melhor nossos clientes
+              </p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {[
+                  { id: 'google', label: 'Busca no Google', icon: 'magnifying-glass' },
+                  { id: 'social', label: 'Redes Sociais', icon: 'share-nodes' },
+                  { id: 'referral', label: 'Indicação de alguém', icon: 'user-group' },
+                  { id: 'portfolio', label: 'Vi um projeto seu', icon: 'briefcase' },
+                  { id: 'event', label: 'Evento ou conferência', icon: 'calendar-days' },
+                  { id: 'other', label: 'Outro', icon: 'ellipsis' },
+                ].map((source) => (
+                  <button
+                    key={source.id}
+                    type="button"
+                    onClick={() => updateFormData('howHeard', source.id)}
+                    className={`flex items-center gap-4 rounded-button border-2 p-6 text-left transition-all ${
+                      formData.howHeard === source.id
+                        ? 'border-brand-orange bg-brand-orange/5'
+                        : 'border-dark/10 hover:border-brand-orange/50'
+                    }`}
+                  >
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                      <i className={`fa-solid fa-${source.icon} text-xl text-brand-orange`}></i>
+                    </div>
+                    <span className="font-black text-dark">{source.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 7: Contact Info */}
+          {currentStep === 7 && (
+            <div className="space-y-6">
+              <h2 className="mb-6 text-3xl font-black text-dark">Como podemos entrar em contato?</h2>
+              <p className="mb-6 text-dark/70">
+                Preencha seus dados e entraremos em contato em até 24 horas com uma proposta personalizada.
+              </p>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
@@ -348,7 +421,7 @@ export default function MultiStepForm() {
                       value={formData.name}
                       onChange={(e) => updateFormData('name', e.target.value)}
                       className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                      placeholder="Seu nome completo"
+                      placeholder="João Silva"
                       required
                     />
                   </div>
@@ -363,7 +436,7 @@ export default function MultiStepForm() {
                       value={formData.email}
                       onChange={(e) => updateFormData('email', e.target.value)}
                       className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                      placeholder="seu@email.com"
+                      placeholder="joao@empresa.com.br"
                       required
                     />
                   </div>
@@ -380,7 +453,7 @@ export default function MultiStepForm() {
                       value={formData.phone}
                       onChange={(e) => updateFormData('phone', e.target.value)}
                       className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
-                      placeholder="(00) 00000-0000"
+                      placeholder="(11) 99999-9999"
                       required
                     />
                   </div>
@@ -447,9 +520,9 @@ export default function MultiStepForm() {
             ) : (
               <button
                 type="submit"
-                disabled={!validateStep(6) || isSubmitting}
+                disabled={!validateStep(7) || isSubmitting}
                 className={`ml-auto rounded-button px-8 py-3 font-black text-white shadow-lg transition-smooth ${
-                  validateStep(6) && !isSubmitting
+                  validateStep(7) && !isSubmitting
                     ? 'bg-brand-orange hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-xl'
                     : 'cursor-not-allowed bg-gray-400'
                 }`}
