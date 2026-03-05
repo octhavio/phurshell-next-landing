@@ -47,16 +47,32 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full px-4 py-4 sm:px-6 lg:px-8">
       <div className="flex h-20 w-full items-center justify-between rounded-button border border-dark/10 bg-white/80 px-6 backdrop-blur-xl sm:px-8 lg:px-12">
         {/* Logo */}
-        <TransitionLink href="/" className="group flex items-center space-x-2">
-          <Image
-            src="/logos/img-navbar-logo-dark.svg"
-            alt="Phurshell"
-            width={180}
-            height={40}
-            className="h-8 w-auto transition-smooth group-hover:opacity-80"
-            priority
-          />
-        </TransitionLink>
+        {pathname === '/' ? (
+          <button
+            onClick={() => window.location.reload()}
+            className="group flex items-center space-x-2 cursor-pointer"
+          >
+            <Image
+              src="/logos/img-navbar-logo-dark.svg"
+              alt="Phurshell"
+              width={180}
+              height={40}
+              className="h-8 w-auto transition-smooth group-hover:opacity-80"
+              priority
+            />
+          </button>
+        ) : (
+          <TransitionLink href="/" className="group flex items-center space-x-2">
+            <Image
+              src="/logos/img-navbar-logo-dark.svg"
+              alt="Phurshell"
+              width={180}
+              height={40}
+              className="h-8 w-auto transition-smooth group-hover:opacity-80"
+              priority
+            />
+          </TransitionLink>
+        )}
 
         {/* Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-2">
@@ -94,6 +110,17 @@ export default function Header() {
             }`}
           >
             Cases
+          </TransitionLink>
+
+          <TransitionLink
+            href="/insights"
+            className={`rounded-button px-4 py-2 text-base font-bold transition-all ${
+              pathname.startsWith('/insights')
+                ? 'bg-brand-orange/10 text-brand-orange'
+                : 'text-dark/70 hover:bg-brand-orange/10 hover:text-brand-orange'
+            }`}
+          >
+            Insights
           </TransitionLink>
         </nav>
 
@@ -277,11 +304,22 @@ export default function Header() {
               <TransitionLink
                 href="/cases"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-6 py-4 text-base font-bold transition-colors ${
+                className={`block border-b border-dark/10 px-6 py-4 text-base font-bold transition-colors ${
                   pathname === '/cases' ? 'text-brand-orange' : 'text-dark hover:bg-dark/5'
                 }`}
               >
                 Cases
+              </TransitionLink>
+
+              {/* Insights */}
+              <TransitionLink
+                href="/insights"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-6 py-4 text-base font-bold transition-colors ${
+                  pathname.startsWith('/insights') ? 'text-brand-orange' : 'text-dark hover:bg-dark/5'
+                }`}
+              >
+                Insights
               </TransitionLink>
             </nav>
 

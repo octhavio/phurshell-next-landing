@@ -5,11 +5,11 @@ import Image from 'next/image'
 import { useTransition } from './TransitionContext'
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-  const { isTransitioning } = useTransition()
+  const { isTransitioning, showLogo } = useTransition()
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isTransitioning && (
           <motion.div
             key="overlay"
@@ -22,33 +22,40 @@ export default function PageTransition({ children }: { children: React.ReactNode
               ease: [0.16, 1, 0.3, 1], // easeOutExpo - começa devagar e acelera
             }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                scale: [1, 1.05, 1],
-              }}
-              exit={{ opacity: 0 }}
-              transition={{
-                opacity: { duration: 0.3, delay: 0.5 },
-                scale: {
-                  duration: 1,
-                  delay: 0.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
-                exit: { duration: 0.3 },
-              }}
-            >
-              <Image
-                src="/logos/img-logo-icon.svg"
-                alt="Phurshell"
-                width={50}
-                height={50}
-                className="h-12 w-12"
-                priority
-              />
-            </motion.div>
+            <AnimatePresence>
+              {showLogo && (
+                <motion.div
+                  key="logo"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    scale: [1, 1.05, 1],
+                  }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    opacity: { duration: 0.3, delay: 0.5 },
+                    scale: {
+                      duration: 1,
+                      delay: 0.5,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    },
+                    exit: {
+                      duration: 0.3,
+                    },
+                  }}
+                >
+                  <Image
+                    src="/logos/img-logo-icon.svg"
+                    alt="Phurshell"
+                    width={50}
+                    height={50}
+                    className="h-12 w-12"
+                    priority
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>

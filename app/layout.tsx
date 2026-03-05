@@ -98,7 +98,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={nunito.variable}>
-      <body className="flex min-h-screen flex-col bg-white text-dark antialiased">
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-white text-dark antialiased">
         <TransitionProvider>
           <PageTransition>
             <Header />

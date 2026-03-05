@@ -1,0 +1,238 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import TransitionLink from '@/components/TransitionLink'
+import { blogPosts } from '@/data/blogPosts'
+
+interface BlogPostPageProps {
+  params: {
+    slug: string
+  }
+}
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const post = blogPosts.find((p) => p.slug === params.slug)
+
+  if (!post) {
+    return {
+      title: 'Post não encontrado | Phurshell',
+    }
+  }
+
+  return {
+    title: `${post.title} | Insights Phurshell`,
+    description: post.excerpt,
+  }
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = blogPosts.find((p) => p.slug === params.slug)
+
+  if (!post) {
+    notFound()
+  }
+
+  const relatedPosts = blogPosts
+    .filter((p) => p.id !== post.id && p.categorySlug === post.categorySlug)
+    .slice(0, 3)
+
+  return (
+    <div className="bg-white">
+      {/* Breadcrumb */}
+      <section className="border-b border-dark/10 bg-gray-50 py-6">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="flex items-center gap-2 text-sm text-dark/60">
+            <TransitionLink
+              href="/"
+              className="transition-colors hover:text-brand-orange"
+            >
+              Home
+            </TransitionLink>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <TransitionLink
+              href="/insights"
+              className="transition-colors hover:text-brand-orange"
+            >
+              Insights
+            </TransitionLink>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <span className="text-dark">{post.category}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section */}
+      <section className="bg-white pb-12 pt-16 sm:pt-24">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          {/* Category & Meta */}
+          <div className="mb-6 flex flex-wrap items-center gap-4 text-sm">
+            <span className="rounded-button bg-brand-orange/10 px-4 py-2 font-bold text-brand-orange">
+              {post.category}
+            </span>
+            <span className="text-dark/60">{post.publishedAt}</span>
+            <span className="text-dark/60">•</span>
+            <span className="text-dark/60">{post.readTime} de leitura</span>
+          </div>
+
+          {/* Title */}
+          <h1 className="mb-8 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl lg:text-6xl xl:text-7xl">
+            {post.title}
+          </h1>
+
+          {/* Author Info */}
+          <div className="mb-12 flex items-center gap-4 border-b border-dark/10 pb-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
+              <i className="fa-solid fa-user text-2xl text-brand-orange"></i>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-dark">{post.author.name}</div>
+              <div className="text-dark/60">{post.author.role}</div>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="mb-12 overflow-hidden rounded-button">
+            <div className="relative h-[500px] w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 lg:h-[600px]"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="bg-white pb-16 sm:pb-24">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
+            {/* Main Content */}
+            <article
+              className="prose prose-lg max-w-none prose-headings:font-black prose-headings:text-dark prose-h3:text-3xl prose-h4:text-2xl prose-p:text-dark/80 prose-p:leading-relaxed prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline prose-strong:text-dark prose-ul:text-dark/80 prose-li:marker:text-brand-orange"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+
+            {/* Sidebar */}
+            <aside className="space-y-8">
+              {/* Share */}
+              <div className="rounded-button border border-dark/10 bg-white p-6 shadow-lg">
+                <h3 className="mb-4 text-lg font-black text-dark">Compartilhar</h3>
+                <div className="flex flex-col gap-3">
+                  <button className="group flex items-center gap-3 rounded-button bg-[#1DA1F2]/10 px-4 py-3 font-bold text-[#1DA1F2] transition-colors hover:bg-[#1DA1F2] hover:text-white">
+                    <i className="fa-brands fa-twitter"></i>
+                    Twitter
+                  </button>
+                  <button className="group flex items-center gap-3 rounded-button bg-[#0A66C2]/10 px-4 py-3 font-bold text-[#0A66C2] transition-colors hover:bg-[#0A66C2] hover:text-white">
+                    <i className="fa-brands fa-linkedin"></i>
+                    LinkedIn
+                  </button>
+                  <button className="group flex items-center gap-3 rounded-button bg-[#25D366]/10 px-4 py-3 font-bold text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white">
+                    <i className="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                  </button>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="rounded-button bg-gradient-to-br from-brand-orange to-brand-orange-light p-6 text-white shadow-lg">
+                <h3 className="mb-3 text-xl font-black">Gostou do conteúdo?</h3>
+                <p className="mb-4 text-white/90">
+                  Entre em contato e vamos transformar sua ideia em realidade
+                </p>
+                <TransitionLink
+                  href="/contato"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-button bg-white px-6 py-3 font-bold text-brand-orange transition-smooth hover:scale-105"
+                >
+                  Solicitar proposta
+                  <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </TransitionLink>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="border-t border-dark/10 bg-gray-50 py-16 sm:py-24">
+          <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+            <h2 className="mb-12 text-center text-4xl font-black text-dark sm:text-5xl">
+              Artigos relacionados
+            </h2>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {relatedPosts.map((relatedPost) => (
+                <TransitionLink
+                  key={relatedPost.id}
+                  href={`/insights/${relatedPost.slug}`}
+                  className="group flex flex-col overflow-hidden rounded-button border border-dark/10 bg-white shadow-lg transition-smooth hover:-translate-y-2 hover:shadow-2xl"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform group-hover:scale-105"></div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="mb-3 flex items-center gap-3 text-sm text-dark/60">
+                      <span className="rounded-button bg-brand-orange/10 px-3 py-1 font-bold text-brand-orange">
+                        {relatedPost.category}
+                      </span>
+                      <span>{relatedPost.readTime}</span>
+                    </div>
+
+                    <h3 className="mb-3 text-xl font-black text-dark transition-colors group-hover:text-brand-orange">
+                      {relatedPost.title}
+                    </h3>
+
+                    <p className="mb-4 flex-1 text-dark/70">{relatedPost.excerpt}</p>
+
+                    <div className="flex items-center justify-between border-t border-dark/10 pt-4">
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10">
+                          <i className="fa-solid fa-user text-sm text-brand-orange"></i>
+                        </div>
+                        <div className="text-sm">
+                          <div className="font-bold text-dark">{relatedPost.author.name}</div>
+                        </div>
+                      </div>
+
+                      <div className="text-sm text-dark/60">{relatedPost.publishedAt}</div>
+                    </div>
+                  </div>
+                </TransitionLink>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Newsletter CTA */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-2xl rounded-button border border-dark/10 bg-gradient-to-br from-white to-brand-orange/5 p-8 text-center shadow-xl sm:p-12">
+            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
+              <i className="fa-solid fa-envelope text-2xl text-brand-orange"></i>
+            </div>
+
+            <h2 className="mb-4 text-3xl font-black text-dark sm:text-4xl">
+              Receba nossos insights
+            </h2>
+            <p className="mb-8 text-lg text-dark/70">
+              Fique por dentro das últimas tendências em tecnologia e desenvolvimento de software
+            </p>
+
+            <TransitionLink
+              href="/contato"
+              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+            >
+              Falar com especialista
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+            </TransitionLink>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

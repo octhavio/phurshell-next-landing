@@ -66,7 +66,7 @@ export default function ProcessCarousel({
 
   return (
     <section className={`${bgClass} py-12 sm:py-16`}>
-      <div className="container mx-auto mb-8 max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto mb-8 max-w-screen-2xl px-10 sm:px-14 lg:px-20">
         {label && (
           <h3 className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
             {labelIcon && <i className={`fa-jelly fa-${labelIcon} fa-xl`}></i>}

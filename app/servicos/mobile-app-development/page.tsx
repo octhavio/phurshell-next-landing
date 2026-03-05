@@ -267,99 +267,183 @@ export default function MobileAppDevelopmentPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-12 sm:pt-16">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
         <style jsx>{`
-          @keyframes fadeInUp {
+          @keyframes slideUpWord {
             from {
               opacity: 0;
-              transform: translateY(20px);
+              transform: translateY(100%);
             }
             to {
               opacity: 1;
               transform: translateY(0);
             }
           }
-          .word-animate {
+          :global(.word-wrapper) {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            padding-bottom: 0.05em;
+          }
+          :global(.word) {
             display: inline-block;
             opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: slideUpWord 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           }
-          .word-animate:nth-child(1) { animation-delay: 0.1s; }
-          .word-animate:nth-child(2) { animation-delay: 0.2s; }
-          .word-animate:nth-child(3) { animation-delay: 0.3s; }
-          .word-animate:nth-child(4) { animation-delay: 0.4s; }
-          .word-animate:nth-child(5) { animation-delay: 0.5s; }
-          .description-animate {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.5s;
-          }
-          .cta-animate {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.6s;
-          }
-          .image-animate {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.7s;
-          }
+          :global(.word-delay-1) { animation-delay: 0.1s; }
+          :global(.word-delay-2) { animation-delay: 0.15s; }
+          :global(.word-delay-3) { animation-delay: 0.2s; }
+          :global(.word-delay-4) { animation-delay: 0.25s; }
+          :global(.word-delay-5) { animation-delay: 0.28s; }
+          :global(.word-delay-6) { animation-delay: 0.31s; }
+          :global(.word-delay-7) { animation-delay: 0.34s; }
+          :global(.word-delay-8) { animation-delay: 0.37s; }
+          :global(.word-delay-9) { animation-delay: 0.40s; }
+          :global(.word-delay-10) { animation-delay: 0.43s; }
+          :global(.word-delay-11) { animation-delay: 0.46s; }
+          :global(.word-delay-12) { animation-delay: 0.49s; }
+          :global(.word-delay-13) { animation-delay: 0.52s; }
+          :global(.word-delay-14) { animation-delay: 0.55s; }
+          :global(.word-delay-15) { animation-delay: 0.58s; }
+          :global(.word-delay-16) { animation-delay: 0.61s; }
+          :global(.word-delay-17) { animation-delay: 0.64s; }
+          :global(.word-delay-18) { animation-delay: 0.67s; }
+          :global(.word-delay-19) { animation-delay: 0.70s; }
+          :global(.word-delay-20) { animation-delay: 0.73s; }
+          :global(.word-delay-21) { animation-delay: 0.76s; }
+          :global(.word-delay-22) { animation-delay: 0.79s; }
+          :global(.word-delay-23) { animation-delay: 0.82s; }
+          :global(.word-delay-24) { animation-delay: 0.85s; }
+          :global(.word-delay-25) { animation-delay: 0.88s; }
+          :global(.word-delay-26) { animation-delay: 0.91s; }
+          :global(.word-delay-27) { animation-delay: 0.94s; }
+          :global(.word-delay-28) { animation-delay: 0.97s; }
+          :global(.word-delay-29) { animation-delay: 1.00s; }
+          :global(.word-delay-30) { animation-delay: 1.03s; }
+          :global(.word-delay-31) { animation-delay: 1.06s; }
+          :global(.word-delay-32) { animation-delay: 1.09s; }
+          :global(.word-delay-33) { animation-delay: 1.12s; }
+          :global(.word-delay-34) { animation-delay: 1.15s; }
+          :global(.word-delay-35) { animation-delay: 1.18s; }
+          :global(.word-delay-36) { animation-delay: 1.21s; }
+          :global(.word-delay-37) { animation-delay: 1.24s; }
+          :global(.word-delay-38) { animation-delay: 1.27s; }
+          :global(.word-delay-39) { animation-delay: 1.30s; }
+          :global(.word-delay-40) { animation-delay: 1.33s; }
+          :global(.word-delay-41) { animation-delay: 1.36s; }
+          :global(.word-delay-42) { animation-delay: 1.40s; }
+          :global(.word-delay-43) { animation-delay: 1.45s; }
+          :global(.word-delay-44) { animation-delay: 1.50s; }
+          :global(.word-delay-45) { animation-delay: 1.55s; }
+          :global(.word-delay-46) { animation-delay: 1.60s; }
+          :global(.word-delay-47) { animation-delay: 1.65s; }
+          :global(.word-delay-48) { animation-delay: 1.70s; }
+          :global(.word-delay-49) { animation-delay: 1.75s; }
         `}</style>
-        <div className="container relative z-10 mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
-            <span className="word-animate">Desenvolvimento</span>{' '}
-            <span className="word-animate">de</span>{' '}
-            <span className="word-animate">apps</span>
+            <span className="word-wrapper"><span className="word word-delay-1">Desenvolvimento</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-3">apps</span></span>
           </h1>
 
           {/* Description */}
-          <p className="description-animate mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
-            A Phurshell é uma empresa especializada em desenvolvimento de aplicativos customizados para iOS e Android. Criamos soluções sob medida que transformam suas ideias em produtos digitais de alta performance, com foco em experiência do usuário e excelência técnica.
+          <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
+            <span className="word-wrapper"><span className="word word-delay-4">A</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-5">Phurshell</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-6">é</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-7">uma</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-8">empresa</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-9">especializada</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-10">em</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-11">desenvolvimento</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-12">de</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-13">aplicativos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-14">customizados</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-15">para</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-16">iOS</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-17">e</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-18">Android.</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-19">Criamos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-20">soluções</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">sob</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-22">medida</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-23">que</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-24">transformam</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-25">suas</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-26">ideias</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-27">em</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-28">produtos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-29">digitais</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-30">de</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-31">alta</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-32">performance,</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-33">com</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-34">foco</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-35">em</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-36">experiência</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-37">do</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-38">usuário</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-39">e</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-40">excelência</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-41">técnica.</span></span>
           </p>
 
           {/* CTA */}
-          <div className="cta-animate mb-12 flex items-center gap-6">
-            <a
-              href="#contato"
-              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-            >
-              Solicitar proposta
-              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-            </a>
-            <div className="flex items-center gap-4">
-              {/* Team photo */}
-              <div className="relative h-12 w-auto overflow-hidden rounded-full">
-                <Image
-                  src="/img-cta-especialist.png"
-                  alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
-                  width={120}
-                  height={48}
-                  sizes="120px"
-                  loading="lazy"
-                  className="h-12 w-auto object-cover"
-                />
-              </div>
-              <p className="text-lg font-bold text-dark">
-                Fale com um especialista agora
-              </p>
-            </div>
+          <div className="mb-12 flex items-center gap-6">
+            <span className="word word-delay-42" style={{ display: 'inline-block' }}>
+              <a
+                href="#contato"
+                className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+              >
+                Solicitar proposta
+                <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </span>
+            <span className="word-wrapper">
+              <span className="word word-delay-43" style={{ display: 'inline-block' }}>
+                <div className="flex items-center gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                    <Image
+                      src="/img-cta-especialist.png"
+                      alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
+                      width={120}
+                      height={48}
+                      sizes="120px"
+                      loading="lazy"
+                      className="h-12 w-auto object-cover"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-dark">
+                    <span className="word-wrapper"><span className="word word-delay-44">Fale</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-45">com</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-46">um</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-47">especialista</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-48">agora</span></span>
+                  </p>
+                </div>
+              </span>
+            </span>
           </div>
 
           {/* Image */}
-          <div className="image-animate relative aspect-[21/9] overflow-hidden rounded-button">
-            <Image
-              src="/img-hero.png"
-              alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
-              priority
-            />
+          <div className="relative aspect-[21/9] overflow-hidden rounded-button">
+            <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
+              <span className="word word-delay-49" style={{ display: 'block', height: '100%', position: 'relative' }}>
+                <Image
+                  src="/img-hero.png"
+                  alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
 
-            {/* Overlay Content */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white lg:p-12">
+                {/* Overlay Content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white lg:p-12">
               <div className="max-w-full space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
                 {/* Logo e Nome */}
                 <div className="flex items-center gap-3">
@@ -394,7 +478,9 @@ export default function MobileAppDevelopmentPage() {
                   </div>
                 </div>
               </div>
-            </div>
+                </div>
+              </span>
+            </span>
           </div>
         </div>
       </section>
