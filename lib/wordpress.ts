@@ -1,30 +1,21 @@
 /**
  * WordPress API Client
  * Funções para consumir WordPress como headless CMS
- *
- * Uso futuro quando conectar ao WordPress:
- * 1. Configurar WORDPRESS_API_URL no .env
- * 2. Ativar plugin WP REST API no WordPress
- * 3. Instalar e configurar ACF (Advanced Custom Fields) para campos customizados
- * 4. Habilitar CORS no WordPress se necessário
  */
 
-import { WPPage, WPPost, WPCase, WPAPIResponse } from '@/types/wordpress'
+import { WPPage, WPPost, WPCase, WPCategory, BlogPost } from '@/types/wordpress'
 
-const WP_API_URL = process.env.WORDPRESS_API_URL || ''
+// URL base do WordPress - facilmente alterável
+const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://phurshell.com'
+const WP_API_URL = `${WP_BASE_URL}/wp-json/wp/v2`
 
 /**
  * Fetch genérico para WordPress API com tratamento de erros
  */
 async function fetchWordPress<T>(
   endpoint: string,
-  params: Record<string, string | number> = {},
-  revalidate: number = 3600 // Cache de 1 hora por padrão
+  params: Record<string, string | number> = {}
 ): Promise<T> {
-  if (!WP_API_URL) {
-    throw new Error('WORDPRESS_API_URL não configurado no .env')
-  }
-
   const queryParams = new URLSearchParams(
     Object.entries(params).map(([key, value]) => [key, String(value)])
   )
@@ -33,7 +24,6 @@ async function fetchWordPress<T>(
 
   try {
     const response = await fetch(url, {
-      next: { revalidate }, // ISR - Incremental Static Regeneration
       headers: {
         'Content-Type': 'application/json',
       },
@@ -48,6 +38,66 @@ async function fetchWordPress<T>(
   } catch (error) {
     console.error('Erro ao buscar dados do WordPress:', error)
     throw error
+  }
+}
+
+/**
+ * Remove tags HTML de uma string
+ */
+function stripHtmlTags(html: string): string {
+  return html.replace(/<[^>]*>/g, '').trim()
+}
+
+/**
+ * Calcula tempo de leitura baseado no conteúdo
+ */
+function calculateReadTime(content: string): string {
+  const text = stripHtmlTags(content)
+  const words = text.split(/\s+/).filter(word => word.length > 0).length
+  const minutes = Math.ceil(words / 200)
+  return `${minutes} min`
+}
+
+/**
+ * Formata data ISO para formato pt-BR
+ */
+function formatDate(isoDate: string): string {
+  const date = new Date(isoDate)
+  const months = [
+    'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+    'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+  ]
+  const day = date.getDate()
+  const month = months[date.getMonth()]
+  const year = date.getFullYear()
+  return `${day} ${month} ${year}`
+}
+
+/**
+ * Transforma WPPost para BlogPost
+ */
+function transformWPPost(post: WPPost): BlogPost {
+  const category = post._embedded?.['wp:term']?.[0]?.[0]
+  const author = post._embedded?.author?.[0]
+  const media = post._embedded?.['wp:featuredmedia']?.[0]
+
+  return {
+    id: post.id,
+    slug: post.slug,
+    title: post.title.rendered,
+    excerpt: stripHtmlTags(post.excerpt.rendered),
+    content: post.content.rendered,
+    category: category?.name || 'Sem categoria',
+    categorySlug: category?.slug || 'sem-categoria',
+    author: {
+      name: author?.name || 'Phurshell',
+      role: 'Equipe Phurshell',
+      avatar: author?.avatar_urls?.['96'],
+    },
+    publishedAt: formatDate(post.date),
+    readTime: calculateReadTime(post.content.rendered),
+    image: media?.source_url || null,
+    featured: post.sticky,
   }
 }
 
@@ -171,15 +221,38 @@ export function getFeaturedImageUrl(
 }
 
 /**
- * Revalida cache de uma rota específica
- * Usar com API Routes para webhook de revalidação
+ * Busca posts do blog transformados
  */
-export async function revalidatePath(path: string, secret: string) {
-  if (secret !== process.env.REVALIDATE_SECRET) {
-    throw new Error('Invalid revalidation secret')
-  }
+export async function getBlogPosts(perPage: number = 100): Promise<BlogPost[]> {
+  const posts = await fetchWordPress<WPPost[]>('/posts', {
+    per_page: perPage,
+    _embed: 1,
+    orderby: 'date',
+    order: 'desc',
+  })
 
-  // Esta função será usada em uma API Route
-  // Ex: /api/revalidate
-  return { revalidated: true, path }
+  return posts.map(transformWPPost)
+}
+
+/**
+ * Busca um post do blog pelo slug
+ */
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  const posts = await fetchWordPress<WPPost[]>('/posts', {
+    slug,
+    _embed: 1,
+  })
+
+  if (posts.length === 0) return null
+  return transformWPPost(posts[0])
+}
+
+/**
+ * Busca todas as categorias
+ */
+export async function getCategories(): Promise<WPCategory[]> {
+  return fetchWordPress<WPCategory[]>('/categories', {
+    per_page: 100,
+    hide_empty: 1,
+  })
 }

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import TransitionLink from '@/components/TransitionLink'
-import { blogPosts } from '@/data/blogPosts'
+import ShareButtons from '@/components/ShareButtons'
+import { getBlogPosts, getBlogPostBySlug } from '@/lib/wordpress'
 
 interface BlogPostPageProps {
   params: {
@@ -11,13 +11,14 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const posts = await getBlogPosts()
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const post = await getBlogPostBySlug(params.slug)
 
   if (!post) {
     return {
@@ -31,14 +32,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = await getBlogPostBySlug(params.slug)
 
   if (!post) {
     notFound()
   }
 
-  const relatedPosts = blogPosts
+  // Busca posts relacionados da mesma categoria
+  const allPosts = await getBlogPosts()
+  const relatedPosts = allPosts
     .filter((p) => p.id !== post.id && p.categorySlug === post.categorySlug)
     .slice(0, 3)
 
@@ -87,9 +90,17 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Author Info */}
           <div className="mb-12 flex items-center gap-4 border-b border-dark/10 pb-8">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
-              <i className="fa-solid fa-user text-2xl text-brand-orange"></i>
-            </div>
+            {post.author.avatar ? (
+              <img
+                src={post.author.avatar}
+                alt={post.author.name}
+                className="h-16 w-16 rounded-full object-cover"
+              />
+            ) : (
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
+                <i className="fa-solid fa-user text-2xl text-brand-orange"></i>
+              </div>
+            )}
             <div>
               <div className="text-lg font-bold text-dark">{post.author.name}</div>
               <div className="text-dark/60">{post.author.role}</div>
@@ -97,9 +108,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Featured Image */}
-          <div className="mb-12 overflow-hidden rounded-button">
-            <div className="relative h-[500px] w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 lg:h-[600px]"></div>
-          </div>
+          {post.image && (
+            <div className="mb-12 overflow-hidden rounded-button">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="h-auto w-full object-cover lg:max-h-[600px]"
+              />
+            </div>
+          )}
         </div>
       </section>
 
@@ -116,23 +133,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Sidebar */}
             <aside className="space-y-8">
               {/* Share */}
-              <div className="rounded-button border border-dark/10 bg-white p-6 shadow-lg">
-                <h3 className="mb-4 text-lg font-black text-dark">Compartilhar</h3>
-                <div className="flex flex-col gap-3">
-                  <button className="group flex items-center gap-3 rounded-button bg-[#1DA1F2]/10 px-4 py-3 font-bold text-[#1DA1F2] transition-colors hover:bg-[#1DA1F2] hover:text-white">
-                    <i className="fa-brands fa-twitter"></i>
-                    Twitter
-                  </button>
-                  <button className="group flex items-center gap-3 rounded-button bg-[#0A66C2]/10 px-4 py-3 font-bold text-[#0A66C2] transition-colors hover:bg-[#0A66C2] hover:text-white">
-                    <i className="fa-brands fa-linkedin"></i>
-                    LinkedIn
-                  </button>
-                  <button className="group flex items-center gap-3 rounded-button bg-[#25D366]/10 px-4 py-3 font-bold text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white">
-                    <i className="fa-brands fa-whatsapp"></i>
-                    WhatsApp
-                  </button>
-                </div>
-              </div>
+              <ShareButtons title={post.title} slug={post.slug} />
 
               {/* CTA */}
               <div className="rounded-button bg-gradient-to-br from-brand-orange to-brand-orange-light p-6 text-white shadow-lg">
@@ -170,7 +171,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform group-hover:scale-105"></div>
+                    {relatedPost.image ? (
+                      <img
+                        src={relatedPost.image}
+                        alt={relatedPost.title}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform group-hover:scale-105"></div>
+                    )}
                   </div>
 
                   {/* Content */}
@@ -190,9 +199,17 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
                     <div className="flex items-center justify-between border-t border-dark/10 pt-4">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10">
-                          <i className="fa-solid fa-user text-sm text-brand-orange"></i>
-                        </div>
+                        {relatedPost.author.avatar ? (
+                          <img
+                            src={relatedPost.author.avatar}
+                            alt={relatedPost.author.name}
+                            className="h-8 w-8 rounded-full object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10">
+                            <i className="fa-solid fa-user text-sm text-brand-orange"></i>
+                          </div>
+                        )}
                         <div className="text-sm">
                           <div className="font-bold text-dark">{relatedPost.author.name}</div>
                         </div>
