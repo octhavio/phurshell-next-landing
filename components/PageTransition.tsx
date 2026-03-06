@@ -40,9 +40,6 @@ export default function PageTransition({ children }: { children: React.ReactNode
                       repeat: Infinity,
                       ease: 'easeInOut',
                     },
-                    exit: {
-                      duration: 0.3,
-                    },
                   }}
                 >
                   <Image
