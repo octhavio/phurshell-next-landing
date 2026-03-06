@@ -1,10 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import TransitionLink from '@/components/TransitionLink'
 import Image from 'next/image'
 
 export default function Home() {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+  const [isHoveringCard, setIsHoveringCard] = useState(false)
+
   useEffect(() => {
     // Prevent browser scroll restoration and ensure page loads at top
     if ('scrollRestoration' in window.history) {
@@ -136,6 +139,24 @@ export default function Home() {
 
   return (
     <div className="relative bg-white">
+      {/* Custom Cursor */}
+      {isHoveringCard && (
+        <div
+          className="pointer-events-none fixed z-50 flex items-center gap-2 rounded-full bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-white shadow-xl transition-opacity duration-200"
+          style={{
+            left: `${cursorPosition.x}px`,
+            top: `${cursorPosition.y}px`,
+            transform: 'translate(-50%, -50%)',
+            outline: '5px solid rgba(255, 255, 255, 0.2)',
+            outlineOffset: '0px',
+            backdropFilter: 'blur(40px)',
+            WebkitBackdropFilter: 'blur(40px)',
+          }}
+        >
+          Ver case
+          <i className="fa-solid fa-arrow-right text-xs"></i>
+        </div>
+      )}
       {/* Floating Image Container - Outside sections but not fixed */}
       <div className="pointer-events-none absolute right-0 top-0 z-40 h-screen w-full lg:block hidden">
         <style jsx>{`
@@ -440,63 +461,118 @@ export default function Home() {
 
           {/* Cards Grid */}
           <div className="space-y-8">
-            {cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp').map((caseItem, index) => (
+            {[...cases.filter(c => c.name === 'Diag'), ...cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp')].map((caseItem, index) => (
               <div
                 key={index}
-                className="overflow-hidden rounded-button border border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg"
+                className={`overflow-hidden rounded-button border ${
+                  index === 0
+                    ? 'border-transparent bg-[#8046FB] group relative'
+                    : 'border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg'
+                }`}
+                style={index === 0 ? { cursor: 'none' } : {}}
+                onMouseMove={index === 0 ? (e) => {
+                  setCursorPosition({ x: e.clientX, y: e.clientY })
+                } : undefined}
+                onMouseEnter={index === 0 ? () => setIsHoveringCard(true) : undefined}
+                onMouseLeave={index === 0 ? () => setIsHoveringCard(false) : undefined}
               >
-                <div className="grid grid-cols-1 items-center gap-12 p-12 sm:p-16 lg:grid-cols-2 lg:gap-16 lg:p-20">
-                  {/* Left Column - Content */}
-                  <div className="space-y-8">
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src={caseItem.icon}
-                          alt={caseItem.name}
-                          width={80}
-                          height={80}
-                          sizes="80px"
-                          loading="lazy"
-                          className="h-20 w-20 rounded-2xl border border-dark/10"
-                        />
-                        <h3 className="text-4xl font-black leading-tight text-dark sm:text-5xl">
-                          {caseItem.name}
-                        </h3>
-                      </div>
-                      <p className="text-xl leading-relaxed text-dark/60">{caseItem.description}</p>
-                    </div>
-
-                    {/* O que fizemos */}
-                    <div className="space-y-4">
-                      <h4 className="text-sm font-black uppercase tracking-wider text-dark/60">
-                        O que fizemos?
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {caseItem.tags.map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className="rounded-full border border-dark/20 px-4 py-2 text-sm font-bold text-dark"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column - Screenshot */}
-                  <div className="relative flex items-center justify-center">
+                {index === 0 ? (
+                  // First card - Vertical centered layout with image at bottom
+                  <div className="relative flex flex-col items-center gap-8 p-12 pt-12 pb-0 sm:p-16 sm:pt-16 sm:pb-0 lg:p-20 lg:pt-20 lg:pb-0 text-center">
+                    {/* Logo */}
                     <Image
-                      src={caseItem.screenshot}
-                      alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
-                      width={600}
-                      height={800}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                      src="/img-home-icon-diag.png"
+                      alt={caseItem.name}
+                      width={120}
+                      height={40}
+                      sizes="120px"
                       loading="lazy"
-                      className="h-auto w-full max-w-md transition-transform duration-500 hover:scale-105"
+                      className="h-auto relative z-10"
                     />
+
+                    {/* Title and Description with reduced spacing */}
+                    <div className="flex flex-col items-center gap-3 relative z-10 mb-12">
+                      {/* Title */}
+                      <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                        Aplicativo de gestão clínica para médicos
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-xl leading-relaxed text-white/90 max-w-3xl">
+                        {caseItem.description}
+                      </p>
+                    </div>
+
+                    {/* Screenshot - Positioned at bottom */}
+                    <div className="relative w-full flex items-end justify-center mt-auto">
+                      <Image
+                        src="/img-home-case-diag.png"
+                        alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
+                        width={800}
+                        height={600}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
+                        loading="lazy"
+                        className="h-auto w-full max-w-4xl"
+                      />
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // Other cards - Original horizontal layout
+                  <div className="grid grid-cols-1 items-center gap-12 p-12 sm:p-16 lg:grid-cols-2 lg:gap-16 lg:p-20">
+                    {/* Left Column - Content */}
+                    <div className="space-y-8">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <Image
+                            src={caseItem.icon}
+                            alt={caseItem.name}
+                            width={80}
+                            height={80}
+                            sizes="80px"
+                            loading="lazy"
+                            className="h-20 w-20 rounded-2xl border border-dark/10"
+                          />
+                          <h3 className="text-4xl font-black leading-tight text-dark sm:text-5xl">
+                            {caseItem.name}
+                          </h3>
+                        </div>
+                        <p className="text-xl leading-relaxed text-dark/60">
+                          {caseItem.description}
+                        </p>
+                      </div>
+
+                      {/* O que fizemos */}
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-black uppercase tracking-wider text-dark/60">
+                          O que fizemos?
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {caseItem.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="rounded-full border border-dark/20 px-4 py-2 text-sm font-bold text-dark"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Screenshot */}
+                    <div className="relative flex items-center justify-center">
+                      <Image
+                        src={caseItem.screenshot}
+                        alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
+                        width={600}
+                        height={800}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                        loading="lazy"
+                        className="h-auto w-full max-w-md transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
