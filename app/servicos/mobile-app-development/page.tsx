@@ -4,6 +4,8 @@ import { useState } from 'react'
 import TransitionLink from '@/components/TransitionLink'
 import Image from 'next/image'
 import ProcessCarousel from '@/components/ProcessCarousel'
+import WhyPhurshell from '@/components/WhyPhurshell'
+import ContactCTA from '@/components/ContactCTA'
 
 export default function MobileAppDevelopmentPage() {
   const [currentCaseIndex, setCurrentCaseIndex] = useState(0)
@@ -799,181 +801,10 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       {/* Excellence Section */}
-      <section className="relative bg-dark py-16 sm:py-24 overflow-hidden">
-        {/* Orange Gradient Shadow */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-l from-brand-orange/20 via-brand-orange/5 to-transparent"></div>
+      <WhyPhurshell />
 
-        {/* Background Logo */}
-        <div className="absolute bottom-0 right-0 z-0 opacity-20">
-          <Image
-            src="/img-background-logo.png"
-            alt=""
-            width={800}
-            height={800}
-            sizes="(max-width: 640px) 500px, 700px"
-            className="h-auto w-[500px] sm:w-[700px]"
-            priority
-          />
-        </div>
-
-        <div className="container relative z-10 mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div>
-            {/* Top - Text */}
-            <div className="mb-16">
-              <p className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
-                <i className="fa-jelly fa-circle-check fa-xl"></i>
-                SOBRE A PHURSHELL
-              </p>
-              <h2 className="mb-6 text-5xl font-black text-white sm:text-6xl">
-                Porque trabalhar com a Phurshell?
-              </h2>
-              <p className="mb-12 max-w-5xl text-xl leading-relaxed text-white/70">
-                A Phurshell é uma empresa brasileira especializada em desenvolvimento de software. Desde 2015, construímos software para empresas de todos os tamanhos—desde startups em crescimento até grandes corporações. Somos uma das empresas de desenvolvimento de software de mais rápido crescimento. Se você busca qualidade e inovação, somos o parceiro ideal para você.
-              </p>
-            </div>
-
-            {/* Circular Stats - Three Circles Side by Side */}
-            <div className="mb-16 flex flex-wrap justify-start gap-8 sm:gap-12 lg:gap-16">
-              {/* Projects Circle */}
-              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
-                {/* Decorative circular text */}
-                <div className="absolute inset-0">
-                  <svg className="h-full w-full animate-spin-slow" viewBox="0 0 256 256">
-                    <defs>
-                      <path
-                        id="projectsCircle"
-                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
-                      />
-                    </defs>
-                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      <textPath href="#projectsCircle" startOffset="0%">
-                        projetos · qualidade · sucesso · entregues ·
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-
-                {/* Center Content */}
-                <div className="relative z-10 text-center">
-                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">50+</div>
-                  <div className="text-lg text-brand-orange">projetos</div>
-                  <div className="text-lg text-brand-orange">entregues</div>
-                </div>
-              </div>
-
-              {/* Apps Circle */}
-              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
-                {/* Decorative circular text */}
-                <div className="absolute inset-0">
-                  <svg className="h-full w-full animate-spin-slow" viewBox="0 0 256 256">
-                    <defs>
-                      <path
-                        id="appsCircle"
-                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
-                      />
-                    </defs>
-                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      <textPath href="#appsCircle" startOffset="0%">
-                        apps mobile · apps web · plataformas · soluções ·
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-
-                {/* Center Content */}
-                <div className="relative z-10 text-center">
-                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">100+</div>
-                  <div className="text-lg text-brand-orange">apps</div>
-                  <div className="text-lg text-brand-orange">desenvolvidos</div>
-                </div>
-              </div>
-
-              {/* Years Circle */}
-              <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64">
-                {/* Decorative circular text */}
-                <div className="absolute inset-0">
-                  <svg className="h-full w-full animate-spin-slow-reverse" viewBox="0 0 256 256">
-                    <defs>
-                      <path
-                        id="yearsCircle"
-                        d="M 128, 128 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
-                      />
-                    </defs>
-                    <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      <textPath href="#yearsCircle" startOffset="0%">
-                        experiência · excelência · inovação · qualidade ·
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-
-                {/* Center Content */}
-                <div className="relative z-10 text-center">
-                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">10+</div>
-                  <div className="text-lg text-brand-orange">anos de</div>
-                  <div className="text-lg text-brand-orange">mercado</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-white py-12">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          {/* Card Container */}
-          <div className="rounded-button bg-brand-orange/10 p-8 shadow-sm sm:p-12 lg:p-16">
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_350px]">
-              {/* Left Column - Content */}
-              <div className="space-y-6">
-                <p className="flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
-                  <i className="fa-jelly fa-comments fa-xl"></i>
-                  ENTRAR EM CONTATO
-                </p>
-                <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
-                  Receba sua proposta hoje mesmo
-                </h2>
-                <p className="text-xl leading-relaxed text-dark/70">
-                  Assim que você enviar o formulário de solicitação de proposta, o Gustavo entrará em contato para agendar uma conversa e entender melhor as necessidades do seu projeto. Com base nesse primeiro contato, geramos uma proposta inicial personalizada para você ter uma visão clara dos investimentos envolvidos e do escopo do trabalho. Dessa forma, podemos iniciar rapidamente o processo de desenvolvimento e transformar sua ideia em realidade.
-                </p>
-
-                {/* CTA Button */}
-                <div className="pt-4">
-                  <TransitionLink
-                    href="/contato"
-                    className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-                  >
-                    Solicitar proposta
-                    <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-                  </TransitionLink>
-                </div>
-              </div>
-
-              {/* Right Column - Image */}
-              <div className="order-first lg:order-last">
-                <div className="relative overflow-hidden rounded-button">
-                  <Image
-                    src="/img-cta.png"
-                    alt="Gustavo Bittar, fundador e líder de desenvolvimento mobile da Phurshell"
-                    width={350}
-                    height={466}
-                    sizes="(max-width: 1024px) 100vw, 350px"
-                    loading="lazy"
-                    className="h-auto w-full"
-                  />
-                  {/* Overlay with Name */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-2xl font-black text-white">Gustavo Bittar</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact CTA */}
+      <ContactCTA />
 
       {/* FAQ */}
       <section className="bg-white py-12 sm:py-16">

@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import TransitionLink from '@/components/TransitionLink'
 import Image from 'next/image'
+import WhyPhurshell from '@/components/WhyPhurshell'
+import ContactCTA from '@/components/ContactCTA'
 
 export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -95,43 +97,30 @@ export default function Home() {
 
   const services = [
     {
-      title: 'Estratégia',
+      title: 'Descoberta de Produto',
       description:
-        'Definindo a estratégia em torno da execução técnica. Roadmaps flexíveis visando garantir entregas eficientes e pontuais.',
+        'Definimos a estratégia técnica e funcional do seu produto digital antes do desenvolvimento, estruturando o MVP, arquitetura do sistema e roadmap inicial.',
       icon: 'lightbulb',
       iconType: 'fa-jelly',
     },
     {
-      title: 'Design',
+      title: 'UX/UI para Aplicativos',
       description:
-        'Criando experiências de usuário simples e intuitivas e interfaces visualmente atraentes, adaptadas para atender às necessidades do negócio.',
+        'Criamos experiências digitais simples e intuitivas, com interfaces pensadas para facilitar o uso e maximizar o valor do produto.',
       icon: 'palette',
       iconType: 'fa-jelly',
     },
     {
-      title: 'Desenvolvimento',
+      title: 'Desenvolvimento de Aplicativos',
       description:
-        'Construindo produtos Web e Mobile de última geração, eficientes, confiáveis e escaláveis que são incríveis e funcionam ainda melhor.',
+        'Construímos aplicativos mobile e plataformas web escaláveis, com arquitetura moderna, integrações e foco em performance.',
       icon: 'code',
       iconType: 'fa-jelly',
     },
     {
-      title: 'Testes',
+      title: 'Evolução e Suporte de Produto',
       description:
-        'Elaborando estratégias de teste completas para garantir a qualidade do produto, visando a detecção precoce de problemas e confiabilidade.',
-      icon: 'gauge',
-      iconType: 'fa-jelly',
-    },
-    {
-      title: 'Lançamento',
-      description: 'O início de uma jornada de evolução e iteração contínuas.',
-      icon: 'check',
-      iconType: 'fa-jelly',
-    },
-    {
-      title: 'Manutenção',
-      description:
-        'Suporte contínuo e melhorias constantes para garantir que seu produto permaneça atualizado e funcionando perfeitamente.',
+        'Após o lançamento, continuamos evoluindo o produto com melhorias, novas funcionalidades e suporte técnico contínuo.',
       icon: 'arrows-rotate',
       iconType: 'fa-jelly',
     },
@@ -342,38 +331,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Principais Serviços */}
-      <section className="bg-white py-12 sm:py-16">
-        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          {/* Header */}
-          <h2 className="mb-6 text-5xl font-black tracking-tight text-dark sm:text-6xl">
-            Especialistas em produto digital,
-            <br />
-            do conceito ao lançamento
-          </h2>
-          <p className="mb-16 max-w-4xl text-xl leading-relaxed text-dark/60">
-            Nossos serviços abrangem todo o ciclo de vida do produto, desde estratégia e design até
-            implantação e suporte pós-lançamento.
-          </p>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="rounded-button border border-dark/10 bg-white p-6"
-              >
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className={`${service.iconType} fa-${service.icon} fa-xl text-brand-orange`}></i>
-                </div>
-                <h3 className="mb-3 text-xl font-black text-dark">{service.title}</h3>
-                <p className="text-xl leading-relaxed text-dark/60">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Clients Carousel - Dark Section */}
       <section className="relative overflow-hidden bg-white pb-12">
         <style jsx>{`
@@ -401,7 +358,7 @@ export default function Home() {
               <h2 className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
                 Empresas ambiciosas
                 <br />
-                que ajudamos a escalar
+                que trabalhamos em conjunto
               </h2>
             </div>
 
@@ -445,6 +402,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Principais Serviços */}
+      <section className="bg-white py-12 sm:py-16">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          {/* Header */}
+          <p className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+            Nossos principais serviços
+          </p>
+          <h2 className="mb-6 max-w-4xl text-5xl font-black tracking-tight text-dark sm:text-6xl">
+            Como ajudamos empresas a construir produtos digitais
+          </h2>
+          <p className="mb-16 max-w-4xl text-xl leading-relaxed text-dark/60">
+            Cuidamos de todo o ciclo de desenvolvimento — da estratégia inicial até a evolução contínua do seu aplicativo ou plataforma.
+          </p>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="rounded-button border border-dark/10 bg-white p-6"
+              >
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className={`${service.iconType} fa-${service.icon} fa-xl text-brand-orange`}></i>
+                </div>
+                <h3 className="mb-3 text-xl font-black text-dark">{service.title}</h3>
+                <p className="text-xl leading-relaxed text-dark/60">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Cases */}
       <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
@@ -461,61 +450,106 @@ export default function Home() {
 
           {/* Cards Grid */}
           <div className="space-y-8">
-            {[...cases.filter(c => c.name === 'Diag'), ...cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp')].map((caseItem, index) => (
+            {cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp').slice(0, 2).map((caseItem, index) => (
               <div
                 key={index}
-                className={`overflow-hidden rounded-button border ${
+                className={`overflow-hidden rounded-button ${
                   index === 0
-                    ? 'border-transparent bg-[#8046FB] group relative'
-                    : 'border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg'
+                    ? 'bg-[#8046FB] group relative'
+                    : index === 1
+                    ? 'bg-[#FD9773] group relative'
+                    : 'border border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg'
                 }`}
-                style={index === 0 ? { cursor: 'none' } : {}}
-                onMouseMove={index === 0 ? (e) => {
+                style={index <= 1 ? { cursor: 'none' } : {}}
+                onMouseMove={index <= 1 ? (e) => {
                   setCursorPosition({ x: e.clientX, y: e.clientY })
                 } : undefined}
-                onMouseEnter={index === 0 ? () => setIsHoveringCard(true) : undefined}
-                onMouseLeave={index === 0 ? () => setIsHoveringCard(false) : undefined}
+                onMouseEnter={index <= 1 ? () => setIsHoveringCard(true) : undefined}
+                onMouseLeave={index <= 1 ? () => setIsHoveringCard(false) : undefined}
               >
-                {index === 0 ? (
-                  // First card - Vertical centered layout with image at bottom
-                  <div className="relative flex flex-col items-center gap-8 p-12 pt-12 pb-0 sm:p-16 sm:pt-16 sm:pb-0 lg:p-20 lg:pt-20 lg:pb-0 text-center">
-                    {/* Logo */}
-                    <Image
-                      src="/img-home-icon-diag.png"
-                      alt={caseItem.name}
-                      width={120}
-                      height={40}
-                      sizes="120px"
-                      loading="lazy"
-                      className="h-auto relative z-10"
-                    />
+                {index <= 1 ? (
+                  // First and second cards - Vertical centered layout with image at bottom
+                  index === 1 ? (
+                    <TransitionLink href="/cases/psiapp" className="block" style={{ cursor: 'none' }}>
+                      <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
+                        {/* Logo */}
+                        <Image
+                          src="/img-home-icon-psiapp.png"
+                          alt={caseItem.name}
+                          width={120}
+                          height={40}
+                          sizes="120px"
+                          loading="lazy"
+                          className="h-auto relative z-10"
+                        />
 
-                    {/* Title and Description with reduced spacing */}
-                    <div className="flex flex-col items-center gap-3 relative z-10 mb-12">
-                      {/* Title */}
-                      <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
-                        Aplicativo de gestão clínica para médicos
-                      </h3>
+                        {/* Title and Description with reduced spacing */}
+                        <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
+                          {/* Title */}
+                          <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                            O aplicativo que conecta psicólogos a pacientes
+                          </h3>
 
-                      {/* Description */}
-                      <p className="text-xl leading-relaxed text-white/90 max-w-3xl">
-                        {caseItem.description}
-                      </p>
-                    </div>
+                          {/* Description */}
+                          <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
+                            Desenvolvimento completo dos aplicativos para pacientes e psicólogos, backoffice para gestão de atendimentos e análise de dados.
+                          </p>
+                        </div>
 
-                    {/* Screenshot - Positioned at bottom */}
-                    <div className="relative w-full flex items-end justify-center mt-auto">
+                        {/* Screenshot - Positioned at bottom with hover scale effect */}
+                        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                          <Image
+                            src="/img-home-case-psiapp.png"
+                            alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
+                            width={800}
+                            height={600}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
+                            loading="lazy"
+                            className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      </div>
+                    </TransitionLink>
+                  ) : (
+                    <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
+                      {/* Logo */}
                       <Image
-                        src="/img-home-case-diag.png"
-                        alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
-                        width={800}
-                        height={600}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
+                        src="/img-home-icon-diag.png"
+                        alt={caseItem.name}
+                        width={120}
+                        height={40}
+                        sizes="120px"
                         loading="lazy"
-                        className="h-auto w-full max-w-4xl"
+                        className="h-auto relative z-10"
                       />
+
+                      {/* Title and Description with reduced spacing */}
+                      <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
+                        {/* Title */}
+                        <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                          Aplicativo de gestão clínica para médicos
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
+                          Plataforma completa de gestão de saúde com geração de prontuários e receitas médicas, chat com IA para suporte diagnóstico.
+                        </p>
+                      </div>
+
+                      {/* Screenshot - Positioned at bottom with hover scale effect */}
+                      <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                        <Image
+                          src="/img-home-case-diag.png"
+                          alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
+                          width={800}
+                          height={600}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
+                          loading="lazy"
+                          className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
-                  </div>
+                  )
                 ) : (
                   // Other cards - Original horizontal layout
                   <div className="grid grid-cols-1 items-center gap-12 p-12 sm:p-16 lg:grid-cols-2 lg:gap-16 lg:p-20">
@@ -616,61 +650,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="bg-white py-12">
-        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          {/* Card Container */}
-          <div className="rounded-button bg-brand-orange/10 p-8 shadow-sm sm:p-12 lg:p-16">
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_350px]">
-              {/* Left Column - Content */}
-              <div className="space-y-6">
-                <p className="flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
-                  <i className="fa-jelly fa-comments fa-xl"></i>
-                  ENTRAR EM CONTATO
-                </p>
-                <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
-                  Receba sua proposta hoje mesmo
-                </h2>
-                <p className="text-xl leading-relaxed text-dark/70">
-                  Assim que você enviar o formulário de solicitação de proposta, o Gustavo entrará em contato para agendar uma conversa e entender melhor as necessidades do seu projeto. Com base nesse primeiro contato, geramos uma proposta inicial personalizada para você ter uma visão clara dos investimentos envolvidos e do escopo do trabalho. Dessa forma, podemos iniciar rapidamente o processo de desenvolvimento e transformar sua ideia em realidade.
-                </p>
+      {/* Why Phurshell */}
+      <WhyPhurshell />
 
-                {/* CTA Button */}
-                <div className="pt-4">
-                  <TransitionLink
-                    href="/contato"
-                    className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-                  >
-                    Solicitar proposta
-                    <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-                  </TransitionLink>
-                </div>
-              </div>
-
-              {/* Right Column - Image */}
-              <div className="order-first lg:order-last">
-                <div className="relative overflow-hidden rounded-button">
-                  <Image
-                    src="/img-cta.png"
-                    alt="Gustavo Bittar, fundador e líder de desenvolvimento mobile da Phurshell"
-                    width={350}
-                    height={466}
-                    sizes="(max-width: 1024px) 100vw, 350px"
-                    loading="lazy"
-                    className="h-auto w-full"
-                  />
-                  {/* Overlay with Name */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-2xl font-black text-white">Gustavo Bittar</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact CTA */}
+      <ContactCTA />
     </div>
   )
 }
