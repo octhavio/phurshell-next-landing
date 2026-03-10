@@ -331,38 +331,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Principais Serviços */}
-      <section className="bg-white py-12 sm:py-16">
-        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          {/* Header */}
-          <p className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
-            Nossos principais serviços
-          </p>
-          <h2 className="mb-6 max-w-4xl text-5xl font-black tracking-tight text-dark sm:text-6xl">
-            Como ajudamos empresas a construir produtos digitais
-          </h2>
-          <p className="mb-16 max-w-4xl text-xl leading-relaxed text-dark/60">
-            Cuidamos de todo o ciclo de desenvolvimento — da estratégia inicial até a evolução contínua do seu aplicativo ou plataforma.
-          </p>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="rounded-button border border-dark/10 bg-white p-6"
-              >
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className={`${service.iconType} fa-${service.icon} fa-xl text-brand-orange`}></i>
-                </div>
-                <h3 className="mb-3 text-xl font-black text-dark">{service.title}</h3>
-                <p className="text-xl leading-relaxed text-dark/60">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Clients Carousel - Dark Section */}
       <section className="relative overflow-hidden bg-white pb-12">
         <style jsx>{`
@@ -390,7 +358,7 @@ export default function Home() {
               <h2 className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
                 Empresas ambiciosas
                 <br />
-                que ajudamos a escalar
+                que trabalhamos em conjunto
               </h2>
             </div>
 
@@ -430,6 +398,38 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Principais Serviços */}
+      <section className="bg-white py-12 sm:py-16">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          {/* Header */}
+          <p className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+            Nossos principais serviços
+          </p>
+          <h2 className="mb-6 max-w-4xl text-5xl font-black tracking-tight text-dark sm:text-6xl">
+            Como ajudamos empresas a construir produtos digitais
+          </h2>
+          <p className="mb-16 max-w-4xl text-xl leading-relaxed text-dark/60">
+            Cuidamos de todo o ciclo de desenvolvimento — da estratégia inicial até a evolução contínua do seu aplicativo ou plataforma.
+          </p>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="rounded-button border border-dark/10 bg-white p-6"
+              >
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className={`${service.iconType} fa-${service.icon} fa-xl text-brand-orange`}></i>
+                </div>
+                <h3 className="mb-3 text-xl font-black text-dark">{service.title}</h3>
+                <p className="text-xl leading-relaxed text-dark/60">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

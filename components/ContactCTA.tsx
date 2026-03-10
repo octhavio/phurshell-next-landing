@@ -39,8 +39,8 @@ export default function ContactCTA() {
                 </li>
               </ul>
 
-              {/* CTA Button with Fast Response Text */}
-              <div className="pt-4 flex flex-wrap items-center gap-6">
+              {/* CTA Button */}
+              <div className="pt-4">
                 <TransitionLink
                   href="/contato"
                   className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
@@ -50,13 +50,10 @@ export default function ContactCTA() {
                 </TransitionLink>
 
                 {/* Fast Response Text */}
-                <div className="text-left">
-                  <p className="flex items-center gap-2 text-sm font-black uppercase tracking-wide text-brand-orange">
-                    <i className="fa-solid fa-bolt"></i>
-                    Resposta rápida
-                  </p>
-                  <p className="text-sm font-medium text-dark/70">Tempo recorde de retorno</p>
-                </div>
+                <p className="mt-4 flex items-center gap-2 text-sm font-bold text-brand-orange">
+                  <i className="fa-solid fa-bolt"></i>
+                  Entramos em contato em alguns minutos apenas
+                </p>
               </div>
             </div>
 
@@ -76,11 +73,10 @@ export default function ContactCTA() {
                 {/* Overlay with Name */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="mb-2 text-base text-white/90 italic">
+                  <p className="mb-2 w-full text-xl font-black text-white">
                     "Vamos conversar e transformar o seu negócio?"
                   </p>
-                  <p className="text-2xl font-black text-white">Gustavo Bittar</p>
-                  <p className="text-sm text-white/80">Co-fundador • Phurshell</p>
+                  <p className="text-sm text-white/80">Gustavo Bittar • Co-fundador</p>
                 </div>
               </div>
             </div>
