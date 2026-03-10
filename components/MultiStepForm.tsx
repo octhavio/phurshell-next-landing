@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface FormData {
   // Step 1
@@ -37,10 +38,49 @@ const initialFormData: FormData = {
   message: '',
 }
 
+interface FieldErrors {
+  name?: string
+  email?: string
+  phone?: string
+}
+
+// Validação de nome completo (nome + sobrenome)
+function validateFullName(name: string): boolean {
+  const parts = name.trim().split(/\s+/)
+  return parts.length >= 2 && parts.every(part => part.length >= 2)
+}
+
+// Validação de email
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
+
+// Validação de telefone brasileiro (8 ou 9 dígitos + DDD)
+function validatePhone(phone: string): boolean {
+  const digits = phone.replace(/\D/g, '')
+  return digits.length === 10 || digits.length === 11
+}
+
+// Máscara de telefone brasileiro
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 11)
+
+  if (digits.length === 0) return ''
+  if (digits.length <= 2) return `(${digits}`
+  if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`
+  if (digits.length <= 10) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
+  }
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+}
+
 export default function MultiStepForm() {
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errors, setErrors] = useState<FieldErrors>({})
 
   const totalSteps = 7
 
@@ -88,29 +128,69 @@ export default function MultiStepForm() {
       case 6:
         return formData.howHeard !== ''
       case 7:
-        return formData.name !== '' && formData.email !== '' && formData.phone !== ''
+        return isStep7Valid()
       default:
         return true
     }
   }
 
+  // Validação sem setar erros (para habilitar/desabilitar botão)
+  const isStep7Valid = (): boolean => {
+    return validateFullName(formData.name) &&
+           validateEmail(formData.email) &&
+           validatePhone(formData.phone)
+  }
+
+  // Validação com erros (para mostrar mensagens ao submeter)
+  const validateStep7WithErrors = (): boolean => {
+    const newErrors: FieldErrors = {}
+
+    if (!validateFullName(formData.name)) {
+      newErrors.name = 'Digite nome e sobrenome'
+    }
+
+    if (!validateEmail(formData.email)) {
+      newErrors.email = 'Digite um email válido'
+    }
+
+    if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'Digite um telefone válido'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateStep(7)) return
+    if (!validateStep7WithErrors()) return
 
     setIsSubmitting(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const response = await fetch('https://api.phurshell.com/api/new-landing/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    console.log('Form submitted:', formData)
-    alert('Formulário enviado com sucesso! Entraremos em contato em breve.')
+      const data = await response.json()
 
-    // Clear form and localStorage
-    setFormData(initialFormData)
-    localStorage.removeItem('phurshell_form_software')
-    setCurrentStep(1)
-    setIsSubmitting(false)
+      if (data.status) {
+        setFormData(initialFormData)
+        localStorage.removeItem('phurshell_form_software')
+        router.push('/contato/sucesso')
+      } else {
+        alert('Erro ao enviar formulário. Tente novamente.')
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error)
+      alert('Erro ao enviar formulário. Tente novamente.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const updateFormData = (field: keyof FormData, value: string | string[]) => {
@@ -155,10 +235,10 @@ export default function MultiStepForm() {
               </h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
-                  { id: 'mobile-app', label: 'Aplicativo Mobile', icon: 'mobile-screen', desc: 'iOS, Android ou ambos' },
-                  { id: 'web-app', label: 'Aplicação Web', icon: 'globe', desc: 'Web app ou plataforma' },
-                  { id: 'both', label: 'Mobile + Web', icon: 'layer-group', desc: 'Presença em múltiplas plataformas' },
-                  { id: 'other', label: 'Outro tipo', icon: 'lightbulb', desc: 'API, sistema interno, etc.' },
+                  { id: 'app-mobile', label: 'Aplicativo Mobile', icon: 'mobile-screen', desc: 'iOS, Android ou ambos' },
+                  { id: 'aplicacao-web', label: 'Aplicação Web', icon: 'globe', desc: 'Web app ou plataforma' },
+                  { id: 'mobile-e-web', label: 'Mobile + Web', icon: 'layer-group', desc: 'Presença em múltiplas plataformas' },
+                  { id: 'outro', label: 'Outro tipo', icon: 'lightbulb', desc: 'API, sistema interno, etc.' },
                 ].map((type) => (
                   <button
                     key={type.id}
@@ -190,13 +270,13 @@ export default function MultiStepForm() {
               <div className="grid grid-cols-1 gap-4">
                 {[
                   {
-                    id: 'idea',
+                    id: 'ideia',
                     label: 'Ainda é uma ideia',
                     desc: 'Estou começando e preciso validar o conceito',
                     icon: 'lightbulb',
                   },
                   {
-                    id: 'design',
+                    id: 'prototipo',
                     label: 'Tenho designs ou protótipos',
                     desc: 'Já tenho a visão visual e preciso desenvolver',
                     icon: 'pen-ruler',
@@ -208,7 +288,7 @@ export default function MultiStepForm() {
                     icon: 'rocket',
                   },
                   {
-                    id: 'scale',
+                    id: 'em-producao',
                     label: 'Produto em produção',
                     desc: 'Preciso escalar, adicionar features ou melhorar',
                     icon: 'chart-line',
@@ -246,12 +326,12 @@ export default function MultiStepForm() {
               <p className="mb-6 text-dark/70">Selecione todas as opções que se aplicam</p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
-                  { id: 'strategy', label: 'Estratégia de Produto', icon: 'chess', desc: 'Definir roadmap e prioridades' },
+                  { id: 'estrategia', label: 'Estratégia de Produto', icon: 'chess', desc: 'Definir roadmap e prioridades' },
                   { id: 'design', label: 'Design UX/UI', icon: 'pen-ruler', desc: 'Interface e experiência do usuário' },
-                  { id: 'development', label: 'Desenvolvimento', icon: 'code', desc: 'Construir o produto' },
-                  { id: 'team', label: 'Aumentar o Time', icon: 'users', desc: 'Reforçar equipe existente' },
-                  { id: 'maintenance', label: 'Manutenção', icon: 'screwdriver-wrench', desc: 'Suporte e melhorias contínuas' },
-                  { id: 'consulting', label: 'Consultoria', icon: 'lightbulb', desc: 'Orientação técnica' },
+                  { id: 'desenvolvimento', label: 'Desenvolvimento', icon: 'code', desc: 'Construir o produto' },
+                  { id: 'aumento-time', label: 'Aumentar o Time', icon: 'users', desc: 'Reforçar equipe existente' },
+                  { id: 'manutencao', label: 'Manutenção', icon: 'screwdriver-wrench', desc: 'Suporte e melhorias contínuas' },
+                  { id: 'consultoria', label: 'Consultoria', icon: 'lightbulb', desc: 'Orientação técnica' },
                 ].map((help) => (
                   <button
                     key={help.id}
@@ -319,25 +399,25 @@ export default function MultiStepForm() {
               <div className="grid grid-cols-1 gap-4">
                 {[
                   {
-                    id: 'asap',
+                    id: 'urgente',
                     label: 'O quanto antes',
                     desc: 'Tenho urgência e quero começar já',
                     icon: 'bolt'
                   },
                   {
-                    id: '1-month',
+                    id: 'proximas-semanas',
                     label: 'Nas próximas semanas',
                     desc: 'Pronto para começar em breve',
                     icon: 'calendar-days'
                   },
                   {
-                    id: '2-3-months',
+                    id: '2-3-meses',
                     label: 'Em 2-3 meses',
                     desc: 'Planejando para médio prazo',
                     icon: 'calendar'
                   },
                   {
-                    id: 'flexible',
+                    id: 'flexivel',
                     label: 'Ainda estou explorando',
                     desc: 'Quero conversar sobre o projeto primeiro',
                     icon: 'compass'
@@ -376,11 +456,11 @@ export default function MultiStepForm() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
                   { id: 'google', label: 'Busca no Google', icon: 'magnifying-glass' },
-                  { id: 'social', label: 'Redes Sociais', icon: 'share-nodes' },
-                  { id: 'referral', label: 'Indicação de alguém', icon: 'user-group' },
+                  { id: 'redes-sociais', label: 'Redes Sociais', icon: 'share-nodes' },
+                  { id: 'indicacao', label: 'Indicação de alguém', icon: 'user-group' },
                   { id: 'portfolio', label: 'Vi um projeto seu', icon: 'briefcase' },
-                  { id: 'event', label: 'Evento ou conferência', icon: 'calendar-days' },
-                  { id: 'other', label: 'Outro', icon: 'ellipsis' },
+                  { id: 'evento', label: 'Evento ou conferência', icon: 'calendar-days' },
+                  { id: 'outro', label: 'Outro', icon: 'ellipsis' },
                 ].map((source) => (
                   <button
                     key={source.id}
@@ -419,11 +499,20 @@ export default function MultiStepForm() {
                       type="text"
                       id="name"
                       value={formData.name}
-                      onChange={(e) => updateFormData('name', e.target.value)}
-                      className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+                      onChange={(e) => {
+                        updateFormData('name', e.target.value)
+                        if (errors.name) setErrors(prev => ({ ...prev, name: undefined }))
+                      }}
+                      className={`w-full rounded-button border px-4 py-3 text-dark transition-colors focus:outline-none focus:ring-2 ${
+                        errors.name
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                          : 'border-dark/10 focus:border-brand-orange focus:ring-brand-orange/20'
+                      }`}
                       placeholder="João Silva"
-                      required
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                    )}
                   </div>
 
                   <div>
@@ -434,11 +523,20 @@ export default function MultiStepForm() {
                       type="email"
                       id="email"
                       value={formData.email}
-                      onChange={(e) => updateFormData('email', e.target.value)}
-                      className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+                      onChange={(e) => {
+                        updateFormData('email', e.target.value)
+                        if (errors.email) setErrors(prev => ({ ...prev, email: undefined }))
+                      }}
+                      className={`w-full rounded-button border px-4 py-3 text-dark transition-colors focus:outline-none focus:ring-2 ${
+                        errors.email
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                          : 'border-dark/10 focus:border-brand-orange focus:ring-brand-orange/20'
+                      }`}
                       placeholder="joao@empresa.com.br"
-                      required
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -451,11 +549,20 @@ export default function MultiStepForm() {
                       type="tel"
                       id="phone"
                       value={formData.phone}
-                      onChange={(e) => updateFormData('phone', e.target.value)}
-                      className="w-full rounded-button border border-dark/10 px-4 py-3 text-dark transition-colors focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+                      onChange={(e) => {
+                        updateFormData('phone', formatPhone(e.target.value))
+                        if (errors.phone) setErrors(prev => ({ ...prev, phone: undefined }))
+                      }}
+                      className={`w-full rounded-button border px-4 py-3 text-dark transition-colors focus:outline-none focus:ring-2 ${
+                        errors.phone
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                          : 'border-dark/10 focus:border-brand-orange focus:ring-brand-orange/20'
+                      }`}
                       placeholder="(11) 99999-9999"
-                      required
                     />
+                    {errors.phone && (
+                      <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+                    )}
                   </div>
 
                   <div>
