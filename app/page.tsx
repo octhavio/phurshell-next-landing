@@ -9,6 +9,7 @@ import ContactCTA from '@/components/ContactCTA'
 export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
   const [isHoveringCard, setIsHoveringCard] = useState(false)
+  const [expandedService, setExpandedService] = useState<number | null>(0)
 
   useEffect(() => {
     // Prevent browser scroll restoration and ensure page loads at top
@@ -99,30 +100,126 @@ export default function Home() {
     {
       title: 'Descoberta de Produto',
       description:
-        'Definimos a estratégia técnica e funcional do seu produto digital antes do desenvolvimento, estruturando o MVP, arquitetura do sistema e roadmap inicial.',
+        'Antes de escrever uma linha de código, mergulhamos no seu negócio para entender desafios, oportunidades e objetivos. Definimos juntos a estratégia técnica e funcional do produto, estruturando o escopo do MVP, escolhendo a arquitetura ideal, mapeando integrações necessárias e criando um roadmap realista de desenvolvimento. Esse processo evita retrabalho, reduz riscos e garante que o produto seja construído da forma certa desde o início.',
       icon: 'lightbulb',
       iconType: 'fa-jelly',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop',
+      cards: [
+        {
+          title: 'Definição de MVP',
+          description: 'Escopo mínimo viável para validar a ideia com usuários reais.',
+          icon: 'flag',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Arquitetura Técnica',
+          description: 'Escolha das tecnologias e estrutura do sistema.',
+          icon: 'city',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Roadmap de Produto',
+          description: 'Planejamento de entregas e evolução do produto.',
+          icon: 'map',
+          iconType: 'jelly',
+        },
+      ],
     },
     {
       title: 'UX/UI para Aplicativos',
       description:
-        'Criamos experiências digitais simples e intuitivas, com interfaces pensadas para facilitar o uso e maximizar o valor do produto.',
+        'Desenhamos interfaces que seus usuários vão adorar usar. Nosso processo começa com pesquisa e mapeamento de jornadas, passa por wireframes interativos e evolui para um design system completo e responsivo. Cada tela é pensada para resolver problemas reais, facilitar tarefas e criar experiências memoráveis — seja no mobile ou web. O resultado é um produto bonito, funcional e que converte usuários em fãs.',
       icon: 'palette',
       iconType: 'fa-jelly',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=800&fit=crop',
+      cards: [
+        {
+          title: 'Wireframes',
+          description: 'Protótipos interativos de baixa e alta fidelidade.',
+          icon: 'sidebar',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Design System',
+          description: 'Biblioteca de componentes e padrões visuais.',
+          icon: 'sliders',
+          iconType: 'jelly',
+        },
+        {
+          title: 'UI Design',
+          description: 'Interface visual responsiva para mobile e web.',
+          icon: 'mobile',
+          iconType: 'jelly',
+        },
+      ],
     },
     {
-      title: 'Desenvolvimento de Aplicativos',
+      title: 'Desenvolvimento de Apps',
       description:
-        'Construímos aplicativos mobile e plataformas web escaláveis, com arquitetura moderna, integrações e foco em performance.',
+        'Transformamos design em código de alta qualidade. Desenvolvemos aplicativos nativos iOS e Android, apps React Native para lançamento multiplataforma, e plataformas web modernas com Next.js ou React. Nosso código é limpo, escalável e preparado para crescer junto com seu negócio. Cuidamos de toda infraestrutura cloud, integrações com APIs externas, autenticação, pagamentos e tudo mais que seu produto precisar para operar em produção.',
       icon: 'code',
       iconType: 'fa-jelly',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=800&fit=crop',
+      cards: [
+        {
+          title: 'iOS',
+          description: 'Apps nativos para iPhone e iPad com integração completa ao ecossistema Apple.',
+          icon: 'apple',
+          iconType: 'brands',
+        },
+        {
+          title: 'Android',
+          description: 'Apps nativos otimizados para a diversidade de dispositivos Android.',
+          icon: 'android',
+          iconType: 'brands',
+        },
+        {
+          title: 'Web',
+          description: 'Plataformas web responsivas e dashboards interativos.',
+          icon: 'desktop',
+          iconType: 'jelly',
+        },
+        {
+          title: 'PWA',
+          description: 'Apps web progressivos com capacidade de instalação.',
+          icon: 'mobile',
+          iconType: 'jelly',
+        },
+      ],
     },
     {
       title: 'Evolução e Suporte de Produto',
       description:
-        'Após o lançamento, continuamos evoluindo o produto com melhorias, novas funcionalidades e suporte técnico contínuo.',
+        'O lançamento é só o começo. Continuamos ao lado do seu produto, monitorando performance, corrigindo bugs, otimizando funcionalidades e desenvolvendo novas features baseadas no feedback dos usuários. Oferecemos suporte técnico dedicado, atualizações de segurança, melhorias de performance e ajustes para garantir que seu app evolua junto com as necessidades do mercado e dos seus clientes.',
       icon: 'arrows-rotate',
       iconType: 'fa-jelly',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=800&fit=crop',
+      cards: [
+        {
+          title: 'Monitoramento',
+          description: 'Análise contínua de performance e comportamento dos usuários.',
+          icon: 'desktop',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Correção de Bugs',
+          description: 'Identificação e resolução rápida de problemas técnicos.',
+          icon: 'bug',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Novas Funcionalidades',
+          description: 'Desenvolvimento de features baseadas em feedback.',
+          icon: 'sparkles',
+          iconType: 'jelly',
+        },
+        {
+          title: 'Atualizações',
+          description: 'Manutenção de segurança e compatibilidade do sistema.',
+          icon: 'bell',
+          iconType: 'jelly',
+        },
+      ],
     },
   ]
 
@@ -131,7 +228,7 @@ export default function Home() {
       {/* Custom Cursor */}
       {isHoveringCard && (
         <div
-          className="pointer-events-none fixed z-50 flex items-center gap-2 rounded-full bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-white shadow-xl transition-opacity duration-200"
+          className="pointer-events-none fixed z-50 flex items-center gap-2 rounded-button bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-white shadow-xl transition-opacity duration-200"
           style={{
             left: `${cursorPosition.x}px`,
             top: `${cursorPosition.y}px`,
@@ -146,45 +243,8 @@ export default function Home() {
           <i className="fa-solid fa-arrow-right text-xs"></i>
         </div>
       )}
-      {/* Floating Image Container - Outside sections but not fixed */}
-      <div className="pointer-events-none absolute right-0 top-0 z-40 h-screen w-full lg:block hidden">
-        <style jsx>{`
-          @keyframes rotateAndSlide {
-            from {
-              opacity: 0;
-              transform: rotate(-60deg) translateY(-180px) translateX(-50px);
-            }
-            to {
-              opacity: 1;
-              transform: rotate(-25deg) translateY(20px) translateX(-100px);
-            }
-          }
-          .rotate-slide {
-            animation: rotateAndSlide 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
-            transform-origin: -400px center;
-            will-change: transform, opacity;
-          }
-          .delay-500 { animation-delay: 0.5s; }
-        `}</style>
-
-        <div className="rotate-slide delay-500 absolute right-0 top-0 opacity-0">
-          {/* Orange glow effects behind image */}
-          <div className="absolute -right-20 top-20 h-96 w-96 rounded-full bg-brand-orange/30 blur-[120px]"></div>
-          <div className="absolute -right-10 top-40 h-64 w-64 rounded-full bg-brand-orange-light/40 blur-[100px]"></div>
-
-          <Image
-            src="/img-home-hero-device.png"
-            alt="Phurshell Mobile Apps"
-            width={500}
-            height={500}
-            className="relative z-10 drop-shadow-2xl"
-            priority
-          />
-        </div>
-      </div>
-
       {/* New Hero Section */}
-      <section className="relative bg-white py-16 sm:py-24">
+      <section className="relative bg-white py-16 sm:py-24 overflow-hidden -mt-28 pt-40 sm:pt-48">
         <style jsx>{`
           @keyframes fadeIn {
             from {
@@ -264,12 +324,95 @@ export default function Home() {
           :global(.word-delay-24) { animation-delay: 1.25s; }
           :global(.word-delay-25) { animation-delay: 1.3s; }
           :global(.word-delay-26) { animation-delay: 1.35s; }
+
+          @keyframes rotateAndSlide {
+            from {
+              opacity: 0;
+              transform: rotate(-60deg) translateY(-180px) translateX(-50px);
+            }
+            to {
+              opacity: 1;
+              transform: rotate(-25deg) translateY(20px) translateX(-100px);
+            }
+          }
+          @keyframes rotateAndSlideMedium {
+            from {
+              opacity: 0;
+              transform: rotate(-60deg) translateY(-180px) translateX(-50px) scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: rotate(-25deg) translateY(20px) translateX(180px) scale(0.95);
+            }
+          }
+          @keyframes rotateAndSlideMobile {
+            from {
+              opacity: 0;
+              transform: rotate(-60deg) translateY(-100px) translateX(0px) scale(0.5);
+            }
+            to {
+              opacity: 1;
+              transform: rotate(-25deg) translateY(80px) translateX(20px) scale(0.5);
+            }
+          }
+          @keyframes rotateAndSlideTablet {
+            from {
+              opacity: 0;
+              transform: rotate(-60deg) translateY(-140px) translateX(-30px) scale(0.7);
+            }
+            to {
+              opacity: 1;
+              transform: rotate(-25deg) translateY(-150px) translateX(50px) scale(0.7);
+            }
+          }
+          .rotate-slide {
+            animation: rotateAndSlide 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
+            transform-origin: -400px center;
+            will-change: transform, opacity;
+          }
+          @media (max-width: 1439px) and (min-width: 1024px) {
+            .rotate-slide {
+              animation: rotateAndSlideMedium 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
+              transform-origin: -400px center;
+            }
+          }
+          @media (max-width: 1023px) {
+            .rotate-slide {
+              animation: rotateAndSlideTablet 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
+              transform-origin: center;
+            }
+          }
+          @media (max-width: 767px) {
+            .rotate-slide {
+              animation: rotateAndSlideMobile 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
+              transform-origin: center;
+            }
+          }
+          .delay-500 { animation-delay: 0.5s; }
         `}</style>
 
+        {/* Floating Image - Inside Hero */}
+        <div className="pointer-events-none absolute right-0 top-0 z-30 h-full w-full">
+          <div className="rotate-slide delay-500 absolute right-0 top-0 opacity-0">
+            {/* Orange glow effects behind image */}
+            <div className="absolute -right-20 top-20 h-96 w-96 rounded-full bg-brand-orange/30 blur-[120px] sm:block hidden"></div>
+            <div className="absolute -right-10 top-40 h-64 w-64 rounded-full bg-brand-orange-light/40 blur-[100px] sm:block hidden"></div>
+
+            <Image
+              src="/img-home-hero-device.png"
+              alt="Phurshell Mobile Apps"
+              width={500}
+              height={500}
+              className="relative z-10 drop-shadow-2xl"
+              priority
+            />
+          </div>
+        </div>
+
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          <div className="lg:max-w-2xl">
+          <div className="md:max-w-md lg:max-w-2xl">
             {/* Main Title */}
-            <h1 className="mb-6 text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
+            <h1 className="mb-6 text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="word-wrapper"><span className="word word-delay-1">Construímos</span></span>{' '}
               <span className="word-wrapper"><span className="word word-delay-2">produtos</span></span>{' '}
               <span className="word-wrapper"><span className="word word-delay-3">digitais</span></span>{' '}
@@ -285,25 +428,26 @@ export default function Home() {
             <p className="mb-8 text-xl leading-relaxed text-dark/70 sm:text-2xl lg:max-w-xl">
               <span className="word-wrapper"><span className="word word-delay-10">Desde</span></span>{' '}
               <span className="word-wrapper"><span className="word word-delay-11">2015</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-12">construindo</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-13">produtos</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-14">digitais</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-15">sob</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-16">medida</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-17">para</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-18">startups</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-12">ajudamos</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-13">startups</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-14">e</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-15">empresas</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-16">a</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-17">lançar</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-18">aplicativos</span></span>{' '}
               <span className="word-wrapper"><span className="word word-delay-19">e</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-20">empresas</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-21">que</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-22">querem</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-23">crescer</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-20">plataformas</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-21">digitais</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-22">que</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-23">crescem</span></span>{' '}
               <span className="word-wrapper"><span className="word word-delay-24">com</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-25">tecnologia.</span></span>
+              <span className="word-wrapper"><span className="word word-delay-25">o</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-26">negócio.</span></span>
             </p>
 
             {/* CTA Button */}
             <div className="mb-8">
-              <span className="word word-delay-26" style={{ display: 'inline-block' }}>
+              <span className="word word-delay-27" style={{ display: 'inline-block' }}>
                 <TransitionLink
                   href="/contato"
                   className="group inline-flex items-center gap-3 rounded-button bg-brand-orange px-10 py-5 text-lg font-bold text-white shadow-2xl shadow-brand-orange/30 transition-all duration-300 hover:scale-105 hover:bg-brand-orange-light hover:shadow-brand-orange/50"
@@ -314,19 +458,6 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Mobile Image */}
-            <div className="mt-12 flex justify-center lg:hidden">
-              <div className="relative w-[280px] sm:w-[350px]" style={{ transform: 'rotate(-25deg)' }}>
-                <Image
-                  src="/img-home-hero-device.png"
-                  alt="Phurshell Mobile Apps"
-                  width={350}
-                  height={350}
-                  className="drop-shadow-2xl"
-                  priority
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -416,18 +547,79 @@ export default function Home() {
             Cuidamos de todo o ciclo de desenvolvimento — da estratégia inicial até a evolução contínua do seu aplicativo ou plataforma.
           </p>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+          {/* Accordion List */}
+          <div>
             {services.map((service, index) => (
               <div
                 key={index}
-                className="rounded-button border border-dark/10 bg-white p-6"
+                className="border-b border-dark/10"
               >
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className={`${service.iconType} fa-${service.icon} fa-xl text-brand-orange`}></i>
+                {/* Accordion Header - Clickable */}
+                <button
+                  onClick={() => setExpandedService(expandedService === index ? null : index)}
+                  className="flex w-full items-center justify-between py-8 text-left transition-colors hover:text-brand-orange"
+                >
+                  <div className="flex items-center gap-6">
+                    <i className={`${service.iconType} fa-${service.icon} fa-2xl text-brand-orange`}></i>
+                    <h3 className="text-2xl font-black text-dark sm:text-3xl">{service.title}</h3>
+                  </div>
+                  <i className={`fa-solid fa-chevron-down text-2xl text-brand-orange transition-transform duration-300 ${expandedService === index ? 'rotate-180' : ''}`}></i>
+                </button>
+
+                {/* Accordion Content - Expandable */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ${
+                    expandedService === index ? 'max-h-[1000px] pb-8' : 'max-h-0'
+                  }`}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 pl-[72px] pr-12">
+                    {/* Left Column - Text Content */}
+                    <div>
+                      <p className="text-lg leading-relaxed text-dark/70 mb-8">
+                        {service.description}{' '}
+                        <TransitionLink
+                          href={index === 2 ? '/servicos/mobile-app-development' : '#'}
+                          className="text-base font-bold text-brand-orange"
+                        >
+                          Ver mais
+                        </TransitionLink>
+                      </p>
+
+                      {/* Service Cards - Only for Desenvolvimento de Apps */}
+                      {service.cards && (
+                        <>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {service.cards.map((card: any, cardIndex: number) => (
+                              <div
+                                key={cardIndex}
+                                className="rounded-button border border-dark/10 bg-white p-4"
+                              >
+                                <div className="flex items-center gap-3 mb-3">
+                                  <i className={`fa-${card.iconType} fa-${card.icon} fa-xl text-brand-orange`}></i>
+                                  <h4 className="text-lg font-black text-dark">{card.title}</h4>
+                                </div>
+                                <p className="text-lg leading-relaxed text-dark/60">{card.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+
+                    {/* Right Column - Image */}
+                    <div className="hidden lg:block">
+                      <div className="relative h-full min-h-[300px] overflow-hidden rounded-button">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="30vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">{service.title}</h3>
-                <p className="text-xl leading-relaxed text-dark/60">{service.description}</p>
               </div>
             ))}
           </div>
@@ -439,36 +631,57 @@ export default function Home() {
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Header */}
           <div className="mb-12">
-            <h2 className="mb-6 text-5xl font-black tracking-tight text-dark sm:text-6xl">
-              Projetos que transformamos em realidade
+            <p className="mb-4 text-lg font-black uppercase tracking-wider text-brand-orange">
+              Alguns cases
+            </p>
+            <h2 className="mb-6 max-w-4xl text-5xl font-black tracking-tight text-dark sm:text-6xl">
+              Produtos digitais que ajudamos a levar do zero ao mercado
             </h2>
             <p className="max-w-4xl text-xl leading-relaxed text-dark/60">
-              Conheça alguns dos projetos que desenvolvemos do zero, desde a concepção da ideia até
-              o lançamento e crescimento no mercado.
+              Aplicativos e plataformas que começaram como ideia e hoje atendem milhares de usuários.
             </p>
           </div>
 
           {/* Cards Grid */}
           <div className="space-y-8">
-            {cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp').slice(0, 2).map((caseItem, index) => (
+            {cases.filter(c => c.name === 'Diag' || c.name === 'Psiapp' || c.name === 'Autoday').slice(0, 3).map((caseItem, index) => (
               <div
                 key={index}
                 className={`overflow-hidden rounded-button ${
                   index === 0
-                    ? 'bg-[#8046FB] group relative'
+                    ? 'group relative'
                     : index === 1
-                    ? 'bg-[#FD9773] group relative'
+                    ? 'group relative'
+                    : index === 2
+                    ? 'group relative'
                     : 'border border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg'
                 }`}
-                style={index <= 1 ? { cursor: 'none' } : {}}
-                onMouseMove={index <= 1 ? (e) => {
+                style={
+                  index === 0
+                    ? {
+                        cursor: 'none',
+                        background: 'radial-gradient(circle at center bottom, #f5f0ff 0%, #8046FB 70%)'
+                      }
+                    : index === 1
+                    ? {
+                        cursor: 'none',
+                        background: 'radial-gradient(circle at center bottom, #fff5f0 0%, #FD9773 70%)'
+                      }
+                    : index === 2
+                    ? {
+                        cursor: 'none',
+                        background: 'radial-gradient(circle at center bottom, #ede5f7 0%, #5E239F 70%)'
+                      }
+                    : {}
+                }
+                onMouseMove={index <= 2 ? (e) => {
                   setCursorPosition({ x: e.clientX, y: e.clientY })
                 } : undefined}
-                onMouseEnter={index <= 1 ? () => setIsHoveringCard(true) : undefined}
-                onMouseLeave={index <= 1 ? () => setIsHoveringCard(false) : undefined}
+                onMouseEnter={index <= 2 ? () => setIsHoveringCard(true) : undefined}
+                onMouseLeave={index <= 2 ? () => setIsHoveringCard(false) : undefined}
               >
-                {index <= 1 ? (
-                  // First and second cards - Vertical centered layout with image at bottom
+                {index <= 2 ? (
+                  // Featured cards - Vertical centered layout with image at bottom
                   index === 1 ? (
                     <TransitionLink href="/cases/psiapp" className="block" style={{ cursor: 'none' }}>
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
@@ -510,6 +723,45 @@ export default function Home() {
                         </div>
                       </div>
                     </TransitionLink>
+                  ) : index === 2 ? (
+                    <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
+                      {/* Logo */}
+                      <Image
+                        src="/img-home-icon-autoday.png"
+                        alt="Autoday"
+                        width={120}
+                        height={40}
+                        sizes="120px"
+                        loading="lazy"
+                        className="h-auto relative z-10"
+                      />
+
+                      {/* Title and Description with reduced spacing */}
+                      <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
+                        {/* Title */}
+                        <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                          Seguro de carro sob demanda e mais acessível
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
+                          MVP de insurtech que revolucionou o mercado com seguro intermitente — você paga apenas pelos dias que usar o veículo.
+                        </p>
+                      </div>
+
+                      {/* Screenshot - Positioned at bottom with hover scale effect */}
+                      <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                        <Image
+                          src="/img-home-case-autoday.png"
+                          alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
+                          width={800}
+                          height={600}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
+                          loading="lazy"
+                          className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
                   ) : (
                     <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                       {/* Logo */}
