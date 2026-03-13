@@ -84,6 +84,18 @@ export default function MultiStepForm() {
 
   const totalSteps = 7
 
+  // Permite pular para um step específico via ?step=N (para testes)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const stepParam = params.get('step')
+    if (stepParam) {
+      const step = parseInt(stepParam, 10)
+      if (step >= 1 && step <= totalSteps) {
+        setCurrentStep(step)
+      }
+    }
+  }, [])
+
   // Load saved data from localStorage
   // useEffect(() => {
   //   const savedData = localStorage.getItem('phurshell_form_software')
@@ -627,11 +639,11 @@ export default function MultiStepForm() {
             ) : (
               <button
                 type="submit"
-                disabled={!validateStep(7) || isSubmitting}
+                disabled={isSubmitting}
                 className={`ml-auto rounded-button px-8 py-3 font-black text-white shadow-lg transition-smooth ${
-                  validateStep(7) && !isSubmitting
-                    ? 'bg-brand-orange hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-xl'
-                    : 'cursor-not-allowed bg-gray-400'
+                  isSubmitting
+                    ? 'cursor-not-allowed bg-gray-400'
+                    : 'bg-brand-orange hover:-translate-y-1 hover:bg-brand-orange-light hover:shadow-xl'
                 }`}
               >
                 {isSubmitting ? (
