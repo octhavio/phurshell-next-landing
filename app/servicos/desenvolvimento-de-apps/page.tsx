@@ -415,13 +415,13 @@ export default function MobileAppDevelopmentPage() {
           {/* CTA */}
           <div className="mb-6 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <span className="word word-delay-42" style={{ display: 'inline-block' }}>
-              <a
-                href="#contato"
+              <TransitionLink
+                href="/contato"
                 className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
               >
                 Solicitar proposta
                 <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-              </a>
+              </TransitionLink>
             </span>
             <span className="word-wrapper">
               <span className="word word-delay-43" style={{ display: 'inline-block' }}>
