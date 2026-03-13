@@ -245,7 +245,7 @@ export default function CasesPage() {
                   {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
                     <Image
-                      src="/img-cta-especialist.png"
+                      src="/images/img-cta-especialist.png"
                       alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
                       width={120}
                       height={48}
@@ -335,7 +335,7 @@ export default function CasesPage() {
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                         {/* Logo */}
                         <Image
-                          src="/img-home-icon-psiapp.png"
+                          src="/images/img-home-icon-psiapp.png"
                           alt={caseItem.name}
                           width={120}
                           height={40}
@@ -360,7 +360,7 @@ export default function CasesPage() {
                         {/* Screenshot - Positioned at bottom with hover scale effect */}
                         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                           <Image
-                            src="/img-home-case-psiapp.png"
+                            src="/images/img-home-case-psiapp.png"
                             alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                             width={800}
                             height={600}
@@ -375,7 +375,7 @@ export default function CasesPage() {
                     <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                       {/* Logo */}
                       <Image
-                        src="/img-home-icon-autoday.png"
+                        src="/images/img-home-icon-autoday.png"
                         alt="Autoday"
                         width={120}
                         height={40}
@@ -400,7 +400,7 @@ export default function CasesPage() {
                       {/* Screenshot - Positioned at bottom with hover scale effect */}
                       <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                         <Image
-                          src="/img-home-case-autoday.png"
+                          src="/images/img-home-case-autoday.png"
                           alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
                           width={800}
                           height={600}
@@ -414,7 +414,7 @@ export default function CasesPage() {
                     <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                       {/* Logo */}
                       <Image
-                        src="/img-home-icon-diag.png"
+                        src="/images/img-home-icon-diag.png"
                         alt={caseItem.name}
                         width={120}
                         height={40}
@@ -439,7 +439,7 @@ export default function CasesPage() {
                       {/* Screenshot - Positioned at bottom with hover scale effect */}
                       <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                         <Image
-                          src="/img-home-case-diag.png"
+                          src="/images/img-home-case-diag.png"
                           alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                           width={800}
                           height={600}

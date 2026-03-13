@@ -58,7 +58,7 @@ export default function Header() {
   const servicosDropdown = [
     {
       label: 'Desenvolvimento de Apps',
-      href: '/servicos/mobile-app-development',
+      href: '/servicos/desenvolvimento-de-apps',
       description: 'Apps nativos e cross-platform para iOS e Android',
       icon: 'mobile',
     },

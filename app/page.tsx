@@ -5,6 +5,7 @@ import TransitionLink from '@/components/TransitionLink'
 import Image from 'next-image-export-optimizer'
 import WhyPhurshell from '@/components/WhyPhurshell'
 import ContactCTA from '@/components/ContactCTA'
+import ClientLogosCarousel from '@/components/ClientLogosCarousel'
 
 export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -433,7 +434,7 @@ export default function Home() {
             <div className="absolute -right-10 top-40 h-64 w-64 rounded-full bg-brand-orange-light/40 blur-[100px] sm:block hidden"></div>
 
             <Image
-              src="/img-home-hero-device.png"
+              src="/images/img-home-hero-device.png"
               alt="Phurshell Mobile Apps"
               width={500}
               height={500}
@@ -498,72 +499,18 @@ export default function Home() {
 
       {/* Clients Carousel - Dark Section */}
       <section className="relative overflow-hidden bg-white pb-12">
-        <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
-        `}</style>
-
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          {/* Card Container */}
-          <div className="overflow-hidden rounded-button bg-[#1a1a1a] px-10 py-16 sm:px-14 sm:py-20 lg:px-20 lg:py-24">
-            {/* Header */}
-            <div className="mb-16">
-              <p className="mb-4 text-lg font-bold uppercase tracking-wider text-white/50">
-                Alguns de nossos clientes
-              </p>
-              <h2 className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <ClientLogosCarousel
+            logos={[2, 1, 3, 4, 5, 6]}
+            subtitle="Alguns de nossos clientes"
+            title={
+              <>
                 Empresas ambiciosas
                 <br />
                 que trabalhamos em conjunto
-              </h2>
-            </div>
-
-            {/* Logo Carousel */}
-            <div className="relative">
-              {/* Gradient overlays */}
-              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#1a1a1a] to-transparent"></div>
-              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#1a1a1a] to-transparent"></div>
-
-              {/* Scrolling container */}
-              <div className="flex overflow-hidden">
-                <div className="animate-scroll flex gap-16">
-                  {/* First set of logos */}
-                  {[2, 1, 3, 4, 5, 6].map((num) => (
-                    <div key={`first-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
-                      <Image
-                        src={`/clients/img-partner-${num}.png`}
-                        alt={`Cliente parceiro da Phurshell`}
-                        fill
-                        sizes="200px"
-                        className="object-contain brightness-0 invert opacity-60"
-                      />
-                    </div>
-                  ))}
-                  {/* Duplicate set for seamless loop */}
-                  {[2, 1, 3, 4, 5, 6].map((num) => (
-                    <div key={`second-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
-                      <Image
-                        src={`/clients/img-partner-${num}.png`}
-                        alt={`Cliente parceiro da Phurshell`}
-                        fill
-                        sizes="200px"
-                        className="object-contain brightness-0 invert opacity-60"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+              </>
+            }
+          />
         </div>
       </section>
 
@@ -612,7 +559,7 @@ export default function Home() {
                       <p className="text-lg leading-relaxed text-dark/70 mb-8">
                         {service.description}{' '}
                         <TransitionLink
-                          href={index === 2 ? '/servicos/mobile-app-development' : '#'}
+                          href={index === 2 ? '/servicos/desenvolvimento-de-apps' : '#'}
                           className="text-base font-bold text-brand-orange"
                         >
                           Ver mais
@@ -721,7 +668,7 @@ export default function Home() {
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                         {/* Logo */}
                         <Image
-                          src="/img-home-icon-psiapp.png"
+                          src="/images/img-home-icon-psiapp.png"
                           alt={caseItem.name}
                           width={120}
                           height={40}
@@ -746,7 +693,7 @@ export default function Home() {
                         {/* Screenshot - Positioned at bottom with hover scale effect */}
                         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                           <Image
-                            src="/img-home-case-psiapp.png"
+                            src="/images/img-home-case-psiapp.png"
                             alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                             width={800}
                             height={600}
@@ -761,7 +708,7 @@ export default function Home() {
                     <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                       {/* Logo */}
                       <Image
-                        src="/img-home-icon-autoday.png"
+                        src="/images/img-home-icon-autoday.png"
                         alt="Autoday"
                         width={120}
                         height={40}
@@ -786,7 +733,7 @@ export default function Home() {
                       {/* Screenshot - Positioned at bottom with hover scale effect */}
                       <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                         <Image
-                          src="/img-home-case-autoday.png"
+                          src="/images/img-home-case-autoday.png"
                           alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
                           width={800}
                           height={600}
@@ -800,7 +747,7 @@ export default function Home() {
                     <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                       {/* Logo */}
                       <Image
-                        src="/img-home-icon-diag.png"
+                        src="/images/img-home-icon-diag.png"
                         alt={caseItem.name}
                         width={120}
                         height={40}
@@ -825,7 +772,7 @@ export default function Home() {
                       {/* Screenshot - Positioned at bottom with hover scale effect */}
                       <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                         <Image
-                          src="/img-home-case-diag.png"
+                          src="/images/img-home-case-diag.png"
                           alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                           width={800}
                           height={600}
@@ -918,7 +865,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <Image
-                  src="/img-testimonial-autoday.png"
+                  src="/images/img-testimonial-autoday.png"
                   alt="Foto de Alec Maia, fundador da AutoDay"
                   width={80}
                   height={80}

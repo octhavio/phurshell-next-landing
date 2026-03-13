@@ -1,0 +1,25 @@
+# Redirecionamentos permanentes (301) para SEO
+# Todas as rotas redirecionam para /servicos/desenvolvimento-de-apps
+
+/desenvolvimento-de-aplicativos              /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-de-app                       /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-de-apps                      /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-mobile                       /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-de-aplicativo                /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-de-aplicativo-mobile         /servicos/desenvolvimento-de-apps    301
+
+/fabrica-de-aplicativos                       /servicos/desenvolvimento-de-apps    301
+/fabrica-de-apps                              /servicos/desenvolvimento-de-apps    301
+
+/empresa-de-aplicativos                       /servicos/desenvolvimento-de-apps    301
+/empresa-de-desenvolvimento-de-aplicativos    /servicos/desenvolvimento-de-apps    301
+/empresa-de-desenvolvimento-de-app            /servicos/desenvolvimento-de-apps    301
+
+/criar-aplicativo                             /servicos/desenvolvimento-de-apps    301
+/criar-app                                    /servicos/desenvolvimento-de-apps    301
+/criar-aplicativo-empresa                     /servicos/desenvolvimento-de-apps    301
+
+/software-sob-medida                          /servicos/desenvolvimento-de-apps    301
+/desenvolvimento-de-software-sob-medida       /servicos/desenvolvimento-de-apps    301
+
+/desenvolvimento-de-aplicativos-brasil        /servicos/desenvolvimento-de-apps    301

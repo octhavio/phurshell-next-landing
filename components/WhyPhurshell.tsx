@@ -9,7 +9,7 @@ export default function WhyPhurshell() {
       {/* Background Logo */}
       <div className="absolute bottom-0 right-0 z-0 opacity-20">
         <Image
-          src="/img-background-logo.png"
+          src="/images/img-background-logo.png"
           alt=""
           width={800}
           height={800}

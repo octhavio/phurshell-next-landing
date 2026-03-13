@@ -22,7 +22,7 @@ export default function Footer() {
                 Sobre
               </TransitionLink>
               <TransitionLink
-                href="/servicos/mobile-app-development"
+                href="/servicos/desenvolvimento-de-apps"
                 className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
               >
                 Desenvolvimento Mobile

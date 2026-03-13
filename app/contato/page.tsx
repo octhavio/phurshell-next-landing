@@ -14,7 +14,7 @@ export default function ContatoPage() {
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <Image
-          src="/img-contact-side.jpg"
+          src="/images/img-contact-side.jpg"
           alt="Phurshell - Entre em contato"
           fill
           className="object-cover"
@@ -46,7 +46,7 @@ export default function ContatoPage() {
               <div className="grid grid-cols-3 gap-8 max-w-md">
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-1.png"
+                    src="/images/clients/img-partner-1.png"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -55,7 +55,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-2.png"
+                    src="/images/clients/img-partner-2.png"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -64,7 +64,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-3.png"
+                    src="/images/clients/img-partner-3.png"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -73,7 +73,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-4.png"
+                    src="/images/clients/img-partner-4.png"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -82,7 +82,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-5.png"
+                    src="/images/clients/img-partner-5.png"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -91,7 +91,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <Image
-                    src="/clients/img-partner-6.png"
+                    src="/images/clients/img-partner-6.png"
                     alt="Cliente"
                     width={100}
                     height={40}

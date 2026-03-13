@@ -23,7 +23,7 @@ export default function PsiappCasePage() {
           {/* Logo and Title */}
           <div className="mb-12 flex flex-col items-start gap-6">
             <Image
-              src="/img-home-icon-psiapp.png"
+              src="/images/img-home-icon-psiapp.png"
               alt="Logo Psiapp"
               width={120}
               height={40}
@@ -55,7 +55,7 @@ export default function PsiappCasePage() {
           {/* Hero Image */}
           <div className="relative aspect-[16/9] overflow-hidden rounded-button">
             <Image
-              src="/img-home-case-psiapp.png"
+              src="/images/img-home-case-psiapp.png"
               alt="Interface do aplicativo Psiapp"
               fill
               sizes="(max-width: 1024px) 100vw, 1200px"

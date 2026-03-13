@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida. Transformamos ideias em produtos digitais de alta performance.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Phurshell - Desenvolvimento de Apps',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: 'Phurshell - Desenvolvimento de Apps Sob Medida',
     description:
       'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida.',
-    images: ['/og-image.png'],
+    images: ['/images/og-image.png'],
     creator: '@phurshell',
   },
   alternates: {
@@ -80,13 +80,17 @@ export const metadata: Metadata = {
   verification: {
     // Google Search Console: https://search.google.com/search-console
     // Adicione o código de verificação na variável NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    }),
 
     // Bing Webmaster Tools: https://www.bing.com/webmasters
     // Adicione o código de verificação na variável NEXT_PUBLIC_BING_SITE_VERIFICATION
-    other: {
-      'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
-    },
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION && {
+      other: {
+        'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+      },
+    }),
   },
 }
 

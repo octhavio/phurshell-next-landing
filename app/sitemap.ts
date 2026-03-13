@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Páginas estáticas
   const routes = [
     '',
-    '/servicos/mobile-app-development',
+    '/servicos/desenvolvimento-de-apps',
     '/cases',
     '/cases/psiapp',
     '/insights',
