@@ -433,14 +433,18 @@ export default function Home() {
             <div className="absolute -right-20 top-20 h-96 w-96 rounded-full bg-brand-orange/30 blur-[120px] sm:block hidden"></div>
             <div className="absolute -right-10 top-40 h-64 w-64 rounded-full bg-brand-orange-light/40 blur-[100px] sm:block hidden"></div>
 
-            <Image
-              src="/images/img-home-hero-device.png"
-              alt="Phurshell Mobile Apps"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               width={500}
-              height={500}
+              height={1016}
               className="relative z-10 drop-shadow-2xl"
-              priority
-            />
+              style={{ mixBlendMode: 'screen' }}
+            >
+              <source src="/images/video-home-hero.webm" type="video/webm" />
+            </video>
           </div>
         </div>
 
