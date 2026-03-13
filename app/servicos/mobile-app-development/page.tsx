@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import TransitionLink from '@/components/TransitionLink'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import ProcessCarousel from '@/components/ProcessCarousel'
 import WhyPhurshell from '@/components/WhyPhurshell'
 import ContactCTA from '@/components/ContactCTA'
@@ -269,7 +269,7 @@ export default function MobileAppDevelopmentPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-white pt-16 pb-0 sm:py-24">
         <style jsx>{`
           @keyframes slideUpWord {
             from {
@@ -341,10 +341,29 @@ export default function MobileAppDevelopmentPage() {
           :global(.word-delay-47) { animation-delay: 1.65s; }
           :global(.word-delay-48) { animation-delay: 1.70s; }
           :global(.word-delay-49) { animation-delay: 1.75s; }
+
+          /* Disable animations on mobile for better performance */
+          @media (max-width: 767px) {
+            :global(.word) {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+            .fade-in {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+            .slide-up {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+          }
         `}</style>
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
-          <h1 className="mb-6 text-balance text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
+          <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="word-wrapper"><span className="word word-delay-1">Desenvolvimento</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-3">apps</span></span>
@@ -393,7 +412,7 @@ export default function MobileAppDevelopmentPage() {
           </p>
 
           {/* CTA */}
-          <div className="mb-12 flex items-center gap-6">
+          <div className="mb-6 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <span className="word word-delay-42" style={{ display: 'inline-block' }}>
               <a
                 href="#contato"
@@ -431,7 +450,7 @@ export default function MobileAppDevelopmentPage() {
           </div>
 
           {/* Image */}
-          <div className="relative aspect-[21/9] overflow-hidden rounded-button">
+          <div className="relative aspect-[3/4] sm:aspect-[21/9] overflow-hidden rounded-button">
             <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
               <span className="word word-delay-49" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <Image
@@ -445,8 +464,8 @@ export default function MobileAppDevelopmentPage() {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white lg:p-12">
-              <div className="max-w-full space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8 lg:p-12">
+              <div className="max-w-full space-y-2 sm:space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
                 {/* Logo e Nome */}
                 <div className="flex items-center gap-3">
                   <Image
@@ -458,12 +477,12 @@ export default function MobileAppDevelopmentPage() {
                     loading="lazy"
                     className="h-9 w-9 rounded-xl"
                   />
-                  <span className="text-xl font-black text-white sm:text-2xl">Psiapp</span>
+                  <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Psiapp</span>
                 </div>
 
                 {/* Info Text */}
                 <div>
-                  <p className="text-base leading-relaxed text-white/90">
+                  <p className="text-sm leading-relaxed text-white/90 sm:text-base">
                     Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
                     <br />
                     <span className="font-bold">São quase 100 mil downloads</span>
@@ -472,7 +491,7 @@ export default function MobileAppDevelopmentPage() {
 
                 {/* Rating */}
                 <div className="flex items-center gap-2">
-                  <span className="text-xl font-black text-white">4.8</span>
+                  <span className="text-lg font-black text-white sm:text-xl">4.8</span>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <i key={star} className="fa-solid fa-star text-white"></i>
@@ -531,7 +550,7 @@ export default function MobileAppDevelopmentPage() {
       {/* CTA Button */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <TransitionLink
               href="/contato"
               className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
@@ -772,7 +791,7 @@ export default function MobileAppDevelopmentPage() {
       {/* CTA */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <TransitionLink
               href="/contato"
               className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"

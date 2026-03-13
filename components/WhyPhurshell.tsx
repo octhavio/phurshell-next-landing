@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 
 export default function WhyPhurshell() {
   return (

@@ -46,6 +46,10 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
     }, 150)
   }
 
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div
       className="relative"
@@ -53,8 +57,9 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <TransitionLink
-        href={href}
+      <button
+        type="button"
+        onClick={handleClick}
         className={`flex items-center gap-1 rounded-button px-4 py-2 text-base font-bold transition-all ${
           isActive
             ? 'bg-brand-orange/10 text-brand-orange'
@@ -67,7 +72,7 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
             isOpen ? 'rotate-180' : ''
           }`}
         ></i>
-      </TransitionLink>
+      </button>
 
       {isOpen && (
         <div className="absolute left-1/2 top-full z-50 mt-6 w-[400px] -translate-x-1/2 rounded-button border border-dark/10 bg-white p-4 shadow-lg">

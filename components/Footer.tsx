@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import TransitionLink from './TransitionLink'
 
 export default function Footer() {
@@ -22,40 +22,22 @@ export default function Footer() {
                 Sobre
               </TransitionLink>
               <TransitionLink
-                href="/servicos"
-                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
-              >
-                Serviços
-              </TransitionLink>
-              <TransitionLink
                 href="/servicos/mobile-app-development"
                 className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
               >
                 Desenvolvimento Mobile
               </TransitionLink>
               <TransitionLink
-                href="/servicos/web-development"
-                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
-              >
-                Desenvolvimento Web
-              </TransitionLink>
-              <TransitionLink
-                href="/industrias/healthtech"
-                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
-              >
-                Healthtech
-              </TransitionLink>
-              <TransitionLink
-                href="/industrias"
-                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
-              >
-                Segmentos
-              </TransitionLink>
-              <TransitionLink
                 href="/cases"
                 className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
               >
                 Cases
+              </TransitionLink>
+              <TransitionLink
+                href="/insights"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Insights
               </TransitionLink>
               <TransitionLink
                 href="/contato"
@@ -92,15 +74,6 @@ export default function Footer() {
                 aria-label="LinkedIn"
               >
                 <i className="fa-brands fa-linkedin fa-xl"></i>
-              </a>
-              <a
-                href="https://github.com/phurshell"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 transition-smooth hover:text-brand-orange"
-                aria-label="GitHub"
-              >
-                <i className="fa-brands fa-github fa-xl"></i>
               </a>
               <a
                 href="https://instagram.com/phurshell"

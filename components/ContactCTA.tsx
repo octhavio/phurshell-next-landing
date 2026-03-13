@@ -1,5 +1,5 @@
 import TransitionLink from '@/components/TransitionLink'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 
 export default function ContactCTA() {
   return (
@@ -8,7 +8,7 @@ export default function ContactCTA() {
         {/* Card Container */}
         <div className="rounded-button bg-brand-orange/10 p-8 shadow-sm sm:p-12 lg:p-16">
           {/* Content Grid */}
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_350px]">
+          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_350px]">
             {/* Left Column - Content */}
             <div className="space-y-6">
               <p className="text-lg font-black uppercase tracking-wider text-brand-orange">
@@ -58,14 +58,14 @@ export default function ContactCTA() {
             </div>
 
             {/* Right Column - Image */}
-            <div className="order-first lg:order-last">
+            <div className="order-first md:order-last">
               <div className="relative overflow-hidden rounded-button">
                 <Image
                   src="/img-cta.png"
                   alt="Gustavo Bittar, co-fundador da Phurshell"
                   width={350}
                   height={466}
-                  sizes="(max-width: 1024px) 100vw, 350px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 300px, 350px"
                   loading="lazy"
                   className="h-auto w-full"
                 />

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import MultiStepForm from '@/components/MultiStepForm'
 import TransitionLink from '@/components/TransitionLink'
 

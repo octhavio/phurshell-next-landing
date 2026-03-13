@@ -1,7 +1,7 @@
 'use client'
 
 import TransitionLink from '@/components/TransitionLink'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import ContactCTA from '@/components/ContactCTA'
 
 export default function PsiappCasePage() {

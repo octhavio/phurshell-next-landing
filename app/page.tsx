@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import TransitionLink from '@/components/TransitionLink'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import WhyPhurshell from '@/components/WhyPhurshell'
 import ContactCTA from '@/components/ContactCTA'
 
@@ -244,7 +244,7 @@ export default function Home() {
         </div>
       )}
       {/* New Hero Section */}
-      <section className="relative bg-white py-16 sm:py-24 overflow-hidden -mt-28 pt-40 sm:pt-48">
+      <section className="relative bg-gradient-to-b from-brand-orange/10 via-brand-orange/5 to-white py-16 sm:py-24 overflow-hidden -mt-28 pt-40 sm:pt-48">
         <style jsx>{`
           @keyframes fadeIn {
             from {
@@ -332,7 +332,7 @@ export default function Home() {
             }
             to {
               opacity: 1;
-              transform: rotate(-25deg) translateY(20px) translateX(-100px);
+              transform: rotate(-25deg) translateY(40px) translateX(-240px);
             }
           }
           @keyframes rotateAndSlideMedium {
@@ -342,7 +342,17 @@ export default function Home() {
             }
             to {
               opacity: 1;
-              transform: rotate(-25deg) translateY(20px) translateX(180px) scale(0.95);
+              transform: rotate(-25deg) translateY(150px) translateX(-50px) scale(0.95);
+            }
+          }
+          @keyframes rotateAndSlideSmallMedium {
+            from {
+              opacity: 0;
+              transform: rotate(-60deg) translateY(-180px) translateX(-50px) scale(0.7);
+            }
+            to {
+              opacity: 1;
+              transform: rotate(-25deg) translateY(240px) translateX(290px) scale(0.7);
             }
           }
           @keyframes rotateAndSlideMobile {
@@ -358,11 +368,11 @@ export default function Home() {
           @keyframes rotateAndSlideTablet {
             from {
               opacity: 0;
-              transform: rotate(-60deg) translateY(-140px) translateX(-30px) scale(0.7);
+              transform: rotate(-60deg) translateY(-180px) translateX(-50px) scale(0.7);
             }
             to {
               opacity: 1;
-              transform: rotate(-25deg) translateY(-150px) translateX(50px) scale(0.7);
+              transform: rotate(-15deg) translateY(185px) translateX(340px) scale(0.7);
             }
           }
           .rotate-slide {
@@ -370,25 +380,49 @@ export default function Home() {
             transform-origin: -400px center;
             will-change: transform, opacity;
           }
-          @media (max-width: 1439px) and (min-width: 1024px) {
+          @media (max-width: 1549px) and (min-width: 1320px) {
             .rotate-slide {
               animation: rotateAndSlideMedium 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
+              transform-origin: -400px center;
+            }
+          }
+          @media (max-width: 1319px) and (min-width: 1024px) {
+            .rotate-slide {
+              animation: rotateAndSlideSmallMedium 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
               transform-origin: -400px center;
             }
           }
           @media (max-width: 1023px) {
             .rotate-slide {
               animation: rotateAndSlideTablet 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
-              transform-origin: center;
+              transform-origin: -400px center;
             }
           }
           @media (max-width: 767px) {
             .rotate-slide {
-              animation: rotateAndSlideMobile 2.5s cubic-bezier(0.11, 0, 0, 1) forwards;
-              transform-origin: center;
+              display: none;
             }
           }
           .delay-500 { animation-delay: 0.5s; }
+
+          /* Disable animations on mobile for better performance */
+          @media (max-width: 767px) {
+            :global(.word) {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+            .fade-in {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+            .slide-up {
+              opacity: 1 !important;
+              animation: none !important;
+              transform: none !important;
+            }
+          }
         `}</style>
 
         {/* Floating Image - Inside Hero */}
@@ -569,10 +603,10 @@ export default function Home() {
                 {/* Accordion Content - Expandable */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ${
-                    expandedService === index ? 'max-h-[1000px] pb-8' : 'max-h-0'
+                    expandedService === index ? 'max-h-[1000px] pb-12' : 'max-h-0'
                   }`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 pl-[72px] pr-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 pr-8">
                     {/* Left Column - Text Content */}
                     <div>
                       <p className="text-lg leading-relaxed text-dark/70 mb-8">

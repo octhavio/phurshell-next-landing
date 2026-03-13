@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import Image from 'next-image-export-optimizer'
 import { useTransition } from './TransitionContext'
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {

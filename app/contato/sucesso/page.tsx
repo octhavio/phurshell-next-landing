@@ -2,7 +2,7 @@ import TransitionLink from '@/components/TransitionLink'
 
 export default function ContatoSucessoPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-white via-brand-orange/5 to-white px-6">
+    <div className="flex items-center justify-center bg-gradient-to-br from-white via-brand-orange/5 to-white px-6 py-24">
       <div className="max-w-2xl text-center">
         <div className="mb-8 inline-flex h-24 w-24 items-center justify-center rounded-full bg-brand-orange/10">
           <i className="fa-solid fa-check text-5xl text-brand-orange"></i>
