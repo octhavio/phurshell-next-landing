@@ -23,8 +23,11 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
   useEffect(() => {
     if (!isNavigating) return
 
+    // Normaliza URLs removendo trailing slash para comparação
+    const normalizeUrl = (url: string) => url.replace(/\/$/, '') || '/'
+
     // Verifica se chegamos na URL de destino
-    if (targetUrl && pathname === targetUrl) {
+    if (targetUrl && normalizeUrl(pathname) === normalizeUrl(targetUrl)) {
       // Aguarda o DOMContentLoaded e recursos da página
       const checkPageLoad = () => {
         if (document.readyState === 'complete') {
