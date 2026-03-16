@@ -1,0 +1,41 @@
+variables:
+  SITE_PROD: "phurshell.com"
+  AWSREGION: "sa-east-1"
+  FOLDER: "dist"
+
+stages:
+  - build
+  - deploy
+
+build production:
+  image: node:20-alpine
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - $FOLDER
+      - s3-website-config.json
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success
+
+deploy:
+  image:
+    name: amazon/aws-cli:latest
+    entrypoint: [""]
+  stage: deploy
+  before_script:
+    - aws configure set aws_access_key_id $AWS_SECRET_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set default.region $AWSREGION
+  script:
+    - aws s3 cp $FOLDER s3://$SITE_PROD/ --recursive --acl public-read
+    - aws s3api put-bucket-website --bucket $SITE_PROD --website-configuration file://s3-website-config.json
+  after_script:
+    - curl -s -X POST https://api.telegram.org/bot$TELEGRAM_KEY/sendMessage -d chat_id=-1001592941762 -d text="$CI_JOB_NAME $CI_PROJECT_NAME-$CI_COMMIT_BRANCH com status $CI_JOB_STATUS, consulte $CI_JOB_URL para maiores informações"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success

@@ -1,0 +1,78 @@
+{
+  "IndexDocument": {
+    "Suffix": "index.html"
+  },
+  "ErrorDocument": {
+    "Key": "index.html"
+  },
+  "RoutingRules": [
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-aplicativos" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-app" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-apps" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-mobile" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-aplicativo-mobile" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-aplicativo" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "fabrica-de-aplicativos" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "fabrica-de-apps" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "empresa-de-aplicativos" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "empresa-de-desenvolvimento-de-aplicativos" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "empresa-de-desenvolvimento-de-app" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "criar-aplicativo-empresa" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "criar-aplicativo" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "criar-app" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "software-sob-medida" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-software-sob-medida" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "desenvolvimento-de-aplicativos-brasil" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
+    }
+  ]
+}
