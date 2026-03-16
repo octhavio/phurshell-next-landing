@@ -1,7 +1,7 @@
 variables:
   SITE_PROD: "phurshell.com"
   AWSREGION: "sa-east-1"
-  FOLDER: "out"
+  FOLDER: "dist"
 
 stages:
   - build
