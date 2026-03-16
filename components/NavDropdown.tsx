@@ -98,6 +98,26 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
                 </div>
               </TransitionLink>
             ))}
+
+            {/* Link para ver todos os serviços */}
+            <div className="border-t border-dark/10 pt-2 mt-2">
+              <TransitionLink
+                href={href}
+                className="group flex items-start gap-4 rounded-button p-4 transition-colors hover:bg-gray-50"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className="fa-jelly fa-grid fa-lg text-brand-orange"></i>
+                </div>
+                <div className="flex-1">
+                  <div className="font-bold text-dark transition-colors group-hover:text-brand-orange">
+                    Ver todos os serviços
+                  </div>
+                  <div className="mt-1 text-sm text-dark/60">
+                    Todas as soluções que oferecemos
+                  </div>
+                </div>
+              </TransitionLink>
+            </div>
           </div>
         </div>
       )}

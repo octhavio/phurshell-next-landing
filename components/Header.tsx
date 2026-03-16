@@ -59,7 +59,7 @@ export default function Header() {
     {
       label: 'Desenvolvimento de Apps',
       href: '/servicos/desenvolvimento-de-apps',
-      description: 'Apps nativos e cross-platform para iOS e Android',
+      description: 'Apps iOS e Android de alta performance',
       icon: 'mobile',
     },
   ]
@@ -246,7 +246,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={closeMobileMenu}
-                          className="flex items-start gap-3 border-b border-dark/5 px-6 py-4 transition-colors last:border-0 hover:bg-white"
+                          className="flex items-start gap-3 border-b border-dark/5 px-6 py-4 transition-colors hover:bg-white"
                         >
                           {item.icon && (
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
@@ -259,6 +259,20 @@ export default function Header() {
                           </div>
                         </TransitionLink>
                       ))}
+                      {/* Link para ver todos os serviços */}
+                      <TransitionLink
+                        href="/servicos"
+                        onClick={closeMobileMenu}
+                        className="flex items-start gap-3 border-t border-dark/10 px-6 py-4 transition-colors hover:bg-white"
+                      >
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                          <i className="fa-jelly fa-grid text-brand-orange"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-bold text-dark">Ver todos os serviços</div>
+                          <div className="mt-1 text-sm text-dark/60">Todas as soluções que oferecemos</div>
+                        </div>
+                      </TransitionLink>
                     </div>
                   )}
                 </div>
