@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "lighthouse": "npx lighthouse http://localhost:3000 --preset=desktop --output=html --output-path=./lighthouse-desktop.html --view",
