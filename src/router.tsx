@@ -10,6 +10,7 @@ import CasePsiapp from './pages/CasePsiapp'
 import Contato from './pages/Contato'
 import ContatoSucesso from './pages/ContatoSucesso'
 import Sobre from './pages/Sobre'
+import Proposta from './pages/Proposta'
 import NotFound from './pages/NotFound'
 
 export const router = createBrowserRouter([
@@ -28,6 +29,8 @@ export const router = createBrowserRouter([
       { path: 'contato', element: <Contato /> },
       { path: 'contato/sucesso', element: <ContatoSucesso /> },
       { path: 'sobre', element: <Sobre /> },
+      { path: 'proposta', element: <Proposta /> },
+      { path: 'proposta/:id', element: <Proposta /> },
 
       // Redirects SEO (client-side)
       { path: 'desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
