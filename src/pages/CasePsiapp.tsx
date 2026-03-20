@@ -11,124 +11,190 @@ export default function CasePsiapp() {
         url="/cases/psiapp"
       />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#FD9773] py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          <div className="mb-8">
-            <TransitionLink
-              href="/cases"
-              className="inline-flex items-center gap-2 text-lg font-bold text-white/80 transition-colors hover:text-white"
-            >
-              <i className="fa-solid fa-arrow-left"></i>
-              Voltar para Cases
-            </TransitionLink>
-          </div>
+          {/* Title */}
+          <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="word-wrapper"><span className="word word-delay-1">Conectando</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-2">psicólogos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-3">e</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-4">pacientes</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-5">através</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-6">da</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-7">tecnologia</span></span>
+          </h1>
 
-          {/* Logo and Title */}
-          <div className="mb-12 flex flex-col items-start gap-6">
-            <img
-              src="/images/img-home-icon-psiapp.png"
-              alt="Logo Psiapp"
-              width={120}
-              height={40}
-              className="h-auto"
-            />
-            <h1 className="text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
-              Conectando psicólogos e pacientes através da tecnologia
-            </h1>
-          </div>
-
-          {/* Meta Info */}
-          <div className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div>
-              <h3 className="mb-2 text-sm font-black uppercase tracking-wider text-white/70">Indústria</h3>
-              <p className="text-xl font-bold text-white">Saúde Mental / Healthtech</p>
-            </div>
-            <div>
-              <h3 className="mb-2 text-sm font-black uppercase tracking-wider text-white/70">Período</h3>
-              <p className="text-xl font-bold text-white">2019 - Presente</p>
-            </div>
-            <div>
-              <h3 className="mb-2 text-sm font-black uppercase tracking-wider text-white/70">Plataformas</h3>
-              <p className="text-xl font-bold text-white">iOS, Android, Web, Backoffice</p>
-            </div>
-          </div>
+          {/* Description */}
+          <p className="mb-6 sm:mb-12 max-w-4xl text-xl leading-relaxed text-dark/70">
+            <span className="word-wrapper"><span className="word word-delay-8">Uma</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-9">plataforma</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-10">completa</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-11">que</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-12">facilita</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-13">o</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-14">acesso</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-15">à</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-16">psicoterapia,</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-17">conectando</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-18">profissionais</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-19">e</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-20">pacientes</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">de</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-22">forma</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-23">simples,</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-24">segura</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-25">e</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-26">eficiente.</span></span>
+          </p>
 
           {/* Hero Image */}
-          <div className="relative aspect-[16/9] overflow-hidden rounded-button">
-            <img
-              src="/images/img-home-case-psiapp.png"
-              alt="Interface do aplicativo Psiapp"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+          <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-button">
+            <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
+              <span className="word word-delay-27" style={{ display: 'block', height: '100%', position: 'relative' }}>
+                <img
+                  src="/images/img-hero.png"
+                  alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Overlay Content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8 lg:p-12">
+                  <div className="max-w-full space-y-2 sm:space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
+                    {/* Logo e Nome */}
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="/img-icon-psiapp.svg"
+                        alt="Logo do aplicativo Psiapp"
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 rounded-xl"
+                      />
+                      <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Psiapp</span>
+                    </div>
+
+                    {/* Info Text */}
+                    <div>
+                      <p className="text-sm leading-relaxed text-white/90 sm:text-base">
+                        Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
+                        <br />
+                        <span className="font-bold">São quase 100 mil downloads</span>
+                      </p>
+                    </div>
+
+                    {/* Rating */}
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl font-black text-white">4.8</span>
+                      <div className="flex gap-0.5">
+                        <i className="fa-solid fa-star text-yellow-400"></i>
+                        <i className="fa-solid fa-star text-yellow-400"></i>
+                        <i className="fa-solid fa-star text-yellow-400"></i>
+                        <i className="fa-solid fa-star text-yellow-400"></i>
+                        <i className="fa-solid fa-star text-yellow-400"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="bg-white py-16 sm:py-24">
+      {/* Overview & Project Info */}
+      <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          <div className="mx-auto max-w-4xl">
+          {/* Overview Text */}
+          <div className="mb-12 max-w-[70%]">
             <h2 className="mb-8 text-4xl font-black text-dark sm:text-5xl">
               Visão Geral
             </h2>
             <p className="mb-6 text-xl leading-relaxed text-dark/70">
-              O Psiapp nasceu com a missão de democratizar o acesso à psicoterapia no Brasil. Em 2019, quando a ideia surgiu, encontrar um psicólogo compatível com suas necessidades era um processo complexo e demorado. A pandemia de 2020 acelerou a necessidade de soluções digitais na área da saúde mental.
+              O Psiapp nasceu com a missão de democratizar o acesso à psicoterapia no Brasil. Em 2020, quando a ideia surgiu, encontrar um psicólogo compatível com suas necessidades era um processo complexo e demorado. A pandemia acelerou a necessidade de soluções digitais na área da saúde mental.
             </p>
             <p className="text-xl leading-relaxed text-dark/70">
               A Phurshell foi escolhida como parceira tecnológica para transformar essa visão em realidade, desenvolvendo uma plataforma completa que conecta psicólogos e pacientes de forma simples, segura e eficiente.
             </p>
           </div>
+
+          {/* Project Info Cards */}
+          <div className="flex flex-wrap gap-6">
+            {/* Card Segmento */}
+            <div className="rounded-button border border-dark/10 p-8">
+              <h3 className="mb-3 text-xl font-black text-dark">Segmento</h3>
+              <p className="text-xl leading-relaxed text-dark/70">Saúde Mental / Healthtech</p>
+            </div>
+
+            {/* Card Período */}
+            <div className="rounded-button border border-dark/10 p-8">
+              <h3 className="mb-3 text-xl font-black text-dark">Período</h3>
+              <p className="text-xl leading-relaxed text-dark/70">2020 - Presente</p>
+            </div>
+
+            {/* Card Plataformas */}
+            <div className="rounded-button border border-dark/10 p-8">
+              <h3 className="mb-3 text-xl font-black text-dark">Plataformas</h3>
+              <p className="text-xl leading-relaxed text-dark/70">iOS, Android, Web, Backoffice</p>
+            </div>
+          </div>
+
+          {/* Case Image */}
+          <div className="mt-12">
+            <img
+              src="/images/img-psiapp-case-1.png"
+              alt="Psiapp case"
+              className="w-full rounded-button"
+            />
+          </div>
         </div>
       </section>
 
       {/* Challenge */}
-      <section className="bg-gray-50 py-16 sm:py-24">
+      <section className="bg-dark py-24">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-4xl font-black text-dark sm:text-5xl">
-                O Desafio
-              </h2>
-              <div className="space-y-4 text-xl leading-relaxed text-dark/70">
-                <p>
-                  Criar uma plataforma que atendesse simultaneamente dois públicos distintos — psicólogos e pacientes — cada um com necessidades e expectativas diferentes.
-                </p>
-                <p>
-                  Para os <strong className="text-dark">psicólogos</strong>, era essencial oferecer ferramentas profissionais de gestão: agenda, prontuários, controle financeiro e um perfil que destacasse suas especializações.
-                </p>
-                <p>
-                  Para os <strong className="text-dark">pacientes</strong>, a experiência precisava ser acolhedora e descomplicada: buscar profissionais por especialização, agendar consultas com facilidade e ter um ambiente seguro para suas sessões online.
-                </p>
-              </div>
+          <div>
+            <h2 className="mb-6 text-4xl font-black text-white sm:text-5xl">
+              O Desafio
+            </h2>
+            <div className="mb-12 max-w-[70%] space-y-4 text-xl leading-relaxed text-white/70">
+              <p>
+                Criar uma plataforma que atendesse simultaneamente dois públicos distintos — psicólogos e pacientes — cada um com necessidades e expectativas diferentes.
+              </p>
+              <p>
+                Para os <strong className="text-white">psicólogos</strong>, era essencial oferecer ferramentas profissionais de gestão: agenda, prontuários, controle financeiro e um perfil que destacasse suas especializações.
+              </p>
+              <p>
+                Para os <strong className="text-white">pacientes</strong>, a experiência precisava ser acolhedora e descomplicada: buscar profissionais por especialização, agendar consultas com facilidade e ter um ambiente seguro para suas sessões online.
+              </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="rounded-button bg-white p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-[#FD9773]/10">
-                  <i className="fa-jelly fa-users fa-xl text-[#FD9773]"></i>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="rounded-button border border-white/10 bg-white/5 p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className="fa-jelly fa-users fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Dupla Persona</h3>
-                <p className="text-lg leading-relaxed text-dark/70">
+                <h3 className="mb-3 text-xl font-black text-white">Dupla Persona</h3>
+                <p className="text-lg leading-relaxed text-white/70">
                   Equilibrar as necessidades de profissionais de saúde com a experiência de usuários finais buscando ajuda.
                 </p>
               </div>
 
-              <div className="rounded-button bg-white p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-[#FD9773]/10">
-                  <i className="fa-jelly fa-shield-halved fa-xl text-[#FD9773]"></i>
+              <div className="rounded-button border border-white/10 bg-white/5 p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className="fa-jelly fa-shield-halved fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Segurança e Privacidade</h3>
-                <p className="text-lg leading-relaxed text-dark/70">
+                <h3 className="mb-3 text-xl font-black text-white">Segurança e Privacidade</h3>
+                <p className="text-lg leading-relaxed text-white/70">
                   Garantir conformidade com LGPD e proteção total dos dados sensíveis de pacientes.
                 </p>
               </div>
 
-              <div className="rounded-button bg-white p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-[#FD9773]/10">
-                  <i className="fa-jelly fa-video fa-xl text-[#FD9773]"></i>
+              <div className="rounded-button border border-white/10 bg-white/5 p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className="fa-jelly fa-video fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Videochamadas Estáveis</h3>
-                <p className="text-lg leading-relaxed text-dark/70">
+                <h3 className="mb-3 text-xl font-black text-white">Videochamadas Estáveis</h3>
+                <p className="text-lg leading-relaxed text-white/70">
                   Implementar sistema de videochamadas confiável para sessões terapêuticas sem interrupções.
                 </p>
               </div>
@@ -137,8 +203,35 @@ export default function CasePsiapp() {
         </div>
       </section>
 
+      {/* Case Images */}
+      <section className="bg-white py-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div>
+              <img
+                src="/images/img-psiapp-case-2.png"
+                alt="Psiapp case"
+                className="h-full w-full rounded-button object-cover"
+              />
+            </div>
+            <div className="flex flex-col gap-6">
+              <img
+                src="/images/img-psiapp-case-3.png"
+                alt="Psiapp case"
+                className="w-full rounded-button object-cover"
+              />
+              <img
+                src="/images/img-psiapp-case-4.png"
+                alt="Psiapp case"
+                className="w-full rounded-button object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h2 className="mb-16 text-center text-4xl font-black text-dark sm:text-5xl">
             Nosso Processo
@@ -224,7 +317,7 @@ export default function CasePsiapp() {
       </section>
 
       {/* Technologies */}
-      <section className="bg-gray-50 py-16 sm:py-24">
+      <section className="bg-gray-50 py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h2 className="mb-6 text-4xl font-black text-dark sm:text-5xl">
             Tecnologias Utilizadas
@@ -255,7 +348,7 @@ export default function CasePsiapp() {
       </section>
 
       {/* Results */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h2 className="mb-16 text-center text-4xl font-black text-dark sm:text-5xl">
             Resultados
@@ -296,7 +389,7 @@ export default function CasePsiapp() {
       </section>
 
       {/* Features Showcase */}
-      <section className="bg-gray-50 py-16 sm:py-24">
+      <section className="bg-gray-50 py-12">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h2 className="mb-16 text-center text-4xl font-black text-dark sm:text-5xl">
             Funcionalidades Principais

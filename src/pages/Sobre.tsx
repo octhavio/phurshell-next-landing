@@ -1,7 +1,66 @@
-import TransitionLink from '../components/TransitionLink'
+import ContactCTA from '../components/ContactCTA'
 import SEO from '../components/SEO'
 
 export default function Sobre() {
+  const teamMembers = [
+    {
+      name: 'Gustavo Bittar',
+      role: 'Co-Fundador',
+      image: '/images/team/guga.jpg',
+    },
+    {
+      name: 'Bruno Campanhã',
+      role: 'Co-Fundador',
+      image: '/images/team/bruno.jpg',
+    },
+    {
+      name: 'Octhavio Martins',
+      role: 'Co-Fundador',
+      image: '/images/team/octhavio.jpg',
+    },
+    {
+      name: 'Andrews Alves',
+      role: 'Desenvolvedor',
+      image: '/images/team/andrews.jpg',
+    },
+    {
+      name: 'Paulo Marinho',
+      role: 'Desenvolvedor',
+      image: '/images/team/paulo.jpg',
+    },
+    {
+      name: 'Vinicius Alves',
+      role: 'Desenvolvedor',
+      image: '/images/team/vinnie.jpg',
+    },
+    {
+      name: 'Máquina de café',
+      role: 'Assistente',
+      image: '/images/maquina.jpg',
+    },
+  ]
+
+  const whyWorkWithUs = [
+    {
+      icon: 'fa-clock',
+      title: 'Metodologias ágeis',
+      description:
+        'Dobro do trabalho em metade do tempo. Nosso time trabalha de forma organizada e eficiente, sempre focando o resultado final.',
+    },
+    {
+      icon: 'fa-chart-line',
+      title: 'Crescimento rápido',
+      description:
+        'Não esperamos ficar pra trás. Nós estudamos, testamos, e colocamos em prática novas tecnologias de maneira ágil.',
+    },
+    {
+      icon: 'fa-door-open',
+      title: 'Ambiente flexível',
+      description:
+        'Nem todo mundo trabalha da mesma maneira. Nosso time tem a liberdade para escolher como preferem trabalhar, nosso comprometimento é com os resultados.',
+    },
+  ]
+
   return (
     <div className="bg-white">
       <SEO
@@ -10,241 +69,209 @@ export default function Sobre() {
         url="/sobre"
       />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-24 sm:py-32">
-        <div className="container relative z-10 mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            {/* Content */}
+      <section className="relative overflow-hidden bg-white pt-12">
+        <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          {/* Title */}
+          <h1 className="mb-6 text-balance text-5xl font-black leading-[1.1] tracking-tight text-dark sm:text-6xl lg:text-7xl">
+            <span className="word-wrapper"><span className="word word-delay-1">Quem</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-2">somos?</span></span>
+          </h1>
+
+          {/* Description */}
+          <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
+            <span className="word-wrapper"><span className="word word-delay-3">Na</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-4">Phurshell,</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-5">te</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-6">ajudamos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-7">a</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-8">transformar</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-9">seu</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-10">negócio</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-11">combinando</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-12">design</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-13">minimalista</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-14">com</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-15">máxima</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-16">usabilidade.</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-17">Temos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-18">equipes</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-19">multidisciplinares</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-20">que</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">podem</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-22">te</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-23">ajudar</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-24">em</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-25">todas</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-26">as</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-27">fases</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-28">dos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-29">seus</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-30">produtos.</span></span>
+          </p>
+
+          {/* CTA */}
+          <div className="mb-12 flex items-center gap-6">
+            <span className="word word-delay-31" style={{ display: 'inline-block' }}>
+              <a
+                href="#contato"
+                className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+              >
+                Solicitar proposta
+                <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </span>
+            <span className="word-wrapper">
+              <span className="word word-delay-32" style={{ display: 'inline-block' }}>
+                <div className="flex items-center gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                    <img
+                      src="/images/img-cta-especialist.png"
+                      alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
+                      width={120}
+                      height={48}
+                      className="h-12 w-auto object-cover"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-dark">
+                    <span className="word-wrapper"><span className="word word-delay-33">Fale</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-34">com</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-35">um</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-36">especialista</span></span>{' '}
+                    <span className="word-wrapper"><span className="word word-delay-37">agora</span></span>
+                  </p>
+                </div>
+              </span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* About - Um time que faz acontecer */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="space-y-6">
-              <h1 className="text-balance text-5xl font-black leading-tight tracking-tight text-dark sm:text-6xl lg:text-7xl">
-                Nossa equipe tem paixão por{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-brand-orange via-brand-orange-light to-brand-orange bg-clip-text text-transparent">
-                    aplicativos excepcionais
-                  </span>
-                </span>
-              </h1>
-              <p className="text-pretty text-xl leading-relaxed text-dark/70">
-                Se há algo que amamos, é trabalhar em produtos digitais — garantindo que cada
-                detalhe reflita sua visão única e alcance seus objetivos de negócio.
+              <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
+                Um time que faz acontecer!
+              </h2>
+              <p className="text-xl leading-relaxed text-dark/70">
+                Somos uma equipe de entusiastas em tecnologia sempre focada em trazer o que há de
+                mais novo no mercado para nossos parceiros.
+              </p>
+              <p className="text-xl leading-relaxed text-dark/70">
+                Gostamos do que fazemos e nos divertimos enquanto estamos trabalhando.
               </p>
             </div>
-
-            {/* Image Placeholder */}
-            <div className="relative aspect-square overflow-hidden rounded-button bg-gradient-to-br from-brand-orange/10 via-gray-50 to-brand-orange-light/10">
-              <div className="flex h-full items-center justify-center">
-                <i className="fa-jelly fa-users fa-10x text-brand-orange opacity-20"></i>
-              </div>
+            <div className="overflow-hidden rounded-button shadow-lg">
+              <img
+                src="/images/team-1.jpg"
+                alt="Equipe Phurshell"
+                className="h-auto w-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section - Tried, tested, trusted */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-8 text-center">
-            <h2 className="text-sm font-black tracking-wider text-brand-orange">
-              Testado, Aprovado, Confiável
+      {/* Why Work With Us */}
+      <section className="bg-gray-50 py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <div className="mb-12">
+            <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
+              Porque trabalhar com a gente?
             </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="text-center">
-              <div className="mb-2 text-5xl font-black text-brand-orange">11+</div>
-              <div className="text-sm font-medium tracking-wide text-dark/60">
-                Anos de Experiência
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2 text-5xl font-black text-brand-orange">50+</div>
-              <div className="text-sm font-medium tracking-wide text-dark/60">
-                Clientes Satisfeitos
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2 text-5xl font-black text-brand-orange">4.9/5</div>
-              <div className="text-sm font-medium tracking-wide text-dark/60">
-                Avaliação Média
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2 text-5xl font-black text-brand-orange">85%</div>
-              <div className="text-sm font-medium tracking-wide text-dark/60">
-                Contratam Novamente
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 sm:py-32">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-black tracking-tight text-dark sm:text-5xl">
-              O que nossos clientes dizem
-            </h2>
-            <div className="mx-auto h-1 w-20 bg-brand-orange"></div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* Testimonial 1 */}
-            <div className="rounded-button border border-dark/10 bg-dark/5 p-8 backdrop-blur-sm">
-              <div className="mb-6">
-                <i className="fa-jelly fa-quote-left fa-2x text-brand-orange opacity-20"></i>
-              </div>
-              <p className="mb-6 text-lg leading-relaxed text-dark/80">
-                "A Phurshell transformou nossa ideia em um aplicativo incrível. A atenção aos
-                detalhes e o profissionalismo da equipe superaram nossas expectativas."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-user fa-lg text-brand-orange"></i>
+            {whyWorkWithUs.map((item, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                  <i className={`fa-solid ${item.icon} text-2xl text-brand-orange`}></i>
                 </div>
                 <div>
-                  <div className="font-black text-dark">João Silva</div>
-                  <div className="text-sm text-dark/60">CEO, TechStart</div>
+                  <h3 className="mb-3 text-xl font-black text-dark">{item.title}</h3>
+                  <p className="leading-relaxed text-dark/70">{item.description}</p>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Testimonial 2 */}
-            <div className="rounded-button border border-dark/10 bg-dark/5 p-8 backdrop-blur-sm">
-              <div className="mb-6">
-                <i className="fa-jelly fa-quote-left fa-2x text-brand-orange opacity-20"></i>
-              </div>
-              <p className="mb-6 text-lg leading-relaxed text-dark/80">
-                "Trabalhar com a Phurshell foi uma experiência excepcional. Entregaram muito além
-                do que esperávamos, e no prazo!"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-user fa-lg text-brand-orange"></i>
-                </div>
-                <div>
-                  <div className="font-black text-dark">Maria Santos</div>
-                  <div className="text-sm text-dark/60">Fundadora, HealthApp</div>
-                </div>
-              </div>
+      {/* Team Photos Grid */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+            <div className="overflow-hidden rounded-button shadow-lg">
+              <img
+                src="/images/phurshell-team-1.jpg"
+                alt="Equipe Phurshell 1"
+                className="h-auto w-full object-cover"
+              />
             </div>
-
-            {/* Testimonial 3 */}
-            <div className="rounded-button border border-dark/10 bg-dark/5 p-8 backdrop-blur-sm">
-              <div className="mb-6">
-                <i className="fa-jelly fa-quote-left fa-2x text-brand-orange opacity-20"></i>
-              </div>
-              <p className="mb-6 text-lg leading-relaxed text-dark/80">
-                "Código limpo, arquitetura sólida e comunicação transparente. A Phurshell é nosso
-                parceiro de confiança para todos os projetos."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-user fa-lg text-brand-orange"></i>
-                </div>
-                <div>
-                  <div className="font-black text-dark">Carlos Mendes</div>
-                  <div className="text-sm text-dark/60">CTO, FinanceHub</div>
-                </div>
-              </div>
+            <div className="overflow-hidden rounded-button shadow-lg">
+              <img
+                src="/images/phurshell-team-2.jpg"
+                alt="Equipe Phurshell 2"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-button shadow-lg">
+              <img
+                src="/images/phurshell-team-3.jpg"
+                alt="Equipe Phurshell 3"
+                className="h-auto w-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values Section */}
-      <section className="bg-gray-50 py-24 sm:py-32">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-black tracking-tight text-dark sm:text-5xl">
-              Nossos Valores
+      {/* Team Members */}
+      <section className="bg-gray-50 py-16 sm:py-24">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <div className="mb-12">
+            <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
+              Time principal
             </h2>
-            <div className="mx-auto h-1 w-20 bg-brand-orange"></div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {/* Value 1 */}
-            <div className="group text-center">
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:scale-110">
-                <i className="fa-jelly fa-chart-bar fa-2x text-brand-orange"></i>
+          <div className="mb-12 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center rounded-button border border-dark/10 bg-white p-6 text-center shadow-sm"
+              >
+                <div className="mb-4 overflow-hidden rounded-button">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+                <h3 className="mb-1 text-lg font-black text-dark">{member.name}</h3>
+                <p className="text-sm text-dark/60">{member.role}</p>
               </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Crescimento</h3>
-              <p className="text-sm leading-relaxed text-dark/60">
-                Expandimos constantemente nossa base de conhecimento, sempre aprendendo com cada
-                projeto e desafio.
-              </p>
-            </div>
+            ))}
+          </div>
 
-            {/* Value 2 */}
-            <div className="group text-center">
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:scale-110">
-                <i className="fa-jelly fa-trophy fa-2x text-brand-orange"></i>
-              </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Excelência</h3>
-              <p className="text-sm leading-relaxed text-dark/60">
-                Não nos contentamos com o bom. Buscamos o excepcional em cada linha de código e
-                decisão de design.
-              </p>
-            </div>
-
-            {/* Value 3 */}
-            <div className="group text-center">
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:scale-110">
-                <i className="fa-jelly fa-heart fa-2x text-brand-orange"></i>
-              </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Paixão</h3>
-              <p className="text-sm leading-relaxed text-dark/60">
-                Fazemos o que amamos. Cada projeto é tratado com dedicação genuína e entusiasmo.
-              </p>
-            </div>
-
-            {/* Value 4 */}
-            <div className="group text-center">
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-button bg-brand-orange/10 transition-smooth group-hover:scale-110">
-                <i className="fa-jelly fa-users fa-2x text-brand-orange"></i>
-              </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Sinergia</h3>
-              <p className="text-sm leading-relaxed text-dark/60">
-                Trabalhamos em equipe. Juntos, alcançamos resultados que vão além da soma das
-                partes.
-              </p>
-            </div>
+          <div className="text-center">
+            <p className="text-lg text-dark/70">
+              Quer trabalhar com a gente? Envie seu currículo para{' '}
+              <a
+                href="mailto:contato@phurshell.com"
+                className="font-bold text-brand-orange transition-colors hover:text-brand-orange-light"
+              >
+                contato@phurshell.com
+              </a>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-orange via-brand-orange-dark to-dark py-24 sm:py-32">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-dots-pattern bg-dots opacity-20"></div>
-        <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-button bg-white opacity-10 blur-3xl"></div>
-
-        <div className="container relative z-10 mx-auto max-w-4xl px-6 text-center sm:px-8 lg:px-12">
-          <h2 className="mb-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Vamos conversar sobre seu projeto
-          </h2>
-          <p className="mb-10 text-lg leading-relaxed text-white/90 sm:text-xl">
-            Descubra como podemos transformar seu produto digital de bom para excepcional
-          </p>
-
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <TransitionLink
-              href="/contato"
-              className="group inline-flex items-center justify-center gap-2 rounded-button border-2 border-white bg-white px-8 py-4 text-sm font-black tracking-wider text-brand-orange shadow-xl transition-smooth hover:-translate-y-1 hover:shadow-2xl"
-            >
-              <i className="fa-jelly fa-calendar fa-lg"></i>
-              Agendar Conversa
-            </TransitionLink>
-            <a
-              href="https://wa.me/5511999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-button border-2 border-white bg-transparent px-8 py-4 text-sm font-black tracking-wider text-white backdrop-blur-sm transition-smooth hover:-translate-y-1 hover:bg-white hover:text-brand-orange"
-            >
-              <i className="fa-brands fa-whatsapp fa-lg"></i>
-              Chat no WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Contact CTA */}
+      <ContactCTA />
     </div>
   )
 }

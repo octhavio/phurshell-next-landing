@@ -18,10 +18,10 @@ export default function Footer() {
                 Sobre
               </TransitionLink>
               <TransitionLink
-                href="/servicos/desenvolvimento-de-apps"
+                href="/servicos/desenvolvimento-de-aplicativos"
                 className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
               >
-                Desenvolvimento Mobile
+                Desenvolvimento de Aplicativos
               </TransitionLink>
               <TransitionLink
                 href="/cases"
@@ -34,6 +34,12 @@ export default function Footer() {
                 className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
               >
                 Insights
+              </TransitionLink>
+              <TransitionLink
+                href="/calculadora"
+                className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange"
+              >
+                Calculadora
               </TransitionLink>
               <TransitionLink
                 href="/contato"

@@ -10,6 +10,7 @@ import CasePsiapp from './pages/CasePsiapp'
 import Contato from './pages/Contato'
 import ContatoSucesso from './pages/ContatoSucesso'
 import Sobre from './pages/Sobre'
+import Calculadora from './pages/Calculadora'
 import NotFound from './pages/NotFound'
 
 export const router = createBrowserRouter([
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'servicos', element: <Servicos /> },
-      { path: 'servicos/desenvolvimento-de-apps', element: <ServicosApps /> },
+      { path: 'servicos/desenvolvimento-de-aplicativos', element: <ServicosApps /> },
       { path: 'insights', element: <Insights /> },
       { path: 'insights/:slug', element: <InsightPost /> },
       { path: 'cases', element: <Cases /> },
@@ -28,25 +29,26 @@ export const router = createBrowserRouter([
       { path: 'contato', element: <Contato /> },
       { path: 'contato/sucesso', element: <ContatoSucesso /> },
       { path: 'sobre', element: <Sobre /> },
+      { path: 'calculadora', element: <Calculadora /> },
 
       // Redirects SEO (client-side)
-      { path: 'desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-app', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-apps', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-mobile', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-aplicativo', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-aplicativo-mobile', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'fabrica-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'fabrica-de-apps', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'empresa-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'empresa-de-desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'empresa-de-desenvolvimento-de-app', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'criar-aplicativo', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'criar-app', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'criar-aplicativo-empresa', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'software-sob-medida', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-software-sob-medida', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
-      { path: 'desenvolvimento-de-aplicativos-brasil', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
+      { path: 'desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-app', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-apps', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-mobile', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-aplicativo', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-aplicativo-mobile', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'fabrica-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'fabrica-de-apps', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'empresa-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'empresa-de-desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'empresa-de-desenvolvimento-de-app', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'criar-aplicativo', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'criar-app', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'criar-aplicativo-empresa', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'software-sob-medida', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-software-sob-medida', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
+      { path: 'desenvolvimento-de-aplicativos-brasil', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
 
       { path: '*', element: <NotFound /> },
     ],

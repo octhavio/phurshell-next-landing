@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_buyapp</title>
+    <g id="icon_buyapp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#F75A38" x="1.56319402e-13" y="0" width="150" height="150"></rect>
+        <g id="Group" transform="translate(26.293945, 32.226562)" stroke="#000000" stroke-linejoin="round">
+            <polygon id="Path-11-Copy-9" stroke-width="7.29189971" fill="#FFFFFF" points="-1.85610041e-13 131.713158 4.14901421 38.6436551 79.6245565 38.6436551 84.3475492 131.713158"></polygon>
+            <polygon id="Path-12-Copy-9" stroke-width="7.29189971" fill="#000000" points="79.6245565 38.6436551 84.8142867 40.494244 89.8491379 42.289605 97.3508198 126.973424 84.3475492 131.713158"></polygon>
+            <path d="M26.7918275,52.0551571 L26.7918275,77.820481 C26.6328051,85.5908387 31.1987185,89.4760176 40.4895677,89.4760176 C49.7804169,89.4760176 54.7200923,85.5908387 55.3085937,77.820481 L55.3085937,52.0551571" id="Path-13-Copy-9" stroke-width="7.29189971" stroke-linecap="round"></path>
+            <line x1="56.547901" y1="-0.204080399" x2="56.547901" y2="14.8538632" id="Path-14-Copy-5" stroke-width="9.11487463" stroke-linecap="round" transform="translate(56.547901, 7.324891) rotate(-345.000000) translate(-56.547901, -7.324891) "></line>
+            <line x1="77.2568961" y1="13.3874883" x2="66.6093221" y2="24.0350624" id="Path-14-Copy-10" stroke-width="9.11487463" stroke-linecap="round"></line>
+            <line x1="35.5251468" y1="-0.204080399" x2="35.5251468" y2="14.8538632" id="Path-14-Copy-11" stroke-width="9.11487463" stroke-linecap="round" transform="translate(35.525147, 7.324891) scale(-1, 1) rotate(-345.000000) translate(-35.525147, -7.324891) "></line>
+            <line x1="23.6042913" y1="13.3874883" x2="12.9567172" y2="24.0350624" id="Path-14-Copy-12" stroke-width="9.11487463" stroke-linecap="round" transform="translate(18.280504, 18.711275) scale(-1, 1) translate(-18.280504, -18.711275) "></line>
+        </g>
+    </g>
+</svg>

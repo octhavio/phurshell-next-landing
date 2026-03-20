@@ -387,7 +387,7 @@ export default function Home() {
                       <p className="text-lg leading-relaxed text-dark/70 mb-8">
                         {service.description}{' '}
                         <TransitionLink
-                          href={index === 2 ? '/servicos/desenvolvimento-de-apps' : '#'}
+                          href={index === 2 ? '/servicos/desenvolvimento-de-aplicativos' : '#'}
                           className="text-base font-bold text-brand-orange"
                         >
                           Ver mais

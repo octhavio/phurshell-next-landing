@@ -54,8 +54,8 @@ export default function Header() {
 
   const servicosDropdown = [
     {
-      label: 'Desenvolvimento de Apps',
-      href: '/servicos/desenvolvimento-de-apps',
+      label: 'Desenvolvimento de Aplicativos',
+      href: '/servicos/desenvolvimento-de-aplicativos',
       description: 'Apps iOS e Android de alta performance',
       icon: 'mobile',
     },
@@ -100,12 +100,34 @@ export default function Header() {
           ref={navRef}
           className={`items-center space-x-2 ${shouldCollapse ? 'hidden' : 'hidden md:flex'}`}
         >
+          <TransitionLink
+            href="/sobre"
+            className={`rounded-button px-4 py-2 text-base font-bold transition-all ${
+              pathname.startsWith('/sobre')
+                ? 'bg-brand-orange/10 text-brand-orange'
+                : 'text-dark/70 hover:bg-brand-orange/10 hover:text-brand-orange'
+            }`}
+          >
+            Sobre
+          </TransitionLink>
+
           <NavDropdown
             label="Serviços"
             href="/servicos"
             items={servicosDropdown}
             isActive={pathname.startsWith('/servicos')}
           />
+
+          <TransitionLink
+            href="/cases"
+            className={`rounded-button px-4 py-2 text-base font-bold transition-all ${
+              pathname.startsWith('/cases')
+                ? 'bg-brand-orange/10 text-brand-orange'
+                : 'text-dark/70 hover:bg-brand-orange/10 hover:text-brand-orange'
+            }`}
+          >
+            Cases
+          </TransitionLink>
 
           <TransitionLink
             href="/insights"
@@ -216,6 +238,17 @@ export default function Header() {
                 }}
                 className="rounded-button border border-dark/10 bg-white shadow-sm"
               >
+                {/* Sobre */}
+                <TransitionLink
+                  href="/sobre"
+                  onClick={closeMobileMenu}
+                  className={`block border-b border-dark/10 px-6 py-4 text-base font-bold transition-colors ${
+                    pathname.startsWith('/sobre') ? 'text-brand-orange' : 'text-dark hover:bg-dark/5'
+                  }`}
+                >
+                  Sobre
+                </TransitionLink>
+
                 {/* Serviços - Accordion */}
                 <div className="border-b border-dark/10">
                   <button
@@ -271,6 +304,17 @@ export default function Header() {
                     </div>
                   )}
                 </div>
+
+                {/* Cases */}
+                <TransitionLink
+                  href="/cases"
+                  onClick={closeMobileMenu}
+                  className={`block border-b border-dark/10 px-6 py-4 text-base font-bold transition-colors ${
+                    pathname.startsWith('/cases') ? 'text-brand-orange' : 'text-dark hover:bg-dark/5'
+                  }`}
+                >
+                  Cases
+                </TransitionLink>
 
                 {/* Insights */}
                 <TransitionLink

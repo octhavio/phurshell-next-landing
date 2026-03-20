@@ -257,9 +257,9 @@ export default function ServicosApps() {
   return (
     <div className="bg-white">
       <SEO
-        title="Desenvolvimento de Apps"
+        title="Desenvolvimento de Aplicativos"
         description="A Phurshell é uma empresa especializada em desenvolvimento de aplicativos customizados para iOS e Android. Criamos soluções sob medida que transformam suas ideias em produtos digitais de alta performance."
-        url="/servicos/desenvolvimento-de-apps"
+        url="/servicos/desenvolvimento-de-aplicativos"
       />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white py-12">
@@ -268,7 +268,7 @@ export default function ServicosApps() {
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="word-wrapper"><span className="word word-delay-1">Desenvolvimento</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">apps</span></span>
+            <span className="word-wrapper"><span className="word word-delay-3">aplicativos</span></span>
           </h1>
 
           {/* Description */}
