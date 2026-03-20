@@ -1,68 +1,45 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 
-// Dados fake da proposta
-const propostaData = {
-  cliente: {
-    nome: 'FoodExpress',
-    contato: 'João Silva',
-    email: 'joao@foodexpress.com.br',
-  },
-  projeto: {
-    nome: 'App de Delivery de Comida',
-    descricao: 'Desenvolvimento completo de aplicativo de delivery de comida com apps para clientes (iOS e Android), app para entregadores, painel administrativo para restaurantes e backoffice para gestão da plataforma.',
-    prazo: '20 semanas',
-    valor: 150000,
-    manutencao: 10000,
-  },
-  escopo: [
-    {
-      titulo: 'App do Cliente (iOS e Android)',
-      itens: [
-        'Cadastro e autenticação de usuários',
-        'Busca de restaurantes por localização',
-        'Cardápio digital com fotos e descrições',
-        'Carrinho de compras e checkout',
-        'Pagamento via cartão, PIX e carteira digital',
-        'Acompanhamento de pedido em tempo real',
-        'Histórico de pedidos',
-        'Avaliação de restaurantes e entregadores',
-        'Cupons e promoções',
-        'Push notifications',
-      ],
-    },
-    {
-      titulo: 'App do Entregador (iOS e Android)',
-      itens: [
-        'Cadastro e validação de documentos',
-        'Aceitar/recusar entregas',
-        'Navegação integrada (GPS)',
-        'Chat com cliente e restaurante',
-        'Histórico de corridas e ganhos',
-        'Saque de valores',
-      ],
-    },
-    {
-      titulo: 'Painel do Restaurante (Web)',
-      itens: [
-        'Gestão de cardápio',
-        'Recebimento e gestão de pedidos',
-        'Relatórios de vendas',
-        'Configuração de horários e taxas',
-        'Promoções e cupons',
-      ],
-    },
-    {
-      titulo: 'Backoffice Administrativo (Web)',
-      itens: [
-        'Dashboard com métricas em tempo real',
-        'Gestão de usuários, restaurantes e entregadores',
-        'Configuração de taxas e comissões',
-        'Relatórios financeiros',
-        'Suporte e atendimento',
-      ],
-    },
-  ],
+// Tipos da API
+interface PropostaClient {
+  name: string
+  contact: string
+  email: string
+}
+
+interface PropostaProject {
+  name: string
+  description: string
+  deadline: string
+  value: number
+  maintenance: number
+}
+
+interface PropostaScope {
+  titulo: string
+  itens: string[]
+}
+
+interface PropostaData {
+  id: number
+  code: string
+  client: PropostaClient
+  project: PropostaProject
+  created_date: string
+  validity_days: number
+  scope: PropostaScope[]
+}
+
+interface ApiResponse {
+  status: boolean
+  data: PropostaData
+  message?: string
+}
+
+// Dados hardcodados (não vêm da API)
+const hardcodedData = {
   etapas: [
     { numero: 1, titulo: 'Kickoff e Discovery', descricao: 'Alinhamento do projeto, definição detalhada do escopo e arquitetura técnica.' },
     { numero: 2, titulo: 'UX/UI Design', descricao: 'Wireframes, protótipos interativos e design final de todas as telas.' },
@@ -115,6 +92,9 @@ const propostaData = {
   ],
 }
 
+// URL base da API
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.phurshell.com'
+
 const sections = [
   { id: 'intro', label: 'Introdução' },
   { id: 'quem-somos', label: 'Quem Somos' },
@@ -128,8 +108,41 @@ const sections = [
 ]
 
 export default function Proposta() {
+  const { code } = useParams<{ code: string }>()
   const [activeSection, setActiveSection] = useState('intro')
+  const [proposta, setProposta] = useState<PropostaData | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
+  // Fetch proposta data from API
+  useEffect(() => {
+    const fetchProposta = async () => {
+      if (!code) {
+        setError('Código da proposta não informado')
+        setLoading(false)
+        return
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/proposals/code/${code}`)
+        const data: ApiResponse = await response.json()
+
+        if (!response.ok || !data.status) {
+          throw new Error(data.message || 'Proposta não encontrada')
+        }
+
+        setProposta(data.data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Erro ao carregar proposta')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProposta()
+  }, [code])
+
+  // Scroll spy
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150
@@ -170,11 +183,57 @@ export default function Proposta() {
     }).format(value)
   }
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString + 'T00:00:00')
+    return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+  }
+
+  const getValidityDate = () => {
+    if (!proposta) return ''
+    const createdDate = new Date(proposta.created_date + 'T00:00:00')
+    const validityDate = new Date(createdDate.getTime() + proposta.validity_days * 24 * 60 * 60 * 1000)
+    return validityDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+  }
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-white">
+        <div className="text-center">
+          <div className="mb-4 h-12 w-12 animate-spin rounded-full border-4 border-gray-200 border-t-brand-orange mx-auto"></div>
+          <p className="text-gray-500">Carregando proposta...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Error state
+  if (error || !proposta) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-white">
+        <div className="text-center">
+          <div className="mb-4 text-6xl text-gray-300">
+            <i className="fa-solid fa-file-circle-exclamation"></i>
+          </div>
+          <h1 className="mb-2 text-2xl font-black text-dark">Proposta não encontrada</h1>
+          <p className="mb-6 text-gray-500">{error || 'Não foi possível carregar a proposta.'}</p>
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 font-bold text-white transition-all hover:bg-brand-orange-light"
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+            Voltar ao site
+          </a>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title={`Proposta - ${propostaData.projeto.nome}`}
-        description={`Proposta comercial para desenvolvimento do ${propostaData.projeto.nome}`}
+        title={`Proposta - ${proposta.project.name}`}
+        description={`Proposta comercial para desenvolvimento do ${proposta.project.name}`}
       />
 
       {/* Sidebar Navigation */}
@@ -192,8 +251,8 @@ export default function Proposta() {
           {/* Client Info */}
           <div className="mb-8 rounded-button bg-gray-50 p-4">
             <p className="text-sm font-bold text-gray-500">Proposta para</p>
-            <p className="text-lg font-black text-dark">{propostaData.cliente.nome}</p>
-            <p className="text-sm text-gray-500">{propostaData.cliente.contato}</p>
+            <p className="text-lg font-black text-dark">{proposta.client.name}</p>
+            <p className="text-sm text-gray-500">{proposta.client.contact}</p>
           </div>
 
           {/* Navigation */}
@@ -212,22 +271,13 @@ export default function Proposta() {
               </button>
             ))}
           </nav>
-
-{/* Download Button - hidden for now
-          <div className="mt-8">
-            <button className="flex w-full items-center justify-center gap-2 rounded-button border-2 border-dark px-4 py-3 text-sm font-bold text-dark transition-all hover:bg-dark hover:text-white">
-              <i className="fa-solid fa-download"></i>
-              Baixar PDF
-            </button>
-          </div>
-*/}
         </div>
 
         {/* Date Info - Bottom */}
         <div className="border-t border-gray-100 px-6 py-4">
           <div className="space-y-1 text-xs text-gray-400">
-            <p>Gerada em {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}</p>
-            <p>Válida até <span className="font-bold text-gray-500">{new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}</span></p>
+            <p>Gerada em {formatDate(proposta.created_date)}</p>
+            <p>Válida até <span className="font-bold text-gray-500">{getValidityDate()}</span></p>
           </div>
         </div>
       </aside>
@@ -241,7 +291,7 @@ export default function Proposta() {
             className="h-6 w-auto"
           />
           <span className="text-sm font-bold text-gray-500">
-            Proposta: {propostaData.cliente.nome}
+            Proposta: {proposta.client.name}
           </span>
         </div>
       </div>
@@ -257,22 +307,22 @@ export default function Proposta() {
                 Proposta Comercial
               </p>
               <h1 className="mb-4 text-4xl font-black leading-tight text-dark sm:text-5xl lg:text-6xl">
-                {propostaData.projeto.nome}
+                {proposta.project.name}
               </h1>
               <p className="text-xl leading-relaxed text-gray-600">
-                {propostaData.projeto.descricao}
+                {proposta.project.description}
               </p>
             </div>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-2xl font-black text-brand-orange whitespace-nowrap">{propostaData.projeto.prazo}</p>
+                <p className="text-2xl font-black text-brand-orange whitespace-nowrap">{proposta.project.deadline}</p>
                 <p className="text-sm font-bold text-gray-500">Prazo estimado</p>
               </div>
               <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-3xl font-black text-brand-orange">4</p>
-                <p className="text-sm font-bold text-gray-500">Apps/Plataformas</p>
+                <p className="text-3xl font-black text-brand-orange">{proposta.scope.length}</p>
+                <p className="text-sm font-bold text-gray-500">Módulos</p>
               </div>
               <div className="rounded-button bg-gray-50 p-6 text-center">
                 <p className="text-3xl font-black text-brand-orange">4</p>
@@ -384,7 +434,7 @@ export default function Proposta() {
             </p>
 
             <div className="space-y-6">
-              {propostaData.cases.map((caseItem, index) => (
+              {hardcodedData.cases.map((caseItem, index) => (
                 <div
                   key={index}
                   className="overflow-hidden rounded-button border border-gray-100 transition-all hover:border-brand-orange hover:shadow-lg"
@@ -449,23 +499,23 @@ export default function Proposta() {
             </h2>
 
             <p className="mb-8 text-lg text-gray-600">
-              Detalhamento das funcionalidades e entregas previstas para o {propostaData.projeto.nome}:
+              Detalhamento das funcionalidades e entregas previstas para o {proposta.project.name}:
             </p>
 
             <div className="space-y-6">
-              {propostaData.escopo.map((item, index) => (
+              {proposta.scope.map((section, index) => (
                 <div key={index} className="rounded-button border border-gray-100 p-6">
                   <h3 className="mb-4 flex items-center gap-3 text-xl font-black text-dark">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange text-sm text-white">
                       {index + 1}
                     </span>
-                    {item.titulo}
+                    {section.titulo}
                   </h3>
                   <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                    {item.itens.map((subitem, subindex) => (
-                      <li key={subindex} className="flex items-start gap-2 text-gray-600">
+                    {section.itens.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start gap-2 text-gray-600">
                         <i className="fa-solid fa-check mt-1 text-sm text-brand-orange"></i>
-                        {subitem}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -481,11 +531,11 @@ export default function Proposta() {
             </h2>
 
             <p className="mb-8 text-lg text-gray-600">
-              Estimamos {propostaData.projeto.prazo} para desenvolvimento completo do projeto, dividido nas seguintes etapas:
+              Estimamos {proposta.project.deadline} para desenvolvimento completo do projeto, dividido nas seguintes etapas:
             </p>
 
             <div className="space-y-4">
-              {propostaData.etapas.map((etapa, index) => (
+              {hardcodedData.etapas.map((etapa, index) => (
                 <div
                   key={index}
                   className="relative flex gap-6 rounded-button border border-gray-100 p-6 transition-all hover:border-brand-orange"
@@ -515,7 +565,7 @@ export default function Proposta() {
             </div>
 
             <div className="mb-8 space-y-4">
-              {propostaData.tecnologias.map((tech, index) => (
+              {hardcodedData.tecnologias.map((tech, index) => (
                 <div key={index} className="flex items-center gap-4 rounded-button border border-gray-100 p-4">
                   <p className="font-black text-dark whitespace-nowrap">{tech.categoria}</p>
                   <p className="text-gray-500">{tech.opcoes}</p>
@@ -526,7 +576,7 @@ export default function Proposta() {
             {/* Infraestrutura */}
             <h3 className="mb-4 text-xl font-black text-dark">Infraestrutura</h3>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {propostaData.infraestrutura.map((item, index) => (
+              {hardcodedData.infraestrutura.map((item, index) => (
                 <div key={index} className="flex items-center gap-2 text-gray-600">
                   <i className="fa-solid fa-check text-sm text-brand-orange"></i>
                   {item}
@@ -545,10 +595,10 @@ export default function Proposta() {
               <div className="flex items-center justify-between p-6">
                 <div>
                   <p className="font-bold text-dark">Desenvolvimento Completo</p>
-                  <p className="text-sm text-gray-500">Prazo estimado: {propostaData.projeto.prazo}</p>
+                  <p className="text-sm text-gray-500">Prazo estimado: {proposta.project.deadline}</p>
                 </div>
                 <p className="text-3xl font-black text-brand-orange">
-                  {formatCurrency(propostaData.projeto.valor)}
+                  {formatCurrency(proposta.project.value)}
                 </p>
               </div>
             </div>
@@ -560,7 +610,7 @@ export default function Proposta() {
                   <p className="text-sm text-gray-500">20h de desenvolvimento + infraestrutura</p>
                 </div>
                 <p className="text-xl font-black text-dark">
-                  {formatCurrency(propostaData.projeto.manutencao)}<span className="text-sm font-bold text-gray-500">/mês</span>
+                  {formatCurrency(proposta.project.maintenance)}<span className="text-sm font-bold text-gray-500">/mês</span>
                 </p>
               </div>
             </div>
@@ -622,10 +672,10 @@ export default function Proposta() {
 
             <div className="rounded-button bg-dark p-8 text-center">
               <p className="mb-4 text-lg text-white/70">
-                Esta proposta é válida por <span className="font-bold text-white">15 dias</span> a partir do recebimento.
+                Esta proposta é válida por <span className="font-bold text-white">{proposta.validity_days} dias</span> a partir do recebimento.
               </p>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de conversar sobre a proposta do app de delivery."
+                href={`https://wa.me/5511999999999?text=Olá! Gostaria de conversar sobre a proposta ${proposta.code}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white transition-all hover:bg-brand-orange-light"

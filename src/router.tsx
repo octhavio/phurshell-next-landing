@@ -29,8 +29,7 @@ export const router = createBrowserRouter([
       { path: 'contato', element: <Contato /> },
       { path: 'contato/sucesso', element: <ContatoSucesso /> },
       { path: 'sobre', element: <Sobre /> },
-      { path: 'proposta', element: <Proposta /> },
-      { path: 'proposta/:id', element: <Proposta /> },
+      { path: 'propostas/:code', element: <Proposta /> },
 
       // Redirects SEO (client-side)
       { path: 'desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-apps" replace /> },
