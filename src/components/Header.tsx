@@ -9,6 +9,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
   const [servicosOpen, setServicosOpen] = useState(false)
+  const [casesOpen, setCasesOpen] = useState(false)
   const [shouldCollapse, setShouldCollapse] = useState(false)
 
   const headerRef = useRef<HTMLDivElement>(null)
@@ -58,6 +59,27 @@ export default function Header() {
       href: '/servicos/desenvolvimento-de-aplicativos',
       description: 'Apps iOS e Android de alta performance',
       icon: 'mobile',
+    },
+  ]
+
+  const casesDropdown = [
+    {
+      label: 'Psiapp',
+      href: '/cases/psiapp',
+      description: 'Plataforma de psicoterapia online',
+      icon: 'users',
+    },
+    {
+      label: 'Diag',
+      href: '/cases/diag',
+      description: 'Sistema de diagnóstico médico',
+      icon: 'plus',
+    },
+    {
+      label: 'Autoday',
+      href: '/cases/autoday',
+      description: 'Seguro automotivo intermitente',
+      icon: 'car',
     },
   ]
 
@@ -118,16 +140,14 @@ export default function Header() {
             isActive={pathname.startsWith('/servicos')}
           />
 
-          <TransitionLink
+          <NavDropdown
+            label="Cases"
             href="/cases"
-            className={`rounded-button px-4 py-2 text-base font-bold transition-all ${
-              pathname.startsWith('/cases')
-                ? 'bg-brand-orange/10 text-brand-orange'
-                : 'text-dark/70 hover:bg-brand-orange/10 hover:text-brand-orange'
-            }`}
-          >
-            Cases
-          </TransitionLink>
+            items={casesDropdown}
+            isActive={pathname.startsWith('/cases')}
+            viewAllLabel="Ver todos os cases"
+            viewAllDescription="Projetos que transformaram negócios"
+          />
 
           <TransitionLink
             href="/insights"
@@ -305,16 +325,61 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Cases */}
-                <TransitionLink
-                  href="/cases"
-                  onClick={closeMobileMenu}
-                  className={`block border-b border-dark/10 px-6 py-4 text-base font-bold transition-colors ${
-                    pathname.startsWith('/cases') ? 'text-brand-orange' : 'text-dark hover:bg-dark/5'
-                  }`}
-                >
-                  Cases
-                </TransitionLink>
+                {/* Cases - Accordion */}
+                <div className="border-b border-dark/10">
+                  <button
+                    type="button"
+                    onClick={() => setCasesOpen(!casesOpen)}
+                    className="flex w-full items-center justify-between px-6 py-4 text-left text-base font-bold text-dark transition-colors hover:bg-dark/5"
+                  >
+                    <span
+                      className={pathname.startsWith('/cases') ? 'text-brand-orange' : 'text-dark'}
+                    >
+                      Cases
+                    </span>
+                    <i
+                      className={`fa-solid fa-chevron-down text-sm transition-transform ${
+                        casesOpen ? 'rotate-180' : ''
+                      }`}
+                    ></i>
+                  </button>
+                  {casesOpen && (
+                    <div className="border-t border-dark/5 bg-gray-50">
+                      {casesDropdown.map((item) => (
+                        <TransitionLink
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className="flex items-start gap-3 border-b border-dark/5 px-6 py-4 transition-colors hover:bg-white"
+                        >
+                          {item.icon && (
+                            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                              <i className={`fa-jelly fa-${item.icon} text-brand-orange`}></i>
+                            </div>
+                          )}
+                          <div className="flex-1">
+                            <div className="font-bold text-dark">{item.label}</div>
+                            <div className="mt-1 text-sm text-dark/60">{item.description}</div>
+                          </div>
+                        </TransitionLink>
+                      ))}
+                      {/* Link para ver todos os cases */}
+                      <TransitionLink
+                        href="/cases"
+                        onClick={closeMobileMenu}
+                        className="flex items-start gap-3 border-t border-dark/10 px-6 py-4 transition-colors hover:bg-white"
+                      >
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                          <i className="fa-jelly fa-grid text-brand-orange"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-bold text-dark">Ver todos os cases</div>
+                          <div className="mt-1 text-sm text-dark/60">Projetos que transformaram negócios</div>
+                        </div>
+                      </TransitionLink>
+                    </div>
+                  )}
+                </div>
 
                 {/* Insights */}
                 <TransitionLink

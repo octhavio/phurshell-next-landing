@@ -75,6 +75,77 @@ export default function Servicos() {
       ],
     },
     {
+      id: 'estrategia-financas-crescimento',
+      title: 'Estratégia, Finanças e Crescimento para Startups',
+      icon: 'chart-line-up',
+      description: 'Mais do que desenvolver software, ajudamos a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
+      services: [
+        {
+          title: 'Planejamento financeiro estratégico',
+          slug: 'planejamento-financeiro-estrategico',
+          icon: 'calculator',
+          description:
+            'Estruturação completa das finanças do negócio com foco em crescimento sustentável.',
+        },
+        {
+          title: 'Projeção de receita e cenários (forecast)',
+          slug: 'projecao-receita-cenarios',
+          icon: 'chart-mixed',
+          description:
+            'Modelagem de cenários otimista, realista e conservador para tomada de decisão.',
+        },
+        {
+          title: 'KPIs financeiros e estratégia orientada a dados',
+          slug: 'kpis-financeiros-estrategia-dados',
+          icon: 'bullseye',
+          description:
+            'Definição e acompanhamento de métricas como CAC, LTV, churn e margem para guiar decisões de crescimento.',
+        },
+        {
+          title: 'Estruturação de fluxo de caixa',
+          slug: 'estruturacao-fluxo-caixa',
+          icon: 'money-bill-transfer',
+          description:
+            'Organização e previsão de entradas e saídas para evitar gargalos financeiros.',
+        },
+        {
+          title: 'Modelagem de negócios e monetização',
+          slug: 'modelagem-negocios-monetizacao',
+          icon: 'coins',
+          description:
+            'Definição de pricing, recorrência, planos e estratégias de receita.',
+        },
+        {
+          title: 'Captação de investimento e valuation',
+          slug: 'captacao-investimento-valuation',
+          icon: 'handshake',
+          description:
+            'Preparação financeira e construção de indicadores para conversas com investidores.',
+        },
+        {
+          title: 'Business plan e pitch para investidores',
+          slug: 'business-plan-pitch-investidores',
+          icon: 'presentation-screen',
+          description:
+            'Estruturação do plano de negócio e criação de pitch deck claro, objetivo e convincente.',
+        },
+        {
+          title: 'Mapeamento de riscos financeiros, contábeis e jurídicos',
+          slug: 'mapeamento-riscos',
+          icon: 'shield-exclamation',
+          description:
+            'Antecipação de problemas que podem travar crescimento ou investimento.',
+        },
+        {
+          title: 'Integração entre produto, tecnologia e modelo de negócio',
+          slug: 'integracao-produto-tecnologia-negocio',
+          icon: 'puzzle-piece',
+          description:
+            'Garantia de que o software está alinhado com os objetivos financeiros da empresa.',
+        },
+      ],
+    },
+    {
       id: 'design-produto-experiencia',
       title: 'Design de Produto & Experiência',
       icon: 'palette',
@@ -527,11 +598,18 @@ export default function Servicos() {
         >
           <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
             {/* Category Header */}
-            <div className="mb-12 flex items-center gap-4">
-              <i className={`fa-jelly fa-${category.icon} text-4xl text-brand-orange`}></i>
-              <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
-                {category.title}
-              </h2>
+            <div className="mb-12">
+              <div className="mb-6 flex items-center gap-4">
+                <i className={`fa-jelly fa-${category.icon} text-4xl text-brand-orange`}></i>
+                <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
+                  {category.title}
+                </h2>
+              </div>
+              {category.description && (
+                <p className="max-w-4xl text-xl leading-relaxed text-dark/70">
+                  {category.description}
+                </p>
+              )}
             </div>
 
             {/* Services Grid */}

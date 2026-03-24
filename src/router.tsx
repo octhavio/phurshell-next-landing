@@ -7,6 +7,8 @@ import Insights from './pages/Insights'
 import InsightPost from './pages/InsightPost'
 import Cases from './pages/Cases'
 import CasePsiapp from './pages/CasePsiapp'
+import CaseDiag from './pages/CaseDiag'
+import CaseAutoday from './pages/CaseAutoday'
 import Contato from './pages/Contato'
 import ContatoSucesso from './pages/ContatoSucesso'
 import Sobre from './pages/Sobre'
@@ -26,6 +28,8 @@ export const router = createBrowserRouter([
       { path: 'insights/:slug', element: <InsightPost /> },
       { path: 'cases', element: <Cases /> },
       { path: 'cases/psiapp', element: <CasePsiapp /> },
+      { path: 'cases/diag', element: <CaseDiag /> },
+      { path: 'cases/autoday', element: <CaseAutoday /> },
       { path: 'contato', element: <Contato /> },
       { path: 'contato/sucesso', element: <ContatoSucesso /> },
       { path: 'sobre', element: <Sobre /> },

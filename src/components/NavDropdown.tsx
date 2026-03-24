@@ -13,9 +13,18 @@ interface NavDropdownProps {
   href: string
   items: DropdownItem[]
   isActive: boolean
+  viewAllLabel?: string
+  viewAllDescription?: string
 }
 
-export default function NavDropdown({ label, href, items, isActive }: NavDropdownProps) {
+export default function NavDropdown({
+  label,
+  href,
+  items,
+  isActive,
+  viewAllLabel = 'Ver todos os serviços',
+  viewAllDescription = 'Todas as soluções que oferecemos'
+}: NavDropdownProps) {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout>()
@@ -97,7 +106,7 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
               </TransitionLink>
             ))}
 
-            {/* Link para ver todos os serviços */}
+            {/* Link para ver todos */}
             <div className="border-t border-dark/10 pt-2 mt-2">
               <TransitionLink
                 href={href}
@@ -108,10 +117,10 @@ export default function NavDropdown({ label, href, items, isActive }: NavDropdow
                 </div>
                 <div className="flex-1">
                   <div className="font-bold text-dark transition-colors group-hover:text-brand-orange">
-                    Ver todos os serviços
+                    {viewAllLabel}
                   </div>
                   <div className="mt-1 text-sm text-dark/60">
-                    Todas as soluções que oferecemos
+                    {viewAllDescription}
                   </div>
                 </div>
               </TransitionLink>
