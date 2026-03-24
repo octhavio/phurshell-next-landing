@@ -15,6 +15,7 @@ interface PropostaProject {
   deadline: string
   value: number
   maintenance: number
+  infrastructure: number | null
 }
 
 interface PropostaScope {
@@ -322,7 +323,7 @@ export default function Proposta() {
               </div>
               <div className="rounded-button bg-gray-50 p-6 text-center">
                 <p className="text-3xl font-black text-brand-orange">{proposta.scope.length}</p>
-                <p className="text-sm font-bold text-gray-500">Módulos</p>
+                <p className="text-sm font-bold text-gray-500">{proposta.scope.length === 1 ? 'Produto' : 'Produtos'}</p>
               </div>
               <div className="rounded-button bg-gray-50 p-6 text-center">
                 <p className="text-3xl font-black text-brand-orange">4</p>
@@ -560,7 +561,7 @@ export default function Proposta() {
 
             <div className="mb-8 border-l-2 border-brand-orange pl-4">
               <p className="text-lg text-gray-600">
-                Somos <span className="font-bold text-dark">agnósticos de tecnologia</span>. Trabalhamos com as melhores e mais modernas ferramentas do mercado, escolhendo a stack ideal para cada projeto conforme as necessidades específicas do cliente.
+                Não somos fãs de tecnologia A ou B — somos fãs de <span className="font-bold text-dark">resolver problema</span>. Se precisar usar o "melhor do mercado", usamos. Se precisar misturar tudo, também. O importante é funcionar bem e ficar bonito.
               </p>
             </div>
 
@@ -603,17 +604,33 @@ export default function Proposta() {
               </div>
             </div>
 
-            <div className="mb-8 rounded-button border border-gray-100 p-5">
+            <div className="mb-4 rounded-button border border-gray-100 p-5">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-bold text-dark">Manutenção Contínua</p>
-                  <p className="text-sm text-gray-500">20h de desenvolvimento + infraestrutura</p>
+                  <p className="text-sm text-gray-500">Suporte, correções e melhorias</p>
                 </div>
                 <p className="text-xl font-black text-dark">
                   {formatCurrency(proposta.project.maintenance)}<span className="text-sm font-bold text-gray-500">/mês</span>
                 </p>
               </div>
             </div>
+
+            {proposta.project.infrastructure && (
+              <div className="mb-8 rounded-button border border-gray-100 p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-bold text-dark">Custo de infraestrutura</p>
+                    <p className="text-sm text-gray-500">Servidores, banco de dados e serviços</p>
+                  </div>
+                  <p className="text-xl font-black text-dark">
+                    {formatCurrency(proposta.project.infrastructure)}<span className="text-sm font-bold text-gray-500">/mês</span>
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {!proposta.project.infrastructure && <div className="mb-4"></div>}
 
             <div className="rounded-button bg-gray-50 p-6">
               <h3 className="mb-4 text-lg font-black text-dark">Formas de Pagamento</h3>
@@ -675,7 +692,7 @@ export default function Proposta() {
                 Esta proposta é válida por <span className="font-bold text-white">{proposta.validity_days} dias</span> a partir do recebimento.
               </p>
               <a
-                href={`https://wa.me/5511999999999?text=Olá! Gostaria de conversar sobre a proposta ${proposta.code}.`}
+                href={`https://wa.me/5511991341871?text=Olá! Gostaria de conversar sobre a proposta ${proposta.code}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white transition-all hover:bg-brand-orange-light"
