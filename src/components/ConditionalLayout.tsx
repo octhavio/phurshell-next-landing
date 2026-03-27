@@ -6,8 +6,9 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const { pathname } = useLocation()
   const isContactPage = pathname === '/contato'
   const isCalculatorPage = pathname === '/calculadora'
+  const isPropostaPage = pathname.startsWith('/propostas')
 
-  if (isContactPage || isCalculatorPage) {
+  if (isContactPage || isCalculatorPage || isPropostaPage) {
     return <>{children}</>
   }
 

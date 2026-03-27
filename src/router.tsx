@@ -13,6 +13,7 @@ import Contato from './pages/Contato'
 import ContatoSucesso from './pages/ContatoSucesso'
 import Sobre from './pages/Sobre'
 import Calculadora from './pages/Calculadora'
+import Proposta from './pages/Proposta'
 import NotFound from './pages/NotFound'
 
 export const router = createBrowserRouter([
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
       { path: 'contato/sucesso', element: <ContatoSucesso /> },
       { path: 'sobre', element: <Sobre /> },
       { path: 'calculadora', element: <Calculadora /> },
+      { path: 'propostas/:code', element: <Proposta /> },
 
       // Redirects SEO (client-side)
       { path: 'desenvolvimento-de-aplicativos', element: <Navigate to="/servicos/desenvolvimento-de-aplicativos" replace /> },
