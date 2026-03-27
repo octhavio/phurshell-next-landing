@@ -7,7 +7,7 @@ export default function CaseDiag() {
     <div className="bg-white">
       <SEO
         title="Case Diag"
-        description="Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados."
+        description="Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico."
         url="/cases/diag"
       />
       {/* Hero Section */}
@@ -15,13 +15,13 @@ export default function CaseDiag() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Conectando</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">psicólogos</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">e</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">pacientes</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">através</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">da</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-7">tecnologia</span></span>
+            <span className="word-wrapper"><span className="word word-delay-1">Simplificando</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-2">a</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-3">rotina</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-4">médica</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-5">com</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-6">inteligência</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-7">artificial</span></span>
           </h1>
 
           {/* Description */}
@@ -29,22 +29,22 @@ export default function CaseDiag() {
             <span className="word-wrapper"><span className="word word-delay-8">Uma</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-9">plataforma</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-10">completa</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-11">que</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-12">facilita</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-13">o</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-14">acesso</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-15">à</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-16">psicoterapia,</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-17">conectando</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-18">profissionais</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-19">e</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-20">pacientes</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-21">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-22">forma</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-23">simples,</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-24">segura</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-11">de</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-12">gestão</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-13">clínica</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-14">que</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-15">otimiza</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-16">o</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-17">trabalho</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-18">dos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-19">médicos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-20">com</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">prontuários</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-22">digitais,</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-23">receitas</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-24">médicas</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-25">e</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-26">eficiente.</span></span>
+            <span className="word-wrapper"><span className="word word-delay-26">IA.</span></span>
           </p>
 
           {/* Hero Image */}
@@ -52,8 +52,8 @@ export default function CaseDiag() {
             <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
               <span className="word word-delay-27" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <img
-                  src="/images/img-hero.png"
-                  alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
+                  src="/images/img-diag-hero.png"
+                  alt="Interface do aplicativo Diag mostrando prontuários digitais e receitas médicas"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -64,34 +64,22 @@ export default function CaseDiag() {
                     {/* Logo e Nome */}
                     <div className="flex items-center gap-3">
                       <img
-                        src="/img-icon-psiapp.svg"
-                        alt="Logo do aplicativo Psiapp"
+                        src="/images/img-cases-diag-icon.png"
+                        alt="Logo do aplicativo Diag"
                         width={36}
                         height={36}
                         className="h-9 w-9 rounded-xl"
                       />
-                      <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Psiapp</span>
+                      <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Diag</span>
                     </div>
 
                     {/* Info Text */}
                     <div>
                       <p className="text-sm leading-relaxed text-white/90 sm:text-base">
-                        Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
+                        Plataforma desenvolvida pela Phurshell que revoluciona a rotina médica com prontuários digitais, geração de receitas e chat com IA para suporte diagnóstico.
                         <br />
-                        <span className="font-bold">São quase 100 mil downloads</span>
+                        <span className="font-bold">Quase 15 mil médicos cadastrados</span>
                       </p>
-                    </div>
-
-                    {/* Rating */}
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl font-black text-white">4.8</span>
-                      <div className="flex gap-0.5">
-                        <i className="fa-solid fa-star text-yellow-400"></i>
-                        <i className="fa-solid fa-star text-yellow-400"></i>
-                        <i className="fa-solid fa-star text-yellow-400"></i>
-                        <i className="fa-solid fa-star text-yellow-400"></i>
-                        <i className="fa-solid fa-star text-yellow-400"></i>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -110,10 +98,10 @@ export default function CaseDiag() {
               Visão Geral
             </h2>
             <p className="mb-6 text-xl leading-relaxed text-dark/70">
-              O Psiapp nasceu com a missão de democratizar o acesso à psicoterapia no Brasil. Em 2020, quando a ideia surgiu, encontrar um psicólogo compatível com suas necessidades era um processo complexo e demorado. A pandemia acelerou a necessidade de soluções digitais na área da saúde mental.
+              O Diag nasceu da necessidade de modernizar a rotina dos médicos brasileiros. A gestão clínica ainda era feita de forma manual, com papéis e sistemas desconectados. Prescrever receitas, gerenciar prontuários e buscar informações médicas consumia tempo valioso que poderia ser dedicado aos pacientes.
             </p>
             <p className="text-xl leading-relaxed text-dark/70">
-              A Phurshell foi escolhida como parceira tecnológica para transformar essa visão em realidade, desenvolvendo uma plataforma completa que conecta psicólogos e pacientes de forma simples, segura e eficiente.
+              A Phurshell desenvolveu uma plataforma completa que centraliza todas as ferramentas essenciais do dia-a-dia médico: prontuários eletrônicos, geração de receitas digitais com validade jurídica, biblioteca de medicamentos sempre atualizada e um chat com inteligência artificial que auxilia no processo diagnóstico.
             </p>
           </div>
 
@@ -122,10 +110,10 @@ export default function CaseDiag() {
             {/* Card Segmento */}
             <div className="rounded-button border border-dark/10 p-8">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                <i className="fa-jelly fa-landmark fa-xl text-brand-orange"></i>
+                <i className="fa-jelly fa-heart-pulse fa-xl text-brand-orange"></i>
               </div>
               <h3 className="mb-3 text-xl font-black text-dark">Segmento</h3>
-              <p className="text-xl leading-relaxed text-dark/70">Saúde Mental / Healthtech</p>
+              <p className="text-xl leading-relaxed text-dark/70">Gestão Clínica / Healthtech</p>
             </div>
 
             {/* Card Período */}
@@ -134,24 +122,24 @@ export default function CaseDiag() {
                 <i className="fa-jelly fa-calendar fa-xl text-brand-orange"></i>
               </div>
               <h3 className="mb-3 text-xl font-black text-dark">Período</h3>
-              <p className="text-xl leading-relaxed text-dark/70">2020 - Presente</p>
+              <p className="text-xl leading-relaxed text-dark/70">2022 - Presente</p>
             </div>
 
             {/* Card Plataformas */}
             <div className="rounded-button border border-dark/10 p-8">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                <i className="fa-jelly fa-clipboard fa-xl text-brand-orange"></i>
+                <i className="fa-jelly fa-mobile fa-xl text-brand-orange"></i>
               </div>
               <h3 className="mb-3 text-xl font-black text-dark">Plataformas</h3>
-              <p className="text-xl leading-relaxed text-dark/70">iOS, Android, Web, Backoffice</p>
+              <p className="text-xl leading-relaxed text-dark/70">iOS, Android, Web, Landing Page</p>
             </div>
           </div>
 
           {/* Case Image */}
           <div className="mt-12">
             <img
-              src="/images/img-psiapp-case-1.png"
-              alt="Psiapp case"
+              src="/images/img-diag-case-1.png"
+              alt="Diag case"
               className="w-full rounded-button"
             />
           </div>
@@ -167,44 +155,44 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Criar uma plataforma que atendesse simultaneamente dois públicos distintos — psicólogos e pacientes — cada um com necessidades e expectativas diferentes.
+                Criar uma solução que pudesse atender médicos de diferentes especialidades, com fluxos de trabalho distintos, mantendo a facilidade de uso e conformidade com regulamentações médicas.
               </p>
               <p>
-                Para os <strong className="text-dark">psicólogos</strong>, era essencial oferecer ferramentas profissionais de gestão: agenda, prontuários, controle financeiro e um perfil que destacasse suas especializações.
+                Para os <strong className="text-dark">médicos</strong>, era essencial ter uma ferramenta rápida e intuitiva que não atrapalhasse o fluxo de atendimento. A plataforma precisava gerar receitas válidas juridicamente, armazenar prontuários de forma segura (LGPD) e oferecer suporte diagnóstico confiável.
               </p>
               <p>
-                Para os <strong className="text-dark">pacientes</strong>, a experiência precisava ser acolhedora e descomplicada: buscar profissionais por especialização, agendar consultas com facilidade e ter um ambiente seguro para suas sessões online.
+                Além disso, a <strong className="text-dark">inteligência artificial</strong> precisava ser precisa e constantemente atualizada com as informações médicas mais recentes, auxiliando o profissional sem substituir seu julgamento clínico.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <div className="rounded-button border border-dark/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-users fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-clipboard fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Dupla Persona</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Prontuários Eletrônicos</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Equilibrar as necessidades de profissionais de saúde com a experiência de usuários finais buscando ajuda.
+                  Desenvolver sistema seguro e prático de prontuários digitais com conformidade LGPD e acesso rápido ao histórico completo do paciente.
                 </p>
               </div>
 
               <div className="rounded-button border border-dark/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-bolt fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-plus fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Agendamento Rápido</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Receitas Digitais</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Conectar pacientes e psicólogos em consultas imediatas, como um "Uber da psicoterapia", permitindo atendimento instantâneo quando o paciente mais precisa.
+                  Criar sistema de prescrição médica digital com validade jurídica, integrado à base de medicamentos atualizada e com alertas de interações medicamentosas.
                 </p>
               </div>
 
               <div className="rounded-button border border-dark/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-video fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-sparkles fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Videochamadas Estáveis</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">IA Diagnóstica</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Implementar sistema de videochamadas confiável para sessões terapêuticas sem interrupções.
+                  Implementar chat com inteligência artificial treinada em literatura médica para auxiliar no processo diagnóstico e sugerir condutas baseadas em evidências.
                 </p>
               </div>
             </div>
@@ -213,23 +201,23 @@ export default function CaseDiag() {
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="h-full">
                 <img
-                  src="/images/img-psiapp-case-2.png"
-                  alt="Psiapp case"
+                  src="/images/img-diag-case-2.png"
+                  alt="Diag case"
                   className="h-full w-full rounded-button object-cover"
                 />
               </div>
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-3.png"
-                    alt="Psiapp case"
+                    src="/images/img-diag-case-3.png"
+                    alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-4.png"
-                    alt="Psiapp case"
+                    src="/images/img-diag-case-4.png"
+                    alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
@@ -248,18 +236,18 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Transformar a visão do Psiapp em realidade exigiu um processo estruturado e colaborativo. Desde a imersão no universo da psicoterapia até o lançamento e evolução contínua, cada etapa foi cuidadosamente planejada para garantir uma plataforma que atendesse às necessidades reais de psicólogos e pacientes.
+                Transformar a visão do Diag em realidade exigiu profunda imersão no universo médico. Desde entender o fluxo de trabalho dos profissionais de saúde até implementar IA confiável, cada etapa foi pensada para criar uma ferramenta que médicos realmente utilizariam no dia-a-dia.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <div className="rounded-button border border-dark/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-pencil fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-plus fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Design e Validação</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Imersão Médica</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Imersão profunda com psicólogos e pacientes, prototipagem rápida e validação de hipóteses. Criação de wireframes e identidade visual que transmite profissionalismo e acolhimento.
+                  Pesquisa profunda com médicos de diferentes especialidades, mapeamento de fluxos de atendimento e validação de funcionalidades. Design focado em agilidade e conformidade regulatória.
                 </p>
               </div>
 
@@ -269,17 +257,17 @@ export default function CaseDiag() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Desenvolvimento</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Construção de apps nativos iOS e Android, backoffice web, infraestrutura escalável com videochamadas WebRTC, pagamentos e segurança end-to-end com conformidade LGPD.
+                  Apps nativos iOS e Android, plataforma web, infraestrutura escalável, integração com base de dados de medicamentos (Anvisa), sistema de IA com modelos de linguagem médica e conformidade total com LGPD.
                 </p>
               </div>
 
               <div className="rounded-button border border-dark/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-flag fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-arrows-rotate fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Lançamento e Evolução</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Evolução Contínua</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Lançamento estratégico com onboarding gradual. Ciclo contínuo de melhorias baseado em dados de uso e feedbacks, evoluindo constantemente para atender necessidades reais.
+                  Lançamento gradual com onboarding de médicos beta-testers. Atualização constante da base de conhecimento da IA e melhorias baseadas no feedback real dos profissionais.
                 </p>
               </div>
             </div>
@@ -289,23 +277,23 @@ export default function CaseDiag() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-5.png"
-                    alt="Psiapp case"
+                    src="/images/img-diag-case-5.png"
+                    alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-6.png"
-                    alt="Psiapp case"
+                    src="/images/img-diag-case-6.png"
+                    alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
               </div>
               <div className="h-full">
                 <img
-                  src="/images/img-psiapp-case-7.png"
-                  alt="Psiapp case"
+                  src="/images/img-diag-case-7.png"
+                  alt="Diag case"
                   className="h-full w-full rounded-button object-cover"
                 />
               </div>
@@ -323,45 +311,36 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-white/70 lg:max-w-[70%]">
               <p>
-                O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso à saúde mental para milhares de pessoas e proporcionando aos psicólogos uma ferramenta profissional completa para gerenciar suas práticas.
+                O Diag se tornou uma ferramenta essencial para milhares de médicos brasileiros, otimizando consultas, reduzindo tempo de prescrição e oferecendo suporte diagnóstico baseado em evidências científicas atualizadas.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <div className="rounded-button border border-white/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-users fa-xl text-brand-orange"></i>
                 </div>
-                <div className="mb-2 text-4xl font-black text-white">100k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Pacientes</h3>
-                <p className="text-lg leading-relaxed text-white/70">Ativos na plataforma</p>
+                <div className="mb-2 text-4xl font-black text-white">15k+</div>
+                <h3 className="mb-2 text-xl font-black text-white">Médicos</h3>
+                <p className="text-lg leading-relaxed text-white/70">Cadastrados na plataforma</p>
               </div>
 
               <div className="rounded-button border border-white/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-star fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-plus fa-xl text-brand-orange"></i>
                 </div>
-                <div className="mb-2 text-4xl font-black text-white">4.8</div>
-                <h3 className="mb-2 text-xl font-black text-white">Avaliação</h3>
-                <p className="text-lg leading-relaxed text-white/70">Média nas app stores</p>
+                <div className="mb-2 text-4xl font-black text-white">10k+</div>
+                <h3 className="mb-2 text-xl font-black text-white">Receitas Médicas</h3>
+                <p className="text-lg leading-relaxed text-white/70">Geradas na plataforma</p>
               </div>
 
               <div className="rounded-button border border-white/10 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-user fa-xl text-brand-orange"></i>
+                  <i className="fa-jelly fa-clipboard fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">4k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Psicólogos</h3>
-                <p className="text-lg leading-relaxed text-white/70">Ativos na plataforma</p>
-              </div>
-
-              <div className="rounded-button border border-white/10 p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-arrow-right-arrow-left fa-xl text-brand-orange"></i>
-                </div>
-                <div className="mb-2 text-4xl font-black text-white">2.7mi+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Receita Gerada</h3>
-                <p className="text-lg leading-relaxed text-white/70">Para psicólogos na plataforma</p>
+                <h3 className="mb-2 text-xl font-black text-white">Prontuários Médicos</h3>
+                <p className="text-lg leading-relaxed text-white/70">Gerados na plataforma</p>
               </div>
             </div>
 
@@ -369,10 +348,10 @@ export default function CaseDiag() {
             <div className="mt-12 flex items-center justify-between gap-8">
               <div className="flex-1">
                 <h3 className="mb-6 text-3xl font-black text-white sm:text-4xl">
-                  Impacto Real na Saúde Mental
+                  Impacto Real na Saúde
                 </h3>
                 <p className="max-w-full text-xl leading-relaxed text-white/70 lg:max-w-3xl">
-                  O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso à saúde mental para milhares de pessoas e proporcionando aos psicólogos uma ferramenta profissional completa para gerenciar suas práticas.
+                  O Diag revolucionou a rotina de milhares de médicos brasileiros, permitindo que dediquem mais tempo aos pacientes e menos tempo com burocracia. A IA auxilia em diagnósticos mais precisos, reduzindo erros e aumentando a qualidade do atendimento médico.
                 </p>
               </div>
 
@@ -389,7 +368,7 @@ export default function CaseDiag() {
                     </defs>
                     <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                       <textPath href="#impactCircle" startOffset="0%">
-                        consultas · sessões · atendimentos · psicoterapia ·
+                        prontuários · receitas · diagnósticos · medicina ·
                       </textPath>
                     </text>
                   </svg>
@@ -397,9 +376,9 @@ export default function CaseDiag() {
 
                 {/* Center Content */}
                 <div className="relative z-10 text-center">
-                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">20k+</div>
-                  <div className="text-lg text-brand-orange">consultas</div>
-                  <div className="text-lg text-brand-orange">realizadas</div>
+                  <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">6k+</div>
+                  <div className="text-lg text-brand-orange">pacientes</div>
+                  <div className="text-lg text-brand-orange">atendidos</div>
                 </div>
               </div>
             </div>
@@ -417,7 +396,7 @@ export default function CaseDiag() {
                 <i className="fa-solid fa-quote-left fa-3x text-brand-orange"></i>
               </div>
               <blockquote className="text-3xl leading-tight text-dark sm:text-4xl">
-                "Ficou muito, muito bom! Eu adorei, não conseguiria pensar em algo melhor, ficou incrível, amei!"
+                "Sabe quando você encontra parceiros que realmente vestem a camisa junto com você? A Phurshell é exatamente isso. Uma empresa cheia de ideias impressionantes, com uma equipe batalhadora e extremamente dedicada, e o melhor: sempre disposta a ajudar de verdade."
               </blockquote>
             </div>
 
@@ -425,16 +404,16 @@ export default function CaseDiag() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/images/img-testimonial-psiapp.png"
-                  alt="Foto de Pamela Magalhães, Idealizadora do Psiapp"
+                  src="/images/img-testimonial-diag.png"
+                  alt="Foto de Amanda Martins, Fundadora do Diag"
                   width={80}
                   height={80}
                   className="h-full w-full object-cover"
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <h3 className="mb-1 text-xl font-black text-dark">Pamela Magalhães</h3>
-                <p className="text-base font-bold text-dark/70">Idealizadora</p>
+                <h3 className="mb-1 text-xl font-black text-dark">Amanda Bernardes</h3>
+                <p className="text-base font-bold text-dark/70">Fundadora do Diag</p>
               </div>
             </div>
           </div>

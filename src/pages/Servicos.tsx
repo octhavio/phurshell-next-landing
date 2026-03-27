@@ -6,237 +6,161 @@ export default function Servicos() {
   const serviceCategories = [
     {
       id: 'estrategia-produto-digital',
-      title: 'Estratégia & Produto Digital',
+      title: 'Estratégia de Produto Digital',
+      slug: 'estrategia-de-produto-digital',
       icon: 'compass',
+      description: 'Ajudamos você a transformar sua ideia em um produto digital com direção clara, validação de mercado e um plano de execução sólido.',
       services: [
         {
-          title: 'Estratégia de Produto',
-          slug: 'estrategia-de-produto',
-          icon: 'chart-line',
-          description:
-            'Planejamento estratégico completo para seu produto digital, alinhando objetivos de negócio com necessidades do mercado.',
-        },
-        {
           title: 'Discovery de Produto',
-          slug: 'discovery-de-produto',
           icon: 'magnifying-glass',
           description:
             'Processo estruturado de pesquisa e validação para entender profundamente seu mercado, usuários e oportunidades.',
         },
         {
           title: 'Validação de Ideia',
-          slug: 'validacao-de-ideia',
           icon: 'lightbulb',
           description:
             'Teste e valide sua ideia de negócio antes de investir em desenvolvimento completo, reduzindo riscos e aumentando chances de sucesso.',
         },
         {
-          title: 'Planejamento de Produto',
-          slug: 'planejamento-de-produto',
-          icon: 'clipboard-list',
-          description:
-            'Definição de roadmap, features e estratégia de desenvolvimento alinhada aos objetivos de negócio e expectativas dos usuários.',
-        },
-        {
           title: 'Definição de MVP',
-          slug: 'definicao-de-mvp',
           icon: 'rocket',
           description:
             'Identificação e validação das funcionalidades essenciais para lançar seu produto com máximo valor e mínimo investimento.',
         },
         {
+          title: 'Planejamento de Produto',
+          icon: 'clipboard-list',
+          description:
+            'Definição de roadmap, features e estratégia de desenvolvimento alinhada aos objetivos de negócio e expectativas dos usuários.',
+        },
+        {
           title: 'Roadmap de Produto',
-          slug: 'roadmap-de-produto',
           icon: 'map',
           description:
             'Planejamento estratégico de evolução do produto definindo prioridades, milestones e entrega de valor ao longo do tempo.',
         },
-        {
-          title: 'Consultoria Técnica',
-          slug: 'consultoria-tecnica',
-          icon: 'user-tie',
-          description:
-            'Orientação especializada em arquitetura, tecnologias e melhores práticas para garantir o sucesso técnico do seu projeto.',
-        },
-        {
-          title: 'Auditoria de Código',
-          slug: 'auditoria-de-codigo',
-          icon: 'file-code',
-          description:
-            'Análise profunda do código existente identificando problemas de performance, segurança e qualidade para melhorias contínuas.',
-        },
-        {
-          title: 'Modernização de Sistemas',
-          slug: 'modernizacao-de-sistemas',
-          icon: 'arrows-rotate',
-          description:
-            'Atualização de aplicações legadas para tecnologias modernas melhorando performance, manutenibilidade e experiência do usuário.',
-        },
       ],
     },
     {
-      id: 'estrategia-financas-crescimento',
-      title: 'Estratégia, Finanças e Crescimento para Startups',
-      icon: 'chart-line-up',
-      description: 'Mais do que desenvolver software, ajudamos a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
+      id: 'consultoria-startups',
+      title: 'Consultoria para Startups',
+      slug: 'consultoria-para-startups',
+      icon: 'chart-pie',
+      description: 'Mais do que software, ajudamos a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
       services: [
         {
-          title: 'Planejamento financeiro estratégico',
-          slug: 'planejamento-financeiro-estrategico',
+          title: 'Planejamento Financeiro Estratégico',
           icon: 'calculator',
           description:
             'Estruturação completa das finanças do negócio com foco em crescimento sustentável.',
         },
         {
-          title: 'Projeção de receita e cenários (forecast)',
-          slug: 'projecao-receita-cenarios',
+          title: 'Projeção de Receita e Cenários (Forecast)',
           icon: 'chart-mixed',
           description:
             'Modelagem de cenários otimista, realista e conservador para tomada de decisão.',
         },
         {
-          title: 'KPIs financeiros e estratégia orientada a dados',
-          slug: 'kpis-financeiros-estrategia-dados',
+          title: 'KPIs Financeiros e Métricas de Crescimento',
           icon: 'bullseye',
           description:
-            'Definição e acompanhamento de métricas como CAC, LTV, churn e margem para guiar decisões de crescimento.',
+            'Definição e acompanhamento de métricas como CAC, LTV, churn e margem para guiar decisões.',
         },
         {
-          title: 'Estruturação de fluxo de caixa',
-          slug: 'estruturacao-fluxo-caixa',
-          icon: 'money-bill-transfer',
-          description:
-            'Organização e previsão de entradas e saídas para evitar gargalos financeiros.',
-        },
-        {
-          title: 'Modelagem de negócios e monetização',
-          slug: 'modelagem-negocios-monetizacao',
+          title: 'Modelagem de Negócios e Monetização',
           icon: 'coins',
           description:
             'Definição de pricing, recorrência, planos e estratégias de receita.',
         },
         {
-          title: 'Captação de investimento e valuation',
-          slug: 'captacao-investimento-valuation',
+          title: 'Captação de Investimento e Valuation',
           icon: 'handshake',
           description:
             'Preparação financeira e construção de indicadores para conversas com investidores.',
         },
         {
-          title: 'Business plan e pitch para investidores',
-          slug: 'business-plan-pitch-investidores',
+          title: 'Business Plan e Pitch para Investidores',
           icon: 'presentation-screen',
           description:
             'Estruturação do plano de negócio e criação de pitch deck claro, objetivo e convincente.',
-        },
-        {
-          title: 'Mapeamento de riscos financeiros, contábeis e jurídicos',
-          slug: 'mapeamento-riscos',
-          icon: 'shield-exclamation',
-          description:
-            'Antecipação de problemas que podem travar crescimento ou investimento.',
-        },
-        {
-          title: 'Integração entre produto, tecnologia e modelo de negócio',
-          slug: 'integracao-produto-tecnologia-negocio',
-          icon: 'puzzle-piece',
-          description:
-            'Garantia de que o software está alinhado com os objetivos financeiros da empresa.',
         },
       ],
     },
     {
       id: 'design-produto-experiencia',
       title: 'Design de Produto & Experiência',
+      slug: 'design-de-produto-e-experiencia',
       icon: 'palette',
+      description: 'Criamos interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
       services: [
         {
-          title: 'UI Design',
-          slug: 'ui-design',
-          icon: 'paintbrush',
-          description:
-            'Design de interfaces visuais modernas e atraentes que refletem a identidade da sua marca e encantam usuários.',
-        },
-        {
           title: 'UX Design',
-          slug: 'ux-design',
           icon: 'users',
           description:
-            'Criação de experiências intuitivas e envolventes focadas nas necessidades reais dos usuários e melhores práticas de usabilidade.',
+            'Criação de experiências intuitivas e envolventes focadas nas necessidades reais dos usuários.',
         },
         {
-          title: 'Wireframes',
-          slug: 'wireframes',
+          title: 'UI Design',
+          icon: 'paintbrush',
+          description:
+            'Design de interfaces visuais modernas e atraentes que refletem a identidade da sua marca.',
+        },
+        {
+          title: 'Wireframes & Prototipação',
           icon: 'drafting-compass',
           description:
             'Estruturação visual e fluxos de navegação para validar ideias e arquitetura de informação antes do design final.',
         },
         {
           title: 'Design de Produto Digital',
-          slug: 'design-de-produto-digital',
           icon: 'palette',
           description:
             'Design completo de produtos digitais desde conceito até interface final, garantindo consistência e excelência visual.',
         },
         {
           title: 'Web Design',
-          slug: 'web-design',
           icon: 'desktop',
           description:
-            'Design visual de websites modernos e responsivos com foco em estética, usabilidade e conversão de visitantes.',
-        },
-        {
-          title: 'Design de Interfaces',
-          slug: 'design-de-interfaces',
-          icon: 'window-maximize',
-          description:
-            'Criação de interfaces intuitivas e funcionais que facilitam a interação do usuário com seu produto digital.',
+            'Design visual de websites modernos e responsivos com foco em estética, usabilidade e conversão.',
         },
       ],
     },
     {
       id: 'desenvolvimento-aplicativos',
       title: 'Desenvolvimento de Aplicativos',
+      slug: 'desenvolvimento-de-aplicativos',
       icon: 'mobile',
+      description: 'Aplicativos mobile completos para iOS e Android com design moderno, performance otimizada e experiência nativa de alta qualidade.',
+      hasPage: true,
       services: [
         {
-          title: 'Desenvolvimento de Aplicativos',
-          slug: 'desenvolvimento-de-aplicativos',
-          icon: 'mobile-screen-button',
-          description:
-            'Aplicativos mobile completos para iOS e Android com design moderno, performance otimizada e experiência nativa de alta qualidade.',
-        },
-        {
-          title: 'Desenvolvimento de Apps iOS',
-          slug: 'desenvolvimento-de-apps-ios',
+          title: 'Apps iOS',
           icon: 'apple',
           description:
             'Aplicativos nativos para iPhone e iPad com Swift e SwiftUI garantindo máxima performance e integração com ecossistema Apple.',
         },
         {
-          title: 'Desenvolvimento de Apps Android',
-          slug: 'desenvolvimento-de-apps-android',
+          title: 'Apps Android',
           icon: 'android',
           description:
-            'Aplicativos nativos para dispositivos Android com Kotlin oferecendo performance otimizada e acesso a recursos nativos da plataforma.',
+            'Aplicativos nativos para dispositivos Android com Kotlin oferecendo performance otimizada e acesso a recursos nativos.',
         },
         {
-          title: 'Desenvolvimento de Apps Híbridos',
-          slug: 'desenvolvimento-de-apps-hibridos',
+          title: 'Apps Híbridos',
           icon: 'layer-group',
           description:
             'Desenvolvimento cross-platform com React Native e Flutter para lançar em iOS e Android simultaneamente com código compartilhado.',
         },
         {
           title: 'Desenvolvimento de MVP',
-          slug: 'desenvolvimento-de-mvp',
           icon: 'rocket',
           description:
             'Desenvolvimento rápido de produtos mínimos viáveis para validar sua ideia no mercado com menor investimento e time-to-market.',
         },
         {
-          title: 'Desenvolvimento de Apps sob medida',
-          slug: 'desenvolvimento-de-apps-sob-medida',
+          title: 'Apps sob Medida',
           icon: 'wrench',
           description:
             'Aplicativos mobile customizados desenvolvidos especificamente para atender as necessidades únicas e complexas do seu negócio.',
@@ -244,118 +168,101 @@ export default function Servicos() {
       ],
     },
     {
-      id: 'desenvolvimento-software',
-      title: 'Desenvolvimento de Software',
-      icon: 'code',
+      id: 'desenvolvimento-web-saas',
+      title: 'Desenvolvimento Web & SaaS',
+      slug: 'desenvolvimento-web-e-saas',
+      icon: 'globe',
+      description: 'Plataformas web escaláveis e robustas utilizando as melhores tecnologias do mercado.',
       services: [
         {
           title: 'Desenvolvimento Web',
-          slug: 'desenvolvimento-web',
           icon: 'globe',
           description:
             'Plataformas web escaláveis e responsivas utilizando Next.js, React e as melhores práticas de desenvolvimento moderno.',
         },
         {
-          title: 'Desenvolvimento SaaS',
-          slug: 'desenvolvimento-saas',
+          title: 'Plataformas SaaS',
           icon: 'cloud',
           description:
             'Plataformas Software as a Service completas com multi-tenancy, billing, onboarding e infraestrutura escalável para crescimento.',
         },
         {
-          title: 'Desenvolvimento de E-commerce',
-          slug: 'desenvolvimento-de-ecommerce',
+          title: 'E-commerce',
           icon: 'cart-shopping',
           description:
-            'Plataformas de vendas online rápidas e escaláveis que melhoram a experiência do cliente e maximizam taxas de conversão.',
+            'Plataformas de vendas online rápidas e escaláveis que melhoram a experiência do cliente e maximizam conversão.',
         },
         {
-          title: 'Desenvolvimento de Software Customizado',
-          slug: 'desenvolvimento-de-software-customizado',
-          icon: 'gears',
+          title: 'Dashboards & Admin',
+          icon: 'chart-pie',
           description:
-            'Soluções sob medida desenvolvidas especificamente para atender as necessidades únicas e processos específicos do seu negócio.',
+            'Painéis administrativos completos e intuitivos para gestão de dados, métricas e operações do seu negócio em tempo real.',
         },
         {
           title: 'Soluções Enterprise',
-          slug: 'solucoes-enterprise',
           icon: 'building',
           description:
             'Sistemas corporativos robustos e escaláveis para grandes organizações com alta disponibilidade, segurança e compliance.',
         },
         {
-          title: 'Dashboards & Admin',
-          slug: 'dashboards-admin',
-          icon: 'chart-pie',
+          title: 'Software Customizado',
+          icon: 'gears',
           description:
-            'Painéis administrativos completos e intuitivos para gestão de dados, métricas e operações do seu negócio em tempo real.',
+            'Soluções sob medida desenvolvidas especificamente para atender necessidades únicas e processos específicos do seu negócio.',
         },
       ],
     },
     {
       id: 'engenharia-arquitetura-software',
       title: 'Engenharia & Arquitetura de Software',
+      slug: 'engenharia-e-arquitetura-de-software',
       icon: 'wrench',
+      description: 'Construímos a base técnica sólida que seus produtos precisam para escalar com segurança e performance.',
       services: [
         {
           title: 'Arquitetura de Software',
-          slug: 'arquitetura-de-software',
           icon: 'building-columns',
           description:
             'Definição de estrutura técnica, padrões e tecnologias para garantir escalabilidade, performance e manutenibilidade a longo prazo.',
         },
         {
           title: 'Backend',
-          slug: 'backend',
           icon: 'server',
           description:
             'Sistemas backend robustos e escaláveis com Node.js, Python ou Java para suportar suas aplicações com alta performance.',
         },
         {
           title: 'Frontend',
-          slug: 'frontend',
           icon: 'laptop-code',
           description:
             'Interfaces modernas e interativas com React, Vue ou Angular focadas em performance e experiência excepcional do usuário.',
         },
         {
-          title: 'APIs REST',
-          slug: 'apis-rest',
+          title: 'APIs REST & GraphQL',
           icon: 'plug',
           description:
-            'APIs RESTful robustas e escaláveis seguindo padrões REST para integração com qualquer plataforma ou serviço externo.',
-        },
-        {
-          title: 'GraphQL',
-          slug: 'graphql',
-          icon: 'code-branch',
-          description:
-            'APIs GraphQL flexíveis que permitem consultas precisas e reduzem o tráfego de dados desnecessário aumentando eficiência.',
+            'APIs robustas e escaláveis seguindo as melhores práticas para integração com qualquer plataforma ou serviço.',
         },
         {
           title: 'Microservices',
-          slug: 'microservices',
           icon: 'cubes',
           description:
-            'Arquiteturas modulares e escaláveis baseadas em microserviços que facilitam manutenção e permitem crescimento independente.',
+            'Arquiteturas modulares e escaláveis baseadas em microsserviços que facilitam crescimento independente.',
         },
         {
           title: 'Banco de Dados',
-          slug: 'banco-de-dados',
           icon: 'database',
           description:
-            'Modelagem e otimização de bancos de dados SQL e NoSQL para máxima performance, confiabilidade e integridade de dados.',
+            'Modelagem e otimização de bancos de dados SQL e NoSQL para máxima performance, confiabilidade e integridade.',
         },
         {
           title: 'Integrações de Sistemas',
-          slug: 'integracoes-de-sistemas',
           icon: 'arrows-left-right',
           description:
             'Conecte diferentes plataformas e serviços criando um ecossistema integrado e eficiente para seu negócio digital.',
         },
         {
           title: 'Autenticação & Segurança',
-          slug: 'autenticacao-seguranca',
           icon: 'lock',
           description:
             'Implementação de sistemas seguros de autenticação, autorização e proteção de dados sensíveis seguindo melhores práticas.',
@@ -365,32 +272,30 @@ export default function Servicos() {
     {
       id: 'cloud-devops',
       title: 'Cloud & DevOps',
+      slug: 'cloud-e-devops',
       icon: 'cloud',
+      description: 'Infraestrutura moderna e automatizada para que seus produtos rodem com alta disponibilidade e entregas contínuas.',
       services: [
         {
           title: 'Cloud Infrastructure',
-          slug: 'cloud-infrastructure',
           icon: 'cloud-arrow-up',
           description:
             'Infraestrutura escalável e resiliente na AWS, Google Cloud ou Azure para suportar seu crescimento com alta disponibilidade.',
         },
         {
           title: 'CI/CD Pipeline',
-          slug: 'ci-cd-pipeline',
           icon: 'gears',
           description:
             'Automação de deploy, testes e integração contínua garantindo entregas rápidas, confiáveis e sem downtime.',
         },
         {
           title: 'Containerização',
-          slug: 'containerizacao',
           icon: 'box',
           description:
             'Deploy com Docker e Kubernetes para garantir consistência entre ambientes, facilitar escalabilidade e portabilidade.',
         },
         {
           title: 'Monitoramento & Logs',
-          slug: 'monitoramento-logs',
           icon: 'chart-line',
           description:
             'Sistemas de observabilidade para monitorar performance, erros e comportamento da aplicação em tempo real com alertas.',
@@ -399,113 +304,145 @@ export default function Servicos() {
     },
     {
       id: 'qualidade-seguranca',
-      title: 'Qualidade & Segurança',
+      title: 'Qualidade de Software & Segurança',
+      slug: 'qualidade-de-software-e-seguranca',
       icon: 'shield',
+      description: 'Garantimos que seu produto funcione com excelência, segurança e confiabilidade em qualquer cenário.',
       services: [
         {
           title: 'Testes Automatizados',
-          slug: 'testes-automatizados',
           icon: 'vial-circle-check',
           description:
             'Suite completa de testes automatizados (unitários, integração, E2E) garantindo qualidade e confiabilidade contínua do código.',
         },
         {
           title: 'QA & Software Testing',
-          slug: 'qa-software-testing',
           icon: 'check-double',
           description:
             'Garantia de qualidade abrangente com testes manuais e automatizados para identificar bugs e garantir excelência do produto.',
         },
         {
           title: 'Testes de Performance',
-          slug: 'testes-de-performance',
           icon: 'gauge-high',
           description:
             'Análise e otimização de performance com testes de carga, stress e escalabilidade para garantir resposta rápida sob demanda.',
         },
         {
+          title: 'Auditoria de Código',
+          icon: 'file-code',
+          description:
+            'Análise profunda do código existente identificando problemas de performance, segurança e qualidade para melhorias contínuas.',
+        },
+        {
           title: 'Cyber Segurança',
-          slug: 'cyber-seguranca',
           icon: 'shield-halved',
           description:
-            'Proteção completa contra ameaças digitais com auditoria de segurança, pentesting e implementação de melhores práticas de segurança.',
+            'Proteção completa contra ameaças digitais com auditoria de segurança, pentesting e implementação de melhores práticas.',
         },
       ],
     },
     {
-      id: 'inteligencia-artificial-tecnologias',
-      title: 'Inteligência Artificial & Tecnologias Avançadas',
+      id: 'inteligencia-artificial-automacao',
+      title: 'Inteligência Artificial & Automação',
+      slug: 'inteligencia-artificial-e-automacao',
       icon: 'sparkles',
+      description: 'Soluções inteligentes que automatizam processos, geram insights e criam experiências personalizadas para seus usuários.',
       services: [
         {
-          title: 'Inteligência Artificial',
-          slug: 'inteligencia-artificial',
+          title: 'Implementação de IA',
           icon: 'brain',
           description:
-            'Implementação de soluções de IA para automação inteligente, análise preditiva e tomada de decisões baseada em dados.',
+            'Soluções de IA para automação inteligente, análise preditiva e tomada de decisões baseada em dados.',
         },
         {
           title: 'Machine Learning',
-          slug: 'machine-learning',
           icon: 'robot',
           description:
             'Modelos de Machine Learning customizados para reconhecimento de padrões, previsões e otimização de processos de negócio.',
         },
         {
-          title: 'Blockchain & Smart Contracts',
-          slug: 'blockchain-smart-contracts',
-          icon: 'link',
+          title: 'Chatbots Inteligentes',
+          icon: 'comments',
           description:
-            'Desenvolvimento de soluções blockchain e contratos inteligentes para automação, transparência e segurança de transações.',
+            'Chatbots com IA para automatizar atendimento, melhorar engajamento e otimizar suporte ao cliente 24/7.',
+        },
+        {
+          title: 'Automação de Processos',
+          icon: 'arrows-rotate',
+          description:
+            'Automatize tarefas repetitivas e fluxos de trabalho com inteligência artificial, aumentando eficiência e reduzindo custos.',
+        },
+      ],
+    },
+    {
+      id: 'blockchain-web3',
+      title: 'Blockchain & Web3',
+      slug: 'blockchain-e-web3',
+      icon: 'link',
+      description: 'Desenvolvimento de soluções descentralizadas e contratos inteligentes para transparência e segurança nas transações.',
+      services: [
+        {
+          title: 'Smart Contracts',
+          icon: 'file-contract',
+          description:
+            'Desenvolvimento e auditoria de contratos inteligentes para automação segura de transações e regras de negócio.',
+        },
+        {
+          title: 'Aplicações Descentralizadas (dApps)',
+          icon: 'network-wired',
+          description:
+            'Criação de aplicações Web3 com integração a blockchains e carteiras digitais.',
+        },
+        {
+          title: 'Tokenização & NFTs',
+          icon: 'coins',
+          description:
+            'Soluções de tokenização de ativos e criação de NFTs para novos modelos de negócio e engajamento.',
         },
       ],
     },
     {
       id: 'solucoes-digitais-negocios',
       title: 'Soluções Digitais para Negócios',
+      slug: 'solucoes-digitais-para-negocios',
       icon: 'suitcase',
+      description: 'Sistemas e ferramentas que modernizam operações, melhoram a gestão e impulsionam resultados do seu negócio.',
       services: [
         {
           title: 'Transformação Digital',
-          slug: 'transformacao-digital',
           icon: 'arrow-trend-up',
           description:
             'Modernize seus processos de negócio com tecnologias digitais que aumentam eficiência, produtividade e competitividade.',
         },
         {
-          title: 'ERP Development',
-          slug: 'erp-development',
+          title: 'ERP',
           icon: 'diagram-project',
           description:
             'Sistemas ERP integrados para gerenciar e otimizar processos core do negócio em toda sua organização com eficiência.',
         },
         {
           title: 'CRM',
-          slug: 'crm',
           icon: 'address-book',
           description:
             'Soluções de Customer Relationship Management para gerenciar interações com clientes, impulsionar vendas e fidelização.',
         },
         {
           title: 'CMS',
-          slug: 'cms',
           icon: 'file-lines',
           description:
             'Sistemas customizáveis de gestão de conteúdo para simplificar criação, gerenciamento e modificação de conteúdo web.',
         },
         {
-          title: 'Chatbots',
-          slug: 'chatbots',
-          icon: 'comments',
-          description:
-            'Chatbots inteligentes com IA para automatizar atendimento, melhorar engajamento e otimizar suporte ao cliente 24/7.',
-        },
-        {
           title: 'Business Intelligence',
-          slug: 'business-intelligence',
           icon: 'chart-column',
           description:
-            'Análise avançada de dados e dashboards interativos para decisões de negócio informadas e crescimento estratégico baseado em insights.',
+            'Análise avançada de dados e dashboards interativos para decisões de negócio informadas e crescimento estratégico.',
+        },
+        {
+          title: 'Modernização de Sistemas',
+          icon: 'arrows-rotate',
+          description:
+            'Atualização de aplicações legadas para tecnologias modernas melhorando performance, manutenibilidade e experiência do usuário.',
         },
       ],
     },
@@ -604,6 +541,11 @@ export default function Servicos() {
                 <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
                   {category.title}
                 </h2>
+                {category.hasPage && (
+                  <span className="rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold text-brand-orange">
+                    Mais procurado
+                  </span>
+                )}
               </div>
               {category.description && (
                 <p className="max-w-4xl text-xl leading-relaxed text-dark/70">
@@ -615,51 +557,35 @@ export default function Servicos() {
             {/* Services Grid */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => {
-                const hasPage = service.slug === 'desenvolvimento-de-aplicativos'
-                const linkUrl = hasPage ? `/servicos/${service.slug}` : '#'
-
                 return (
-                  <div
+                  <TransitionLink
                     key={service.title}
-                    className="group flex h-full flex-col rounded-button bg-white p-8 cursor-pointer"
+                    href={`/servicos/${category.slug}`}
+                    className="group flex h-full flex-col rounded-button bg-white p-8 transition-all duration-200 hover:shadow-lg"
                   >
-                    {hasPage ? (
-                      <TransitionLink href={linkUrl} className="flex h-full flex-col">
-                        <div className="mb-3 flex items-center gap-3">
-                          <i className={`${service.icon === 'apple' || service.icon === 'android' ? 'fa-brands' : 'fa-solid'} fa-${service.icon} text-xl text-dark`}></i>
-                          <h3 className="text-xl font-black text-dark">
-                            {service.title}
-                          </h3>
-                        </div>
-                        <p className="mb-4 flex-grow text-xl leading-relaxed text-dark/60">
-                          {service.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="inline-flex items-center gap-2 text-xl font-bold text-dark/60 transition-colors group-hover:text-brand-orange">
-                            Ver mais
-                            <i className="fa-solid fa-arrow-right opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"></i>
-                          </span>
-                          <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-sm font-bold text-brand-orange">
-                            Mais procurado
-                          </span>
-                        </div>
-                      </TransitionLink>
-                    ) : (
-                      <>
-                        <div className="mb-3 flex items-center gap-3">
-                          <i className={`${service.icon === 'apple' || service.icon === 'android' ? 'fa-brands' : 'fa-solid'} fa-${service.icon} text-xl text-dark`}></i>
-                          <h3 className="text-xl font-black text-dark">
-                            {service.title}
-                          </h3>
-                        </div>
-                        <p className="flex-grow text-xl leading-relaxed text-dark/60">
-                          {service.description}
-                        </p>
-                      </>
-                    )}
-                  </div>
+                    <div className="mb-3 flex items-center gap-3">
+                      <i className={`${service.icon === 'apple' || service.icon === 'android' ? 'fa-brands' : 'fa-solid'} fa-${service.icon} text-xl text-dark transition-colors duration-200 group-hover:text-brand-orange`}></i>
+                      <h3 className="text-xl font-black text-dark transition-colors duration-200 group-hover:text-brand-orange">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="flex-grow text-xl leading-relaxed text-dark/60">
+                      {service.description}
+                    </p>
+                  </TransitionLink>
                 )
               })}
+            </div>
+
+            {/* Ver todos button */}
+            <div className="mt-6">
+              <TransitionLink
+                href={`/servicos/${category.slug}`}
+                className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+              >
+                Conhecer mais
+                <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+              </TransitionLink>
             </div>
           </div>
         </section>

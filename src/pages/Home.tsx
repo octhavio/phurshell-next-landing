@@ -97,126 +97,187 @@ export default function Home() {
 
   const services = [
     {
-      title: 'Descoberta de Produto',
-      description:
-        'Antes de escrever uma linha de código, mergulhamos no seu negócio para entender desafios, oportunidades e objetivos. Definimos juntos a estratégia técnica e funcional do produto, estruturando o escopo do MVP, escolhendo a arquitetura ideal, mapeando integrações necessárias e criando um roadmap realista de desenvolvimento. Esse processo evita retrabalho, reduz riscos e garante que o produto seja construído da forma certa desde o início.',
-      icon: 'lightbulb',
+      title: 'Consultoria para Startups',
+      description: 'Mais do que software, ajudamos a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
+      longDescription: 'Ajudamos fundadores a transformar ideias em negócios estruturados e prontos para escalar. Nosso trabalho vai além do software: construímos junto o planejamento financeiro, a modelagem de receita e a estratégia de captação. Cada decisão é orientada por dados e métricas reais — de CAC e LTV até projeções de cenários. O resultado é uma startup com base sólida, pitch afiado e clareza para crescer.',
+      icon: 'chart-pie',
       iconType: 'fa-jelly',
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=800&fit=crop',
-      cards: [
+      slug: 'consultoria-para-startups',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=800&fit=crop',
+      services: [
         {
-          title: 'Definição de MVP',
-          description: 'Escopo mínimo viável para validar a ideia com usuários reais.',
-          icon: 'flag',
-          iconType: 'jelly',
+          title: 'Planejamento Financeiro Estratégico',
+          description: 'Estruturação financeira com foco em crescimento sustentável.',
+          icon: 'calculator',
         },
         {
-          title: 'Arquitetura Técnica',
-          description: 'Escolha das tecnologias e estrutura do sistema.',
-          icon: 'city',
-          iconType: 'jelly',
+          title: 'Projeção de Receita e Cenários',
+          description: 'Modelagem otimista, realista e conservadora para tomada de decisão.',
+          icon: 'chart-mixed',
         },
         {
-          title: 'Roadmap de Produto',
-          description: 'Planejamento de entregas e evolução do produto.',
-          icon: 'map',
-          iconType: 'jelly',
+          title: 'KPIs e Métricas de Crescimento',
+          description: 'Acompanhamento de CAC, LTV, churn e margem.',
+          icon: 'bullseye',
+        },
+        {
+          title: 'Modelagem de Negócios e Monetização',
+          description: 'Definição de pricing, recorrência e estratégias de receita.',
+          icon: 'coins',
+        },
+        {
+          title: 'Captação de Investimento e Valuation',
+          description: 'Preparação financeira para conversas com investidores.',
+          icon: 'handshake',
+        },
+        {
+          title: 'Business Plan e Pitch Deck',
+          description: 'Plano de negócio claro e pitch convincente.',
+          icon: 'presentation-screen',
         },
       ],
     },
     {
-      title: 'UX/UI para Aplicativos',
-      description:
-        'Desenhamos interfaces que seus usuários vão adorar usar. Nosso processo começa com pesquisa e mapeamento de jornadas, passa por wireframes interativos e evolui para um design system completo e responsivo. Cada tela é pensada para resolver problemas reais, facilitar tarefas e criar experiências memoráveis — seja no mobile ou web. O resultado é um produto bonito, funcional e que converte usuários em fãs.',
+      title: 'Design de Produto & Experiência',
+      description: 'Criamos interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
+      longDescription: 'Desenhamos interfaces que seus usuários vão adorar usar. Nosso processo começa com pesquisa e mapeamento de jornadas, passa por wireframes interativos e evolui para um design system completo e responsivo. Cada tela é pensada para resolver problemas reais, facilitar tarefas e criar experiências memoráveis — seja no mobile ou web. O resultado é um produto bonito, funcional e que converte usuários em fãs.',
       icon: 'palette',
       iconType: 'fa-jelly',
+      slug: 'design-de-produto-e-experiencia',
       image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=800&fit=crop',
-      cards: [
+      services: [
         {
-          title: 'Wireframes',
-          description: 'Protótipos interativos de baixa e alta fidelidade.',
-          icon: 'sidebar',
-          iconType: 'jelly',
-        },
-        {
-          title: 'Design System',
-          description: 'Biblioteca de componentes e padrões visuais.',
-          icon: 'sliders',
-          iconType: 'jelly',
+          title: 'UX Design',
+          description: 'Experiências intuitivas focadas nas necessidades reais dos usuários.',
+          icon: 'users',
         },
         {
           title: 'UI Design',
-          description: 'Interface visual responsiva para mobile e web.',
-          icon: 'mobile',
-          iconType: 'jelly',
+          description: 'Interfaces visuais modernas que refletem a identidade da sua marca.',
+          icon: 'paintbrush',
+        },
+        {
+          title: 'Wireframes & Prototipação',
+          description: 'Fluxos de navegação para validar ideias antes do design final.',
+          icon: 'drafting-compass',
+        },
+        {
+          title: 'Design de Produto Digital',
+          description: 'Design completo do conceito à interface final.',
+          icon: 'palette',
+        },
+        {
+          title: 'Web Design',
+          description: 'Websites modernos e responsivos focados em conversão.',
+          icon: 'desktop',
         },
       ],
     },
     {
-      title: 'Desenvolvimento de Apps',
-      description:
-        'Transformamos design em código de alta qualidade. Desenvolvemos aplicativos nativos iOS e Android, apps React Native para lançamento multiplataforma, e plataformas web modernas com Next.js ou React. Nosso código é limpo, escalável e preparado para crescer junto com seu negócio. Cuidamos de toda infraestrutura cloud, integrações com APIs externas, autenticação, pagamentos e tudo mais que seu produto precisar para operar em produção.',
-      icon: 'code',
+      title: 'Desenvolvimento de Aplicativos',
+      description: 'Aplicativos mobile completos para iOS e Android com design moderno, performance otimizada e experiência nativa de alta qualidade.',
+      longDescription: 'Criamos aplicativos mobile completos que seus usuários vão querer abrir todo dia. Do conceito ao deploy nas stores, cuidamos de cada detalhe: arquitetura robusta, interface fluida, performance nativa e integração com APIs e serviços externos. Trabalhamos com iOS, Android e soluções híbridas — sempre priorizando qualidade, escalabilidade e a melhor experiência para o usuário final.',
+      icon: 'mobile',
       iconType: 'fa-jelly',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=800&fit=crop',
-      cards: [
+      slug: 'desenvolvimento-de-aplicativos',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=800&fit=crop',
+      services: [
         {
-          title: 'iOS',
-          description: 'Apps nativos para iPhone e iPad com integração completa ao ecossistema Apple.',
+          title: 'Apps iOS',
+          description: 'Aplicativos nativos com Swift e SwiftUI para iPhone e iPad.',
           icon: 'apple',
-          iconType: 'brands',
         },
         {
-          title: 'Android',
-          description: 'Apps nativos otimizados para a diversidade de dispositivos Android.',
+          title: 'Apps Android',
+          description: 'Aplicativos nativos com Kotlin para dispositivos Android.',
           icon: 'android',
-          iconType: 'brands',
         },
         {
-          title: 'Web',
-          description: 'Plataformas web responsivas e dashboards interativos.',
-          icon: 'desktop',
-          iconType: 'jelly',
+          title: 'Apps Híbridos',
+          description: 'Cross-platform com React Native e Flutter para iOS e Android.',
+          icon: 'layer-group',
         },
         {
-          title: 'PWA',
-          description: 'Apps web progressivos com capacidade de instalação.',
-          icon: 'mobile',
-          iconType: 'jelly',
+          title: 'Desenvolvimento de MVP',
+          description: 'Produtos mínimos viáveis para validar sua ideia rapidamente.',
+          icon: 'rocket',
+        },
+        {
+          title: 'Apps sob Medida',
+          description: 'Soluções mobile customizadas para necessidades complexas.',
+          icon: 'wrench',
         },
       ],
     },
     {
-      title: 'Evolução e Suporte de Produto',
-      description:
-        'O lançamento é só o começo. Continuamos ao lado do seu produto, monitorando performance, corrigindo bugs, otimizando funcionalidades e desenvolvendo novas features baseadas no feedback dos usuários. Oferecemos suporte técnico dedicado, atualizações de segurança, melhorias de performance e ajustes para garantir que seu app evolua junto com as necessidades do mercado e dos seus clientes.',
-      icon: 'arrows-rotate',
+      title: 'Desenvolvimento Web & SaaS',
+      description: 'Plataformas web escaláveis e robustas utilizando as melhores tecnologias do mercado.',
+      longDescription: 'Construímos plataformas web que escalam junto com o seu negócio. De landing pages a sistemas SaaS completos com multi-tenancy e billing, usamos as tecnologias mais modernas do mercado para entregar performance, segurança e uma experiência impecável. Seja um e-commerce, um dashboard administrativo ou uma solução enterprise — entregamos código limpo, arquitetura sólida e produto pronto para crescer.',
+      icon: 'globe',
       iconType: 'fa-jelly',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=800&fit=crop',
-      cards: [
+      slug: 'desenvolvimento-web-e-saas',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=800&fit=crop',
+      services: [
         {
-          title: 'Monitoramento',
-          description: 'Análise contínua de performance e comportamento dos usuários.',
-          icon: 'desktop',
-          iconType: 'jelly',
+          title: 'Desenvolvimento Web',
+          description: 'Plataformas escaláveis com Next.js e React.',
+          icon: 'globe',
         },
         {
-          title: 'Correção de Bugs',
-          description: 'Identificação e resolução rápida de problemas técnicos.',
-          icon: 'bug',
-          iconType: 'jelly',
+          title: 'Plataformas SaaS',
+          description: 'Sistemas completos com multi-tenancy, billing e onboarding.',
+          icon: 'cloud',
         },
         {
-          title: 'Novas Funcionalidades',
-          description: 'Desenvolvimento de features baseadas em feedback.',
-          icon: 'sparkles',
-          iconType: 'jelly',
+          title: 'E-commerce',
+          description: 'Lojas online rápidas que maximizam conversão.',
+          icon: 'cart-shopping',
         },
         {
-          title: 'Atualizações',
-          description: 'Manutenção de segurança e compatibilidade do sistema.',
-          icon: 'bell',
-          iconType: 'jelly',
+          title: 'Dashboards & Admin',
+          description: 'Painéis intuitivos para gestão de dados em tempo real.',
+          icon: 'chart-pie',
+        },
+        {
+          title: 'Soluções Enterprise',
+          description: 'Sistemas corporativos robustos e escaláveis.',
+          icon: 'building',
+        },
+        {
+          title: 'Software Customizado',
+          description: 'Soluções sob medida para processos específicos.',
+          icon: 'gears',
+        },
+      ],
+    },
+    {
+      title: 'Inteligência Artificial & Automação',
+      description: 'Soluções inteligentes que automatizam processos, geram insights e criam experiências personalizadas para seus usuários.',
+      longDescription: 'Integramos inteligência artificial nos seus produtos e processos para gerar resultados reais. De chatbots inteligentes que atendem seus clientes 24/7 a modelos de machine learning que identificam padrões e otimizam operações — transformamos dados em decisões e tarefas manuais em fluxos automatizados. O resultado é mais eficiência, menos custo e uma experiência personalizada para cada usuário.',
+      icon: 'sparkles',
+      iconType: 'fa-jelly',
+      slug: 'inteligencia-artificial-e-automacao',
+      image: 'https://images.unsplash.com/photo-1714036838363-f678d928915b?w=600&h=800&fit=crop',
+      services: [
+        {
+          title: 'Implementação de IA',
+          description: 'Automação inteligente e análise preditiva baseada em dados.',
+          icon: 'brain',
+        },
+        {
+          title: 'Machine Learning',
+          description: 'Modelos customizados para reconhecimento de padrões e previsões.',
+          icon: 'robot',
+        },
+        {
+          title: 'Chatbots Inteligentes',
+          description: 'Atendimento automatizado com IA 24/7.',
+          icon: 'comments',
+        },
+        {
+          title: 'Automação de Processos',
+          description: 'Automatização de tarefas repetitivas e fluxos de trabalho.',
+          icon: 'arrows-rotate',
         },
       ],
     },
@@ -377,47 +438,52 @@ export default function Home() {
 
                 {/* Accordion Content - Expandable */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ${
-                    expandedService === index ? 'max-h-[1000px] pb-12' : 'max-h-0'
+                  className={`overflow-hidden transition-all duration-300 ${
+                    expandedService === index ? 'max-h-[2000px] pb-12' : 'max-h-0'
                   }`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 pr-8">
-                    {/* Left Column - Text Content */}
+                  <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
+                    {/* Left Column - Text & Cards */}
                     <div>
-                      <p className="text-lg leading-relaxed text-dark/70 mb-8">
-                        {service.description}{' '}
-                        <TransitionLink
-                          href={index === 2 ? '/servicos/desenvolvimento-de-aplicativos' : '#'}
-                          className="text-base font-bold text-brand-orange"
-                        >
-                          Ver mais
-                        </TransitionLink>
+                      {/* Long Description */}
+                      <p className="text-lg leading-relaxed text-dark/70 mb-6">
+                        {service.longDescription}
                       </p>
 
-                      {/* Service Cards - Only for Desenvolvimento de Apps */}
-                      {service.cards && (
-                        <>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {service.cards.map((card: any, cardIndex: number) => (
-                              <div
-                                key={cardIndex}
-                                className="rounded-button border border-dark/10 bg-white p-4"
-                              >
-                                <div className="flex items-center gap-3 mb-3">
-                                  <i className={`fa-${card.iconType} fa-${card.icon} fa-xl text-brand-orange`}></i>
-                                  <h4 className="text-lg font-black text-dark">{card.title}</h4>
+                      {/* Conhecer mais link */}
+                      <div className="mb-8">
+                        <TransitionLink
+                          href={`/servicos/${service.slug}`}
+                          className="group inline-flex items-center gap-2 text-base font-bold text-brand-orange hover:text-brand-orange-light transition-colors"
+                        >
+                          Conhecer mais
+                          <i className="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                        </TransitionLink>
+                      </div>
+
+                      {/* Services Cards - Horizontal Grid */}
+                      {service.services && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {service.services.map((item: any, itemIndex: number) => (
+                            <div
+                              key={itemIndex}
+                              className="rounded-button border border-dark/10 bg-white p-4"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                  <i className={`${item.icon === 'apple' || item.icon === 'android' ? 'fa-brands' : 'fa-solid'} fa-${item.icon} text-dark text-sm`}></i>
                                 </div>
-                                <p className="text-lg leading-relaxed text-dark/60">{card.description}</p>
+                                <h4 className="text-base font-bold text-dark">{item.title}</h4>
                               </div>
-                            ))}
-                          </div>
-                        </>
+                            </div>
+                          ))}
+                        </div>
                       )}
                     </div>
 
                     {/* Right Column - Image */}
                     <div className="hidden lg:block">
-                      <div className="relative h-full min-h-[300px] overflow-hidden rounded-button">
+                      <div className="relative h-full min-h-[400px] overflow-hidden rounded-button">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -429,6 +495,19 @@ export default function Home() {
                 </div>
               </div>
             ))}
+
+            {/* Last item - Link to all services (not accordion) */}
+            <div>
+              <TransitionLink
+                href="/servicos"
+                className="group inline-flex items-center gap-3 py-8 transition-colors"
+              >
+                <h3 className="text-xl font-black text-brand-orange group-hover:text-brand-orange-light sm:text-2xl transition-colors">
+                  Conhecer todos os serviços
+                </h3>
+                <i className="fa-solid fa-arrow-right text-xl text-brand-orange group-hover:text-brand-orange-light transition-all duration-200 group-hover:translate-x-1"></i>
+              </TransitionLink>
+            </div>
           </div>
         </div>
       </section>
@@ -527,75 +606,79 @@ export default function Home() {
                       </div>
                     </TransitionLink>
                   ) : index === 2 ? (
-                    <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
-                      {/* Logo */}
-                      <img
-                        src="/images/img-home-icon-autoday.png"
-                        alt="Autoday"
-                        width={120}
-                        height={40}
-                        className="h-auto relative z-10"
-                      />
-
-                      {/* Title and Description with reduced spacing */}
-                      <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
-                        {/* Title */}
-                        <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
-                          Seguro de carro sob demanda e mais acessível
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
-                          MVP de insurtech que revolucionou o mercado com seguro intermitente — você paga apenas pelos dias que usar o veículo.
-                        </p>
-                      </div>
-
-                      {/* Screenshot - Positioned at bottom with hover scale effect */}
-                      <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                    <TransitionLink href="/cases/autoday" className="block" style={{ cursor: 'none' }}>
+                      <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
+                        {/* Logo */}
                         <img
-                          src="/images/img-home-case-autoday.png"
-                          alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
-                          width={800}
-                          height={600}
-                          className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                          src="/images/img-home-icon-autoday.png"
+                          alt="Autoday"
+                          width={120}
+                          height={40}
+                          className="h-auto relative z-10"
                         />
+
+                        {/* Title and Description with reduced spacing */}
+                        <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
+                          {/* Title */}
+                          <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                            Seguro de carro sob demanda e mais acessível
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
+                            MVP de insurtech que revolucionou o mercado com seguro intermitente — você paga apenas pelos dias que usar o veículo.
+                          </p>
+                        </div>
+
+                        {/* Screenshot - Positioned at bottom with hover scale effect */}
+                        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                          <img
+                            src="/images/img-home-case-autoday.png"
+                            alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
+                            width={800}
+                            height={600}
+                            className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </TransitionLink>
                   ) : (
-                    <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
-                      {/* Logo */}
-                      <img
-                        src="/images/img-home-icon-diag.png"
-                        alt={caseItem.name}
-                        width={120}
-                        height={40}
-                        className="h-auto relative z-10"
-                      />
-
-                      {/* Title and Description with reduced spacing */}
-                      <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
-                        {/* Title */}
-                        <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
-                          Aplicativo de gestão clínica para médicos
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
-                          Plataforma completa de gestão de saúde com geração de prontuários e receitas médicas, chat com IA para suporte diagnóstico.
-                        </p>
-                      </div>
-
-                      {/* Screenshot - Positioned at bottom with hover scale effect */}
-                      <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                    <TransitionLink href="/cases/diag" className="block" style={{ cursor: 'none' }}>
+                      <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
+                        {/* Logo */}
                         <img
-                          src="/images/img-home-case-diag.png"
-                          alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
-                          width={800}
-                          height={600}
-                          className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                          src="/images/img-home-icon-diag.png"
+                          alt={caseItem.name}
+                          width={120}
+                          height={40}
+                          className="h-auto relative z-10"
                         />
+
+                        {/* Title and Description with reduced spacing */}
+                        <div className="flex flex-col items-center gap-3 relative z-10 mb-2">
+                          {/* Title */}
+                          <h3 className="text-3xl font-black leading-tight text-white sm:text-4xl">
+                            Aplicativo de gestão clínica para médicos
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-xl leading-relaxed text-white/90 max-w-2xl line-clamp-2">
+                            Plataforma completa de gestão de saúde com geração de prontuários e receitas médicas, chat com IA para suporte diagnóstico.
+                          </p>
+                        </div>
+
+                        {/* Screenshot - Positioned at bottom with hover scale effect */}
+                        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
+                          <img
+                            src="/images/img-home-case-diag.png"
+                            alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
+                            width={800}
+                            height={600}
+                            className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </TransitionLink>
                   )
                 ) : (
                   // Other cards - Original horizontal layout
