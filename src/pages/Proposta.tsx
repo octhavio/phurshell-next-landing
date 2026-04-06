@@ -15,6 +15,7 @@ interface PropostaProject {
   deadline: string
   value: number
   maintenance: number
+  maintenance_hours: number | null
   infrastructure: number | null
 }
 
@@ -608,7 +609,11 @@ export default function Proposta() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-bold text-dark">Manutenção Contínua</p>
-                  <p className="text-sm text-gray-500">Suporte, correções e melhorias</p>
+                  <p className="text-sm text-gray-500">
+                    {proposta.project.maintenance_hours
+                      ? `${proposta.project.maintenance_hours}h de suporte, correções e melhorias`
+                      : 'Suporte, correções e melhorias'}
+                  </p>
                 </div>
                 <p className="text-xl font-black text-dark">
                   {formatCurrency(proposta.project.maintenance)}<span className="text-sm font-bold text-gray-500">/mês</span>
