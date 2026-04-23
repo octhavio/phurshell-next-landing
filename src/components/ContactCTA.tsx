@@ -2,7 +2,7 @@ import TransitionLink from './TransitionLink'
 
 export default function ContactCTA() {
   return (
-    <section className="bg-white py-12">
+    <section id="contato" className="bg-white py-12">
       <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
         {/* Card Container */}
         <div className="rounded-button bg-brand-orange/10 p-8 shadow-sm sm:p-12 lg:p-16">
