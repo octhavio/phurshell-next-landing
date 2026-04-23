@@ -716,7 +716,10 @@ export default function PropostaClientComponent() {
               className="mx-auto mb-4 h-8 w-auto"
             />
             <p className="text-sm text-gray-500">
-              {new Date().getFullYear()} Phurshell. Todos os direitos reservados.
+              © {new Date().getFullYear()} Phurshell. Todos os direitos reservados.
+            </p>
+            <p className="mt-2 text-xs text-gray-400">
+              PHURSHELL DESENVOLVIMENTO DE SITES E APLICATIVOS LTDA - CNPJ 26.689.276/0001-12
             </p>
           </footer>
         </div>
