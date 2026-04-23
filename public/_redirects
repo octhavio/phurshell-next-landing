@@ -1,3 +1,6 @@
+# SPA fallback para rotas dinâmicas
+/propostas/*    /propostas/index.html    200
+
 # Redirecionamentos permanentes (301) para SEO
 # Todas as rotas redirecionam para /servicos/desenvolvimento-de-apps
 

@@ -7,6 +7,10 @@
   },
   "RoutingRules": [
     {
+      "Condition": { "KeyPrefixEquals": "propostas/", "HttpErrorCodeReturnedEquals": "404" },
+      "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyPrefixWith": "propostas/?code=", "HttpRedirectCode": "302" }
+    },
+    {
       "Condition": { "KeyPrefixEquals": "desenvolvimento-de-aplicativos" },
       "Redirect": { "HostName": "phurshell.com", "Protocol": "https", "ReplaceKeyWith": "servicos/desenvolvimento-de-apps", "HttpRedirectCode": "301" }
     },
