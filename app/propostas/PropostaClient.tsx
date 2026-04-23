@@ -119,12 +119,14 @@ export default function PropostaClientComponent() {
 
   // Extract code from query param (?code=AP0HQV)
   const code = searchParams?.get('code')
-  const hasCode = !!code
 
   // Fetch proposta data from API
   useEffect(() => {
+    // Wait for searchParams to be available
+    if (searchParams === null) return
+
     const fetchProposta = async () => {
-      if (!hasCode) {
+      if (!code) {
         setError('Código da proposta não informado')
         setLoading(false)
         return
@@ -147,7 +149,7 @@ export default function PropostaClientComponent() {
     }
 
     fetchProposta()
-  }, [hasCode, code])
+  }, [searchParams, code])
 
   // Scroll spy
   useEffect(() => {
