@@ -30,7 +30,7 @@ interface PropostaData {
   code: string
   client: PropostaClient
   project: PropostaProject
-  created_date: string
+  created_at: string
   validity_days: number
   scope: PropostaScope[]
 }
@@ -193,13 +193,13 @@ export default function PropostaClientComponent() {
   }
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString + 'T00:00:00')
+    const date = new Date(dateString)
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
   }
 
   const getValidityDate = () => {
     if (!proposta) return ''
-    const createdDate = new Date(proposta.created_date + 'T00:00:00')
+    const createdDate = new Date(proposta.created_at)
     const validityDate = new Date(createdDate.getTime() + proposta.validity_days * 24 * 60 * 60 * 1000)
     return validityDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
   }
@@ -280,7 +280,7 @@ export default function PropostaClientComponent() {
         {/* Date Info - Bottom */}
         <div className="border-t border-gray-100 px-6 py-4">
           <div className="space-y-1 text-xs text-gray-400">
-            <p>Gerada em {formatDate(proposta.created_date)}</p>
+            <p>Gerada em {formatDate(proposta.created_at)}</p>
             <p>Válida até <span className="font-bold text-gray-500">{getValidityDate()}</span></p>
           </div>
         </div>
