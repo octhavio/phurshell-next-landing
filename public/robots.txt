@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 Disallow: /contato/sucesso
 Disallow: /propostas
-
-Sitemap: https://phurshell.com/sitemap.xml
