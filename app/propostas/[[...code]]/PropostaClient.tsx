@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 // Tipos da API
 interface PropostaClient {
@@ -109,20 +110,21 @@ const sections = [
   { id: 'proximos-passos', label: 'Próximos Passos' },
 ]
 
-interface PropostaClientProps {
-  code?: string
-}
-
-export default function PropostaClientComponent({ code }: PropostaClientProps) {
+export default function PropostaClientComponent() {
+  const pathname = usePathname()
   const [activeSection, setActiveSection] = useState('intro')
   const [proposta, setProposta] = useState<PropostaData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // Extract code from pathname (e.g., /propostas/AP0HQV -> AP0HQV)
+  const code = pathname?.split('/').pop()
+  const hasCode = code && code !== 'propostas'
+
   // Fetch proposta data from API
   useEffect(() => {
     const fetchProposta = async () => {
-      if (!code) {
+      if (!hasCode) {
         setError('Código da proposta não informado')
         setLoading(false)
         return
@@ -145,7 +147,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
     }
 
     fetchProposta()
-  }, [code])
+  }, [hasCode, code])
 
   // Scroll spy
   useEffect(() => {
