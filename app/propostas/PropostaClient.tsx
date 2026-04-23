@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 // Tipos da API
 interface PropostaClient {
@@ -111,17 +111,14 @@ const sections = [
 ]
 
 export default function PropostaClientComponent() {
-  const pathname = usePathname()
   const searchParams = useSearchParams()
   const [activeSection, setActiveSection] = useState('intro')
   const [proposta, setProposta] = useState<PropostaData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Extract code from pathname (e.g., /propostas/AP0HQV -> AP0HQV) or query param (?code=AP0HQV)
-  const pathCode = pathname?.split('/').pop()
-  const queryCode = searchParams?.get('code')
-  const code = queryCode || (pathCode && pathCode !== 'propostas' ? pathCode : null)
+  // Extract code from query param (?code=AP0HQV)
+  const code = searchParams?.get('code')
   const hasCode = !!code
 
   // Fetch proposta data from API
