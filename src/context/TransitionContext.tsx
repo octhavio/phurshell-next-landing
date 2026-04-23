@@ -42,7 +42,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
             setTargetUrl(null)
           }, 700) // 300ms logo + 400ms pausa
         } else if (typeof window !== 'undefined') {
-          // Se ainda nao esta completo, aguarda o evento load
+          // Se ainda não está completo, aguarda o evento load
           window.addEventListener('load', () => {
             setShowLogo(false)
             setTimeout(() => {

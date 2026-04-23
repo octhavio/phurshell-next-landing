@@ -20,7 +20,7 @@ interface PropostaProject {
 }
 
 interface PropostaScope {
-  titulo: string
+  título: string
   itens: string[]
 }
 
@@ -40,13 +40,13 @@ interface ApiResponse {
   message?: string
 }
 
-// Dados hardcodados (nao vem da API)
+// Dados hardcodados (não vem da API)
 const hardcodedData = {
   etapas: [
-    { numero: 1, titulo: 'Kickoff e Discovery', descricao: 'Alinhamento do projeto, definicao detalhada do escopo e arquitetura tecnica.' },
-    { numero: 2, titulo: 'UX/UI Design', descricao: 'Wireframes, prototipos interativos e design final de todas as telas.' },
-    { numero: 3, titulo: 'Desenvolvimento', descricao: 'Desenvolvimento dos produtos contratados com entregas incrementais e validacao continua.' },
-    { numero: 4, titulo: 'Testes e Publicacao', descricao: 'QA completo, ajustes finais e publicacao nas lojas.' },
+    { número: 1, título: 'Kickoff e Discovery', descrição: 'Alinhamento do projeto, definição detalhada do escopo e arquitetura técnica.' },
+    { número: 2, título: 'UX/UI Design', descrição: 'Wireframes, protótipos interativos e design final de todas as telas.' },
+    { número: 3, título: 'Desenvolvimento', descrição: 'Desenvolvimento dos produtos contratados com entregas incrementais e validação contínua.' },
+    { número: 4, título: 'Testes e Publicação', descrição: 'QA completo, ajustes finais e publicação nas lojas.' },
   ],
   tecnologias: [
     { categoria: 'Apps Mobile', opcoes: 'React Native, Flutter, PWA' },
@@ -56,7 +56,7 @@ const hardcodedData = {
     { categoria: 'Cloud', opcoes: 'AWS, Google Cloud, Azure' },
   ],
   infraestrutura: [
-    'API RESTful escalavel',
+    'API RESTful escalável',
     'Banco de dados otimizado',
     'Servidores com auto-scaling',
     'CDN para imagens e assets',
@@ -66,28 +66,28 @@ const hardcodedData = {
   cases: [
     {
       nome: 'Psiapp',
-      descricao: 'Aplicativo que conecta psicologos a pacientes. Desenvolvimento completo dos apps, backoffice e analise de dados.',
+      descrição: 'Aplicativo que conecta psicólogos a pacientes. Desenvolvimento completo dos apps, backoffice e análise de dados.',
       imagem: '/images/img-home-case-psiapp.png',
       tags: ['iOS', 'Android', 'Web', 'Backoffice'],
       destaques: [
-        { valor: '3.000+', label: 'psicologos ativos' },
+        { valor: '3.000+', label: 'psicólogos ativos' },
         { valor: '60.000+', label: 'pacientes cadastrados' },
         { valor: '20.000+', label: 'consultas realizadas' },
       ],
     },
     {
       nome: 'Diag',
-      descricao: 'Plataforma de gestao de saude com prontuarios, receitas medicas e chat com IA para suporte diagnostico.',
+      descrição: 'Plataforma de gestão de saúde com prontuários, receitas médicas e chat com IA para suporte diagnóstico.',
       imagem: '/images/img-home-case-diag.png',
       tags: ['iOS', 'Android', 'Web', 'IA'],
       destaques: [
-        { valor: '16.000+', label: 'medicos usuarios' },
+        { valor: '16.000+', label: 'médicos usuários' },
       ],
     },
     {
       nome: 'Autoday',
-      descricao: 'Insurtech de seguro de carro sob demanda. MVP completo com app, backoffice e landing page.',
-      destaque_texto: 'A empresa recebeu multiplos aportes milionarios e foi vendida para o Sem Parar.',
+      descrição: 'Insurtech de seguro de carro sob demanda. MVP completo com app, backoffice e landing page.',
+      destaque_texto: 'A empresa recebeu múltiplos aportes milionários e foi vendida para o Sem Parar.',
       imagem: '/images/img-home-case-autoday.png',
       tags: ['iOS', 'Android', 'Backoffice'],
     },
@@ -98,7 +98,7 @@ const hardcodedData = {
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.phurshell.com'
 
 const sections = [
-  { id: 'intro', label: 'Introducao' },
+  { id: 'intro', label: 'Introdução' },
   { id: 'quem-somos', label: 'Quem Somos' },
   { id: 'como-trabalhamos', label: 'Como Trabalhamos' },
   { id: 'cases', label: 'Cases de Sucesso' },
@@ -106,7 +106,7 @@ const sections = [
   { id: 'cronograma', label: 'Cronograma' },
   { id: 'tecnologias', label: 'Tecnologias' },
   { id: 'investimento', label: 'Investimento' },
-  { id: 'proximos-passos', label: 'Proximos Passos' },
+  { id: 'proximos-passos', label: 'Próximos Passos' },
 ]
 
 interface PropostaClientProps {
@@ -123,7 +123,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
   useEffect(() => {
     const fetchProposta = async () => {
       if (!code) {
-        setError('Codigo da proposta nao informado')
+        setError('Código da proposta não informado')
         setLoading(false)
         return
       }
@@ -133,7 +133,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
         const data: ApiResponse = await response.json()
 
         if (!response.ok || !data.status) {
-          throw new Error(data.message || 'Proposta nao encontrada')
+          throw new Error(data.message || 'Proposta não encontrada')
         }
 
         setProposta(data.data)
@@ -220,8 +220,8 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
           <div className="mb-4 text-6xl text-gray-300">
             <i className="fa-solid fa-file-circle-exclamation"></i>
           </div>
-          <h1 className="mb-2 text-2xl font-black text-dark">Proposta nao encontrada</h1>
-          <p className="mb-6 text-gray-500">{error || 'Nao foi possivel carregar a proposta.'}</p>
+          <h1 className="mb-2 text-2xl font-black text-dark">Proposta não encontrada</h1>
+          <p className="mb-6 text-gray-500">{error || 'Não foi possível carregar a proposta.'}</p>
           <a
             href="/"
             className="inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 font-bold text-white transition-all hover:bg-brand-orange-light"
@@ -277,7 +277,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
         <div className="border-t border-gray-100 px-6 py-4">
           <div className="space-y-1 text-xs text-gray-400">
             <p>Gerada em {formatDate(proposta.created_date)}</p>
-            <p>Valida ate <span className="font-bold text-gray-500">{getValidityDate()}</span></p>
+            <p>Válida até <span className="font-bold text-gray-500">{getValidityDate()}</span></p>
           </div>
         </div>
       </aside>
@@ -338,11 +338,11 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
           {/* Quem Somos Section */}
           <section id="quem-somos" className="mb-20">
             <h2 className="mb-8 text-3xl font-black text-dark sm:text-4xl">
-              Quem e a Phurshell
+              Quem é a Phurshell
             </h2>
 
             <p className="mb-8 text-lg leading-relaxed text-gray-600">
-              Desde 2015 desenvolvemos produtos digitais sob medida para startups e empresas que querem crescer com tecnologia. Ja ajudamos a lancar dezenas de aplicativos, plataformas e sistemas que hoje operam em producao, atendendo usuarios reais e evoluindo junto com o negocio de nossos clientes.
+              Desde 2015 desenvolvemos produtos digitais sob medida para startups e empresas que querem crescer com tecnologia. Já ajudamos a lançar dezenas de aplicativos, plataformas e sistemas que hoje operam em produção, atendendo usuários reais e evoluindo junto com o negócio de nossos clientes.
             </p>
 
             {/* Stats */}
@@ -362,7 +362,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
             </div>
 
             <p className="text-lg leading-relaxed text-gray-600">
-              Nossa equipe e formada por especialistas em desenvolvimento mobile, web, UX/UI e infraestrutura cloud. Trabalhamos com metodologias ageis e entregas incrementais, garantindo transparencia e qualidade em cada etapa do projeto.
+              Nossa equipe é formada por especialistas em desenvolvimento mobile, web, UX/UI e infraestrutura cloud. Trabalhamos com metodologias ágeis e entregas incrementais, garantindo transparência e qualidade em cada etapa do projeto.
             </p>
           </section>
 
@@ -380,7 +380,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                 <div>
                   <h3 className="mb-2 text-xl font-black text-dark">Descoberta de Produto</h3>
                   <p className="text-gray-600">
-                    Antes de escrever codigo, mergulhamos no seu negocio para entender desafios, oportunidades e objetivos. Definimos juntos a estrategia tecnica e funcional do produto, estruturando o escopo do MVP e criando um roadmap realista.
+                    Antes de escrever código, mergulhamos no seu negócio para entender desafios, oportunidades e objetivos. Definimos juntos a estratégia técnica e funcional do produto, estruturando o escopo do MVP e criando um roadmap realista.
                   </p>
                 </div>
               </div>
@@ -392,7 +392,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                 <div>
                   <h3 className="mb-2 text-xl font-black text-dark">UX/UI Design</h3>
                   <p className="text-gray-600">
-                    Desenhamos interfaces que seus usuarios vao adorar usar. Nosso processo comeca com wireframes interativos e evolui para um design system completo e responsivo. Cada tela e pensada para resolver problemas reais.
+                    Desenhamos interfaces que seus usuários vão adorar usar. Nosso processo começa com wireframes interativos e evolui para um design system completo e responsivo. Cada tela é pensada para resolver problemas reais.
                   </p>
                 </div>
               </div>
@@ -402,9 +402,9 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   <i className="fa-jelly fa-code"></i>
                 </div>
                 <div>
-                  <h3 className="mb-2 text-xl font-black text-dark">Desenvolvimento Agil</h3>
+                  <h3 className="mb-2 text-xl font-black text-dark">Desenvolvimento Ágil</h3>
                   <p className="text-gray-600">
-                    Transformamos design em codigo de alta qualidade. Trabalhamos em sprints com entregas incrementais, permitindo validacao continua e ajustes durante o desenvolvimento. Nosso codigo e limpo, escalavel e preparado para crescer.
+                    Transformamos design em código de alta qualidade. Trabalhamos em sprints com entregas incrementais, permitindo validação contínua e ajustes durante o desenvolvimento. Nosso código é limpo, escalável e preparado para crescer.
                   </p>
                 </div>
               </div>
@@ -414,9 +414,9 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   <i className="fa-jelly fa-arrows-rotate"></i>
                 </div>
                 <div>
-                  <h3 className="mb-2 text-xl font-black text-dark">Suporte Continuo</h3>
+                  <h3 className="mb-2 text-xl font-black text-dark">Suporte Contínuo</h3>
                   <p className="text-gray-600">
-                    O lancamento e so o comeco. Continuamos ao lado do seu produto, monitorando performance, corrigindo bugs, otimizando funcionalidades e desenvolvendo novas features baseadas no feedback dos usuarios.
+                    O lançamento é só o começo. Continuamos ao lado do seu produto, monitorando performance, corrigindo bugs, otimizando funcionalidades e desenvolvendo novas features baseadas no feedback dos usuários.
                   </p>
                 </div>
               </div>
@@ -430,7 +430,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
             </h2>
 
             <p className="mb-8 text-lg text-gray-600">
-              Conheca alguns dos projetos que desenvolvemos e que hoje atendem milhares de usuarios:
+              Conheça alguns dos projetos que desenvolvemos e que hoje atendem milhares de usuários:
             </p>
 
             <div className="space-y-6">
@@ -442,9 +442,9 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="p-6 md:p-8">
                       <h3 className="mb-2 text-2xl font-black text-dark">{caseItem.nome}</h3>
-                      <p className="mb-4 text-gray-600">{caseItem.descricao}</p>
+                      <p className="mb-4 text-gray-600">{caseItem.descrição}</p>
 
-                      {/* Destaques numericos */}
+                      {/* Destaques numéricos */}
                       {caseItem.destaques && caseItem.destaques.length > 0 && (
                         <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
                           {caseItem.destaques.map((destaque, destaqueIndex) => (
@@ -463,7 +463,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                       {caseItem.destaque_texto && (
                         <div className="mb-4 border-l-2 border-brand-orange pl-3">
                           <p className="text-gray-600">
-                            A empresa recebeu multiplos <span className="font-bold text-dark">aportes milionarios</span> e foi vendida para o <span className="font-bold text-dark">Sem Parar</span>.
+                            A empresa recebeu múltiplos <span className="font-bold text-dark">aportes milionários</span> e foi vendida para o <span className="font-bold text-dark">Sem Parar</span>.
                           </p>
                         </div>
                       )}
@@ -509,7 +509,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange text-sm text-white">
                       {index + 1}
                     </span>
-                    {section.titulo}
+                    {section.título}
                   </h3>
                   <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {section.itens.map((item, itemIndex) => (
@@ -541,11 +541,11 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   className="relative flex gap-6 rounded-button border border-gray-100 p-6 transition-all hover:border-brand-orange"
                 >
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-dark text-lg font-black text-white">
-                    {etapa.numero}
+                    {etapa.número}
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-1 text-lg font-black text-dark">{etapa.titulo}</h3>
-                    <p className="text-gray-600">{etapa.descricao}</p>
+                    <h3 className="mb-1 text-lg font-black text-dark">{etapa.título}</h3>
+                    <p className="text-gray-600">{etapa.descrição}</p>
                   </div>
                 </div>
               ))}
@@ -560,7 +560,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
 
             <div className="mb-8 border-l-2 border-brand-orange pl-4">
               <p className="text-lg text-gray-600">
-                Nao somos fas de tecnologia A ou B - somos fas de <span className="font-bold text-dark">resolver problema</span>. Se precisar usar o "melhor do mercado", usamos. Se precisar misturar tudo, tambem. O importante e funcionar bem e ficar bonito.
+                Não somos fãs de tecnologia A ou B - somos fãs de <span className="font-bold text-dark">resolver problema</span>. Se precisar usar o "melhor do mercado", usamos. Se precisar misturar tudo, também. O importante é funcionar bem e ficar bonito.
               </p>
             </div>
 
@@ -606,15 +606,15 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
             <div className="mb-4 rounded-button border border-gray-100 p-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-bold text-dark">Manutencao Continua</p>
+                  <p className="font-bold text-dark">Manutenção Contínua</p>
                   <p className="text-sm text-gray-500">
                     {proposta.project.maintenance_hours
-                      ? `${proposta.project.maintenance_hours}h de suporte, correcoes e melhorias`
-                      : 'Suporte, correcoes e melhorias'}
+                      ? `${proposta.project.maintenance_hours}h de suporte, correções e melhorias`
+                      : 'Suporte, correções e melhorias'}
                   </p>
                 </div>
                 <p className="text-xl font-black text-dark">
-                  {formatCurrency(proposta.project.maintenance)}<span className="text-sm font-bold text-gray-500">/mes</span>
+                  {formatCurrency(proposta.project.maintenance)}<span className="text-sm font-bold text-gray-500">/mês</span>
                 </p>
               </div>
             </div>
@@ -624,10 +624,10 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-bold text-dark">Custo de infraestrutura</p>
-                    <p className="text-sm text-gray-500">Servidores, banco de dados e servicos</p>
+                    <p className="text-sm text-gray-500">Servidores, banco de dados e serviços</p>
                   </div>
                   <p className="text-xl font-black text-dark">
-                    {formatCurrency(proposta.project.infrastructure)}<span className="text-sm font-bold text-gray-500">/mes</span>
+                    {formatCurrency(proposta.project.infrastructure)}<span className="text-sm font-bold text-gray-500">/mês</span>
                   </p>
                 </div>
               </div>
@@ -644,11 +644,11 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                 </li>
                 <li className="flex items-center gap-2">
                   <i className="fa-solid fa-check text-brand-orange"></i>
-                  Pagamento por etapa/sprint concluida
+                  Pagamento por etapa/sprint concluída
                 </li>
                 <li className="flex items-center gap-2">
                   <i className="fa-solid fa-check text-brand-orange"></i>
-                  Condicoes especiais para pagamento a vista
+                  Condições especiais para pagamento à vista
                 </li>
               </ul>
             </div>
@@ -657,7 +657,7 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
           {/* Proximos Passos Section */}
           <section id="proximos-passos" className="mb-20">
             <h2 className="mb-8 text-3xl font-black text-dark sm:text-4xl">
-              Proximos Passos
+              Próximos Passos
             </h2>
 
             <div className="mb-8 space-y-4">
@@ -666,8 +666,8 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   1
                 </div>
                 <div>
-                  <h3 className="font-black text-dark">Agendar reuniao de alinhamento</h3>
-                  <p className="text-gray-600">Esclarecemos duvidas e refinamos o escopo conforme necessario.</p>
+                  <h3 className="font-black text-dark">Agendar reunião de alinhamento</h3>
+                  <p className="text-gray-600">Esclarecemos dúvidas e refinamos o escopo conforme necessário.</p>
                 </div>
               </div>
               <div className="flex gap-4 rounded-button border border-gray-100 p-6">
@@ -675,8 +675,8 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
                   2
                 </div>
                 <div>
-                  <h3 className="font-black text-dark">Aprovacao e contrato</h3>
-                  <p className="text-gray-600">Formalizamos o acordo e definimos as condicoes comerciais.</p>
+                  <h3 className="font-black text-dark">Aprovação e contrato</h3>
+                  <p className="text-gray-600">Formalizamos o acordo e definimos as condições comerciais.</p>
                 </div>
               </div>
               <div className="flex gap-4 rounded-button border border-gray-100 p-6">
@@ -692,10 +692,10 @@ export default function PropostaClientComponent({ code }: PropostaClientProps) {
 
             <div className="rounded-button bg-dark p-8 text-center">
               <p className="mb-4 text-lg text-white/70">
-                Esta proposta e valida por <span className="font-bold text-white">{proposta.validity_days} dias</span> a partir do recebimento.
+                Esta proposta é válida por <span className="font-bold text-white">{proposta.validity_days} dias</span> a partir do recebimento.
               </p>
               <a
-                href={`https://wa.me/5511991341871?text=Ola! Gostaria de conversar sobre a proposta ${proposta.code}.`}
+                href={`https://wa.me/5511991341871?text=Olá! Gostaria de conversar sobre a proposta ${proposta.code}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white transition-all hover:bg-brand-orange-light"

@@ -34,9 +34,9 @@ export default function Calculadora() {
 
   const [content, setContent] = useState<Question[]>([
     {
-      q: 'Qual tipo de aplicativo voce esta procurando?',
+      q: 'Qual tipo de aplicativo você está procurando?',
       description:
-        'Estamos aqui para ajudar voce a escolher o tipo de aplicativo que melhor atende as suas necessidades. Selecione uma das opcoes abaixo para prosseguir e descobrir como podemos transformar sua ideia em realidade.',
+        'Estamos aqui para ajudar você a escolher o tipo de aplicativo que melhor atende às suas necessidades. Selecione uma das opções abaixo para prosseguir e descobrir como podemos transformar sua ideia em realidade.',
       userAnswer: '',
       a: [
         {
@@ -63,9 +63,9 @@ export default function Calculadora() {
       ],
     },
     {
-      q: 'Voce precisa de uma identidade visual customizada para o seu aplicativo?',
+      q: 'Você precisa de uma identidade visual customizada para o seu aplicativo?',
       description:
-        'Por favor, selecione uma ou mais opcoes abaixo para prosseguir. Uma interface de usuario customizada e um logo profissional podem ajudar a criar uma experiencia de uso excepcional e fortalecer a identidade da sua marca.',
+        'Por favor, selecione uma ou mais opções abaixo para prosseguir. Uma interface de usuário customizada e um logo profissional podem ajudar a criar uma experiência de uso excepcional e fortalecer a identidade da sua marca.',
       userAnswer: '',
       a: [
         {
@@ -83,7 +83,7 @@ export default function Calculadora() {
           selected: false,
         },
         {
-          text: 'Nao',
+          text: 'Não',
           price: '$',
           icon: 'fa-solid fa-xmark',
           value: multiplier * 0,
@@ -93,66 +93,66 @@ export default function Calculadora() {
     },
     {
       q: 'Qual a categoria principal do seu aplicativo?',
-      description: 'Escolha a categoria principal do seu aplicativo para definir seu proposito e publico-alvo.',
+      description: 'Escolha a categoria principal do seu aplicativo para definir seu propósito e público-alvo.',
       userAnswer: '',
       a: [
         { text: 'Mobilidade urbana', price: '$', icon: 'fa-solid fa-car', value: 0, selected: false },
         { text: 'Rastreamento e entrega', price: '$$', icon: 'fa-solid fa-truck-fast', value: 0, selected: false },
         { text: 'Marketplace', price: '$$$', icon: 'fa-solid fa-store', value: 0, selected: false },
-        { text: 'Comercio eletronico', price: '$$$', icon: 'fa-solid fa-cart-shopping', value: 0, selected: false },
-        { text: 'Gestao e processos', price: '$$$', icon: 'fa-solid fa-clipboard-list', value: 0, selected: false },
+        { text: 'Comércio eletrônico', price: '$$$', icon: 'fa-solid fa-cart-shopping', value: 0, selected: false },
+        { text: 'Gestão e processos', price: '$$$', icon: 'fa-solid fa-clipboard-list', value: 0, selected: false },
         { text: 'Financeiro', price: '$$$', icon: 'fa-solid fa-money-bill-trend-up', value: 0, selected: false },
-        { text: 'Conteudo e ensino', price: '$$$', icon: 'fa-solid fa-graduation-cap', value: 0, selected: false },
+        { text: 'Conteúdo e ensino', price: '$$$', icon: 'fa-solid fa-graduation-cap', value: 0, selected: false },
         { text: 'Rede social', price: '$$$', icon: 'fa-solid fa-users', value: 0, selected: false },
         { text: 'Outros', price: '$$$', icon: 'fa-solid fa-ellipsis', value: 0, selected: false },
       ],
     },
     {
-      q: 'Quais funcionalidades serao implementadas em seu aplicativo?',
+      q: 'Quais funcionalidades serão implementadas em seu aplicativo?',
       description:
-        'Selecione as funcionalidades que voce deseja incluir. Cada funcionalidade adicional pode impactar no tempo de desenvolvimento e no custo total. Escolha as opcoes que melhor atendem as necessidades do seu projeto.',
+        'Selecione as funcionalidades que você deseja incluir. Cada funcionalidade adicional pode impactar no tempo de desenvolvimento e no custo total. Escolha as opções que melhor atendem às necessidades do seu projeto.',
       userAnswer: '',
       a: [
-        { text: 'Autenticacao e login', price: 'Sem custo', icon: 'fa-solid fa-user-lock', value: multiplier * 10000, selected: false },
-        { text: 'Perfis de usuario', price: 'Sem custo', icon: 'fa-solid fa-user', value: multiplier * 5000, selected: false },
-        { text: 'Envio de notificacoes', price: 'Sem custo', icon: 'fa-solid fa-bell', value: multiplier * 5000, selected: false },
-        { text: 'Integracao com redes sociais', price: 'Sem custo', icon: 'fa-solid fa-share-nodes', value: multiplier * 10000, selected: false },
-        { text: 'Videoconferencia', price: 'Sem custo', icon: 'fa-solid fa-video', value: multiplier * 20000, selected: false },
-        { text: 'Pagamentos e transacoes', price: 'Sem custo', icon: 'fa-solid fa-credit-card', value: multiplier * 20000, selected: false },
-        { text: 'Servico de assinatura', price: 'Sem custo', icon: 'fa-solid fa-repeat', value: multiplier * 20000, selected: false },
+        { text: 'Autenticação e login', price: 'Sem custo', icon: 'fa-solid fa-user-lock', value: multiplier * 10000, selected: false },
+        { text: 'Perfis de usuário', price: 'Sem custo', icon: 'fa-solid fa-user', value: multiplier * 5000, selected: false },
+        { text: 'Envio de notificações', price: 'Sem custo', icon: 'fa-solid fa-bell', value: multiplier * 5000, selected: false },
+        { text: 'Integração com redes sociais', price: 'Sem custo', icon: 'fa-solid fa-share-nodes', value: multiplier * 10000, selected: false },
+        { text: 'Videoconferência', price: 'Sem custo', icon: 'fa-solid fa-video', value: multiplier * 20000, selected: false },
+        { text: 'Pagamentos e transações', price: 'Sem custo', icon: 'fa-solid fa-credit-card', value: multiplier * 20000, selected: false },
+        { text: 'Serviço de assinatura', price: 'Sem custo', icon: 'fa-solid fa-repeat', value: multiplier * 20000, selected: false },
         { text: 'Chat e mensagens', price: 'Sem custo', icon: 'fa-solid fa-comments', value: multiplier * 15000, selected: false },
-        { text: 'Servico de localizacao (Geolocalizacao)', price: 'Sem custo', icon: 'fa-solid fa-location-dot', value: multiplier * 15000, selected: false },
+        { text: 'Serviço de localização (Geolocalização)', price: 'Sem custo', icon: 'fa-solid fa-location-dot', value: multiplier * 15000, selected: false },
         { text: 'Buscas e filtros', price: 'Sem custo', icon: 'fa-solid fa-magnifying-glass', value: multiplier * 15000, selected: false },
       ],
     },
     {
       q: 'Seu aplicativo vai precisar de um sistema administrativo?',
       description:
-        'Um sistema administrativo permite gerenciar usuarios, conteudo, e outras funcionalidades essenciais de forma eficiente. Isso pode incluir paineis de controle, relatorios, gerenciamento de permissoes e muito mais. A inclusao desse sistema pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
+        'Um sistema administrativo permite gerenciar usuários, conteúdo, e outras funcionalidades essenciais de forma eficiente. Isso pode incluir painéis de controle, relatórios, gerenciamento de permissões e muito mais. A inclusão desse sistema pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
       userAnswer: '',
       a: [
         { text: 'Sim', price: 'Sem custo', icon: 'fa-solid fa-check', value: multiplier * 15000, selected: false },
-        { text: 'Nao', price: '$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
+        { text: 'Não', price: '$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
       ],
     },
     {
       q: 'Seu aplicativo vai precisar de um site institucional?',
       description:
-        'Informe se voce deseja incluir um site institucional (landing page) para o seu projeto. Um site institucional ajuda a apresentar seu aplicativo, destacando suas funcionalidades e beneficios, alem de atrair e engajar potenciais usuarios. A inclusao de uma landing page pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
+        'Informe se você deseja incluir um site institucional (landing page) para o seu projeto. Um site institucional ajuda a apresentar seu aplicativo, destacando suas funcionalidades e benefícios, além de atrair e engajar potenciais usuários. A inclusão de uma landing page pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
       userAnswer: '',
       a: [
         { text: 'Sim', price: 'Sem custo', icon: 'fa-solid fa-check', value: multiplier * 5000, selected: false },
-        { text: 'Nao', price: '$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
+        { text: 'Não', price: '$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
       ],
     },
     {
-      q: 'Seu aplicativo precisa de integracao com sistemas ou APIs de terceiros?',
+      q: 'Seu aplicativo precisa de integração com sistemas ou APIs de terceiros?',
       description:
-        'Informe se voce precisa que seu aplicativo se integre com sistemas ou APIs de terceiros. A integracao pode incluir servicos como pagamentos, redes sociais, mapas, ou outras plataformas que podem enriquecer a funcionalidade do seu aplicativo. A inclusao dessas integracoes pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
+        'Informe se você precisa que seu aplicativo se integre com sistemas ou APIs de terceiros. A integração pode incluir serviços como pagamentos, redes sociais, mapas, ou outras plataformas que podem enriquecer a funcionalidade do seu aplicativo. A inclusão dessas integrações pode influenciar o custo e o tempo de desenvolvimento do seu projeto.',
       userAnswer: '',
       a: [
         { text: 'Sim', price: 'Sem custo', icon: 'fa-solid fa-check', value: multiplier * 30000, selected: false },
-        { text: 'Nao', price: '$$$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
+        { text: 'Não', price: '$$$', icon: 'fa-solid fa-xmark', value: 0, selected: false },
       ],
     },
   ])
@@ -316,7 +316,7 @@ export default function Calculadora() {
                 {step === content.length + 1 && (
                   <button onClick={refresh} className="btn-pill mr-2 rounded-button border border-dark/10 px-6 py-3 font-bold text-dark transition-smooth hover:bg-dark/5">
                     <i className="fa-solid fa-rotate-left mr-1"></i>
-                    Recomecar
+                    Recomeçar
                   </button>
                 )}
               </div>
@@ -358,18 +358,18 @@ export default function Calculadora() {
                   <h2 className="text-4xl font-black text-dark">Quanto custa desenvolver um app com um time de especialistas?</h2>
                 </div>
                 <p className="mb-6 text-xl leading-relaxed text-dark/70">
-                  O desenvolvimento de aplicativos e um processo complexo que envolve varias etapas, desde a concepcao
-                  inicial ate o lancamento e manutencao continua. Nossa equipe de especialistas esta aqui para guia-lo por
-                  cada fase do processo, garantindo que sua visao seja transformada em uma realidade digital de sucesso.
+                  O desenvolvimento de aplicativos é um processo complexo que envolve várias etapas, desde a concepção
+                  inicial até o lançamento e manutenção contínua. Nossa equipe de especialistas está aqui para guiá-lo por
+                  cada fase do processo, garantindo que sua visão seja transformada em uma realidade digital de sucesso.
                 </p>
 
                 <hr className="my-8" />
 
                 <h3 className="mb-4 text-2xl font-black text-dark">Uma equipe de profissionais experientes</h3>
                 <p className="mb-6 text-xl leading-relaxed text-dark/70">
-                  A equipe da Phurshell e composta por profissionais apaixonados e experientes, cada um trazendo habilidades
-                  unicas para o processo de desenvolvimento. Desde designers criativos e desenvolvedores habilidosos ate
-                  especialistas em garantia de qualidade, nossa equipe trabalha em conjunto para oferecer solucoes
+                  A equipe da Phurshell é composta por profissionais apaixonados e experientes, cada um trazendo habilidades
+                  únicas para o processo de desenvolvimento. Desde designers criativos e desenvolvedores habilidosos até
+                  especialistas em garantia de qualidade, nossa equipe trabalha em conjunto para oferecer soluções
                   inovadoras e de alta qualidade aos nossos clientes.
                 </p>
 
@@ -380,8 +380,8 @@ export default function Calculadora() {
                       Product Owner
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      O Product Owner e quem entende em detalhes cada funcionalidade do seu projeto. E o responsavel por
-                      documentar e coordenar toda a construcao do aplicativo.
+                      O Product Owner é quem entende em detalhes cada funcionalidade do seu projeto. É o responsável por
+                      documentar e coordenar toda a construção do aplicativo.
                     </p>
                   </div>
 
@@ -391,8 +391,8 @@ export default function Calculadora() {
                       Design
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Equipe especializada em usabilidade e na experiencia do usuario. Eles transformam e dao identidade a sua
-                      ideia em um prototipo completo do seu aplicativo.
+                      Equipe especializada em usabilidade e na experiência do usuário. Eles transformam e dão identidade à sua
+                      ideia em um protótipo completo do seu aplicativo.
                     </p>
                   </div>
 
@@ -424,7 +424,7 @@ export default function Calculadora() {
                       Back-end
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Equipe dedicada na API, infraestrutura de servidores, banco de dados, etc. Sao especialistas na
+                      Equipe dedicada na API, infraestrutura de servidores, banco de dados, etc. São especialistas na
                       linguagem de PHP (Laravel).
                     </p>
                   </div>
@@ -435,7 +435,7 @@ export default function Calculadora() {
                       Q.A
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Equipe de Quality Assurance dedicada em testar o aplicativo e assegurar que tudo esta funcionando como
+                      Equipe de Quality Assurance dedicada em testar o aplicativo e assegurar que tudo está funcionando como
                       deveria.
                     </p>
                   </div>
@@ -445,7 +445,7 @@ export default function Calculadora() {
 
                 <h3 className="mb-4 text-2xl font-black text-dark">O processo de desenvolvimento</h3>
                 <p className="mb-6 text-xl leading-relaxed text-dark/70">
-                  Desenvolver um aplicativo envolve diversas fases, cada uma com sua importancia e complexidade. As etapas
+                  Desenvolver um aplicativo envolve diversas fases, cada uma com sua importância e complexidade. As etapas
                   principais incluem:
                 </p>
 
@@ -453,12 +453,12 @@ export default function Calculadora() {
                   <div className="rounded-button border border-dark/10 bg-white p-6 shadow-sm">
                     <h4 className="mb-3 text-xl font-black text-dark">
                       <i className="fas fa-lightbulb mr-2 text-brand-orange"></i>
-                      1. Concepcao e Planejamento
+                      1. Concepção e Planejamento
                     </h4>
                     <ul className="list-inside list-disc space-y-2 text-xl text-dark/70">
-                      <li>Pesquisa de Mercado: Entender as necessidades do mercado e o publico-alvo.</li>
-                      <li>Definicao de Requisitos: Especificar as funcionalidades e objetivos do aplicativo.</li>
-                      <li>Wireframing e Prototipagem: Criar esbocos e prototipos para visualizacao do fluxo e design do app.</li>
+                      <li>Pesquisa de Mercado: Entender as necessidades do mercado e o público-alvo.</li>
+                      <li>Definição de Requisitos: Especificar as funcionalidades e objetivos do aplicativo.</li>
+                      <li>Wireframing e Prototipagem: Criar esboços e protótipos para visualização do fluxo e design do app.</li>
                     </ul>
                   </div>
 
@@ -468,10 +468,10 @@ export default function Calculadora() {
                       2. Design de Interface (UI/UX)
                     </h4>
                     <ul className="list-inside list-disc space-y-2 text-xl text-dark/70">
-                      <li>Design Visual: Criacao do layout e aparencia visual do aplicativo.</li>
+                      <li>Design Visual: Criação do layout e aparência visual do aplicativo.</li>
                       <li>
-                        Experiencia do Usuario: Planejar a navegacao e a interacao do usuario para garantir uma experiencia
-                        intuitiva e agradavel.
+                        Experiência do Usuário: Planejar a navegação e a interação do usuário para garantir uma experiência
+                        intuitiva e agradável.
                       </li>
                     </ul>
                   </div>
@@ -479,11 +479,11 @@ export default function Calculadora() {
                   <div className="rounded-button border border-dark/10 bg-white p-6 shadow-sm">
                     <h4 className="mb-3 text-xl font-black text-dark">
                       <i className="fas fa-code mr-2 text-brand-orange"></i>
-                      3. Desenvolvimento e Programacao
+                      3. Desenvolvimento e Programação
                     </h4>
                     <ul className="list-inside list-disc space-y-2 text-xl text-dark/70">
-                      <li>Front-End: Desenvolvimento da interface que o usuario ira interagir.</li>
-                      <li>Back-End: Desenvolvimento da logica do servidor, banco de dados, e integracao de APIs.</li>
+                      <li>Front-End: Desenvolvimento da interface que o usuário irá interagir.</li>
+                      <li>Back-End: Desenvolvimento da lógica do servidor, banco de dados, e integração de APIs.</li>
                     </ul>
                   </div>
 
@@ -494,20 +494,20 @@ export default function Calculadora() {
                     </h4>
                     <ul className="list-inside list-disc space-y-2 text-xl text-dark/70">
                       <li>Testes de Funcionalidade: Garantir que todas as funcionalidades funcionem corretamente.</li>
-                      <li>Testes de Usabilidade: Avaliar a experiencia do usuario.</li>
-                      <li>Correcao de Bugs: Identificar e corrigir problemas.</li>
+                      <li>Testes de Usabilidade: Avaliar a experiência do usuário.</li>
+                      <li>Correção de Bugs: Identificar e corrigir problemas.</li>
                     </ul>
                   </div>
 
                   <div className="rounded-button border border-dark/10 bg-white p-6 shadow-sm">
                     <h4 className="mb-3 text-xl font-black text-dark">
                       <i className="fas fa-rocket mr-2 text-brand-orange"></i>
-                      5. Lancamento e Manutencao
+                      5. Lançamento e Manutenção
                     </h4>
                     <ul className="list-inside list-disc space-y-2 text-xl text-dark/70">
-                      <li>Publicacao: Lancar o aplicativo nas lojas de apps (Google Play, App Store).</li>
-                      <li>Atualizacoes: Manter o aplicativo atualizado com novas funcionalidades e melhorias.</li>
-                      <li>Suporte Tecnico: Oferecer suporte aos usuarios e resolver possiveis problemas.</li>
+                      <li>Publicação: Lançar o aplicativo nas lojas de apps (Google Play, App Store).</li>
+                      <li>Atualizações: Manter o aplicativo atualizado com novas funcionalidades e melhorias.</li>
+                      <li>Suporte Técnico: Oferecer suporte aos usuários e resolver possíveis problemas.</li>
                     </ul>
                   </div>
                 </div>
@@ -527,18 +527,18 @@ export default function Calculadora() {
                       Complexidade do App
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Aplicativos com funcionalidades complexas, como integracao com outros servicos, recursos de seguranca
-                      avancados, ou personalizacoes especificas, tendem a ser mais caros.
+                      Aplicativos com funcionalidades complexas, como integração com outros serviços, recursos de segurança
+                      avançados, ou personalizações específicas, tendem a ser mais caros.
                     </p>
                   </div>
 
                   <div className="rounded-button border border-dark/10 bg-white p-6 shadow-sm">
                     <h4 className="mb-3 text-xl font-black text-dark">
                       <i className="fas fa-paint-brush mr-2 text-brand-orange"></i>
-                      Design e Experiencia do Usuario
+                      Design e Experiência do Usuário
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Investir em um design atraente e uma experiencia de usuario fluida pode aumentar os custos, mas e
+                      Investir em um design atraente e uma experiência de usuário fluida pode aumentar os custos, mas é
                       crucial para o sucesso do aplicativo.
                     </p>
                   </div>
@@ -549,17 +549,17 @@ export default function Calculadora() {
                       Plataformas de Desenvolvimento
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Desenvolver para multiplas plataformas (iOS, Android, Web) pode aumentar o custo.
+                      Desenvolver para múltiplas plataformas (iOS, Android, Web) pode aumentar o custo.
                     </p>
                   </div>
 
                   <div className="rounded-button border border-dark/10 bg-white p-6 shadow-sm">
                     <h4 className="mb-3 text-xl font-black text-dark">
                       <i className="fas fa-tools mr-2 text-brand-orange"></i>
-                      Manutencao e Suporte
+                      Manutenção e Suporte
                     </h4>
                     <p className="text-xl leading-relaxed text-dark/70">
-                      Apos o lancamento, e necessario considerar os custos continuos de manutencao e suporte.
+                      Após o lançamento, é necessário considerar os custos contínuos de manutenção e suporte.
                     </p>
                   </div>
                 </div>
@@ -568,12 +568,12 @@ export default function Calculadora() {
 
                 <h3 className="mb-4 text-2xl font-black text-dark">Nossa Abordagem</h3>
                 <p className="mb-4 text-xl leading-relaxed text-dark/70">
-                  Na <strong>Phurshell</strong>, oferecemos uma abordagem personalizada para cada projeto, garantindo que seu aplicativo nao apenas atenda as suas expectativas, mas tambem entregue uma experiencia
-                  excepcional para seus usuarios. Nossa equipe de especialistas esta aqui para guia-lo em cada etapa do
-                  processo, fornecendo solucoes inovadoras e eficientes.
+                  Na <strong>Phurshell</strong>, oferecemos uma abordagem personalizada para cada projeto, garantindo que seu aplicativo não apenas atenda às suas expectativas, mas também entregue uma experiência
+                  excepcional para seus usuários. Nossa equipe de especialistas está aqui para guiá-lo em cada etapa do
+                  processo, fornecendo soluções inovadoras e eficientes.
                 </p>
                 <p className="text-xl leading-relaxed text-dark/70">
-                  Investir no desenvolvimento de um aplicativo e investir no futuro da sua empresa. Entre em contato conosco
+                  Investir no desenvolvimento de um aplicativo é investir no futuro da sua empresa. Entre em contato conosco
                   para saber mais sobre como podemos transformar sua ideia em realidade.
                 </p>
               </article>
@@ -629,7 +629,7 @@ export default function Calculadora() {
 
                     <p className="mb-8 text-xl leading-relaxed text-dark/70">
                       Baseado nas suas respostas conseguimos levantar o custo aproximado para iniciar o desenvolvimento do seu app,
-                      para saber mais informacoes, tirar duvidas ou solicitar um orcamento completo entre em contato com a gente
+                      para saber mais informações, tirar dúvidas ou solicitar um orçamento completo entre em contato com a gente
                       logo abaixo.
                     </p>
 
@@ -652,7 +652,7 @@ export default function Calculadora() {
                     </div>
 
                     <p className="mb-8 text-xl leading-relaxed text-dark/70">
-                      Importante lembrar que todos esses valores sao aproximados e podem variar conforme a complexidade do projeto. O ideal e ter uma conversa com nossos especialistas, que poderao ajudar nao so no desenvolvimento, mas tambem na estrategia do seu negocio.
+                      Importante lembrar que todos esses valores são aproximados e podem variar conforme a complexidade do projeto. O ideal é ter uma conversa com nossos especialistas, que poderão ajudar não só no desenvolvimento, mas também na estratégia do seu negócio.
                     </p>
 
                     <div className="mb-8">
@@ -661,7 +661,7 @@ export default function Calculadora() {
                         className="rounded-button border border-dark/10 px-6 py-3 font-bold text-dark transition-smooth hover:bg-dark/5"
                       >
                         <i className="fa-solid fa-rotate-left mr-2"></i>
-                        Recomecar calculo
+                        Recomeçar cálculo
                       </button>
                     </div>
 
@@ -670,7 +670,7 @@ export default function Calculadora() {
                         <h2 className="mb-4 text-3xl font-black text-dark">Vamos conversar sobre seu projeto?</h2>
                         <p className="mb-6 text-xl leading-relaxed text-dark/70">
                           Preencha seus dados abaixo e entraremos em contato no mesmo dia para conversar e transformar o seu
-                          negocio.
+                          negócio.
                         </p>
 
                         <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -718,7 +718,7 @@ export default function Calculadora() {
                           <label className="mb-2 block font-bold text-dark">Nos conte um pouco do seu projeto</label>
                           <textarea
                             name="project_description"
-                            placeholder="Descreva seu projeto para nos."
+                            placeholder="Descreva seu projeto para nós."
                             rows={4}
                             className="w-full rounded-button border border-dark/10 px-4 py-3 text-xl"
                             value={formData.project_description}
@@ -750,7 +750,7 @@ export default function Calculadora() {
                       Mensagem enviada com sucesso!
                     </h2>
                     <p className="mb-6 text-xl leading-relaxed text-dark/70">
-                      Obrigado por compartilhar seu projeto conosco! Entraremos em contato com voce pelo Whatsapp ainda hoje para comecar a trabalhar na sua ideia.
+                      Obrigado por compartilhar seu projeto conosco! Entraremos em contato com você pelo Whatsapp ainda hoje para começar a trabalhar na sua ideia.
                     </p>
                     <hr className="my-6" />
                     <div className="flex gap-4">
@@ -759,7 +759,7 @@ export default function Calculadora() {
                         className="rounded-button border border-dark/10 px-6 py-3 font-bold text-dark transition-smooth hover:bg-dark/5"
                       >
                         <i className="fa-solid fa-rotate-left mr-2"></i>
-                        Recomecar
+                        Recomeçar
                       </button>
                       <TransitionLink
                         href="/"
@@ -803,7 +803,7 @@ export default function Calculadora() {
                   <hr className="my-6" />
 
                   <p className="text-dark/60">
-                    Os calculos fornecidos sao estimativas e podem variar. A realidade do custo final pode ser diferente dependendo dos requisitos especificos do projeto.
+                    Os cálculos fornecidos são estimativas e podem variar. A realidade do custo final pode ser diferente dependendo dos requisitos específicos do projeto.
                   </p>
                 </div>
               </div>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: 'Phurshell - Desenvolvimento de Apps Sob Medida',
     template: '%s | Phurshell',
   },
-  description: 'Somos uma fabrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
+  description: 'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
   keywords: ['desenvolvimento de aplicativos', 'fabrica de apps', 'desenvolvimento mobile', 'iOS', 'Android', 'React Native', 'Flutter', 'startup', 'MVP'],
   authors: [{ name: 'Phurshell' }],
   creator: 'Phurshell',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: 'https://phurshell.com',
     siteName: 'Phurshell',
     title: 'Phurshell - Desenvolvimento de Apps Sob Medida',
-    description: 'Somos uma fabrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
+    description: 'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
     images: [
       {
         url: '/images/og-image.png',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Phurshell - Desenvolvimento de Apps Sob Medida',
-    description: 'Somos uma fabrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
+    description: 'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
     images: ['/images/og-image.png'],
   },
   verification: {

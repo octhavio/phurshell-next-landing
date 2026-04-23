@@ -157,7 +157,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
 
               {/* CTA */}
               <div className="rounded-button bg-gradient-to-br from-brand-orange to-brand-orange-light p-6 text-white shadow-lg">
-                <h3 className="mb-3 text-xl font-black">Gostou do conteudo?</h3>
+                <h3 className="mb-3 text-xl font-black">Gostou do conteúdo?</h3>
                 <p className="mb-4 text-white/90">
                   Entre em contato e vamos transformar sua ideia em realidade
                 </p>
@@ -257,7 +257,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
               Receba nossos insights
             </h2>
             <p className="mb-8 text-lg text-dark/70">
-              Fique por dentro das ultimas tendencias em tecnologia e desenvolvimento de software
+              Fique por dentro das últimas tendências em tecnologia e desenvolvimento de software
             </p>
 
             <TransitionLink

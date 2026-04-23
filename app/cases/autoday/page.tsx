@@ -3,7 +3,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
   title: 'Case Autoday | Phurshell',
-  description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veiculo.',
+  description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veículo.',
 }
 
 export default function CaseAutoday() {
@@ -21,7 +21,7 @@ export default function CaseAutoday() {
             <span className="word-wrapper"><span className="word word-delay-5">demanda</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-6">e</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-7">mais</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-8">acessivel</span></span>
+            <span className="word-wrapper"><span className="word word-delay-8">acessível</span></span>
           </h1>
 
           {/* Description */}
@@ -38,7 +38,7 @@ export default function CaseAutoday() {
             <span className="word-wrapper"><span className="word word-delay-18">seguro</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-19">intermitente</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-20">—</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-21">voce</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">você</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-22">paga</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-23">apenas</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-24">pelos</span></span>{' '}
@@ -46,7 +46,7 @@ export default function CaseAutoday() {
             <span className="word-wrapper"><span className="word word-delay-26">que</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-27">usar</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-28">o</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-29">veiculo.</span></span>
+            <span className="word-wrapper"><span className="word word-delay-29">veículo.</span></span>
           </p>
 
           {/* Hero Image */}
@@ -78,7 +78,7 @@ export default function CaseAutoday() {
                     {/* Info Text */}
                     <div>
                       <p className="text-sm leading-relaxed text-white/90 sm:text-base">
-                        Insurtech desenvolvida pela Phurshell que trouxe inovacao ao mercado de seguros automotivos. Tecnologia que permite ativar e desativar a cobertura conforme a necessidade do usuario.
+                        Insurtech desenvolvida pela Phurshell que trouxe inovação ao mercado de seguros automotivos. Tecnologia que permite ativar e desativar a cobertura conforme a necessidade do usuário.
                         <br />
                         <span className="font-bold">Pioneira em seguro sob demanda no Brasil</span>
                       </p>
@@ -97,13 +97,13 @@ export default function CaseAutoday() {
           {/* Overview Text */}
           <div className="mb-12 max-w-full lg:max-w-[70%]">
             <h2 className="mb-8 text-4xl font-black text-dark sm:text-5xl">
-              Visao Geral
+              Visão Geral
             </h2>
             <p className="mb-6 text-xl leading-relaxed text-dark/70">
-              O Autoday nasceu com uma proposta disruptiva: revolucionar o mercado de seguros automotivos no Brasil. A ideia era simples mas inovadora — por que pagar seguro integral se voce so usa o carro ocasionalmente? Em 2021, esse conceito ainda era totalmente novo no mercado brasileiro.
+              O Autoday nasceu com uma proposta disruptiva: revolucionar o mercado de seguros automotivos no Brasil. A ideia era simples mas inovadora — por que pagar seguro integral se você só usa o carro ocasionalmente? Em 2021, esse conceito ainda era totalmente novo no mercado brasileiro.
             </p>
             <p className="text-xl leading-relaxed text-dark/70">
-              A Phurshell foi escolhida como parceira tecnologica para transformar essa visao em MVP funcional, desenvolvendo uma solucao completa que permitisse aos usuarios ativar e desativar a cobertura do seguro sob demanda, pagando apenas pelos dias de uso real do veiculo.
+              A Phurshell foi escolhida como parceira tecnológica para transformar essa visão em MVP funcional, desenvolvendo uma solução completa que permitisse aos usuários ativar e desativar a cobertura do seguro sob demanda, pagando apenas pelos dias de uso real do veículo.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default function CaseAutoday() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                 <i className="fa-jelly fa-calendar fa-xl text-brand-orange"></i>
               </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Periodo</h3>
+              <h3 className="mb-3 text-xl font-black text-dark">Período</h3>
               <p className="text-xl leading-relaxed text-dark/70">2021</p>
             </div>
 
@@ -157,13 +157,13 @@ export default function CaseAutoday() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Criar uma solucao tecnologica completamente inovadora para um modelo de negocio inexistente no mercado brasileiro — um seguro automotivo que pudesse ser ativado e desativado sob demanda.
+                Criar uma solução tecnológica completamente inovadora para um modelo de negócio inexistente no mercado brasileiro — um seguro automotivo que pudesse ser ativado e desativado sob demanda.
               </p>
               <p>
-                O grande desafio tecnico era <strong className="text-dark">desenvolver a infraestrutura</strong> que permitisse calcular precos de forma dinamica, processar ativacoes/desativacoes em tempo real, e garantir conformidade regulatoria com as normas da SUSEP.
+                O grande desafio técnico era <strong className="text-dark">desenvolver a infraestrutura</strong> que permitisse calcular preços de forma dinâmica, processar ativações/desativações em tempo real, e garantir conformidade regulatória com as normas da SUSEP.
               </p>
               <p>
-                Alem disso, a <strong className="text-dark">experiencia do usuario</strong> precisava ser extremamente simples — em poucos toques, o motorista deveria conseguir ativar sua cobertura e sair dirigindo com tranquilidade.
+                Além disso, a <strong className="text-dark">experiência do usuário</strong> precisava ser extremamente simples — em poucos toques, o motorista deveria conseguir ativar sua cobertura e sair dirigindo com tranquilidade.
               </p>
             </div>
 
@@ -172,9 +172,9 @@ export default function CaseAutoday() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-lightbulb fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Modelo Inedito</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Modelo Inédito</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Desenvolver tecnologia para um modelo de negocio completamente novo no Brasil, sem referencias de mercado para seguir.
+                  Desenvolver tecnologia para um modelo de negócio completamente novo no Brasil, sem referências de mercado para seguir.
                 </p>
               </div>
 
@@ -182,9 +182,9 @@ export default function CaseAutoday() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-bolt fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Ativacao em Tempo Real</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Ativação em Tempo Real</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Criar sistema que permita ligar e desligar a cobertura do seguro instantaneamente, com calculo dinamico de precos e validacao de cobertura.
+                  Criar sistema que permita ligar e desligar a cobertura do seguro instantaneamente, com cálculo dinâmico de preços e validação de cobertura.
                 </p>
               </div>
 
@@ -194,7 +194,7 @@ export default function CaseAutoday() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">UX Simplificada</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Tornar todo o processo extremamente simples — do cadastro a ativacao da cobertura em poucos toques na tela.
+                  Tornar todo o processo extremamente simples — do cadastro à ativação da cobertura em poucos toques na tela.
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function CaseAutoday() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Transformar a visao do Autoday em MVP funcional exigiu um processo agil e focado. Desde o entendimento do modelo de negocio inovador ate o lancamento no mercado, cada etapa foi executada com objetivo claro: validar a viabilidade tecnica e comercial do seguro sob demanda no Brasil.
+                Transformar a visão do Autoday em MVP funcional exigiu um processo ágil e focado. Desde o entendimento do modelo de negócio inovador até o lançamento no mercado, cada etapa foi executada com objetivo claro: validar a viabilidade técnica e comercial do seguro sob demanda no Brasil.
               </p>
             </div>
 
@@ -249,7 +249,7 @@ export default function CaseAutoday() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Descoberta e Design</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Imersao no modelo de negocio, mapeamento de jornada do usuario e definicao de arquitetura tecnica. Criacao de wireframes e identidade visual moderna que transmite inovacao e confianca.
+                  Imersão no modelo de negócio, mapeamento de jornada do usuário e definição de arquitetura técnica. Criação de wireframes e identidade visual moderna que transmite inovação e confiança.
                 </p>
               </div>
 
@@ -259,7 +259,7 @@ export default function CaseAutoday() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Desenvolvimento do MVP</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Construcao de apps nativos iOS e Android, backoffice para gestao, APIs para calculo dinamico de precos, integracao com sistemas de pagamento e infraestrutura cloud robusta.
+                  Construção de apps nativos iOS e Android, backoffice para gestão, APIs para cálculo dinâmico de preços, integração com sistemas de pagamento e infraestrutura cloud robusta.
                 </p>
               </div>
 
@@ -267,9 +267,9 @@ export default function CaseAutoday() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-flag fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Lancamento</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Lançamento</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Validacao tecnica e regulatoria com SUSEP, testes de carga e seguranca, e lancamento estrategico no mercado. Suporte no go-to-market e primeiros usuarios.
+                  Validação técnica e regulatória com SUSEP, testes de carga e segurança, e lançamento estratégico no mercado. Suporte no go-to-market e primeiros usuários.
                 </p>
               </div>
             </div>
@@ -313,7 +313,7 @@ export default function CaseAutoday() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-white/70 lg:max-w-[70%]">
               <p>
-                O Autoday foi pioneiro em trazer o conceito de seguro sob demanda para o Brasil, validando tecnicamente a viabilidade desse modelo inovador e abrindo caminho para uma nova forma de pensar seguros automotivos no pais.
+                O Autoday foi pioneiro em trazer o conceito de seguro sob demanda para o Brasil, validando tecnicamente a viabilidade desse modelo inovador e abrindo caminho para uma nova forma de pensar seguros automotivos no país.
               </p>
             </div>
 
@@ -332,7 +332,7 @@ export default function CaseAutoday() {
                   <i className="fa-jelly fa-users fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">200k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Usuarios</h3>
+                <h3 className="mb-2 text-xl font-black text-white">Usuários</h3>
                 <p className="text-lg leading-relaxed text-white/70">Motoristas cadastrados na plataforma</p>
               </div>
             </div>
@@ -344,7 +344,7 @@ export default function CaseAutoday() {
                   Transformando o Mercado de Seguros
                 </h3>
                 <p className="max-w-full text-xl leading-relaxed text-white/70 lg:max-w-3xl">
-                  O Autoday validou tecnicamente um modelo de negocio inovador, provando que e possivel oferecer seguro automotivo de forma mais flexivel e acessivel. A tecnologia desenvolvida abriu caminho para uma nova categoria de produtos no mercado brasileiro de seguros.
+                  O Autoday validou tecnicamente um modelo de negócio inovador, provando que é possível oferecer seguro automotivo de forma mais flexível e acessível. A tecnologia desenvolvida abriu caminho para uma nova categoria de produtos no mercado brasileiro de seguros.
                 </p>
               </div>
 
@@ -361,7 +361,7 @@ export default function CaseAutoday() {
                     </defs>
                     <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                       <textPath href="#impactCircle" startOffset="0%">
-                        apolices - seguros - coberturas - protecao -
+                        apólices - seguros - coberturas - proteção -
                       </textPath>
                     </text>
                   </svg>
@@ -370,7 +370,7 @@ export default function CaseAutoday() {
                 {/* Center Content */}
                 <div className="relative z-10 text-center">
                   <div className="text-4xl font-black text-white sm:text-5xl md:text-6xl">70k+</div>
-                  <div className="text-lg text-brand-orange">apolices</div>
+                  <div className="text-lg text-brand-orange">apólices</div>
                   <div className="text-lg text-brand-orange">emitidas</div>
                 </div>
               </div>
@@ -389,7 +389,7 @@ export default function CaseAutoday() {
                 <i className="fa-solid fa-quote-left fa-3x text-brand-orange"></i>
               </div>
               <blockquote className="text-3xl leading-tight text-dark sm:text-4xl">
-                "Foi uma empresa muito parceira nossa, porque eles contribuiram nao so no desenvolvimento, mas tambem com ideias pro negocio. Deram muito suporte pra gente."
+                "Foi uma empresa muito parceira nossa, porque eles contribuíram não só no desenvolvimento, mas também com ideias pro negócio. Deram muito suporte pra gente."
               </blockquote>
             </div>
 

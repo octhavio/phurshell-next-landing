@@ -64,8 +64,8 @@ export default function NotFound() {
         </h2>
 
         <p className="mb-12 max-w-2xl text-center text-lg text-dark/70 sm:text-xl">
-          Parece que voce encontrou um bug no universo. Nao se preocupe, nossos desenvolvedores
-          estao trabalhando nisso... ou talvez estejam tomando cafe.
+          Parece que você encontrou um bug no universo. Não se preocupe, nossos desenvolvedores
+          estão trabalhando nisso... ou talvez estejam tomando café.
         </p>
 
         {/* Action Button */}

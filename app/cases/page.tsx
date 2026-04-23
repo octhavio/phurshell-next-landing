@@ -16,7 +16,7 @@ export default function Cases() {
       icon: '/images/img-cases-diag-icon.png',
       segment: 'Healthtech',
       description:
-        'Prescricoes medicas simplificadas. Plataforma completa de gestao de saude com geracao de prontuarios e receitas medicas, chat com IA para suporte diagnostico, e conteudos medicos atualizados para facilitar o dia-a-dia dos medicos.',
+        'Prescrições médicas simplificadas. Plataforma completa de gestão de saúde com geração de prontuários e receitas médicas, chat com IA para suporte diagnóstico, e conteúdos médicos atualizados para facilitar o dia-a-dia dos médicos.',
       screenshot: '/images/img-cases-diag-screenshot-1.png',
       screenshot2: '/images/img-cases-diag-screenshot-2.png',
       tags: [
@@ -37,7 +37,7 @@ export default function Cases() {
       icon: '/images/img-cases-psiapp-icon.png',
       segment: 'Healthtech',
       description:
-        'O aplicativo que conecta psicologos a pacientes. Desenvolvimento completo dos aplicativos para pacientes e psicologos, criacao do backoffice para gestao e suporte dos atendimentos. Analise de dados para crescimento do projeto e manutencao continua.',
+        'O aplicativo que conecta psicólogos a pacientes. Desenvolvimento completo dos aplicativos para pacientes e psicólogos, criação do backoffice para gestão e suporte dos atendimentos. Análise de dados para crescimento do projeto e manutenção contínua.',
       screenshot: '/images/img-cases-psiapp-screenshot-1.png',
       screenshot2: '/images/img-cases-psiapp-screenshot-2.png',
       tags: [
@@ -56,7 +56,7 @@ export default function Cases() {
       icon: '/images/img-cases-autoday-icon.png',
       segment: 'Insurtech',
       description:
-        'E uma insurtech especializada no desenvolvimento de solucoes de seguros de mobilidade inovadores e acessiveis. O aplicativo que ajuda voce a proteger seu carro com um seguro intermitente revolucionario.',
+        'É uma insurtech especializada no desenvolvimento de soluções de seguros de mobilidade inovadores e acessíveis. O aplicativo que ajuda você a proteger seu carro com um seguro intermitente revolucionário.',
       screenshot: '/images/img-cases-autoday-screenshot-1.png',
       screenshot2: '/images/img-cases-autoday-screenshot-2.png',
       tags: ['BACKOFFICE', 'WIREFRAME', 'IDENTIDADE VISUAL', 'INFRAESTRUTURA', 'LANDING PAGE', 'IOS', 'ANDROID'],
@@ -67,7 +67,7 @@ export default function Cases() {
       icon: '/images/img-cases-bluu-icon.png',
       segment: 'Healthtech',
       description:
-        'Aplicativo de saude preventiva para pets, ajudando tutores a melhorar a saude de seus bichinhos com atividades e praticas diarias. Alem de atendimento veterinario para casos emergenciais.',
+        'Aplicativo de saúde preventiva para pets, ajudando tutores a melhorar a saúde de seus bichinhos com atividades e práticas diárias. Além de atendimento veterinário para casos emergenciais.',
       screenshot: '/images/img-cases-bluu-screenshot-1.png',
       screenshot2: '/images/img-cases-bluu-screenshot-2.png',
       tags: ['WIREFRAME', 'BACKOFFICE', 'LANDING PAGE', 'IDENTIDADE VISUAL', 'IOS', 'ANDROID'],
@@ -75,9 +75,9 @@ export default function Cases() {
     {
       name: 'Novva',
       icon: '/images/img-cases-novva-icon.png',
-      segment: 'Educacao',
+      segment: 'Educação',
       description:
-        'Aplicativo para alunos americanos que vao ingressar nas universidades e querem conhecer as instituicoes de ensino. Uma plataforma completa que facilita a jornada de descoberta e conexao com as melhores universidades.',
+        'Aplicativo para alunos americanos que vão ingressar nas universidades e querem conhecer as instituições de ensino. Uma plataforma completa que facilita a jornada de descoberta e conexão com as melhores universidades.',
       screenshot: '/images/img-cases-novva-screenshot-1.png',
       screenshot2: '/images/img-cases-novva-screenshot-2.png',
       tags: ['IDENTIDADE VISUAL', 'WIREFRAME', 'IOS', 'ANDROID'],
@@ -87,7 +87,7 @@ export default function Cases() {
       icon: '/images/img-cases-devotee-icon.png',
       segment: 'Social',
       description:
-        'Tivemos a honra de tirar do papel o unico aplicativo de relacionamento exclusivo para deficientes fisicos. Desde a concepcao da ideia ate o desenvolvimento do iOS e Android.',
+        'Tivemos a honra de tirar do papel o único aplicativo de relacionamento exclusivo para deficientes físicos. Desde a concepção da ideia até o desenvolvimento do iOS e Android.',
       screenshot: '/images/img-cases-devotee-screenshot-1.png',
       screenshot2: '/images/img-cases-devotee-screenshot-2.png',
       tags: ['WIREFRAME', 'BACKEND', 'WEB', 'IOS', 'ANDROID', 'BACKOFFICE', 'IDENTIDADE VISUAL'],
@@ -97,7 +97,7 @@ export default function Cases() {
       icon: '/images/img-cases-4traders-icon.png',
       segment: 'Fintech',
       description:
-        'Aplicativo de informacoes de mercado para quem investe em acoes. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepcao ate a publicacao.',
+        'Aplicativo de informações de mercado para quem investe em ações. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepção até a publicação.',
       screenshot: '/images/img-cases-4traders-screenshot-1.png',
       screenshot2: '/images/img-cases-4traders-screenshot-2.png',
       tags: ['LOGO', 'MOCKUP', 'BACKEND', 'BACKOFFICE', 'IOS', 'ANDROID'],
@@ -107,7 +107,7 @@ export default function Cases() {
       icon: '/images/img-cases-movspot-icon.png',
       segment: 'Social',
       description:
-        'Tiramos a ideia do papel, estudamos o mercado, criamos a identidade e desenvolvemos a unica plataforma que mostra onde os filmes foram gravados na internet.',
+        'Tiramos a ideia do papel, estudamos o mercado, criamos a identidade e desenvolvemos a única plataforma que mostra onde os filmes foram gravados na internet.',
       screenshot: '/images/img-cases-movspot-screenshot-1.png',
       screenshot2: '/images/img-cases-movspot-screenshot-2.png',
       tags: [
@@ -121,11 +121,11 @@ export default function Cases() {
       ],
     },
     {
-      name: 'Chefe de Plantao',
+      name: 'Chefe de Plantão',
       icon: '/images/img-cases-chefe-icon.png',
       segment: 'Healthtech',
       description:
-        'Aplicativo que ajuda medicos recem formados com suas consultas. Projeto que construimos todos os produtos, desde a identidade ate todos os aplicativos.',
+        'Aplicativo que ajuda médicos recém formados com suas consultas. Projeto que construímos todos os produtos, desde a identidade até todos os aplicativos.',
       screenshot: '/images/img-cases-chefe-screenshot-1.png',
       screenshot2: '/images/img-cases-chefe-screenshot-2.png',
       tags: ['LOGO', 'MOCKUP', 'BACKEND', 'BACKOFFICE', 'IOS', 'ANDROID'],
@@ -135,7 +135,7 @@ export default function Cases() {
       icon: '/images/img-cases-goplayer-icon.png',
       segment: 'Social',
       description:
-        'Aplicativo conecta jogadores de futebol com times. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepcao ate a publicacao.',
+        'Aplicativo conecta jogadores de futebol com times. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepção até a publicação.',
       screenshot: '/images/img-cases-goplayer-screenshot-1.png',
       screenshot2: '/images/img-cases-goplayer-screenshot-2.png',
       tags: ['LOGO', 'MOCKUP', 'BACKEND', 'BACKOFFICE', 'IOS', 'ANDROID'],
@@ -145,7 +145,7 @@ export default function Cases() {
       icon: '/images/img-cases-buyapp-icon.png',
       segment: 'Varejo',
       description:
-        'O aplicativo que ajuda voce a fazer suas compras seja em mercados ou em distribuidores.',
+        'O aplicativo que ajuda você a fazer suas compras seja em mercados ou em distribuidores.',
       screenshot: '/images/img-cases-buyapp-screenshot-1.png',
       screenshot2: '/images/img-cases-buyapp-screenshot-2.png',
       tags: ['MOCKUP', 'BACKEND', 'IOS', 'ANDROID'],
@@ -155,7 +155,7 @@ export default function Cases() {
       icon: '/images/img-cases-megatroca-icon.png',
       segment: 'Varejo',
       description:
-        'Aplicativo para venda e compra de veiculos. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepcao ate a publicacao.',
+        'Aplicativo para venda e compra de veículos. Tiramos o projeto do papel criando e desenvolvendo todos os produtos desde a concepção até a publicação.',
       screenshot: '/images/img-cases-megatroca-screenshot-1.png',
       screenshot2: '/images/img-cases-megatroca-screenshot-2.png',
       tags: ['LOGO', 'MOCKUP', 'BACKEND', 'BACKOFFICE', 'IOS', 'ANDROID'],
@@ -165,7 +165,7 @@ export default function Cases() {
       icon: '/images/img-cases-goin-icon.png',
       segment: 'Social',
       description:
-        'Montando um time exclusivo para o desenvolvimento do aplicativo que tras entretenimento na palma das maos pra quem nao aguenta ficar sentado no sofa.',
+        'Montando um time exclusivo para o desenvolvimento do aplicativo que traz entretenimento na palma das mãos pra quem não aguenta ficar sentado no sofá.',
       screenshot: '/images/img-cases-goin-screenshot-1.png',
       screenshot2: '/images/img-cases-goin-screenshot-2.png',
       tags: ['MOCKUP', 'BACKEND', 'FRONTEND', 'IOS', 'WEB', 'BACKOFFICE'],
@@ -175,7 +175,7 @@ export default function Cases() {
       icon: '/images/img-cases-drluke-icon.png',
       segment: 'Healthtech',
       description:
-        'Desenvolvemos a versao Android do aplicativo que esta ajudando as maes com a vacinacao de seus filhos.',
+        'Desenvolvemos a versão Android do aplicativo que está ajudando as mães com a vacinação de seus filhos.',
       screenshot: '/images/img-cases-drluke-screenshot-1.png',
       screenshot2: '/images/img-cases-drluke-screenshot-2.png',
       tags: ['MOCKUP', 'BACKEND', 'IOS', 'ANDROID'],
@@ -185,7 +185,7 @@ export default function Cases() {
       icon: '/images/img-cases-gente-icon.png',
       segment: 'Insurtech',
       description:
-        'Estivemos dia-a-dia estudando o fluxo de dados de nosso cliente. Baseado na maneira como as pessoas utilizavam o servicos da Gente Seguradora nos construimos os aplicativos para digitalizar diversos processos que eram feitos manualmente.',
+        'Estivemos dia-a-dia estudando o fluxo de dados de nosso cliente. Baseado na maneira como as pessoas utilizavam os serviços da Gente Seguradora nós construímos os aplicativos para digitalizar diversos processos que eram feitos manualmente.',
       screenshot: '/images/img-cases-gente-screenshot-1.png',
       screenshot2: '/images/img-cases-gente-screenshot-2.png',
       tags: ['MOCKUP', 'BACKEND', 'FRONTEND', 'WEB', 'IOS', 'ANDROID', 'BACKOFFICE'],
@@ -200,7 +200,7 @@ export default function Cases() {
       'Social': 'fa-solid fa-users',
       'Fintech': 'fa-solid fa-chart-line',
       'Varejo': 'fa-solid fa-store',
-      'Educacao': 'fa-solid fa-graduation-cap',
+      'Educação': 'fa-solid fa-graduation-cap',
     }
     return segmentIconMap[segment] || 'fa-solid fa-tag'
   }
@@ -244,7 +244,7 @@ export default function Cases() {
     'Psiapp': '#FD97731A',
     'Autoday': '#5E239F1A',
     'Bluu': '#D80A831A',
-    'Chefe de Plantao': '#0E97931A',
+    'Chefe de Plantão': '#0E97931A',
     'Dr Luke': '#FEC2671A',
     'Gente Seguradora': '#2692D71A',
     'MovSpot': '#FF8E0A1A',
@@ -297,7 +297,7 @@ export default function Cases() {
 
           {/* Description */}
           <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
-            <span className="word-wrapper"><span className="word word-delay-7">Conheca</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-7">Conheça</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-8">alguns</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-9">dos</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-10">projetos</span></span>{' '}
@@ -307,12 +307,12 @@ export default function Cases() {
             <span className="word-wrapper"><span className="word word-delay-14">zero,</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-15">desde</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-16">a</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-17">concepcao</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-17">concepção</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-18">da</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-19">ideia</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-20">ate</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-20">até</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-21">o</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-22">lancamento</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-22">lançamento</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-23">e</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-24">crescimento</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-25">no</span></span>{' '}

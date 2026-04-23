@@ -49,7 +49,7 @@ export default function Insights() {
               Pronto para transformar sua ideia em realidade?
             </h2>
             <p className="mb-8 text-xl text-white/90">
-              Vamos conversar sobre seu proximo projeto de tecnologia
+              Vamos conversar sobre seu próximo projeto de tecnologia
             </p>
             <TransitionLink
               href="/contato"

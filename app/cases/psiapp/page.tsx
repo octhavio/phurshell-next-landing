@@ -3,7 +3,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
   title: 'Case Psiapp | Phurshell',
-  description: 'Conectando psicologos e pacientes atraves da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e analise de dados.',
+  description: 'Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados.',
 }
 
 export default function CasePsiapp() {
@@ -15,10 +15,10 @@ export default function CasePsiapp() {
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="word-wrapper"><span className="word word-delay-1">Conectando</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">psicologos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-2">psicólogos</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-3">e</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-4">pacientes</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">atraves</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-5">através</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-6">da</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-7">tecnologia</span></span>
           </h1>
@@ -75,9 +75,9 @@ export default function CasePsiapp() {
                     {/* Info Text */}
                     <div>
                       <p className="text-sm leading-relaxed text-white/90 sm:text-base">
-                        Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicologos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapeutico de forma pratica e segura.
+                        Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas é o acompanhamento terapêutico de forma prática e segura.
                         <br />
-                        <span className="font-bold">Sao quase 100 mil downloads</span>
+                        <span className="font-bold">São quase 100 mil downloads</span>
                       </p>
                     </div>
 
@@ -106,13 +106,13 @@ export default function CasePsiapp() {
           {/* Overview Text */}
           <div className="mb-12 max-w-full lg:max-w-[70%]">
             <h2 className="mb-8 text-4xl font-black text-dark sm:text-5xl">
-              Visao Geral
+              Visão Geral
             </h2>
             <p className="mb-6 text-xl leading-relaxed text-dark/70">
-              O Psiapp nasceu com a missao de democratizar o acesso a psicoterapia no Brasil. Em 2020, quando a ideia surgiu, encontrar um psicologo compativel com suas necessidades era um processo complexo e demorado. A pandemia acelerou a necessidade de solucoes digitais na area da saude mental.
+              O Psiapp nasceu com a missão de democratizar o acesso à psicoterapia no Brasil. Em 2020, quando a ideia surgiu, encontrar um psicólogo compatível com suas necessidades era um processo complexo e demorado. A pandemia acelerou a necessidade de soluções digitais na área da saúde mental.
             </p>
             <p className="text-xl leading-relaxed text-dark/70">
-              A Phurshell foi escolhida como parceira tecnologica para transformar essa visao em realidade, desenvolvendo uma plataforma completa que conecta psicologos e pacientes de forma simples, segura e eficiente.
+              A Phurshell foi escolhida como parceira tecnológica para transformar essa visão em realidade, desenvolvendo uma plataforma completa que conecta psicólogos e pacientes de forma simples, segura e eficiente.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function CasePsiapp() {
                 <i className="fa-jelly fa-landmark fa-xl text-brand-orange"></i>
               </div>
               <h3 className="mb-3 text-xl font-black text-dark">Segmento</h3>
-              <p className="text-xl leading-relaxed text-dark/70">Saude Mental / Healthtech</p>
+              <p className="text-xl leading-relaxed text-dark/70">Saúde Mental / Healthtech</p>
             </div>
 
             {/* Card Periodo */}
@@ -132,7 +132,7 @@ export default function CasePsiapp() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                 <i className="fa-jelly fa-calendar fa-xl text-brand-orange"></i>
               </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Periodo</h3>
+              <h3 className="mb-3 text-xl font-black text-dark">Período</h3>
               <p className="text-xl leading-relaxed text-dark/70">2020 - Presente</p>
             </div>
 
@@ -166,13 +166,13 @@ export default function CasePsiapp() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Criar uma plataforma que atendesse simultaneamente dois publicos distintos — psicologos e pacientes — cada um com necessidades e expectativas diferentes.
+                Criar uma plataforma que atendesse simultaneamente dois públicos distintos — psicólogos e pacientes — cada um com necessidades e expectativas diferentes.
               </p>
               <p>
-                Para os <strong className="text-dark">psicologos</strong>, era essencial oferecer ferramentas profissionais de gestao: agenda, prontuarios, controle financeiro e um perfil que destacasse suas especializacoes.
+                Para os <strong className="text-dark">psicólogos</strong>, era essencial oferecer ferramentas profissionais de gestão: agenda, prontuários, controle financeiro e um perfil que destacasse suas especializações.
               </p>
               <p>
-                Para os <strong className="text-dark">pacientes</strong>, a experiencia precisava ser acolhedora e descomplicada: buscar profissionais por especializacao, agendar consultas com facilidade e ter um ambiente seguro para suas sessoes online.
+                Para os <strong className="text-dark">pacientes</strong>, a experiência precisava ser acolhedora e descomplicada: buscar profissionais por especialização, agendar consultas com facilidade e ter um ambiente seguro para suas sessões online.
               </p>
             </div>
 
@@ -183,7 +183,7 @@ export default function CasePsiapp() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Dupla Persona</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Equilibrar as necessidades de profissionais de saude com a experiencia de usuarios finais buscando ajuda.
+                  Equilibrar as necessidades de profissionais de saúde com a experiência de usuários finais buscando ajuda.
                 </p>
               </div>
 
@@ -191,9 +191,9 @@ export default function CasePsiapp() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-bolt fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Agendamento Rapido</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Agendamento Rápido</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Conectar pacientes e psicologos em consultas imediatas, como um "Uber da psicoterapia", permitindo atendimento instantaneo quando o paciente mais precisa.
+                  Conectar pacientes e psicólogos em consultas imediatas, como um "Uber da psicoterapia", permitindo atendimento instantâneo quando o paciente mais precisa.
                 </p>
               </div>
 
@@ -201,9 +201,9 @@ export default function CasePsiapp() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-video fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Videochamadas Estaveis</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Videochamadas Estáveis</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Implementar sistema de videochamadas confiavel para sessoes terapeuticas sem interrupcoes.
+                  Implementar sistema de videochamadas confiável para sessões terapêuticas sem interrupções.
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function CasePsiapp() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Transformar a visao do Psiapp em realidade exigiu um processo estruturado e colaborativo. Desde a imersao no universo da psicoterapia ate o lancamento e evolucao continua, cada etapa foi cuidadosamente planejada para garantir uma plataforma que atendesse as necessidades reais de psicologos e pacientes.
+                Transformar a visão do Psiapp em realidade exigiu um processo estruturado e colaborativo. Desde a imersão no universo da psicoterapia até o lançamento e evolução contínua, cada etapa foi cuidadosamente planejada para garantir uma plataforma que atendesse às necessidades reais de psicólogos e pacientes.
               </p>
             </div>
 
@@ -256,9 +256,9 @@ export default function CasePsiapp() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-pencil fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Design e Validacao</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Design e Validação</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Imersao profunda com psicologos e pacientes, prototipagem rapida e validacao de hipoteses. Criacao de wireframes e identidade visual que transmite profissionalismo e acolhimento.
+                  Imersão profunda com psicólogos e pacientes, prototipagem rápida e validação de hipóteses. Criação de wireframes e identidade visual que transmite profissionalismo e acolhimento.
                 </p>
               </div>
 
@@ -268,7 +268,7 @@ export default function CasePsiapp() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Desenvolvimento</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Construcao de apps nativos iOS e Android, backoffice web, infraestrutura escalavel com videochamadas WebRTC, pagamentos e seguranca end-to-end com conformidade LGPD.
+                  Construção de apps nativos iOS e Android, backoffice web, infraestrutura escalável com videochamadas WebRTC, pagamentos e segurança end-to-end com conformidade LGPD.
                 </p>
               </div>
 
@@ -276,9 +276,9 @@ export default function CasePsiapp() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-flag fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Lancamento e Evolucao</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Lançamento e Evolução</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Lancamento estrategico com onboarding gradual. Ciclo continuo de melhorias baseado em dados de uso e feedbacks, evoluindo constantemente para atender necessidades reais.
+                  Lançamento estratégico com onboarding gradual. Ciclo contínuo de melhorias baseado em dados de uso e feedbacks, evoluindo constantemente para atender necessidades reais.
                 </p>
               </div>
             </div>
@@ -322,7 +322,7 @@ export default function CasePsiapp() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-white/70 lg:max-w-[70%]">
               <p>
-                O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso a saude mental para milhares de pessoas e proporcionando aos psicologos uma ferramenta profissional completa para gerenciar suas praticas.
+                O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso à saúde mental para milhares de pessoas e proporcionando aos psicólogos uma ferramenta profissional completa para gerenciar suas práticas.
               </p>
             </div>
 
@@ -341,8 +341,8 @@ export default function CasePsiapp() {
                   <i className="fa-jelly fa-star fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">4.8</div>
-                <h3 className="mb-2 text-xl font-black text-white">Avaliacao</h3>
-                <p className="text-lg leading-relaxed text-white/70">Media nas app stores</p>
+                <h3 className="mb-2 text-xl font-black text-white">Avaliação</h3>
+                <p className="text-lg leading-relaxed text-white/70">Média nas app stores</p>
               </div>
 
               <div className="rounded-button border border-white/10 p-8">
@@ -350,7 +350,7 @@ export default function CasePsiapp() {
                   <i className="fa-jelly fa-user fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">4k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Psicologos</h3>
+                <h3 className="mb-2 text-xl font-black text-white">Psicólogos</h3>
                 <p className="text-lg leading-relaxed text-white/70">Ativos na plataforma</p>
               </div>
 
@@ -360,7 +360,7 @@ export default function CasePsiapp() {
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">2.7mi+</div>
                 <h3 className="mb-2 text-xl font-black text-white">Receita Gerada</h3>
-                <p className="text-lg leading-relaxed text-white/70">Para psicologos na plataforma</p>
+                <p className="text-lg leading-relaxed text-white/70">Para psicólogos na plataforma</p>
               </div>
             </div>
 
@@ -368,10 +368,10 @@ export default function CasePsiapp() {
             <div className="mt-12 flex items-center justify-between gap-8">
               <div className="flex-1">
                 <h3 className="mb-6 text-3xl font-black text-white sm:text-4xl">
-                  Impacto Real na Saude Mental
+                  Impacto Real na Saúde Mental
                 </h3>
                 <p className="max-w-full text-xl leading-relaxed text-white/70 lg:max-w-3xl">
-                  O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso a saude mental para milhares de pessoas e proporcionando aos psicologos uma ferramenta profissional completa para gerenciar suas praticas.
+                  O Psiapp se consolidou como uma das principais plataformas de psicoterapia online do Brasil, facilitando o acesso à saúde mental para milhares de pessoas e proporcionando aos psicólogos uma ferramenta profissional completa para gerenciar suas práticas.
                 </p>
               </div>
 
@@ -388,7 +388,7 @@ export default function CasePsiapp() {
                     </defs>
                     <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                       <textPath href="#impactCircle" startOffset="0%">
-                        consultas - sessoes - atendimentos - psicoterapia -
+                        consultas - sessões - atendimentos - psicoterapia -
                       </textPath>
                     </text>
                   </svg>
@@ -416,7 +416,7 @@ export default function CasePsiapp() {
                 <i className="fa-solid fa-quote-left fa-3x text-brand-orange"></i>
               </div>
               <blockquote className="text-3xl leading-tight text-dark sm:text-4xl">
-                "Ficou muito, muito bom! Eu adorei, nao conseguiria pensar em algo melhor, ficou incrivel, amei!"
+                "Ficou muito, muito bom! Eu adorei, não conseguiria pensar em algo melhor, ficou incrível, amei!"
               </blockquote>
             </div>
 
@@ -425,14 +425,14 @@ export default function CasePsiapp() {
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
                   src="/images/img-testimonial-psiapp.png"
-                  alt="Foto de Pamela Magalhaes, Idealizadora do Psiapp"
+                  alt="Foto de Pamela Magalhães, Idealizadora do Psiapp"
                   width={80}
                   height={80}
                   className="h-full w-full object-cover"
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <h3 className="mb-1 text-xl font-black text-dark">Pamela Magalhaes</h3>
+                <h3 className="mb-1 text-xl font-black text-dark">Pamela Magalhães</h3>
                 <p className="text-base font-bold text-dark/70">Idealizadora</p>
               </div>
             </div>
