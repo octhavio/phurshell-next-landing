@@ -558,17 +558,9 @@ export default function Servicos() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => {
                 const hasPage = category.slug === 'desenvolvimento-de-aplicativos'
-                const CardWrapper = hasPage ? TransitionLink : 'div'
-                const cardProps = hasPage
-                  ? { href: `/servicos/${category.slug}` }
-                  : {}
 
-                return (
-                  <CardWrapper
-                    key={service.title}
-                    {...cardProps}
-                    className={`flex h-full flex-col rounded-button bg-white p-8 ${hasPage ? 'group transition-all duration-200 hover:shadow-lg' : ''}`}
-                  >
+                const cardContent = (
+                  <>
                     <div className="mb-3 flex items-center gap-3">
                       <i className={`${service.icon === 'apple' || service.icon === 'android' ? 'fa-brands' : 'fa-solid'} fa-${service.icon} text-xl ${hasPage ? 'text-dark transition-colors duration-200 group-hover:text-brand-orange' : 'text-brand-orange'}`}></i>
                       <h3 className={`text-xl font-black text-dark ${hasPage ? 'transition-colors duration-200 group-hover:text-brand-orange' : ''}`}>
@@ -578,7 +570,24 @@ export default function Servicos() {
                     <p className="flex-grow text-xl leading-relaxed text-dark/60">
                       {service.description}
                     </p>
-                  </CardWrapper>
+                  </>
+                )
+
+                return hasPage ? (
+                  <TransitionLink
+                    key={service.title}
+                    href={`/servicos/${category.slug}`}
+                    className="group flex h-full flex-col rounded-button bg-white p-8 transition-all duration-200 hover:shadow-lg"
+                  >
+                    {cardContent}
+                  </TransitionLink>
+                ) : (
+                  <div
+                    key={service.title}
+                    className="flex h-full flex-col rounded-button bg-white p-8"
+                  >
+                    {cardContent}
+                  </div>
                 )
               })}
             </div>
