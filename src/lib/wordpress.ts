@@ -6,7 +6,7 @@
 import { WPPage, WPPost, WPCase, WPCategory, BlogPost } from '../types/wordpress'
 
 // URL base do WordPress - facilmente alterável
-const WP_BASE_URL = import.meta.env.VITE_WORDPRESS_URL || 'https://wp-api.phurshell.com'
+const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
 const WP_API_URL = `${WP_BASE_URL}/wp-json/wp/v2`
 
 /**

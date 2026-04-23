@@ -1,6 +1,7 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import TransitionLink from '../components/TransitionLink'
-import SEO from '../components/SEO'
+import TransitionLink from '../src/components/TransitionLink'
 
 export default function NotFound() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -23,11 +24,6 @@ export default function NotFound() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-brand-orange/5 to-white">
-      <SEO
-        title="Página não encontrada"
-        description="A página que você está procurando não foi encontrada."
-        url="/404"
-      />
       {/* Animated Background Circles */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -68,8 +64,8 @@ export default function NotFound() {
         </h2>
 
         <p className="mb-12 max-w-2xl text-center text-lg text-dark/70 sm:text-xl">
-          Parece que você encontrou um bug no universo. Não se preocupe, nossos desenvolvedores
-          estão trabalhando nisso... ou talvez estejam tomando café.
+          Parece que voce encontrou um bug no universo. Nao se preocupe, nossos desenvolvedores
+          estao trabalhando nisso... ou talvez estejam tomando cafe.
         </p>
 
         {/* Action Button */}

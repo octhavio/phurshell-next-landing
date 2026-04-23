@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import TransitionLink from './TransitionLink'
 import { BlogPost, WPCategory } from '../types/wordpress'
 
-const WP_BASE_URL = import.meta.env.VITE_WORDPRESS_URL || 'https://wp-api.phurshell.com'
+const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
 const POSTS_PER_PAGE = 9
 
 interface InsightsFilterProps {

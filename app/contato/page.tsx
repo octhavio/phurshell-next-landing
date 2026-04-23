@@ -1,15 +1,11 @@
-import MultiStepForm from '../components/MultiStepForm'
-import TransitionLink from '../components/TransitionLink'
-import SEO from '../components/SEO'
+'use client'
+
+import MultiStepForm from '../../src/components/MultiStepForm'
+import TransitionLink from '../../src/components/TransitionLink'
 
 export default function Contato() {
   return (
     <div className="flex min-h-screen">
-      <SEO
-        title="Contato"
-        description="Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia. Desenvolvimento de apps mobile, web e soluções customizadas."
-        url="/contato"
-      />
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <img

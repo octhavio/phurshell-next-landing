@@ -1,15 +1,14 @@
-import TransitionLink from '../components/TransitionLink'
-import ContactCTA from '../components/ContactCTA'
-import SEO from '../components/SEO'
+import { Metadata } from 'next'
+import ContactCTA from '../../../src/components/ContactCTA'
+
+export const metadata: Metadata = {
+  title: 'Case Diag | Phurshell',
+  description: 'Transformando a rotina medica com tecnologia. Plataforma completa de gestao clinica com prontuarios, receitas medicas e IA para suporte diagnostico.',
+}
 
 export default function CaseDiag() {
   return (
     <div className="bg-white">
-      <SEO
-        title="Case Diag"
-        description="Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico."
-        url="/cases/diag"
-      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
@@ -18,9 +17,9 @@ export default function CaseDiag() {
             <span className="word-wrapper"><span className="word word-delay-1">Simplificando</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-2">a</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-3">rotina</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">médica</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-4">medica</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-5">com</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">inteligência</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-6">inteligencia</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-7">artificial</span></span>
           </h1>
 
@@ -30,19 +29,19 @@ export default function CaseDiag() {
             <span className="word-wrapper"><span className="word word-delay-9">plataforma</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-10">completa</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-11">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-12">gestão</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-13">clínica</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-12">gestao</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-13">clinica</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-14">que</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-15">otimiza</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-16">o</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-17">trabalho</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-18">dos</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-19">médicos</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-19">medicos</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-20">com</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-21">prontuários</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-21">prontuarios</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-22">digitais,</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-23">receitas</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-24">médicas</span></span>{' '}
+            <span className="word-wrapper"><span className="word word-delay-24">medicas</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-25">e</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-26">IA.</span></span>
           </p>
@@ -53,7 +52,7 @@ export default function CaseDiag() {
               <span className="word word-delay-27" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <img
                   src="/images/img-diag-hero.png"
-                  alt="Interface do aplicativo Diag mostrando prontuários digitais e receitas médicas"
+                  alt="Interface do aplicativo Diag mostrando prontuarios digitais e receitas medicas"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -76,9 +75,9 @@ export default function CaseDiag() {
                     {/* Info Text */}
                     <div>
                       <p className="text-sm leading-relaxed text-white/90 sm:text-base">
-                        Plataforma desenvolvida pela Phurshell que revoluciona a rotina médica com prontuários digitais, geração de receitas e chat com IA para suporte diagnóstico.
+                        Plataforma desenvolvida pela Phurshell que revoluciona a rotina medica com prontuarios digitais, geracao de receitas e chat com IA para suporte diagnostico.
                         <br />
-                        <span className="font-bold">Quase 15 mil médicos cadastrados</span>
+                        <span className="font-bold">Quase 15 mil medicos cadastrados</span>
                       </p>
                     </div>
                   </div>
@@ -95,13 +94,13 @@ export default function CaseDiag() {
           {/* Overview Text */}
           <div className="mb-12 max-w-full lg:max-w-[70%]">
             <h2 className="mb-8 text-4xl font-black text-dark sm:text-5xl">
-              Visão Geral
+              Visao Geral
             </h2>
             <p className="mb-6 text-xl leading-relaxed text-dark/70">
-              O Diag nasceu da necessidade de modernizar a rotina dos médicos brasileiros. A gestão clínica ainda era feita de forma manual, com papéis e sistemas desconectados. Prescrever receitas, gerenciar prontuários e buscar informações médicas consumia tempo valioso que poderia ser dedicado aos pacientes.
+              O Diag nasceu da necessidade de modernizar a rotina dos medicos brasileiros. A gestao clinica ainda era feita de forma manual, com papeis e sistemas desconectados. Prescrever receitas, gerenciar prontuarios e buscar informacoes medicas consumia tempo valioso que poderia ser dedicado aos pacientes.
             </p>
             <p className="text-xl leading-relaxed text-dark/70">
-              A Phurshell desenvolveu uma plataforma completa que centraliza todas as ferramentas essenciais do dia-a-dia médico: prontuários eletrônicos, geração de receitas digitais com validade jurídica, biblioteca de medicamentos sempre atualizada e um chat com inteligência artificial que auxilia no processo diagnóstico.
+              A Phurshell desenvolveu uma plataforma completa que centraliza todas as ferramentas essenciais do dia-a-dia medico: prontuarios eletronicos, geracao de receitas digitais com validade juridica, biblioteca de medicamentos sempre atualizada e um chat com inteligencia artificial que auxilia no processo diagnostico.
             </p>
           </div>
 
@@ -113,15 +112,15 @@ export default function CaseDiag() {
                 <i className="fa-jelly fa-heart-pulse fa-xl text-brand-orange"></i>
               </div>
               <h3 className="mb-3 text-xl font-black text-dark">Segmento</h3>
-              <p className="text-xl leading-relaxed text-dark/70">Gestão Clínica / Healthtech</p>
+              <p className="text-xl leading-relaxed text-dark/70">Gestao Clinica / Healthtech</p>
             </div>
 
-            {/* Card Período */}
+            {/* Card Periodo */}
             <div className="rounded-button border border-dark/10 p-8">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                 <i className="fa-jelly fa-calendar fa-xl text-brand-orange"></i>
               </div>
-              <h3 className="mb-3 text-xl font-black text-dark">Período</h3>
+              <h3 className="mb-3 text-xl font-black text-dark">Periodo</h3>
               <p className="text-xl leading-relaxed text-dark/70">2022 - Presente</p>
             </div>
 
@@ -155,13 +154,13 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Criar uma solução que pudesse atender médicos de diferentes especialidades, com fluxos de trabalho distintos, mantendo a facilidade de uso e conformidade com regulamentações médicas.
+                Criar uma solucao que pudesse atender medicos de diferentes especialidades, com fluxos de trabalho distintos, mantendo a facilidade de uso e conformidade com regulamentacoes medicas.
               </p>
               <p>
-                Para os <strong className="text-dark">médicos</strong>, era essencial ter uma ferramenta rápida e intuitiva que não atrapalhasse o fluxo de atendimento. A plataforma precisava gerar receitas válidas juridicamente, armazenar prontuários de forma segura (LGPD) e oferecer suporte diagnóstico confiável.
+                Para os <strong className="text-dark">medicos</strong>, era essencial ter uma ferramenta rapida e intuitiva que nao atrapalhasse o fluxo de atendimento. A plataforma precisava gerar receitas validas juridicamente, armazenar prontuarios de forma segura (LGPD) e oferecer suporte diagnostico confiavel.
               </p>
               <p>
-                Além disso, a <strong className="text-dark">inteligência artificial</strong> precisava ser precisa e constantemente atualizada com as informações médicas mais recentes, auxiliando o profissional sem substituir seu julgamento clínico.
+                Alem disso, a <strong className="text-dark">inteligencia artificial</strong> precisava ser precisa e constantemente atualizada com as informacoes medicas mais recentes, auxiliando o profissional sem substituir seu julgamento clinico.
               </p>
             </div>
 
@@ -170,9 +169,9 @@ export default function CaseDiag() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-clipboard fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Prontuários Eletrônicos</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Prontuarios Eletronicos</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Desenvolver sistema seguro e prático de prontuários digitais com conformidade LGPD e acesso rápido ao histórico completo do paciente.
+                  Desenvolver sistema seguro e pratico de prontuarios digitais com conformidade LGPD e acesso rapido ao historico completo do paciente.
                 </p>
               </div>
 
@@ -182,7 +181,7 @@ export default function CaseDiag() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Receitas Digitais</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Criar sistema de prescrição médica digital com validade jurídica, integrado à base de medicamentos atualizada e com alertas de interações medicamentosas.
+                  Criar sistema de prescricao medica digital com validade juridica, integrado a base de medicamentos atualizada e com alertas de interacoes medicamentosas.
                 </p>
               </div>
 
@@ -190,9 +189,9 @@ export default function CaseDiag() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-sparkles fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">IA Diagnóstica</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">IA Diagnostica</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Implementar chat com inteligência artificial treinada em literatura médica para auxiliar no processo diagnóstico e sugerir condutas baseadas em evidências.
+                  Implementar chat com inteligencia artificial treinada em literatura medica para auxiliar no processo diagnostico e sugerir condutas baseadas em evidencias.
                 </p>
               </div>
             </div>
@@ -236,7 +235,7 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-dark/70 lg:max-w-[70%]">
               <p>
-                Transformar a visão do Diag em realidade exigiu profunda imersão no universo médico. Desde entender o fluxo de trabalho dos profissionais de saúde até implementar IA confiável, cada etapa foi pensada para criar uma ferramenta que médicos realmente utilizariam no dia-a-dia.
+                Transformar a visao do Diag em realidade exigiu profunda imersao no universo medico. Desde entender o fluxo de trabalho dos profissionais de saude ate implementar IA confiavel, cada etapa foi pensada para criar uma ferramenta que medicos realmente utilizariam no dia-a-dia.
               </p>
             </div>
 
@@ -245,9 +244,9 @@ export default function CaseDiag() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-plus fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Imersão Médica</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Imersao Medica</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Pesquisa profunda com médicos de diferentes especialidades, mapeamento de fluxos de atendimento e validação de funcionalidades. Design focado em agilidade e conformidade regulatória.
+                  Pesquisa profunda com medicos de diferentes especialidades, mapeamento de fluxos de atendimento e validacao de funcionalidades. Design focado em agilidade e conformidade regulatoria.
                 </p>
               </div>
 
@@ -257,7 +256,7 @@ export default function CaseDiag() {
                 </div>
                 <h3 className="mb-3 text-xl font-black text-dark">Desenvolvimento</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Apps nativos iOS e Android, plataforma web, infraestrutura escalável, integração com base de dados de medicamentos (Anvisa), sistema de IA com modelos de linguagem médica e conformidade total com LGPD.
+                  Apps nativos iOS e Android, plataforma web, infraestrutura escalavel, integracao com base de dados de medicamentos (Anvisa), sistema de IA com modelos de linguagem medica e conformidade total com LGPD.
                 </p>
               </div>
 
@@ -265,9 +264,9 @@ export default function CaseDiag() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-button bg-brand-orange/10">
                   <i className="fa-jelly fa-arrows-rotate fa-xl text-brand-orange"></i>
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark">Evolução Contínua</h3>
+                <h3 className="mb-3 text-xl font-black text-dark">Evolucao Continua</h3>
                 <p className="text-lg leading-relaxed text-dark/70">
-                  Lançamento gradual com onboarding de médicos beta-testers. Atualização constante da base de conhecimento da IA e melhorias baseadas no feedback real dos profissionais.
+                  Lancamento gradual com onboarding de medicos beta-testers. Atualizacao constante da base de conhecimento da IA e melhorias baseadas no feedback real dos profissionais.
                 </p>
               </div>
             </div>
@@ -311,7 +310,7 @@ export default function CaseDiag() {
             </h2>
             <div className="mb-12 max-w-full space-y-4 text-xl leading-relaxed text-white/70 lg:max-w-[70%]">
               <p>
-                O Diag se tornou uma ferramenta essencial para milhares de médicos brasileiros, otimizando consultas, reduzindo tempo de prescrição e oferecendo suporte diagnóstico baseado em evidências científicas atualizadas.
+                O Diag se tornou uma ferramenta essencial para milhares de medicos brasileiros, otimizando consultas, reduzindo tempo de prescricao e oferecendo suporte diagnostico baseado em evidencias cientificas atualizadas.
               </p>
             </div>
 
@@ -321,7 +320,7 @@ export default function CaseDiag() {
                   <i className="fa-jelly fa-users fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">15k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Médicos</h3>
+                <h3 className="mb-2 text-xl font-black text-white">Medicos</h3>
                 <p className="text-lg leading-relaxed text-white/70">Cadastrados na plataforma</p>
               </div>
 
@@ -330,7 +329,7 @@ export default function CaseDiag() {
                   <i className="fa-jelly fa-plus fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">10k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Receitas Médicas</h3>
+                <h3 className="mb-2 text-xl font-black text-white">Receitas Medicas</h3>
                 <p className="text-lg leading-relaxed text-white/70">Geradas na plataforma</p>
               </div>
 
@@ -339,7 +338,7 @@ export default function CaseDiag() {
                   <i className="fa-jelly fa-clipboard fa-xl text-brand-orange"></i>
                 </div>
                 <div className="mb-2 text-4xl font-black text-white">4k+</div>
-                <h3 className="mb-2 text-xl font-black text-white">Prontuários Médicos</h3>
+                <h3 className="mb-2 text-xl font-black text-white">Prontuarios Medicos</h3>
                 <p className="text-lg leading-relaxed text-white/70">Gerados na plataforma</p>
               </div>
             </div>
@@ -348,10 +347,10 @@ export default function CaseDiag() {
             <div className="mt-12 flex items-center justify-between gap-8">
               <div className="flex-1">
                 <h3 className="mb-6 text-3xl font-black text-white sm:text-4xl">
-                  Impacto Real na Saúde
+                  Impacto Real na Saude
                 </h3>
                 <p className="max-w-full text-xl leading-relaxed text-white/70 lg:max-w-3xl">
-                  O Diag revolucionou a rotina de milhares de médicos brasileiros, permitindo que dediquem mais tempo aos pacientes e menos tempo com burocracia. A IA auxilia em diagnósticos mais precisos, reduzindo erros e aumentando a qualidade do atendimento médico.
+                  O Diag revolucionou a rotina de milhares de medicos brasileiros, permitindo que dediquem mais tempo aos pacientes e menos tempo com burocracia. A IA auxilia em diagnosticos mais precisos, reduzindo erros e aumentando a qualidade do atendimento medico.
                 </p>
               </div>
 
@@ -368,7 +367,7 @@ export default function CaseDiag() {
                     </defs>
                     <text className="fill-white/20 text-sm uppercase tracking-[0.3em]" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                       <textPath href="#impactCircle" startOffset="0%">
-                        prontuários · receitas · diagnósticos · medicina ·
+                        prontuarios - receitas - diagnosticos - medicina -
                       </textPath>
                     </text>
                   </svg>
@@ -396,7 +395,7 @@ export default function CaseDiag() {
                 <i className="fa-solid fa-quote-left fa-3x text-brand-orange"></i>
               </div>
               <blockquote className="text-3xl leading-tight text-dark sm:text-4xl">
-                "Sabe quando você encontra parceiros que realmente vestem a camisa junto com você? A Phurshell é exatamente isso. Uma empresa cheia de ideias impressionantes, com uma equipe batalhadora e extremamente dedicada, e o melhor: sempre disposta a ajudar de verdade."
+                "Sabe quando voce encontra parceiros que realmente vestem a camisa junto com voce? A Phurshell e exatamente isso. Uma empresa cheia de ideias impressionantes, com uma equipe batalhadora e extremamente dedicada, e o melhor: sempre disposta a ajudar de verdade."
               </blockquote>
             </div>
 

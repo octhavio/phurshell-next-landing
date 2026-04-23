@@ -1,10 +1,11 @@
+'use client'
+
 import { useState } from 'react'
-import TransitionLink from '../components/TransitionLink'
-import ProcessCarousel from '../components/ProcessCarousel'
-import WhyPhurshell from '../components/WhyPhurshell'
-import ContactCTA from '../components/ContactCTA'
-import ClientLogosCarousel from '../components/ClientLogosCarousel'
-import SEO from '../components/SEO'
+import TransitionLink from '../../../src/components/TransitionLink'
+import ProcessCarousel from '../../../src/components/ProcessCarousel'
+import WhyPhurshell from '../../../src/components/WhyPhurshell'
+import ContactCTA from '../../../src/components/ContactCTA'
+import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 
 export default function ServicosApps() {
   const [currentCaseIndex, setCurrentCaseIndex] = useState(0)
@@ -256,11 +257,6 @@ export default function ServicosApps() {
 
   return (
     <div className="bg-white">
-      <SEO
-        title="Desenvolvimento de Aplicativos"
-        description="A Phurshell é uma empresa especializada em desenvolvimento de aplicativos customizados para iOS e Android. Criamos soluções sob medida que transformam suas ideias em produtos digitais de alta performance."
-        url="/servicos/desenvolvimento-de-aplicativos"
-      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
@@ -327,7 +323,6 @@ export default function ServicosApps() {
             <span className="word-wrapper">
               <span className="word word-delay-43" style={{ display: 'inline-block' }}>
                 <div className="flex items-center gap-4">
-                  {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
                     <img
                       src="/images/img-cta-especialist.png"
@@ -362,38 +357,35 @@ export default function ServicosApps() {
                 {/* Overlay Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8 lg:p-12">
-              <div className="max-w-full space-y-2 sm:space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
-                {/* Logo e Nome */}
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/img-icon-psiapp.svg"
-                    alt="Logo do aplicativo Psiapp"
-                    width={36}
-                    height={36}
-                    className="h-9 w-9 rounded-xl"
-                  />
-                  <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Psiapp</span>
-                </div>
+                  <div className="max-w-full space-y-2 sm:space-y-3 sm:max-w-[70%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="/img-icon-psiapp.svg"
+                        alt="Logo do aplicativo Psiapp"
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 rounded-xl"
+                      />
+                      <span className="text-lg font-black text-white sm:text-xl md:text-2xl">Psiapp</span>
+                    </div>
 
-                {/* Info Text */}
-                <div>
-                  <p className="text-sm leading-relaxed text-white/90 sm:text-base">
-                    Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
-                    <br />
-                    <span className="font-bold">São quase 100 mil downloads</span>
-                  </p>
-                </div>
+                    <div>
+                      <p className="text-sm leading-relaxed text-white/90 sm:text-base">
+                        Um dos aplicativos desenvolvidos pela Phurshell, que conecta psicólogos a pacientes, facilitando o agendamento de consultas e o acompanhamento terapêutico de forma prática e segura.
+                        <br />
+                        <span className="font-bold">São quase 100 mil downloads</span>
+                      </p>
+                    </div>
 
-                {/* Rating */}
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-black text-white sm:text-xl">4.8</span>
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <i key={star} className="fa-solid fa-star text-white"></i>
-                    ))}
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg font-black text-white sm:text-xl">4.8</span>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <i key={star} className="fa-solid fa-star text-white"></i>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
                 </div>
               </span>
             </span>
@@ -575,7 +567,6 @@ export default function ServicosApps() {
       <section className="bg-white py-16 sm:py-24">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="mx-auto max-w-4xl">
-            {/* Testimonial */}
             <div className="mb-12 text-center">
               <div className="relative mb-6 flex justify-center">
                 <i className="fa-solid fa-quote-left fa-3x text-brand-orange"></i>
@@ -586,7 +577,6 @@ export default function ServicosApps() {
               </blockquote>
             </div>
 
-            {/* Client Info */}
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
@@ -627,11 +617,9 @@ export default function ServicosApps() {
               <div key={stage.stage} className="relative flex items-center gap-6 pb-12 last:pb-0">
                 {/* Timeline Line & Circle */}
                 <div className="relative flex flex-col items-center self-stretch justify-center">
-                  {/* Continuous Line Behind */}
                   {index !== processStages.length - 1 && (
                     <div className="absolute left-1/2 top-1/2 h-[calc(100%+3rem-1.5rem)] w-0.5 -translate-x-1/2 bg-brand-orange/30"></div>
                   )}
-                  {/* Circle with number */}
                   <div className="z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-orange shadow-lg">
                     <span className="text-lg font-black text-white">{index + 1}</span>
                   </div>
@@ -707,7 +695,6 @@ export default function ServicosApps() {
           </h2>
 
           <div className="divide-y divide-dark/10">
-            {/* Question 1 */}
             <details className="group py-6">
               <summary className="flex cursor-pointer items-center justify-between text-xl font-bold text-dark">
                 Qual é o prazo estimado para o projeto?
@@ -720,7 +707,6 @@ export default function ServicosApps() {
               </div>
             </details>
 
-            {/* Question 2 */}
             <details className="group py-6">
               <summary className="flex cursor-pointer items-center justify-between text-xl font-bold text-dark">
                 O que é preciso para iniciar o desenvolvimento?
@@ -733,7 +719,6 @@ export default function ServicosApps() {
               </div>
             </details>
 
-            {/* Question 3 */}
             <details className="group py-6">
               <summary className="flex cursor-pointer items-center justify-between text-xl font-bold text-dark">
                 Como será a comunicação (reuniões, canais, frequência)?
@@ -746,7 +731,6 @@ export default function ServicosApps() {
               </div>
             </details>
 
-            {/* Question 4 */}
             <details className="group py-6">
               <summary className="flex cursor-pointer items-center justify-between text-xl font-bold text-dark">
                 Como garantem que o software atenderá o escopo?
@@ -759,7 +743,6 @@ export default function ServicosApps() {
               </div>
             </details>
 
-            {/* Question 5 */}
             <details className="group py-6">
               <summary className="flex cursor-pointer items-center justify-between text-xl font-bold text-dark">
                 Há suporte técnico após o encerramento do projeto? Qual o custo?

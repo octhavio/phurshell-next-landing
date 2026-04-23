@@ -1,9 +1,10 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import TransitionLink from '../components/TransitionLink'
-import WhyPhurshell from '../components/WhyPhurshell'
-import ContactCTA from '../components/ContactCTA'
-import ClientLogosCarousel from '../components/ClientLogosCarousel'
-import SEO from '../components/SEO'
+import TransitionLink from '../src/components/TransitionLink'
+import WhyPhurshell from '../src/components/WhyPhurshell'
+import ContactCTA from '../src/components/ContactCTA'
+import ClientLogosCarousel from '../src/components/ClientLogosCarousel'
 
 export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -285,11 +286,6 @@ export default function Home() {
 
   return (
     <div className="relative bg-white">
-      <SEO
-        title="Desenvolvimento de Apps Sob Medida"
-        description="Construímos produtos digitais que transformam ideias em negócios reais. Desde 2015 ajudamos startups e empresas a lançar aplicativos e plataformas digitais."
-        url="/"
-      />
       {/* Custom Cursor */}
       {isHoveringCard && (
         <div

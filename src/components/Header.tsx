@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import TransitionLink from './TransitionLink'
 import NavDropdown from './NavDropdown'
 
 export default function Header() {
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
   const [servicosOpen, setServicosOpen] = useState(false)

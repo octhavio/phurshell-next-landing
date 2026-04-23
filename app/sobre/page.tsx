@@ -1,73 +1,73 @@
-import ContactCTA from '../components/ContactCTA'
-import SEO from '../components/SEO'
+import type { Metadata } from 'next'
+import ContactCTA from '../../src/components/ContactCTA'
+
+export const metadata: Metadata = {
+  title: 'Sobre Nós',
+  description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios.',
+}
+
+const teamMembers = [
+  {
+    name: 'Gustavo Bittar',
+    role: 'Co-Fundador',
+    image: '/images/team/guga.jpg',
+  },
+  {
+    name: 'Bruno Campanhã',
+    role: 'Co-Fundador',
+    image: '/images/team/bruno.jpg',
+  },
+  {
+    name: 'Octhavio Martins',
+    role: 'Co-Fundador',
+    image: '/images/team/octhavio.jpg',
+  },
+  {
+    name: 'Andrews Alves',
+    role: 'Desenvolvedor',
+    image: '/images/team/andrews.jpg',
+  },
+  {
+    name: 'Paulo Marinho',
+    role: 'Desenvolvedor',
+    image: '/images/team/paulo.jpg',
+  },
+  {
+    name: 'Vinicius Alves',
+    role: 'Desenvolvedor',
+    image: '/images/team/vinnie.jpg',
+  },
+  {
+    name: 'Máquina de café',
+    role: 'Assistente',
+    image: '/images/maquina.jpg',
+  },
+]
+
+const whyWorkWithUs = [
+  {
+    icon: 'fa-clock',
+    title: 'Metodologias ágeis',
+    description:
+      'Dobro do trabalho em metade do tempo. Nosso time trabalha de forma organizada e eficiente, sempre focando o resultado final.',
+  },
+  {
+    icon: 'fa-chart-line',
+    title: 'Crescimento rápido',
+    description:
+      'Não esperamos ficar pra trás. Nós estudamos, testamos, e colocamos em prática novas tecnologias de maneira ágil.',
+  },
+  {
+    icon: 'fa-door-open',
+    title: 'Ambiente flexível',
+    description:
+      'Nem todo mundo trabalha da mesma maneira. Nosso time tem a liberdade para escolher como preferem trabalhar, nosso comprometimento é com os resultados.',
+  },
+]
 
 export default function Sobre() {
-  const teamMembers = [
-    {
-      name: 'Gustavo Bittar',
-      role: 'Co-Fundador',
-      image: '/images/team/guga.jpg',
-    },
-    {
-      name: 'Bruno Campanhã',
-      role: 'Co-Fundador',
-      image: '/images/team/bruno.jpg',
-    },
-    {
-      name: 'Octhavio Martins',
-      role: 'Co-Fundador',
-      image: '/images/team/octhavio.jpg',
-    },
-    {
-      name: 'Andrews Alves',
-      role: 'Desenvolvedor',
-      image: '/images/team/andrews.jpg',
-    },
-    {
-      name: 'Paulo Marinho',
-      role: 'Desenvolvedor',
-      image: '/images/team/paulo.jpg',
-    },
-    {
-      name: 'Vinicius Alves',
-      role: 'Desenvolvedor',
-      image: '/images/team/vinnie.jpg',
-    },
-    {
-      name: 'Máquina de café',
-      role: 'Assistente',
-      image: '/images/maquina.jpg',
-    },
-  ]
-
-  const whyWorkWithUs = [
-    {
-      icon: 'fa-clock',
-      title: 'Metodologias ágeis',
-      description:
-        'Dobro do trabalho em metade do tempo. Nosso time trabalha de forma organizada e eficiente, sempre focando o resultado final.',
-    },
-    {
-      icon: 'fa-chart-line',
-      title: 'Crescimento rápido',
-      description:
-        'Não esperamos ficar pra trás. Nós estudamos, testamos, e colocamos em prática novas tecnologias de maneira ágil.',
-    },
-    {
-      icon: 'fa-door-open',
-      title: 'Ambiente flexível',
-      description:
-        'Nem todo mundo trabalha da mesma maneira. Nosso time tem a liberdade para escolher como preferem trabalhar, nosso comprometimento é com os resultados.',
-    },
-  ]
-
   return (
     <div className="bg-white">
-      <SEO
-        title="Sobre Nós"
-        description="Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios."
-        url="/sobre"
-      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">

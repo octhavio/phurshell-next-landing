@@ -1,9 +1,11 @@
-import { useLocation } from 'react-router-dom'
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Header from './Header'
 import Footer from './Footer'
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const isContactPage = pathname === '/contato'
   const isCalculatorPage = pathname === '/calculadora'
   const isPropostaPage = pathname.startsWith('/propostas')

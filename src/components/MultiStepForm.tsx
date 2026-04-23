@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 
 interface FormData {
   // Step 1
@@ -74,7 +74,7 @@ function formatPhone(value: string): string {
 }
 
 export default function MultiStepForm() {
-  const navigate = useNavigate()
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -191,7 +191,7 @@ export default function MultiStepForm() {
       if (data.status) {
         setFormData(initialFormData)
         localStorage.removeItem('phurshell_form_software')
-        navigate('/contato/sucesso')
+        router.push('/contato/sucesso')
       } else {
         alert('Erro ao enviar formulário. Tente novamente.')
       }

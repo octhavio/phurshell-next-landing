@@ -1,9 +1,11 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import TransitionLink from '../components/TransitionLink'
-import InsightsFilter from '../components/InsightsFilter'
-import { getCategories } from '../lib/wordpress'
-import { WPCategory } from '../types/wordpress'
-import SEO from '../components/SEO'
+import { Metadata } from 'next'
+import TransitionLink from '../../src/components/TransitionLink'
+import InsightsFilter from '../../src/components/InsightsFilter'
+import { getCategories } from '../../src/lib/wordpress'
+import { WPCategory } from '../../src/types/wordpress'
 
 export default function Insights() {
   const [categories, setCategories] = useState<WPCategory[]>([])
@@ -27,11 +29,6 @@ export default function Insights() {
   if (loading) {
     return (
       <div className="bg-white">
-        <SEO
-          title="Insights"
-          description="Artigos sobre tecnologia, desenvolvimento de apps, startups e inovacao. Conteudo atualizado sobre as melhores praticas do mercado."
-          url="/insights"
-        />
         <div className="flex min-h-[50vh] items-center justify-center">
           <i className="fa-solid fa-spinner fa-spin text-6xl text-brand-orange"></i>
         </div>
@@ -41,11 +38,6 @@ export default function Insights() {
 
   return (
     <div className="bg-white">
-      <SEO
-        title="Insights"
-        description="Artigos sobre tecnologia, desenvolvimento de apps, startups e inovacao. Conteudo atualizado sobre as melhores praticas do mercado."
-        url="/insights"
-      />
       {/* Filter and Posts */}
       <InsightsFilter categories={categories} />
 

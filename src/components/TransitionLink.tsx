@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { useTransition } from '../context/TransitionContext'
 import { MouseEvent } from 'react'
 
@@ -14,7 +16,7 @@ export default function TransitionLink({ href, children, onClick, ...props }: Tr
   const { startTransition } = useTransition()
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    // Se for link âncora (#), deixa o comportamento padrão
+    // Se for link ancora (#), deixa o comportamento padrao
     if (href.startsWith('#')) {
       if (onClick) {
         onClick(e)
@@ -22,7 +24,7 @@ export default function TransitionLink({ href, children, onClick, ...props }: Tr
       return
     }
 
-    // Previne navegação padrão sempre (exceto âncoras)
+    // Previne navegacao padrao sempre (exceto ancoras)
     e.preventDefault()
 
     // Chama o onClick passado como prop, se existir (ex: fechar menu mobile)
@@ -30,12 +32,12 @@ export default function TransitionLink({ href, children, onClick, ...props }: Tr
       onClick(e)
     }
 
-    // Inicia transição
+    // Inicia transicao
     startTransition(href)
   }
 
   return (
-    <Link to={href} onClick={handleClick} {...props}>
+    <Link href={href} onClick={handleClick} {...props}>
       {children}
     </Link>
   )

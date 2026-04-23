@@ -1,5 +1,7 @@
+'use client'
+
 import { createContext, useContext, useState, useCallback, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useRouter, usePathname } from 'next/navigation'
 
 interface TransitionContextType {
   startTransition: (url: string) => void
@@ -10,38 +12,37 @@ interface TransitionContextType {
 const TransitionContext = createContext<TransitionContextType | null>(null)
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const pathname = location.pathname
+  const router = useRouter()
+  const pathname = usePathname()
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [showLogo, setShowLogo] = useState(true)
   const [isNavigating, setIsNavigating] = useState(false)
   const [targetUrl, setTargetUrl] = useState<string | null>(null)
 
-  // Monitora mudanças de rota e aguarda o carregamento completo
+  // Monitora mudancas de rota e aguarda o carregamento completo
   useEffect(() => {
     if (!isNavigating) return
 
-    // Normaliza URLs removendo trailing slash para comparação
+    // Normaliza URLs removendo trailing slash para comparacao
     const normalizeUrl = (url: string) => url.replace(/\/$/, '') || '/'
 
     // Verifica se chegamos na URL de destino
     if (targetUrl && normalizeUrl(pathname) === normalizeUrl(targetUrl)) {
-      // Aguarda o DOMContentLoaded e recursos da página
+      // Aguarda o DOMContentLoaded e recursos da pagina
       const checkPageLoad = () => {
-        if (document.readyState === 'complete') {
+        if (typeof document !== 'undefined' && document.readyState === 'complete') {
           // Etapa 1: Esconde o logo primeiro
           setShowLogo(false)
 
           // Etapa 2: Aguarda o logo desaparecer (0.3s) + pausa (0.4s) = 0.7s
           setTimeout(() => {
-            // Etapa 3: Remove a overlay (ela vai subir com sua animação de 0.5s)
+            // Etapa 3: Remove a overlay (ela vai subir com sua animacao de 0.5s)
             setIsTransitioning(false)
             setIsNavigating(false)
             setTargetUrl(null)
           }, 700) // 300ms logo + 400ms pausa
-        } else {
-          // Se ainda não está completo, aguarda o evento load
+        } else if (typeof window !== 'undefined') {
+          // Se ainda nao esta completo, aguarda o evento load
           window.addEventListener('load', () => {
             setShowLogo(false)
             setTimeout(() => {
@@ -57,6 +58,13 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     }
   }, [pathname, targetUrl, isNavigating])
 
+  // Scroll to top on route change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname])
+
   const startTransition = useCallback(
     (url: string) => {
       setIsTransitioning(true)
@@ -64,12 +72,12 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
       setIsNavigating(true)
       setTargetUrl(url)
 
-      // Navega após a tela branca cobrir 100%
+      // Navega apos a tela branca cobrir 100%
       setTimeout(() => {
-        navigate(url)
+        router.push(url)
       }, 500)
     },
-    [navigate]
+    [router]
   )
 
   return (

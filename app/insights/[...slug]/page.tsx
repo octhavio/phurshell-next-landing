@@ -1,77 +1,95 @@
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import TransitionLink from '../components/TransitionLink'
-import ShareButtons from '../components/ShareButtons'
-import { getBlogPosts, getBlogPostBySlug } from '../lib/wordpress'
-import { BlogPost } from '../types/wordpress'
-import SEO from '../components/SEO'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import TransitionLink from '../../../src/components/TransitionLink'
+import ShareButtons from '../../../src/components/ShareButtons'
+import { getBlogPosts, getBlogPostBySlug } from '../../../src/lib/wordpress'
+import { BlogPost } from '../../../src/types/wordpress'
 
-export default function InsightPost() {
-  const { slug } = useParams<{ slug: string }>()
-  const navigate = useNavigate()
-  const [post, setPost] = useState<BlogPost | null>(null)
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([])
-  const [loading, setLoading] = useState(true)
+interface PageProps {
+  params: { slug: string[] }
+}
 
-  useEffect(() => {
-    async function fetchPost() {
-      if (!slug) {
-        navigate('/insights')
-        return
-      }
-
-      setLoading(true)
-      try {
-        const fetchedPost = await getBlogPostBySlug(slug)
-
-        if (!fetchedPost) {
-          navigate('/404')
-          return
-        }
-
-        setPost(fetchedPost)
-
-        // Busca posts relacionados da mesma categoria
-        const allPosts = await getBlogPosts()
-        const related = allPosts
-          .filter((p) => p.id !== fetchedPost.id && p.categorySlug === fetchedPost.categorySlug)
-          .slice(0, 3)
-        setRelatedPosts(related)
-      } catch (error) {
-        console.error('Erro ao buscar post:', error)
-        navigate('/404')
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchPost()
-  }, [slug, navigate])
-
-  if (loading) {
-    return (
-      <div className="bg-white">
-        <SEO title="Carregando..." url={`/insights/${slug}`} />
-        <div className="flex min-h-[50vh] items-center justify-center">
-          <i className="fa-solid fa-spinner fa-spin text-6xl text-brand-orange"></i>
-        </div>
-      </div>
-    )
+// SSG: Busca TODOS os posts no build time
+export async function generateStaticParams() {
+  try {
+    const posts = await getBlogPosts(100)
+    return posts.map((post) => ({
+      slug: [post.slug],
+    }))
+  } catch (error) {
+    console.error('Erro ao gerar static params:', error)
+    return []
   }
+}
+
+// SEO: Metadata dinâmico baseado no post
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const slug = params.slug[0]
+  const post = await getBlogPostBySlug(slug)
 
   if (!post) {
+    return {
+      title: 'Post não encontrado',
+    }
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | Phurshell`,
+      description: post.excerpt,
+      url: `https://phurshell.com/insights/${post.slug}`,
+      type: 'article',
+      images: post.image ? [{ url: post.image, width: 1200, height: 630 }] : [],
+      publishedTime: post.publishedAt,
+      authors: [post.author.name],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Phurshell`,
+      description: post.excerpt,
+      images: post.image ? [post.image] : [],
+    },
+  }
+}
+
+// Fetch do post no BUILD TIME (server-side)
+async function getPost(slug: string): Promise<BlogPost | null> {
+  try {
+    return await getBlogPostBySlug(slug)
+  } catch (error) {
+    console.error('Erro ao buscar post:', error)
     return null
   }
+}
+
+// Fetch de posts relacionados no BUILD TIME
+async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
+  try {
+    const allPosts = await getBlogPosts(100)
+    return allPosts
+      .filter((p) => p.id !== post.id && p.categorySlug === post.categorySlug)
+      .slice(0, 3)
+  } catch (error) {
+    console.error('Erro ao buscar posts relacionados:', error)
+    return []
+  }
+}
+
+// SERVER COMPONENT - HTML gerado no build com conteúdo real
+export default async function InsightPostPage({ params }: PageProps) {
+  const slug = params.slug[0]
+  const post = await getPost(slug)
+
+  if (!post) {
+    notFound()
+  }
+
+  const relatedPosts = await getRelatedPosts(post)
 
   return (
     <div className="bg-white">
-      <SEO
-        title={post.title}
-        description={post.excerpt}
-        url={`/insights/${post.slug}`}
-        type="article"
-        image={post.image || undefined}
-        author={post.author.name}
-      />
       {/* Breadcrumb */}
       <section className="border-b border-dark/10 bg-gray-50 py-6">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
@@ -108,7 +126,7 @@ export default function InsightPost() {
             <span className="text-dark/60">{post.readTime} de leitura</span>
           </div>
 
-          {/* Title */}
+          {/* Title - CONTEÚDO REAL NO HTML */}
           <h1 className="mb-8 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl lg:text-6xl xl:text-7xl">
             {post.title}
           </h1>
@@ -145,7 +163,7 @@ export default function InsightPost() {
         </div>
       </section>
 
-      {/* Content */}
+      {/* Content - CONTEÚDO REAL NO HTML */}
       <section className="bg-white pb-16 sm:pb-24">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">

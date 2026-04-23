@@ -4,7 +4,7 @@ interface ShareButtonsProps {
 }
 
 export default function ShareButtons({ title, slug }: ShareButtonsProps) {
-  const baseUrl = import.meta.env.VITE_SITE_URL || 'https://phurshell.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://phurshell.com'
   const postUrl = `${baseUrl}/insights/${slug}`
   const encodedUrl = encodeURIComponent(postUrl)
   const encodedTitle = encodeURIComponent(title)
