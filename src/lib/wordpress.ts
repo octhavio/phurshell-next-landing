@@ -27,7 +27,6 @@ async function fetchWordPress<T>(
       headers: {
         'Content-Type': 'application/json',
       },
-      cache: 'no-store', // Desabilita cache do Next.js - sempre busca dados frescos
     })
 
     if (!response.ok) {
