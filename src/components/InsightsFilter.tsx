@@ -169,10 +169,7 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
                         <i className="fa-solid fa-user text-brand-orange"></i>
                       </div>
                     )}
-                    <div>
-                      <div className="font-bold text-dark">{featuredPost.author.name}</div>
-                      <div className="text-sm text-dark/60">{featuredPost.author.role}</div>
-                    </div>
+                    <div className="font-bold text-dark">{featuredPost.author.name}</div>
                   </div>
                 </div>
               </div>

@@ -90,29 +90,6 @@ export default async function InsightPostPage({ params }: PageProps) {
 
   return (
     <div className="bg-white">
-      {/* Breadcrumb */}
-      <section className="border-b border-dark/10 bg-gray-50 py-6">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center gap-2 text-sm text-dark/60">
-            <TransitionLink
-              href="/"
-              className="transition-colors hover:text-brand-orange"
-            >
-              Home
-            </TransitionLink>
-            <i className="fa-solid fa-chevron-right text-xs"></i>
-            <TransitionLink
-              href="/insights"
-              className="transition-colors hover:text-brand-orange"
-            >
-              Insights
-            </TransitionLink>
-            <i className="fa-solid fa-chevron-right text-xs"></i>
-            <span className="text-dark">{post.category}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="bg-white pb-12 pt-16 sm:pt-24">
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
@@ -169,7 +146,25 @@ export default async function InsightPostPage({ params }: PageProps) {
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
             {/* Main Content */}
             <article
-              className="prose prose-lg max-w-none prose-headings:font-black prose-headings:text-dark prose-h3:text-3xl prose-h4:text-2xl prose-p:text-dark/80 prose-p:leading-relaxed prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline prose-strong:text-dark prose-ul:text-dark/80 prose-li:marker:text-brand-orange"
+              className="prose prose-lg max-w-none
+                prose-headings:font-black prose-headings:text-dark prose-headings:mt-10 prose-headings:mb-4
+                prose-h2:text-3xl prose-h2:border-b prose-h2:border-dark/10 prose-h2:pb-3
+                prose-h3:text-2xl prose-h3:text-dark/90
+                prose-h4:text-xl
+                prose-p:text-dark/70 prose-p:leading-relaxed prose-p:my-4
+                prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-dark prose-strong:font-bold
+                prose-ul:text-dark/70 prose-ul:my-4 prose-ul:pl-6
+                prose-ol:text-dark/70 prose-ol:my-4 prose-ol:pl-6
+                prose-li:my-2 prose-li:marker:text-brand-orange
+                prose-table:w-full prose-table:border-collapse prose-table:my-8 prose-table:text-sm
+                prose-th:bg-dark prose-th:text-white prose-th:font-bold prose-th:p-4 prose-th:text-left
+                prose-td:border prose-td:border-dark/20 prose-td:p-4
+                prose-tr:even:bg-gray-50
+                prose-hr:my-10 prose-hr:border-dark/10
+                [&_.lead]:text-xl [&_.lead]:text-dark/80 [&_.lead]:leading-relaxed [&_.lead]:mb-8 [&_.lead]:font-normal
+                [&_.conclusion]:bg-brand-orange/5 [&_.conclusion]:border-l-4 [&_.conclusion]:border-brand-orange [&_.conclusion]:p-6 [&_.conclusion]:rounded-r-lg [&_.conclusion]:my-10
+                [&_.conclusion_h2]:text-2xl [&_.conclusion_h2]:text-brand-orange [&_.conclusion_h2]:mt-0 [&_.conclusion_h2]:mb-4 [&_.conclusion_h2]:border-0"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
