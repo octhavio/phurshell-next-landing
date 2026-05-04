@@ -5,11 +5,17 @@ import ShareButtons from '../../../src/components/ShareButtons'
 import { getBlogPosts, getBlogPostBySlug } from '../../../src/lib/wordpress'
 import { BlogPost } from '../../../src/types/wordpress'
 
+// ISR: Revalida a cada 60 segundos
+export const revalidate = 60
+
+// Permite gerar novos posts sob demanda (fallback: blocking)
+export const dynamicParams = true
+
 interface PageProps {
   params: { slug: string[] }
 }
 
-// SSG: Busca TODOS os posts no build time
+// Gera posts existentes no build time
 export async function generateStaticParams() {
   try {
     const posts = await getBlogPosts(100)

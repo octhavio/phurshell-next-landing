@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import TransitionLink from './TransitionLink'
 import { BlogPost, WPCategory } from '../types/wordpress'

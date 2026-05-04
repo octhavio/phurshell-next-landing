@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
-  // Only use static export in production build
-  ...(isProd && { output: 'export' }),
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'wp-api.phurshell.com' },
+      { protocol: 'https', hostname: '*.wp.com' },
+      { protocol: 'https', hostname: 'secure.gravatar.com' },
+    ],
   },
   async redirects() {
     return [

@@ -1,40 +1,24 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import { Metadata } from 'next'
 import TransitionLink from '../../src/components/TransitionLink'
 import InsightsFilter from '../../src/components/InsightsFilter'
 import { getCategories } from '../../src/lib/wordpress'
-import { WPCategory } from '../../src/types/wordpress'
 
-export default function Insights() {
-  const [categories, setCategories] = useState<WPCategory[]>([])
-  const [loading, setLoading] = useState(true)
+// ISR: Revalida a cada 60 segundos
+export const revalidate = 60
 
-  useEffect(() => {
-    async function fetchCategories() {
-      try {
-        const cats = await getCategories()
-        setCategories(cats)
-      } catch (error) {
-        console.error('Erro ao buscar categorias:', error)
-        setCategories([])
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchCategories()
-  }, [])
+export const metadata: Metadata = {
+  title: 'Insights | Phurshell',
+  description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
+  openGraph: {
+    title: 'Insights | Phurshell',
+    description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
+    url: 'https://phurshell.com/insights',
+    type: 'website',
+  },
+}
 
-  if (loading) {
-    return (
-      <div className="bg-white">
-        <div className="flex min-h-[50vh] items-center justify-center">
-          <i className="fa-solid fa-spinner fa-spin text-6xl text-brand-orange"></i>
-        </div>
-      </div>
-    )
-  }
+export default async function Insights() {
+  const categories = await getCategories()
 
   return (
     <div className="bg-white">
