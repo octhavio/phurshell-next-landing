@@ -55,10 +55,70 @@ export default function Header() {
 
   const servicosDropdown = [
     {
+      label: 'Estratégia de Produto Digital',
+      href: '/servicos/estrategia-de-produto-digital',
+      description: 'Discovery, MVP e roadmap de produto',
+      icon: 'compass',
+    },
+    {
+      label: 'Consultoria para Startups',
+      href: '/servicos/consultoria-para-startups',
+      description: 'Planejamento financeiro e captação',
+      icon: 'chart-pie',
+    },
+    {
+      label: 'Design de Produto & Experiência',
+      href: '/servicos/design-de-produto-e-experiencia',
+      description: 'UX, UI e prototipação',
+      icon: 'palette',
+    },
+    {
       label: 'Desenvolvimento de Aplicativos',
       href: '/servicos/desenvolvimento-de-aplicativos',
       description: 'Apps iOS e Android de alta performance',
       icon: 'mobile',
+    },
+    {
+      label: 'Desenvolvimento Web & SaaS',
+      href: '/servicos/desenvolvimento-web-e-saas',
+      description: 'Plataformas web e SaaS escaláveis',
+      icon: 'globe',
+    },
+    {
+      label: 'Engenharia & Arquitetura de Software',
+      href: '/servicos/engenharia-e-arquitetura-de-software',
+      description: 'Backend, APIs e microsserviços',
+      icon: 'wrench',
+    },
+    {
+      label: 'Cloud & DevOps',
+      href: '/servicos/cloud-e-devops',
+      description: 'Infraestrutura, CI/CD e containers',
+      icon: 'cloud',
+    },
+    {
+      label: 'Qualidade de Software & Segurança',
+      href: '/servicos/qualidade-de-software-e-seguranca',
+      description: 'QA, testes automatizados e pentesting',
+      icon: 'shield',
+    },
+    {
+      label: 'Inteligência Artificial & Automação',
+      href: '/servicos/inteligencia-artificial-e-automacao',
+      description: 'IA, Machine Learning e automação',
+      icon: 'sparkles',
+    },
+    {
+      label: 'Blockchain & Web3',
+      href: '/servicos/blockchain-e-web3',
+      description: 'Smart contracts e dApps',
+      icon: 'link',
+    },
+    {
+      label: 'Soluções Digitais para Negócios',
+      href: '/servicos/solucoes-digitais-para-negocios',
+      description: 'ERP, CRM e transformação digital',
+      icon: 'suitcase',
     },
   ]
 
