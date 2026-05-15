@@ -54,16 +54,22 @@ function validateEmail(email: string): boolean {
   return emailRegex.test(email)
 }
 
-// Validação de telefone brasileiro (8 ou 9 dígitos + DDD)
+// Validação de telefone (brasileiro ou internacional)
 function validatePhone(phone: string): boolean {
   const digits = phone.replace(/\D/g, '')
-  return digits.length === 10 || digits.length === 11
+  // Brasileiro: 10-11 dígitos, Internacional: até 15 dígitos
+  return digits.length >= 10 && digits.length <= 15
+}
+
+// Detecta se é número internacional (começa com + ou tem mais de 11 dígitos)
+function isInternational(value: string): boolean {
+  const hasPlus = value.trim().startsWith('+')
+  const digits = value.replace(/\D/g, '')
+  return hasPlus || digits.length > 11
 }
 
 // Máscara de telefone brasileiro
-function formatPhone(value: string): string {
-  const digits = value.replace(/\D/g, '').slice(0, 11)
-
+function formatBrazilianPhone(digits: string): string {
   if (digits.length === 0) return ''
   if (digits.length <= 2) return `(${digits}`
   if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`
@@ -71,6 +77,30 @@ function formatPhone(value: string): string {
     return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
   }
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+}
+
+// Máscara de telefone internacional (espaços a cada 3 dígitos)
+function formatInternationalPhone(value: string): string {
+  const cleaned = value.replace(/[^\d+]/g, '')
+  if (cleaned.length === 0) return ''
+
+  const hasPlus = cleaned.startsWith('+')
+  const digits = cleaned.replace(/\D/g, '').slice(0, 15)
+
+  if (digits.length === 0) return hasPlus ? '+' : ''
+
+  // Agrupa em blocos: código país (1-3) + resto em grupos de 3
+  const formatted = digits.replace(/(\d{1,3})(?=\d)/g, '$1 ').trim()
+  return hasPlus ? `+${formatted}` : formatted
+}
+
+// Máscara de telefone (detecta automaticamente)
+function formatPhone(value: string): string {
+  if (isInternational(value)) {
+    return formatInternationalPhone(value)
+  }
+  const digits = value.replace(/\D/g, '').slice(0, 11)
+  return formatBrazilianPhone(digits)
 }
 
 export default function MultiStepForm() {
