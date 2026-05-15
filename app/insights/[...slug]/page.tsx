@@ -151,28 +151,32 @@ export default async function InsightPostPage({ params }: PageProps) {
         <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
             {/* Main Content */}
-            <article
-              className="prose prose-lg max-w-none
-                prose-headings:font-black prose-headings:text-dark prose-headings:mt-10 prose-headings:mb-4
-                prose-h2:text-3xl prose-h2:border-b prose-h2:border-dark/10 prose-h2:pb-3
-                prose-h3:text-2xl prose-h3:text-dark/90
-                prose-h4:text-xl
-                prose-p:text-dark/70 prose-p:leading-relaxed prose-p:my-4
-                prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-dark prose-strong:font-bold
-                prose-ul:text-dark/70 prose-ul:my-4 prose-ul:pl-6
-                prose-ol:text-dark/70 prose-ol:my-4 prose-ol:pl-6
-                prose-li:my-2 prose-li:marker:text-brand-orange
-                prose-table:w-full prose-table:border-collapse prose-table:my-8 prose-table:text-sm
-                prose-th:bg-dark prose-th:text-white prose-th:font-bold prose-th:p-4 prose-th:text-left
-                prose-td:border prose-td:border-dark/20 prose-td:p-4
-                prose-tr:even:bg-gray-50
-                prose-hr:my-10 prose-hr:border-dark/10
-                [&_.lead]:text-xl [&_.lead]:text-dark/80 [&_.lead]:leading-relaxed [&_.lead]:mb-8 [&_.lead]:font-normal
-                [&_.conclusion]:bg-brand-orange/5 [&_.conclusion]:border-l-4 [&_.conclusion]:border-brand-orange [&_.conclusion]:p-6 [&_.conclusion]:rounded-r-lg [&_.conclusion]:my-10
-                [&_.conclusion_h2]:text-2xl [&_.conclusion_h2]:text-brand-orange [&_.conclusion_h2]:mt-0 [&_.conclusion_h2]:mb-4 [&_.conclusion_h2]:border-0"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <div className="min-w-0 overflow-x-auto">
+              <article
+                className="prose prose-lg max-w-none
+                  prose-headings:font-black prose-headings:text-dark prose-headings:mt-10 prose-headings:mb-4
+                  prose-h2:text-3xl prose-h2:border-b prose-h2:border-dark/10 prose-h2:pb-3
+                  prose-h3:text-2xl prose-h3:text-dark/90
+                  prose-h4:text-xl
+                  prose-p:text-dark/70 prose-p:leading-relaxed prose-p:my-4
+                  prose-a:text-brand-orange prose-a:no-underline hover:prose-a:underline
+                  prose-strong:text-dark prose-strong:font-bold
+                  prose-ul:text-dark/70 prose-ul:my-4 prose-ul:pl-6
+                  prose-ol:text-dark/70 prose-ol:my-4 prose-ol:pl-6
+                  prose-li:my-2 prose-li:marker:text-brand-orange
+                  prose-table:my-8 prose-table:text-sm prose-table:min-w-full
+                  prose-th:bg-dark prose-th:text-white prose-th:font-bold prose-th:p-4 prose-th:text-left prose-th:whitespace-nowrap
+                  prose-td:border prose-td:border-dark/20 prose-td:p-4
+                  prose-tr:even:bg-gray-50
+                  prose-pre:overflow-x-auto prose-pre:max-w-full
+                  prose-img:max-w-full prose-img:h-auto
+                  prose-hr:my-10 prose-hr:border-dark/10
+                  [&_.lead]:text-xl [&_.lead]:text-dark/80 [&_.lead]:leading-relaxed [&_.lead]:mb-8 [&_.lead]:font-normal
+                  [&_.conclusion]:bg-brand-orange/5 [&_.conclusion]:border-l-4 [&_.conclusion]:border-brand-orange [&_.conclusion]:p-6 [&_.conclusion]:rounded-r-lg [&_.conclusion]:my-10
+                  [&_.conclusion_h2]:text-2xl [&_.conclusion_h2]:text-brand-orange [&_.conclusion_h2]:mt-0 [&_.conclusion_h2]:mb-4 [&_.conclusion_h2]:border-0"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
 
             {/* Sidebar */}
             <aside className="space-y-8">
