@@ -1,7 +1,7 @@
 'use client'
 
 import TransitionLink from '../../../src/components/TransitionLink'
-import ProcessCarousel from '../../../src/components/ProcessCarousel'
+import ProcessCarousel, { ProcessStage } from '../../../src/components/ProcessCarousel'
 import WhyPhurshell from '../../../src/components/WhyPhurshell'
 import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
@@ -9,7 +9,7 @@ import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
 
 export default function ServicosApps() {
-  const processStages = [
+  const processStages: ProcessStage[] = [
     {
       stage: 1,
       title: 'Validação da ideia',

@@ -7,7 +7,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-interface ProcessStage {
+export interface ProcessStage {
   stage?: number
   step?: string
   title: string
