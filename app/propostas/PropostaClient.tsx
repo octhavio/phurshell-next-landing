@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { pdf } from '@react-pdf/renderer'
+import PropostaPDF from './PropostaPDF'
 
 // Tipos da API
 interface PropostaClient {
@@ -116,6 +118,8 @@ export default function PropostaClientComponent() {
   const [proposta, setProposta] = useState<PropostaData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [pdfLoading, setPdfLoading] = useState<'simple' | 'complete' | null>(null)
+  const [showPdfModal, setShowPdfModal] = useState(false)
 
   // Extract code from query param (?code=AP0HQV)
   const code = searchParams?.get('code')
@@ -204,6 +208,27 @@ export default function PropostaClientComponent() {
     return validityDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
   }
 
+  const downloadPDF = async (variant: 'simple' | 'complete') => {
+    if (!proposta) return
+    setPdfLoading(variant)
+    try {
+      const blob = await pdf(<PropostaPDF proposta={proposta} variant={variant} />).toBlob()
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `proposta-${proposta.code}-${variant === 'simple' ? 'resumida' : 'completa'}.pdf`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+      setShowPdfModal(false)
+    } catch (err) {
+      console.error('Erro ao gerar PDF:', err)
+    } finally {
+      setPdfLoading(null)
+    }
+  }
+
   // Loading state
   if (loading) {
     return (
@@ -277,6 +302,17 @@ export default function PropostaClientComponent() {
           </nav>
         </div>
 
+        {/* PDF Download Button */}
+        <div className="border-t border-gray-100 px-6 py-4">
+          <button
+            onClick={() => setShowPdfModal(true)}
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-bold text-gray-600 transition-all hover:border-brand-orange hover:text-brand-orange"
+          >
+            <i className="fa-solid fa-file-pdf"></i>
+            Exportar PDF
+          </button>
+        </div>
+
         {/* Date Info - Bottom */}
         <div className="border-t border-gray-100 px-6 py-4">
           <div className="space-y-1 text-xs text-gray-400">
@@ -294,9 +330,13 @@ export default function PropostaClientComponent() {
             alt="Phurshell"
             className="h-6 w-auto"
           />
-          <span className="text-sm font-bold text-gray-500">
-            Proposta: {proposta.client.name}
-          </span>
+          <button
+            onClick={() => setShowPdfModal(true)}
+            className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-bold text-gray-600 transition-all hover:border-brand-orange hover:text-brand-orange"
+          >
+            <i className="fa-solid fa-file-pdf"></i>
+            PDF
+          </button>
         </div>
       </div>
 
@@ -319,22 +359,22 @@ export default function PropostaClientComponent() {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-2xl font-black text-brand-orange whitespace-nowrap">{proposta.project.deadline}</p>
-                <p className="text-sm font-bold text-gray-500">Prazo estimado</p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-4 sm:gap-4">
+              <div className="flex items-center justify-between rounded-button bg-gray-50 p-4 sm:flex-col sm:justify-center sm:gap-1 sm:p-6 sm:text-center">
+                <p className="text-sm font-bold text-gray-500 sm:order-2">Prazo estimado</p>
+                <p className="text-xl font-black text-brand-orange whitespace-nowrap sm:order-1 sm:text-2xl">{proposta.project.deadline}</p>
               </div>
-              <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-3xl font-black text-brand-orange">{proposta.scope.length}</p>
-                <p className="text-sm font-bold text-gray-500">{proposta.scope.length === 1 ? 'Produto' : 'Produtos'}</p>
+              <div className="flex items-center justify-between rounded-button bg-gray-50 p-4 sm:flex-col sm:justify-center sm:gap-1 sm:p-6 sm:text-center">
+                <p className="text-sm font-bold text-gray-500 sm:order-2">{proposta.scope.length === 1 ? 'Produto' : 'Produtos'}</p>
+                <p className="text-xl font-black text-brand-orange sm:order-1 sm:text-3xl">{proposta.scope.length}</p>
               </div>
-              <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-3xl font-black text-brand-orange">4</p>
-                <p className="text-sm font-bold text-gray-500">Etapas</p>
+              <div className="flex items-center justify-between rounded-button bg-gray-50 p-4 sm:flex-col sm:justify-center sm:gap-1 sm:p-6 sm:text-center">
+                <p className="text-sm font-bold text-gray-500 sm:order-2">Etapas</p>
+                <p className="text-xl font-black text-brand-orange sm:order-1 sm:text-3xl">4</p>
               </div>
-              <div className="rounded-button bg-gray-50 p-6 text-center">
-                <p className="text-3xl font-black text-brand-orange">AWS</p>
-                <p className="text-sm font-bold text-gray-500">Infraestrutura</p>
+              <div className="flex items-center justify-between rounded-button bg-gray-50 p-4 sm:flex-col sm:justify-center sm:gap-1 sm:p-6 sm:text-center">
+                <p className="text-sm font-bold text-gray-500 sm:order-2">Infraestrutura</p>
+                <p className="text-xl font-black text-brand-orange sm:order-1 sm:text-3xl">AWS</p>
               </div>
             </div>
           </section>
@@ -350,17 +390,17 @@ export default function PropostaClientComponent() {
             </p>
 
             {/* Stats */}
-            <div className="mb-8 grid grid-cols-3 gap-6">
-              <div className="rounded-button border border-gray-100 p-6 text-center">
-                <p className="text-4xl font-black text-dark">50+</p>
+            <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+              <div className="flex items-center gap-4 rounded-button border border-gray-100 p-4 sm:flex-col sm:p-6 sm:text-center">
+                <p className="text-3xl font-black text-dark sm:text-4xl">50+</p>
                 <p className="text-sm font-bold text-brand-orange">Projetos Entregues</p>
               </div>
-              <div className="rounded-button border border-gray-100 p-6 text-center">
-                <p className="text-4xl font-black text-dark">100+</p>
+              <div className="flex items-center gap-4 rounded-button border border-gray-100 p-4 sm:flex-col sm:p-6 sm:text-center">
+                <p className="text-3xl font-black text-dark sm:text-4xl">100+</p>
                 <p className="text-sm font-bold text-brand-orange">Apps Desenvolvidos</p>
               </div>
-              <div className="rounded-button border border-gray-100 p-6 text-center">
-                <p className="text-4xl font-black text-dark">10+</p>
+              <div className="flex items-center gap-4 rounded-button border border-gray-100 p-4 sm:flex-col sm:p-6 sm:text-center">
+                <p className="text-3xl font-black text-dark sm:text-4xl">10+</p>
                 <p className="text-sm font-bold text-brand-orange">Anos de Mercado</p>
               </div>
             </div>
@@ -513,7 +553,7 @@ export default function PropostaClientComponent() {
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange text-sm text-white">
                       {index + 1}
                     </span>
-                    {section.título}
+                    {section.título || 'Funcionalidades'}
                   </h3>
                   <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {section.itens.map((item, itemIndex) => (
@@ -596,19 +636,19 @@ export default function PropostaClientComponent() {
             </h2>
 
             <div className="mb-6 overflow-hidden rounded-button border-2 border-brand-orange">
-              <div className="flex items-center justify-between p-6">
+              <div className="flex flex-col gap-2 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
                 <div>
                   <p className="font-bold text-dark">Desenvolvimento Completo</p>
                   <p className="text-sm text-gray-500">Prazo estimado: {proposta.project.deadline}</p>
                 </div>
-                <p className="text-3xl font-black text-brand-orange">
+                <p className="text-2xl font-black text-brand-orange sm:text-3xl">
                   {formatCurrency(proposta.project.value)}
                 </p>
               </div>
             </div>
 
             <div className="mb-4 rounded-button border border-gray-100 p-5">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="font-bold text-dark">Manutenção Contínua</p>
                   <p className="text-sm text-gray-500">
@@ -625,7 +665,7 @@ export default function PropostaClientComponent() {
 
             {proposta.project.infrastructure && (
               <div className="mb-8 rounded-button border border-gray-100 p-5">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="font-bold text-dark">Custo de infraestrutura</p>
                     <p className="text-sm text-gray-500">Servidores, banco de dados e serviços</p>
@@ -726,6 +766,61 @@ export default function PropostaClientComponent() {
           </footer>
         </div>
       </main>
+
+      {/* PDF Modal */}
+      {showPdfModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-2xl">
+            <div className="mb-6 flex items-center justify-between">
+              <h3 className="text-xl font-black text-dark">Exportar PDF</h3>
+              <button
+                onClick={() => setShowPdfModal(false)}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div className="space-y-3">
+              <button
+                onClick={() => downloadPDF('simple')}
+                disabled={pdfLoading !== null}
+                className="flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 text-left transition-all hover:border-brand-orange hover:bg-brand-orange/5 disabled:opacity-50"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gray-100 text-gray-500">
+                  {pdfLoading === 'simple' ? (
+                    <i className="fa-solid fa-spinner fa-spin text-xl"></i>
+                  ) : (
+                    <i className="fa-solid fa-file-lines text-xl"></i>
+                  )}
+                </div>
+                <div>
+                  <p className="font-bold text-dark">Resumida</p>
+                  <p className="text-sm text-gray-500">2 páginas • Escopo e investimento</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => downloadPDF('complete')}
+                disabled={pdfLoading !== null}
+                className="flex w-full items-center gap-4 rounded-xl border-2 border-brand-orange bg-brand-orange/5 p-4 text-left transition-all hover:bg-brand-orange/10 disabled:opacity-50"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-orange text-white">
+                  {pdfLoading === 'complete' ? (
+                    <i className="fa-solid fa-spinner fa-spin text-xl"></i>
+                  ) : (
+                    <i className="fa-solid fa-file-pdf text-xl"></i>
+                  )}
+                </div>
+                <div>
+                  <p className="font-bold text-dark">Completa</p>
+                  <p className="text-sm text-gray-500">5 páginas • Tudo incluso</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
