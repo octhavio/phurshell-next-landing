@@ -3,17 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-nunito: 'Nunito', system-ui, -apple-system, sans-serif;
-  }
-
   html {
     scroll-behavior: smooth;
     color-scheme: light;
   }
 
   body {
-    @apply antialiased;
+    @apply font-sans antialiased;
   }
 
   /* Focus visible styles - Web Interface Guidelines */
@@ -76,20 +72,25 @@
   /* Swiper customization */
   .process-swiper {
     padding-bottom: 1rem;
-    padding-right: 1.5rem;
     cursor: grab;
   }
 
-  @media (min-width: 640px) {
-    .process-swiper {
-      padding-right: 2rem;
-    }
+  .process-swiper .process-slide {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
   }
 
-  @media (min-width: 1024px) {
-    .process-swiper {
-      padding-right: 3rem;
-    }
+  .process-swiper .swiper-slide-active.process-slide {
+    opacity: 1;
+  }
+
+  .cases-carousel .cases-slide {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  .cases-carousel .swiper-slide-active.cases-slide {
+    opacity: 1;
   }
 
   .process-swiper:active {

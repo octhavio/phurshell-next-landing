@@ -54,7 +54,7 @@ export default function CaseAutoday() {
             <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
               <span className="word word-delay-30" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <img
-                  src="/images/img-autoday-hero.png"
+                  src="/images/img-autoday-hero.webp"
                   alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -66,7 +66,7 @@ export default function CaseAutoday() {
                     {/* Logo e Nome */}
                     <div className="flex items-center gap-3">
                       <img
-                        src="/images/img-icon-autoday.png"
+                        src="/images/img-icon-autoday.webp"
                         alt="Logo do aplicativo Autoday"
                         width={36}
                         height={36}
@@ -140,7 +140,7 @@ export default function CaseAutoday() {
           {/* Case Image */}
           <div className="mt-12">
             <img
-              src="/images/img-autoday-case-1.png"
+              src="/images/img-autoday-case-1.webp"
               alt="Autoday case"
               className="w-full rounded-button"
             />
@@ -203,7 +203,7 @@ export default function CaseAutoday() {
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="h-full">
                 <img
-                  src="/images/img-autoday-case-2.png"
+                  src="/images/img-autoday-case-2.webp"
                   alt="Autoday case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -211,14 +211,14 @@ export default function CaseAutoday() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-autoday-case-3.png"
+                    src="/images/img-autoday-case-3.webp"
                     alt="Autoday case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-autoday-case-4.png"
+                    src="/images/img-autoday-case-4.webp"
                     alt="Autoday case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -279,14 +279,14 @@ export default function CaseAutoday() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-autoday-case-5.png"
+                    src="/images/img-autoday-case-5.webp"
                     alt="Autoday case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-autoday-case-6.png"
+                    src="/images/img-autoday-case-6.webp"
                     alt="Autoday case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -294,7 +294,7 @@ export default function CaseAutoday() {
               </div>
               <div className="h-full">
                 <img
-                  src="/images/img-autoday-case-7.png"
+                  src="/images/img-autoday-case-7.webp"
                   alt="Autoday case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -397,7 +397,7 @@ export default function CaseAutoday() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/images/img-testimonial-autoday.png"
+                  src="/images/img-testimonial-autoday.webp"
                   alt="Foto de Alec Maia, CEO da Autoday"
                   width={80}
                   height={80}

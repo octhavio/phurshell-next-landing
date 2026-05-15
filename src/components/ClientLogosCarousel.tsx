@@ -72,8 +72,11 @@ export default function ClientLogosCarousel({
             {logos.map((num) => (
               <div key={`first-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
                 <img
-                  src={`/images/clients/img-partner-${num}.png`}
-                  alt={`Cliente parceiro da Phurshell`}
+                  src={`/images/clients/img-partner-${num}.webp`}
+                  alt={`Logo de empresa cliente da Phurshell`}
+                  width={192}
+                  height={80}
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full object-contain brightness-0 invert opacity-60"
                 />
               </div>
@@ -82,8 +85,11 @@ export default function ClientLogosCarousel({
             {logos.map((num) => (
               <div key={`second-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
                 <img
-                  src={`/images/clients/img-partner-${num}.png`}
-                  alt={`Cliente parceiro da Phurshell`}
+                  src={`/images/clients/img-partner-${num}.webp`}
+                  alt={`Logo de empresa cliente da Phurshell`}
+                  width={192}
+                  height={80}
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full object-contain brightness-0 invert opacity-60"
                 />
               </div>

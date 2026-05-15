@@ -7,10 +7,11 @@ export default function WhyPhurshell() {
       {/* Background Logo */}
       <div className="absolute bottom-0 right-0 z-0 opacity-20">
         <img
-          src="/images/img-background-logo.png"
-          alt=""
+          src="/images/img-background-logo.webp"
+          alt="Logo da Phurshell em marca d'água decorativa"
           width={800}
           height={800}
+          loading="lazy"
           className="h-auto w-[500px] sm:w-[700px]"
         />
       </div>

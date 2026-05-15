@@ -14,6 +14,7 @@ export default function Servicos() {
       title: 'Estratégia de Produto Digital',
       slug: 'estrategia-de-produto-digital',
       icon: 'compass',
+      hasPage: true,
       description: 'Ajudamos você a transformar sua ideia em um produto digital com direção clara, validação de mercado e um plano de execução sólido.',
       services: [
         {
@@ -53,6 +54,7 @@ export default function Servicos() {
       title: 'Consultoria para Startups',
       slug: 'consultoria-para-startups',
       icon: 'chart-pie',
+      hasPage: true,
       description: 'Mais do que software, ajudamos a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
       services: [
         {
@@ -98,6 +100,7 @@ export default function Servicos() {
       title: 'Design de Produto & Experiência',
       slug: 'design-de-produto-e-experiencia',
       icon: 'palette',
+      hasPage: true,
       description: 'Criamos interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
       services: [
         {
@@ -177,6 +180,7 @@ export default function Servicos() {
       title: 'Desenvolvimento Web & SaaS',
       slug: 'desenvolvimento-web-e-saas',
       icon: 'globe',
+      hasPage: true,
       description: 'Plataformas web escaláveis e robustas utilizando as melhores tecnologias do mercado.',
       services: [
         {
@@ -222,6 +226,7 @@ export default function Servicos() {
       title: 'Engenharia & Arquitetura de Software',
       slug: 'engenharia-e-arquitetura-de-software',
       icon: 'wrench',
+      hasPage: true,
       description: 'Construímos a base técnica sólida que seus produtos precisam para escalar com segurança e performance.',
       services: [
         {
@@ -279,6 +284,7 @@ export default function Servicos() {
       title: 'Cloud & DevOps',
       slug: 'cloud-e-devops',
       icon: 'cloud',
+      hasPage: true,
       description: 'Infraestrutura moderna e automatizada para que seus produtos rodem com alta disponibilidade e entregas contínuas.',
       services: [
         {
@@ -312,6 +318,7 @@ export default function Servicos() {
       title: 'Qualidade de Software & Segurança',
       slug: 'qualidade-de-software-e-seguranca',
       icon: 'shield',
+      hasPage: true,
       description: 'Garantimos que seu produto funcione com excelência, segurança e confiabilidade em qualquer cenário.',
       services: [
         {
@@ -351,6 +358,7 @@ export default function Servicos() {
       title: 'Inteligência Artificial & Automação',
       slug: 'inteligencia-artificial-e-automacao',
       icon: 'sparkles',
+      hasPage: true,
       description: 'Soluções inteligentes que automatizam processos, geram insights e criam experiências personalizadas para seus usuários.',
       services: [
         {
@@ -384,6 +392,7 @@ export default function Servicos() {
       title: 'Blockchain & Web3',
       slug: 'blockchain-e-web3',
       icon: 'link',
+      hasPage: true,
       description: 'Desenvolvimento de soluções descentralizadas e contratos inteligentes para transparência e segurança nas transações.',
       services: [
         {
@@ -411,6 +420,7 @@ export default function Servicos() {
       title: 'Soluções Digitais para Negócios',
       slug: 'solucoes-digitais-para-negocios',
       icon: 'suitcase',
+      hasPage: true,
       description: 'Sistemas e ferramentas que modernizam operações, melhoram a gestão e impulsionam resultados do seu negócio.',
       services: [
         {
@@ -506,7 +516,7 @@ export default function Servicos() {
                   {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
                     <img
-                      src="/images/img-cta-especialist.png"
+                      src="/images/img-cta-especialist.webp"
                       alt="Equipe de especialistas em desenvolvimento de software da Phurshell"
                       width={120}
                       height={48}
@@ -541,7 +551,7 @@ export default function Servicos() {
                 <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
                   {category.title}
                 </h2>
-                {category.hasPage && (
+                {category.slug === 'desenvolvimento-de-aplicativos' && (
                   <span className="rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold text-brand-orange">
                     Mais procurado
                   </span>
@@ -557,7 +567,7 @@ export default function Servicos() {
             {/* Services Grid */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {category.services.map((service) => {
-                const hasPage = category.slug === 'desenvolvimento-de-aplicativos'
+                const hasPage = !!category.hasPage
 
                 const cardContent = (
                   <>
@@ -577,14 +587,14 @@ export default function Servicos() {
                   <TransitionLink
                     key={service.title}
                     href={`/servicos/${category.slug}`}
-                    className="group flex h-full flex-col rounded-button bg-white p-8 transition-all duration-200 hover:shadow-lg"
+                    className="group flex h-full flex-col rounded-button border border-dark/10 bg-white p-8 transition-all duration-200 hover:shadow-lg"
                   >
                     {cardContent}
                   </TransitionLink>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex h-full flex-col rounded-button bg-white p-8"
+                    className="flex h-full flex-col rounded-button border border-dark/10 bg-white p-8"
                   >
                     {cardContent}
                   </div>
@@ -593,7 +603,7 @@ export default function Servicos() {
             </div>
 
             {/* Saiba mais button - only for categories with pages */}
-            {category.slug === 'desenvolvimento-de-aplicativos' && (
+            {category.hasPage && (
               <div className="mt-8">
                 <TransitionLink
                   href={`/servicos/${category.slug}`}

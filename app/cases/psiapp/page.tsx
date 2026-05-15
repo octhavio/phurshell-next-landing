@@ -51,7 +51,7 @@ export default function CasePsiapp() {
             <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
               <span className="word word-delay-27" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <img
-                  src="/images/img-hero.png"
+                  src="/images/img-hero.webp"
                   alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -149,7 +149,7 @@ export default function CasePsiapp() {
           {/* Case Image */}
           <div className="mt-12">
             <img
-              src="/images/img-psiapp-case-1.png"
+              src="/images/img-psiapp-case-1.webp"
               alt="Psiapp case"
               className="w-full rounded-button"
             />
@@ -212,7 +212,7 @@ export default function CasePsiapp() {
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="h-full">
                 <img
-                  src="/images/img-psiapp-case-2.png"
+                  src="/images/img-psiapp-case-2.webp"
                   alt="Psiapp case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -220,14 +220,14 @@ export default function CasePsiapp() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-3.png"
+                    src="/images/img-psiapp-case-3.webp"
                     alt="Psiapp case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-4.png"
+                    src="/images/img-psiapp-case-4.webp"
                     alt="Psiapp case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -288,14 +288,14 @@ export default function CasePsiapp() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-5.png"
+                    src="/images/img-psiapp-case-5.webp"
                     alt="Psiapp case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-psiapp-case-6.png"
+                    src="/images/img-psiapp-case-6.webp"
                     alt="Psiapp case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -303,7 +303,7 @@ export default function CasePsiapp() {
               </div>
               <div className="h-full">
                 <img
-                  src="/images/img-psiapp-case-7.png"
+                  src="/images/img-psiapp-case-7.webp"
                   alt="Psiapp case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -424,7 +424,7 @@ export default function CasePsiapp() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/images/img-testimonial-psiapp.png"
+                  src="/images/img-testimonial-psiapp.webp"
                   alt="Foto de Pamela Magalhães, Idealizadora do Psiapp"
                   width={80}
                   height={80}

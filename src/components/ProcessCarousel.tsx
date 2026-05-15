@@ -25,6 +25,10 @@ interface ProcessCarouselProps {
   description?: string
   bgColor?: 'white' | 'gray'
   cardStyle?: 'process' | 'service'
+  showCta?: boolean
+  ctaImageAlt?: string
+  hideLabel?: boolean
+  smallTitle?: boolean
 }
 
 export default function ProcessCarousel({
@@ -35,6 +39,10 @@ export default function ProcessCarousel({
   description = 'Fornecemos serviços de desenvolvimento mobile específicos para iOS e Android e consultoria de desenvolvimento de apps. Colaboramos com você para refinar sua ideia e garantir o sucesso do projeto desde o primeiro conceito até um app totalmente funcional. Seu desenvolvimento mobile está em mãos capazes quando você trabalha conosco.',
   bgColor = 'gray',
   cardStyle = 'process',
+  showCta = false,
+  ctaImageAlt = 'Equipe de especialistas da Phurshell',
+  hideLabel = false,
+  smallTitle = false,
 }: ProcessCarouselProps) {
   const swiperRef = useRef<SwiperType>()
   const bgClass = bgColor === 'white' ? 'bg-white' : 'bg-gray-50'
@@ -64,169 +72,65 @@ export default function ProcessCarousel({
 
   return (
     <section className={`${bgClass} py-12 sm:py-16`}>
-      <div className="container mx-auto mb-8 max-w-screen-2xl px-10 sm:px-14 lg:px-20">
-        {label && (
-          <h3 className="mb-4 flex items-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+      <div className={`container mx-auto mb-8 max-w-screen-2xl px-10 sm:px-14 lg:px-20 ${cardStyle === 'process' ? 'text-center' : ''}`}>
+        {label && !hideLabel && (
+          <h3 className={`mb-4 text-lg font-black uppercase tracking-wider text-brand-orange ${cardStyle === 'process' ? 'justify-center' : ''} flex items-center gap-3`}>
             {labelIcon && <i className={`fa-jelly fa-${labelIcon} fa-xl`}></i>}
             {label}
           </h3>
         )}
-        <h2 className="mb-6 text-5xl font-black tracking-tight text-dark sm:text-6xl">
+        <h2 className={`mb-6 font-black tracking-tight text-dark ${smallTitle ? 'text-3xl sm:text-4xl' : 'text-5xl sm:text-6xl'}`}>
           {title}
         </h2>
-        <p className="max-w-4xl text-xl leading-relaxed text-dark/60">{description}</p>
+        <p className={`text-xl leading-relaxed text-dark/60 ${cardStyle === 'process' ? 'mx-auto' : ''} max-w-4xl`}>{description}</p>
       </div>
 
       {/* Carousel - Full Width Right */}
       <div className="relative mt-16">
-        {/* Grid Lines Background */}
-        {cardStyle === 'process' && (
-          <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block" aria-hidden="true">
-            {/* Horizontal lines */}
-            <div className="absolute left-0 right-0 top-0 border-t border-dark/5"></div>
-            <div className="absolute left-0 right-0 top-1/4 border-t border-dark/5"></div>
-            <div className="absolute left-0 right-0 top-1/2 border-t border-dark/5"></div>
-            <div className="absolute left-0 right-0 top-3/4 border-t border-dark/5"></div>
-            <div className="absolute bottom-0 left-0 right-0 border-t border-dark/5"></div>
+        {cardStyle === 'service' ? (
+          // Service: grid fixo alinhado à grid do site
+          <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {stages.map((stage, index) => (
+                <div key={index} className="h-full rounded-button border border-dark/10 bg-white p-6">
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
+                    <i className={`fa-${stage.iconType || 'jelly'} fa-${stage.icon} fa-xl text-brand-orange`}></i>
+                  </div>
+                  <h3 className="mb-3 text-xl font-black text-dark">{stage.title}</h3>
+                  <p className="text-xl leading-relaxed text-dark/60">{stage.description}</p>
+                </div>
+              ))}
+            </div>
 
-            {/* Vertical lines */}
-            {[0, 8.33, 16.66, 25, 33.33, 41.66, 50, 58.33, 66.66, 75, 83.33, 91.66].map((percent, i) => (
-              <div
-                key={i}
-                className="absolute top-0 bottom-0 border-r border-dark/5"
-                style={{ left: `${percent}%` }}
-              ></div>
-            ))}
-          </div>
-        )}
-
-        <div className={cardStyle === 'process' ? 'container relative z-10 mx-auto max-w-screen-2xl pl-6 sm:pl-8 lg:pl-12' : 'relative z-10'}>
-          <div className="relative">
-            {/* Desktop navigation - above */}
-            {cardStyle === 'process' && (
-              <div className="mb-8 hidden justify-end pr-6 sm:pr-8 md:flex lg:pr-12">
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => swiperRef.current?.slidePrev()}
-                    className="flex h-12 w-12 items-center justify-center rounded-button border border-dark/10 bg-white text-dark transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:text-brand-orange"
-                    aria-label="Slide anterior"
-                  >
-                    <i className="fa-solid fa-chevron-left"></i>
-                  </button>
-                  <button
-                    onClick={() => swiperRef.current?.slideNext()}
-                    className="flex h-12 w-12 items-center justify-center rounded-button border border-dark/10 bg-white text-dark transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:text-brand-orange"
-                    aria-label="Próximo slide"
-                  >
-                    <i className="fa-solid fa-chevron-right"></i>
-                  </button>
+            {showCta && (
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                <a
+                  href="/contato"
+                  className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
+                >
+                  Solicitar proposta
+                  <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
+                <div className="flex items-center gap-4">
+                  <div className="relative h-12 w-auto overflow-hidden rounded-full">
+                    <img
+                      src="/images/img-cta-especialist.webp"
+                      alt={ctaImageAlt}
+                      width={120}
+                      height={48}
+                      className="h-12 w-auto object-cover"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-dark">Fale com um especialista agora</p>
                 </div>
               </div>
             )}
-
-            {/* Swiper */}
-            <Swiper
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper
-              }}
-              modules={[Navigation, Pagination, Mousewheel, FreeMode]}
-              spaceBetween={24}
-              slidesPerView={cardStyle === 'service' ? 1.5 : 1.2}
-              freeMode={true}
-              mousewheel={{
-                forceToAxis: true,
-              }}
-              breakpoints={
-                cardStyle === 'service'
-                  ? {
-                      640: {
-                        slidesPerView: 3,
-                        spaceBetween: 24,
-                      },
-                      1024: {
-                        slidesPerView: 4.5,
-                        spaceBetween: 24,
-                      },
-                      1280: {
-                        slidesPerView: 5.5,
-                        spaceBetween: 24,
-                      },
-                    }
-                  : {
-                      640: {
-                        slidesPerView: 2,
-                        spaceBetween: 24,
-                      },
-                      1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 32,
-                      },
-                    }
-              }
-              className={cardStyle === 'service' ? 'process-swiper' : 'process-swiper'}
-              style={
-                cardStyle === 'service'
-                  ? {
-                      paddingLeft: 'max(1.5rem, calc((100vw - 1536px) / 2 + 1.5rem))',
-                    }
-                  : undefined
-              }
-            >
-              {stages.map((stage, index) => {
-                const colors = stage.color ? colorClasses[stage.color] : null
-                const displayNumber = stage.step || stage.stage?.toString()
-                return (
-                  <SwiperSlide key={index}>
-                    {cardStyle === 'service' ? (
-                      // Service Card Style
-                      <div className="h-full rounded-button border border-dark/10 bg-white p-6">
-                        <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
-                          <i
-                            className={`fa-${stage.iconType || 'jelly'} fa-${stage.icon} fa-xl text-brand-orange`}
-                          ></i>
-                        </div>
-                        <h3 className="mb-3 text-xl font-black text-dark">{stage.title}</h3>
-                        <p className="text-xl leading-relaxed text-dark/60">{stage.description}</p>
-                      </div>
-                    ) : (
-                      // Process Card Style
-                      <div className="group h-full overflow-hidden rounded-button border border-dark/10 bg-white transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg">
-                        {/* Header */}
-                        {colors ? (
-                          <div className={`flex items-center gap-3 ${colors.bg} p-4`}>
-                            {stage.icon && (
-                              <div
-                                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button ${colors.iconBg}`}
-                              >
-                                <i className={`fa-jelly fa-${stage.icon} text-white`}></i>
-                              </div>
-                            )}
-                            <h3 className={`text-lg font-black ${colors.text}`}>{stage.title}</h3>
-                          </div>
-                        ) : (
-                          <div className="flex items-center gap-3 border-b border-dark/10 bg-brand-orange/5 p-4">
-                            {displayNumber && (
-                              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10 text-brand-orange">
-                                <span className="text-lg font-black">{displayNumber}</span>
-                              </div>
-                            )}
-                            <h3 className="text-lg font-black text-dark">{stage.title}</h3>
-                          </div>
-                        )}
-                        {/* Conteúdo */}
-                        <div className="p-6">
-                          <p className="text-sm leading-relaxed text-dark/70">{stage.description}</p>
-                        </div>
-                      </div>
-                    )}
-                  </SwiperSlide>
-                )
-              })}
-            </Swiper>
-
-            {/* Mobile navigation - below */}
-            {cardStyle === 'process' && (
-              <div className="mt-6 flex justify-center gap-2 pr-6 sm:pr-8 md:hidden lg:pr-12">
+          </div>
+        ) : (
+          // Process: carousel full-bleed right, alinhado ao grid à esquerda
+          <div className="relative z-10">
+            <div className="relative">
+              <div className="mb-8 flex justify-center gap-2">
                 <button
                   onClick={() => swiperRef.current?.slidePrev()}
                   className="flex h-12 w-12 items-center justify-center rounded-button border border-dark/10 bg-white text-dark transition-smooth hover:-translate-y-1 hover:border-brand-orange hover:text-brand-orange"
@@ -242,9 +146,44 @@ export default function ProcessCarousel({
                   <i className="fa-solid fa-chevron-right"></i>
                 </button>
               </div>
-            )}
+
+              <div className="relative">
+              <Swiper
+                onSwiper={(swiper) => { swiperRef.current = swiper }}
+                modules={[Navigation, Pagination, Mousewheel, FreeMode]}
+                spaceBetween={24}
+                slidesPerView={1.2}
+                centeredSlides={true}
+                loop={true}
+                mousewheel={{ forceToAxis: true }}
+                breakpoints={{
+                  640: { slidesPerView: 2, spaceBetween: 24 },
+                  1024: { slidesPerView: 3, spaceBetween: 32 },
+                }}
+                className="process-swiper"
+              >
+                {stages.map((stage, index) => {
+                  const displayNumber = stage.step || stage.stage?.toString()
+                  return (
+                    <SwiperSlide key={index} className="process-slide">
+                      <div className="h-full rounded-button border border-dark/10 bg-white cursor-pointer p-6 text-center">
+                        {stage.icon && (
+                          <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-button bg-brand-orange/10">
+                            <i className={`fa-jelly fa-${stage.icon} fa-xl text-brand-orange`}></i>
+                          </div>
+                        )}
+                        <h3 className="mb-3 text-xl font-black text-dark">{index + 1}. {stage.title}</h3>
+                        <p className="text-xl leading-relaxed text-dark/60">{stage.description}</p>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })}
+              </Swiper>
+
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

@@ -82,8 +82,10 @@ export default function NavDropdown({
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-50 mt-6 w-[400px] -translate-x-1/2 rounded-button border border-dark/10 bg-white p-4 shadow-lg">
-          <div className="flex flex-col">
+        <div
+          className={`fixed left-4 right-4 top-[88px] z-50 rounded-button border border-dark/10 bg-white p-4 shadow-lg xl:absolute xl:left-1/2 xl:right-auto xl:top-full xl:mt-6 xl:-translate-x-1/2 xl:w-max xl:max-w-[calc(100vw-2rem)]`}
+        >
+          <div className={items.length > 4 ? 'grid grid-cols-1 gap-x-2 sm:grid-cols-2 xl:grid-cols-3' : 'flex flex-col'}>
             {items.map((item) => (
               <TransitionLink
                 key={item.href}
@@ -96,7 +98,7 @@ export default function NavDropdown({
                   </div>
                 )}
                 <div className="flex-1">
-                  <div className="font-bold text-dark transition-colors group-hover:text-brand-orange">
+                  <div className="font-bold text-dark transition-colors group-hover:text-brand-orange xl:whitespace-nowrap">
                     {item.label}
                   </div>
                   {item.description && (
@@ -105,26 +107,26 @@ export default function NavDropdown({
                 </div>
               </TransitionLink>
             ))}
+          </div>
 
-            {/* Link para ver todos */}
-            <div className="border-t border-dark/10 pt-2 mt-2">
-              <TransitionLink
-                href={href}
-                className="group flex items-start gap-4 rounded-button p-4 transition-colors hover:bg-gray-50"
-              >
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
-                  <i className="fa-jelly fa-grid fa-lg text-brand-orange"></i>
+          {/* Link para ver todos */}
+          <div className="border-t border-dark/10 pt-2 mt-2">
+            <TransitionLink
+              href={href}
+              className="group flex items-start gap-4 rounded-button p-4 transition-colors hover:bg-gray-50"
+            >
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                <i className="fa-jelly fa-grid fa-lg text-brand-orange"></i>
+              </div>
+              <div className="flex-1">
+                <div className="font-bold text-dark transition-colors group-hover:text-brand-orange">
+                  {viewAllLabel}
                 </div>
-                <div className="flex-1">
-                  <div className="font-bold text-dark transition-colors group-hover:text-brand-orange">
-                    {viewAllLabel}
-                  </div>
-                  <div className="mt-1 text-sm text-dark/60">
-                    {viewAllDescription}
-                  </div>
+                <div className="mt-1 text-sm text-dark/60">
+                  {viewAllDescription}
                 </div>
-              </TransitionLink>
-            </div>
+              </div>
+            </TransitionLink>
           </div>
         </div>
       )}

@@ -12,12 +12,12 @@ export default function FeaturedCase() {
       client: {
         name: 'Laura Matos',
         role: 'CEO, Zelia',
-        image: '/placeholder-client.jpg',
+        image: '/placeholder-client.webp',
       },
       testimonial:
         'A equipe demonstrou grande dedicação e entusiasmo desde o início do projeto, contribuindo com sugestões valiosas que enriqueceram o desenvolvimento do aplicativo.',
       nps: 10,
-      mockup: '/placeholder-mockup.png',
+      mockup: '/placeholder-mockup.webp',
     },
     {
       id: 2,
@@ -29,12 +29,12 @@ export default function FeaturedCase() {
       client: {
         name: 'Carlos Silva',
         role: 'CTO, FinanceHub',
-        image: '/placeholder-client.jpg',
+        image: '/placeholder-client.webp',
       },
       testimonial:
         'Profissionalismo exemplar e entrega dentro do prazo. A solução superou nossas expectativas e nos posicionou como líderes no mercado.',
       nps: 10,
-      mockup: '/placeholder-mockup.png',
+      mockup: '/placeholder-mockup.webp',
     },
   ]
 

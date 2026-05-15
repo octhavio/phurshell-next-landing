@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Phurshell - Desenvolvimento de Apps Sob Medida',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Phurshell - Desenvolvimento de Apps Sob Medida',
     description: 'Somos uma fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida para Android, iOS e multiplataforma.',
-    images: ['/images/og-image.png'],
+    images: ['/images/og-image.webp'],
   },
   verification: {
     google: 'sCu8UBfKJNVpH_qibZSfDjN1_7qPDMvGRz-JJOzmh7g',

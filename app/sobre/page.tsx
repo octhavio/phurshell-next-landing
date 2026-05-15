@@ -10,37 +10,37 @@ const teamMembers = [
   {
     name: 'Gustavo Bittar',
     role: 'Co-Fundador',
-    image: '/images/team/guga.jpg',
+    image: '/images/team/guga.webp',
   },
   {
     name: 'Bruno Campanhã',
     role: 'Co-Fundador',
-    image: '/images/team/bruno.jpg',
+    image: '/images/team/bruno.webp',
   },
   {
     name: 'Octhavio Martins',
     role: 'Co-Fundador',
-    image: '/images/team/octhavio.jpg',
+    image: '/images/team/octhavio.webp',
   },
   {
     name: 'Andrews Alves',
     role: 'Desenvolvedor',
-    image: '/images/team/andrews.jpg',
+    image: '/images/team/andrews.webp',
   },
   {
     name: 'Paulo Marinho',
     role: 'Desenvolvedor',
-    image: '/images/team/paulo.jpg',
+    image: '/images/team/paulo.webp',
   },
   {
     name: 'Vinicius Alves',
     role: 'Desenvolvedor',
-    image: '/images/team/vinnie.jpg',
+    image: '/images/team/vinnie.webp',
   },
   {
     name: 'Máquina de café',
     role: 'Assistente',
-    image: '/images/maquina.jpg',
+    image: '/images/maquina.webp',
   },
 ]
 
@@ -126,7 +126,7 @@ export default function Sobre() {
                   {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
                     <img
-                      src="/images/img-cta-especialist.png"
+                      src="/images/img-cta-especialist.webp"
                       alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
                       width={120}
                       height={48}
@@ -165,7 +165,7 @@ export default function Sobre() {
             </div>
             <div className="overflow-hidden rounded-button shadow-lg">
               <img
-                src="/images/team-1.jpg"
+                src="/images/team-1.webp"
                 alt="Equipe Phurshell"
                 className="h-auto w-full object-cover"
               />
@@ -205,21 +205,21 @@ export default function Sobre() {
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             <div className="overflow-hidden rounded-button shadow-lg">
               <img
-                src="/images/phurshell-team-1.jpg"
+                src="/images/phurshell-team-1.webp"
                 alt="Equipe Phurshell 1"
                 className="h-auto w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-button shadow-lg">
               <img
-                src="/images/phurshell-team-2.jpg"
+                src="/images/phurshell-team-2.webp"
                 alt="Equipe Phurshell 2"
                 className="h-auto w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-button shadow-lg">
               <img
-                src="/images/phurshell-team-3.jpg"
+                src="/images/phurshell-team-3.webp"
                 alt="Equipe Phurshell 3"
                 className="h-auto w-full object-cover"
               />

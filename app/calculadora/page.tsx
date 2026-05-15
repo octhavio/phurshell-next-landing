@@ -354,7 +354,7 @@ export default function Calculadora() {
             {step === 0 && (
               <article>
                 <div className="mb-6 flex flex-col items-start gap-6">
-                  <img src="/images/img-calculator-hero.png" alt="Calculadora" className="h-20" />
+                  <img src="/images/img-calculator-hero.webp" alt="Calculadora" className="h-20" />
                   <h2 className="text-4xl font-black text-dark">Quanto custa desenvolver um app com um time de especialistas?</h2>
                 </div>
                 <p className="mb-6 text-xl leading-relaxed text-dark/70">
