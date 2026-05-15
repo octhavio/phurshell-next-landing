@@ -20,7 +20,7 @@ export default function Cases() {
       client: 'FoodExpress',
       description:
         'Aplicativo mobile completo de delivery de comida com rastreamento em tempo real e integração com múltiplos restaurantes.',
-      image: '/cases/case-1.jpg', // placeholder
+      image: '/cases/case-1.webp', // placeholder
       tags: ['React Native', 'Node.js', 'Firebase'],
       stats: {
         downloads: '50k+',
@@ -33,7 +33,7 @@ export default function Cases() {
       client: 'TechCorp',
       description:
         'Dashboard administrativo completo para gestão de equipes e projetos com analytics em tempo real.',
-      image: '/cases/case-2.jpg',
+      image: '/cases/case-2.webp',
       tags: ['Next.js', 'TypeScript', 'PostgreSQL'],
       stats: {
         users: '10k+',
@@ -46,7 +46,7 @@ export default function Cases() {
       client: 'Fashion Store',
       description:
         'App de e-commerce com experiência de compra fluida, integração com gateway de pagamento e gestão de estoque.',
-      image: '/cases/case-3.jpg',
+      image: '/cases/case-3.webp',
       tags: ['Flutter', 'Django', 'AWS'],
       stats: {
         sales: 'R$ 2M+',
@@ -59,7 +59,7 @@ export default function Cases() {
       client: 'FinTech',
       description:
         'Plataforma web para gestão financeira empresarial com dashboards customizáveis e relatórios automatizados.',
-      image: '/cases/case-4.jpg',
+      image: '/cases/case-4.webp',
       tags: ['React', 'Python', 'Docker'],
       stats: {
         transactions: '1M+',
@@ -72,7 +72,7 @@ export default function Cases() {
       client: 'HealthCare',
       description:
         'Aplicativo de telemedicina com agendamento de consultas, prontuário eletrônico e videochamada integrada.',
-      image: '/cases/case-5.jpg',
+      image: '/cases/case-5.webp',
       tags: ['React Native', 'GraphQL', 'MongoDB'],
       stats: {
         consultations: '25k+',
@@ -85,7 +85,7 @@ export default function Cases() {
       client: 'Industry Connect',
       description:
         'Marketplace conectando fornecedores e compradores industriais com sistema de cotações e negociação.',
-      image: '/cases/case-6.jpg',
+      image: '/cases/case-6.webp',
       tags: ['Next.js', 'Node.js', 'Redis'],
       stats: {
         suppliers: '2k+',

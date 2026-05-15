@@ -51,7 +51,7 @@ export default function CaseDiag() {
             <span className="word-wrapper" style={{ display: 'block', height: '100%' }}>
               <span className="word word-delay-27" style={{ display: 'block', height: '100%', position: 'relative' }}>
                 <img
-                  src="/images/img-diag-hero.png"
+                  src="/images/img-diag-hero.webp"
                   alt="Interface do aplicativo Diag mostrando prontuários digitais e receitas médicas"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -63,7 +63,7 @@ export default function CaseDiag() {
                     {/* Logo e Nome */}
                     <div className="flex items-center gap-3">
                       <img
-                        src="/images/img-cases-diag-icon.png"
+                        src="/images/img-cases-diag-icon.webp"
                         alt="Logo do aplicativo Diag"
                         width={36}
                         height={36}
@@ -137,7 +137,7 @@ export default function CaseDiag() {
           {/* Case Image */}
           <div className="mt-12">
             <img
-              src="/images/img-diag-case-1.png"
+              src="/images/img-diag-case-1.webp"
               alt="Diag case"
               className="w-full rounded-button"
             />
@@ -200,7 +200,7 @@ export default function CaseDiag() {
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="h-full">
                 <img
-                  src="/images/img-diag-case-2.png"
+                  src="/images/img-diag-case-2.webp"
                   alt="Diag case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -208,14 +208,14 @@ export default function CaseDiag() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-diag-case-3.png"
+                    src="/images/img-diag-case-3.webp"
                     alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-diag-case-4.png"
+                    src="/images/img-diag-case-4.webp"
                     alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -276,14 +276,14 @@ export default function CaseDiag() {
               <div className="flex h-full flex-col gap-6">
                 <div className="flex-1">
                   <img
-                    src="/images/img-diag-case-5.png"
+                    src="/images/img-diag-case-5.webp"
                     alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
                 </div>
                 <div className="flex-1">
                   <img
-                    src="/images/img-diag-case-6.png"
+                    src="/images/img-diag-case-6.webp"
                     alt="Diag case"
                     className="h-full w-full rounded-button object-cover"
                   />
@@ -291,7 +291,7 @@ export default function CaseDiag() {
               </div>
               <div className="h-full">
                 <img
-                  src="/images/img-diag-case-7.png"
+                  src="/images/img-diag-case-7.webp"
                   alt="Diag case"
                   className="h-full w-full rounded-button object-cover"
                 />
@@ -403,7 +403,7 @@ export default function CaseDiag() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/images/img-testimonial-diag.png"
+                  src="/images/img-testimonial-diag.webp"
                   alt="Foto de Amanda Martins, Fundadora do Diag"
                   width={80}
                   height={80}

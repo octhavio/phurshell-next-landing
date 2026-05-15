@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: 'https://phurshell.com/servicos/consultoria-para-startups',
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Phurshell - Consultoria para Startups',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Consultoria para Startups | Phurshell',
     description: 'A Phurshell ajuda startups a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
-    images: ['/images/og-image.png'],
+    images: ['/images/og-image.webp'],
   },
 }
 

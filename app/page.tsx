@@ -25,7 +25,7 @@ export default function Home() {
       icon: '/img-icon-diag.svg',
       description:
         'Prescrições médicas simplificadas. Plataforma completa de gestão de saúde com geração de prontuários e receitas médicas, chat com IA para suporte diagnóstico, e conteúdos médicos atualizados para facilitar o dia-a-dia dos médicos.',
-      screenshot: '/img-screenshot-diag.png',
+      screenshot: '/img-screenshot-diag.webp',
       tags: [
         'IDENTIDADE VISUAL',
         'WIREFRAME',
@@ -43,7 +43,7 @@ export default function Home() {
       icon: '/img-icon-psiapp.svg',
       description:
         'O aplicativo que conecta psicólogos a pacientes. Desenvolvimento completo dos aplicativos para pacientes e psicólogos, criação do backoffice para gestão e suporte dos atendimentos. Análise de dados para crescimento do projeto e manutenção contínua.',
-      screenshot: '/img-screenshot-psiapp.png',
+      screenshot: '/img-screenshot-psiapp.webp',
       tags: [
         'IDENTIDADE VISUAL',
         'WIREFRAME',
@@ -59,7 +59,7 @@ export default function Home() {
       icon: '/img-icon_movspot.svg',
       description:
         'Tiramos a ideia do papel, estudamos o mercado, criamos a identidade e desenvolvemos a única plataforma que mostra onde os filmes foram gravados na internet.',
-      screenshot: '/img-screenshot-movspot.png',
+      screenshot: '/img-screenshot-movspot.webp',
       tags: [
         'PESQUISA DE MERCADO',
         'IDENTIDADE VISUAL',
@@ -72,26 +72,26 @@ export default function Home() {
     },
     {
       name: 'Autoday',
-      icon: '/img-icon_autoday.png',
+      icon: '/img-icon_autoday.webp',
       description:
         'É uma insurtech especializada no desenvolvimento de soluções de seguros de mobilidade inovadores e acessíveis. O aplicativo que ajuda você a proteger seu carro com um seguro intermitente revolucionário.',
-      screenshot: '/img-screenshot-autoday.png',
+      screenshot: '/img-screenshot-autoday.webp',
       tags: ['BACKOFFICE', 'WIREFRAME', 'IDENTIDADE VISUAL', 'INFRAESTRUTURA', 'LANDING PAGE', 'IOS', 'ANDROID'],
     },
     {
       name: 'Bluu',
-      icon: '/img-icon_bluu.png',
+      icon: '/img-icon_bluu.webp',
       description:
         'Aplicativo de saúde preventiva para pets, ajudando tutores a melhorar a saúde de seus bichinhos com atividades e práticas diárias. Além de atendimento veterinário para casos emergenciais.',
-      screenshot: '/img-screenshot-bluu.png',
+      screenshot: '/img-screenshot-bluu.webp',
       tags: ['WIREFRAME', 'BACKOFFICE', 'LANDING PAGE', 'IDENTIDADE VISUAL', 'IOS', 'ANDROID'],
     },
     {
       name: 'Devotee',
-      icon: '/img-icon_devote_new.png',
+      icon: '/img-icon_devote_new.webp',
       description:
         'Tivemos a honra de tirar do papel o único aplicativo de relacionamento exclusivo para deficientes físicos. Desde a concepção da ideia até o desenvolvimento do iOS e Android.',
-      screenshot: '/img-screenshot-devotee.png',
+      screenshot: '/img-screenshot-devotee.webp',
       tags: ['WIREFRAME', 'BACKEND', 'WEB', 'IOS', 'ANDROID', 'BACKOFFICE', 'IDENTIDADE VISUAL'],
     },
   ]
@@ -483,6 +483,7 @@ export default function Home() {
                         <img
                           src={service.image}
                           alt={service.title}
+                          loading="lazy"
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       </div>
@@ -569,10 +570,11 @@ export default function Home() {
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                         {/* Logo */}
                         <img
-                          src="/images/img-home-icon-psiapp.png"
+                          src="/images/img-home-icon-psiapp.webp"
                           alt={caseItem.name}
                           width={120}
                           height={40}
+                          loading="lazy"
                           className="h-auto relative z-10"
                         />
 
@@ -592,7 +594,7 @@ export default function Home() {
                         {/* Screenshot - Positioned at bottom with hover scale effect */}
                         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                           <img
-                            src="/images/img-home-case-psiapp.png"
+                            src="/images/img-home-case-psiapp.webp"
                             alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                             width={800}
                             height={600}
@@ -606,10 +608,11 @@ export default function Home() {
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                         {/* Logo */}
                         <img
-                          src="/images/img-home-icon-autoday.png"
+                          src="/images/img-home-icon-autoday.webp"
                           alt="Autoday"
                           width={120}
                           height={40}
+                          loading="lazy"
                           className="h-auto relative z-10"
                         />
 
@@ -629,10 +632,11 @@ export default function Home() {
                         {/* Screenshot - Positioned at bottom with hover scale effect */}
                         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                           <img
-                            src="/images/img-home-case-autoday.png"
+                            src="/images/img-home-case-autoday.webp"
                             alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
                             width={800}
                             height={600}
+                            loading="lazy"
                             className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
@@ -643,10 +647,11 @@ export default function Home() {
                       <div className="relative flex flex-col items-center gap-6 p-12 pt-8 pb-0 sm:p-16 sm:pt-10 sm:pb-0 lg:p-20 lg:pt-12 lg:pb-0 text-center">
                         {/* Logo */}
                         <img
-                          src="/images/img-home-icon-diag.png"
+                          src="/images/img-home-icon-diag.webp"
                           alt={caseItem.name}
                           width={120}
                           height={40}
+                          loading="lazy"
                           className="h-auto relative z-10"
                         />
 
@@ -666,7 +671,7 @@ export default function Home() {
                         {/* Screenshot - Positioned at bottom with hover scale effect */}
                         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden">
                           <img
-                            src="/images/img-home-case-diag.png"
+                            src="/images/img-home-case-diag.webp"
                             alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                             width={800}
                             height={600}
@@ -688,6 +693,7 @@ export default function Home() {
                             alt={caseItem.name}
                             width={80}
                             height={80}
+                            loading="lazy"
                             className="h-20 w-20 rounded-2xl border border-dark/10"
                           />
                           <h3 className="text-4xl font-black leading-tight text-dark sm:text-5xl">
@@ -724,6 +730,7 @@ export default function Home() {
                         alt={`Tela do aplicativo ${caseItem.name} desenvolvido pela Phurshell`}
                         width={600}
                         height={800}
+                        loading="lazy"
                         className="h-auto w-full max-w-md transition-transform duration-500 hover:scale-105"
                       />
                     </div>
@@ -754,10 +761,11 @@ export default function Home() {
             <div className="flex items-center justify-center gap-6">
               <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/images/img-testimonial-autoday.png"
+                  src="/images/img-testimonial-autoday.webp"
                   alt="Foto de Alec Maia, fundador da AutoDay"
                   width={80}
                   height={80}
+                  loading="lazy"
                   className="h-full w-full object-cover"
                 />
               </div>

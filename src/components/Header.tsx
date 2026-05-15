@@ -263,7 +263,7 @@ export default function Header() {
               ease: [0.16, 1, 0.3, 1],
               delay: isExiting ? 0.45 : 0, // Na saída, espera a cascata (300ms + 150ms)
             }}
-            className={`fixed inset-0 z-50 bg-white ${shouldCollapse ? '' : 'md:hidden'}`}
+            className={`fixed inset-0 z-50 flex flex-col bg-white ${shouldCollapse ? '' : 'md:hidden'}`}
           >
             {/* Mobile Header - Floating Card */}
             <div className="px-4 py-4 sm:px-6 lg:px-8">
@@ -297,18 +297,18 @@ export default function Header() {
                 visible: {
                   transition: {
                     staggerChildren: 0.15,
-                    delayChildren: 0.4, // Espera o fundo descer completamente
+                    delayChildren: 0.4,
                   },
                 },
                 exit: {
                   transition: {
                     staggerChildren: 0.15,
                     staggerDirection: -1,
-                    delayChildren: 0, // Começa imediatamente na saída
+                    delayChildren: 0,
                   },
                 },
               }}
-              className="overflow-y-auto px-6 pt-3 pb-6"
+              className="flex-1 overflow-y-auto overscroll-contain px-6 pt-3 pb-6"
             >
               <motion.nav
                 variants={{

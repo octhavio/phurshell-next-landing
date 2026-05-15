@@ -9,7 +9,7 @@ export default function Contato() {
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <img
-          src="/images/img-contact-side.jpg"
+          src="/images/img-contact-side.webp"
           alt="Phurshell - Entre em contato"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -39,7 +39,7 @@ export default function Contato() {
               <div className="grid grid-cols-3 gap-8 max-w-md">
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-1.png"
+                    src="/images/clients/img-partner-1.webp"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -48,7 +48,7 @@ export default function Contato() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-2.png"
+                    src="/images/clients/img-partner-2.webp"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -57,7 +57,7 @@ export default function Contato() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-3.png"
+                    src="/images/clients/img-partner-3.webp"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -66,7 +66,7 @@ export default function Contato() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-4.png"
+                    src="/images/clients/img-partner-4.webp"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -75,7 +75,7 @@ export default function Contato() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-5.png"
+                    src="/images/clients/img-partner-5.webp"
                     alt="Cliente"
                     width={100}
                     height={40}
@@ -84,7 +84,7 @@ export default function Contato() {
                 </div>
                 <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
                   <img
-                    src="/images/clients/img-partner-6.png"
+                    src="/images/clients/img-partner-6.webp"
                     alt="Cliente"
                     width={100}
                     height={40}

@@ -60,7 +60,7 @@ export default function ContactCTA() {
             <div className="order-first md:order-last">
               <div className="relative overflow-hidden rounded-button">
                 <img
-                  src="/images/img-cta.png"
+                  src="/images/img-cta.webp"
                   alt="Gustavo Bittar, co-fundador da Phurshell"
                   width={350}
                   height={466}

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     url: 'https://phurshell.com/servicos/design-de-produto-e-experiencia',
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Phurshell - Design de Produto & Experiência',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Design de Produto & Experiência | Phurshell',
     description: 'A Phurshell cria interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
-    images: ['/images/og-image.png'],
+    images: ['/images/og-image.webp'],
   },
 }
 

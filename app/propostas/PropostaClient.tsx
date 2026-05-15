@@ -68,7 +68,7 @@ const hardcodedData = {
     {
       nome: 'Psiapp',
       descrição: 'Aplicativo que conecta psicólogos a pacientes. Desenvolvimento completo dos apps, backoffice e análise de dados.',
-      imagem: '/images/img-home-case-psiapp.png',
+      imagem: '/images/img-home-case-psiapp.webp',
       tags: ['iOS', 'Android', 'Web', 'Backoffice'],
       destaques: [
         { valor: '3.000+', label: 'psicólogos ativos' },
@@ -79,7 +79,7 @@ const hardcodedData = {
     {
       nome: 'Diag',
       descrição: 'Plataforma de gestão de saúde com prontuários, receitas médicas e chat com IA para suporte diagnóstico.',
-      imagem: '/images/img-home-case-diag.png',
+      imagem: '/images/img-home-case-diag.webp',
       tags: ['iOS', 'Android', 'Web', 'IA'],
       destaques: [
         { valor: '16.000+', label: 'médicos usuários' },
@@ -89,7 +89,7 @@ const hardcodedData = {
       nome: 'Autoday',
       descrição: 'Insurtech de seguro de carro sob demanda. MVP completo com app, backoffice e landing page.',
       destaque_texto: 'A empresa recebeu múltiplos aportes milionários e foi vendida para o Sem Parar.',
-      imagem: '/images/img-home-case-autoday.png',
+      imagem: '/images/img-home-case-autoday.webp',
       tags: ['iOS', 'Android', 'Backoffice'],
     },
   ],

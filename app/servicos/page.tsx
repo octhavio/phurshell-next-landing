@@ -516,7 +516,7 @@ export default function Servicos() {
                   {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
                     <img
-                      src="/images/img-cta-especialist.png"
+                      src="/images/img-cta-especialist.webp"
                       alt="Equipe de especialistas em desenvolvimento de software da Phurshell"
                       width={120}
                       height={48}
@@ -551,7 +551,7 @@ export default function Servicos() {
                 <h2 className="text-4xl font-black tracking-tight text-dark sm:text-5xl">
                   {category.title}
                 </h2>
-                {category.hasPage && (
+                {category.slug === 'desenvolvimento-de-aplicativos' && (
                   <span className="rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold text-brand-orange">
                     Mais procurado
                   </span>
@@ -587,14 +587,14 @@ export default function Servicos() {
                   <TransitionLink
                     key={service.title}
                     href={`/servicos/${category.slug}`}
-                    className="group flex h-full flex-col rounded-button bg-white p-8 transition-all duration-200 hover:shadow-lg"
+                    className="group flex h-full flex-col rounded-button border border-dark/10 bg-white p-8 transition-all duration-200 hover:shadow-lg"
                   >
                     {cardContent}
                   </TransitionLink>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex h-full flex-col rounded-button bg-white p-8"
+                    className="flex h-full flex-col rounded-button border border-dark/10 bg-white p-8"
                   >
                     {cardContent}
                   </div>
