@@ -69,7 +69,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
     <div className="bg-white">
       {/* Breadcrumb */}
       <section className="border-b border-dark/10 bg-gray-50 py-6">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="flex items-center gap-2 text-sm text-dark/60">
             <TransitionLink
               href="/"
@@ -92,7 +92,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
 
       {/* Hero Section */}
       <section className="bg-white pb-12 pt-16 sm:pt-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Category & Meta */}
           <div className="mb-6 flex flex-wrap items-center gap-4 text-sm">
             <span className="rounded-button bg-brand-orange/10 px-4 py-2 font-bold text-brand-orange">
@@ -142,7 +142,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
 
       {/* Content */}
       <section className="bg-white pb-16 sm:pb-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
             {/* Main Content */}
             <article
@@ -177,7 +177,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="border-t border-dark/10 bg-gray-50 py-16 sm:py-24">
-          <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+          <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
             <h2 className="mb-12 text-center text-4xl font-black text-dark sm:text-5xl">
               Artigos relacionados
             </h2>
@@ -247,7 +247,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
 
       {/* Newsletter CTA */}
       <section className="bg-white py-16 sm:py-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="mx-auto max-w-2xl rounded-button border border-dark/10 bg-gradient-to-br from-white to-brand-orange/5 p-8 text-center shadow-xl sm:p-12">
             <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
               <i className="fa-solid fa-envelope text-2xl text-brand-orange"></i>

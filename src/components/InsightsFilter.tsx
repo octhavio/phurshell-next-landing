@@ -1,11 +1,33 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
 import TransitionLink from './TransitionLink'
 import { BlogPost, WPCategory } from '../types/wordpress'
 
 const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
 const POSTS_PER_PAGE = 10
+
+const categoryIconMap: { [key: string]: string } = {
+  'apps mobile': 'fa-solid fa-mobile',
+  'arquitetura de software': 'fa-solid fa-wrench',
+  'blockchain & web3': 'fa-solid fa-link',
+  'blog': 'fa-solid fa-newspaper',
+  'cases': 'fa-solid fa-trophy',
+  'cloud & devops': 'fa-solid fa-cloud',
+  'desenvolvimento web': 'fa-solid fa-globe',
+  'geral': 'fa-solid fa-layer-group',
+  'inteligência artificial': 'fa-solid fa-sparkles',
+  'produto digital': 'fa-solid fa-compass',
+  'qualidade & segurança': 'fa-solid fa-shield',
+  'startups': 'fa-solid fa-chart-pie',
+  'transformação digital': 'fa-solid fa-suitcase',
+  'ux/ui design': 'fa-solid fa-palette',
+}
+
+function getCategoryIcon(name: string): string | null {
+  return categoryIconMap[name.toLowerCase()] || null
+}
 
 interface InsightsFilterProps {
   categories: WPCategory[]
@@ -60,12 +82,40 @@ function transformWPPost(post: any): BlogPost {
 }
 
 export default function InsightsFilter({ categories }: InsightsFilterProps) {
+  const searchParams = useSearchParams()
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [selectedCategory, setSelectedCategory] = useState('todos')
+
+  useEffect(() => {
+    const categoria = searchParams.get('categoria')
+    if (categoria) setSelectedCategory(categoria)
+  }, [searchParams])
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(true)
   const [isFirstPage, setIsFirstPage] = useState(true)
+  const filterRef = useRef<HTMLDivElement>(null)
+  const isDragging = useRef(false)
+  const startX = useRef(0)
+  const scrollLeft = useRef(0)
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true
+    startX.current = e.pageX - (filterRef.current?.offsetLeft ?? 0)
+    scrollLeft.current = filterRef.current?.scrollLeft ?? 0
+    if (filterRef.current) filterRef.current.style.cursor = 'grabbing'
+  }
+  const onMouseUp = () => {
+    isDragging.current = false
+    if (filterRef.current) filterRef.current.style.cursor = 'grab'
+  }
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !filterRef.current) return
+    e.preventDefault()
+    const x = e.pageX - filterRef.current.offsetLeft
+    const walk = x - startX.current
+    filterRef.current.scrollLeft = scrollLeft.current - walk
+  }
 
   // Busca posts paginados
   useEffect(() => {
@@ -117,62 +167,98 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
 
   return (
     <>
+      {/* Hero + Category Filter */}
+      <div className="bg-white py-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          {/* Breadcrumb */}
+          <div className="mb-6 flex items-center gap-2 text-sm font-bold text-dark/50">
+            <TransitionLink href="/" className="transition-colors hover:text-brand-orange">Home</TransitionLink>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <span className="text-dark">Insights</span>
+          </div>
+          <h1 className="mb-4 text-5xl font-black tracking-tight text-dark sm:text-6xl lg:text-7xl">
+            Insights, ideias & inspiração
+          </h1>
+          <p className="mb-8 max-w-5xl text-xl leading-relaxed text-dark/60">
+            Dicas de especialistas, tendências de design, deep-dives técnicos e histórias criativas das mentes por trás da Phurshell. Alimente sua próxima grande ideia com conteúdo instigante e conhecimento do setor.
+          </p>
+          <div className="relative">
+            <div
+              ref={filterRef}
+              className="flex gap-3 overflow-x-auto pb-1 select-none"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', cursor: 'grab' }}
+              onMouseDown={onMouseDown}
+              onMouseUp={onMouseUp}
+              onMouseLeave={onMouseUp}
+              onMouseMove={onMouseMove}
+            >
+            {filterCategories.map((category) => (
+              <button
+                key={category.slug}
+                onClick={() => handleCategoryChange(category.slug)}
+                className={`group relative shrink-0 overflow-hidden rounded-button px-6 py-3 text-sm font-black transition-all ${
+                  selectedCategory === category.slug
+                    ? 'bg-dark text-white'
+                    : 'border border-dark/10 bg-white text-dark/70 hover:bg-dark/5'
+                }`}
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  {getCategoryIcon(category.name) && (
+                    <i className={`${getCategoryIcon(category.name)} text-xs`}></i>
+                  )}
+                  {category.name}
+                </span>
+              </button>
+            ))}
+            </div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent"></div>
+          </div>
+        </div>
+      </div>
+
       {/* Featured Post */}
       {featuredPost && (
-        <section className="bg-white pb-12 pt-4 sm:pb-16 sm:pt-6">
-          <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+        <section className="bg-white">
+          <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
             <TransitionLink
               href={`/insights/${featuredPost.slug}`}
-              className="group block overflow-hidden rounded-button border border-dark/10 bg-white shadow-xl transition-smooth hover:-translate-y-2 hover:shadow-2xl"
+              className="group block rounded-button border border-dark/10 bg-white transition-smooth"
             >
-              <div className="grid gap-8 lg:grid-cols-2">
+              <div className="grid gap-0 lg:grid-cols-2">
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden lg:h-full">
-                  {featuredPost.image ? (
-                    <img
-                      src={featuredPost.image}
-                      alt={featuredPost.title}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20"></div>
-                  )}
-                  <div className="absolute left-6 top-6 rounded-button bg-brand-orange px-4 py-2">
-                    <span className="text-sm font-black text-white">EM DESTAQUE</span>
+                <div className="p-6 pb-6 lg:pb-6 lg:pr-0">
+                  <div className="relative h-64 overflow-hidden rounded-xl lg:h-full">
+                    {featuredPost.image ? (
+                      <img
+                        src={featuredPost.image}
+                        alt={featuredPost.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform duration-500 group-hover:scale-105"></div>
+                    )}
+                    <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark">
+                      {featuredPost.category}
+                    </div>
+                    <div className="absolute right-4 top-4 rounded-button bg-brand-orange px-3 py-1">
+                      <span className="text-sm font-black text-white">Em destaque</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col justify-center p-8 lg:p-12">
-                  <div className="mb-4 flex items-center gap-4 text-sm text-dark/60">
-                    <span className="rounded-button bg-brand-orange/10 px-3 py-1 font-bold text-brand-orange">
-                      {featuredPost.category}
-                    </span>
+                  <div className="mb-4 flex items-center gap-2 text-sm text-dark/60">
                     <span>{featuredPost.publishedAt}</span>
-                    <span>•</span>
+                    <span>·</span>
                     <span>{featuredPost.readTime}</span>
                   </div>
 
-                  <h2 className="mb-4 text-3xl font-black text-dark transition-colors group-hover:text-brand-orange sm:text-4xl">
+                  <h2 className="mb-4 text-3xl font-black text-dark sm:text-4xl">
                     {featuredPost.title}
                   </h2>
 
-                  <p className="mb-6 text-lg leading-relaxed text-dark/70">{featuredPost.excerpt}</p>
-
-                  <div className="flex items-center gap-3">
-                    {featuredPost.author.avatar ? (
-                      <img
-                        src={featuredPost.author.avatar}
-                        alt={featuredPost.author.name}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-orange/10">
-                        <i className="fa-solid fa-user text-brand-orange"></i>
-                      </div>
-                    )}
-                    <div className="font-bold text-dark">{featuredPost.author.name}</div>
-                  </div>
+                  <p className="text-lg leading-relaxed text-dark/70">{featuredPost.excerpt}</p>
                 </div>
               </div>
             </TransitionLink>
@@ -180,34 +266,18 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
         </section>
       )}
 
-      {/* Category Filter */}
-      <section className="border-y border-dark/10 bg-gray-50 py-8">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {filterCategories.map((category) => (
-              <button
-                key={category.slug}
-                onClick={() => handleCategoryChange(category.slug)}
-                className={`rounded-button px-6 py-3 text-base font-bold transition-all ${
-                  selectedCategory === category.slug
-                    ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/30'
-                    : 'bg-white text-dark hover:bg-brand-orange/10 hover:text-brand-orange'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Blog Grid */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+      <section className="bg-white py-8">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {loading ? (
-            <div className="py-20 text-center">
-              <i className="fa-solid fa-spinner fa-spin mb-6 text-6xl text-brand-orange"></i>
-              <h3 className="text-2xl font-black text-dark">Carregando...</h3>
+            <div className="flex py-20 items-center justify-center">
+              <img
+                src="/logos/img-logo-icon.svg"
+                alt="Phurshell"
+                width={50}
+                height={50}
+                className="h-12 w-12 animate-pulse"
+              />
             </div>
           ) : gridPosts.length === 0 ? (
             <div className="py-20 text-center">
@@ -221,61 +291,44 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
                 <TransitionLink
                   key={post.id}
                   href={`/insights/${post.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-button border border-dark/10 bg-white shadow-lg transition-smooth hover:-translate-y-2 hover:shadow-2xl"
+                  className="group flex flex-col rounded-button border border-dark/10 bg-white transition-smooth"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="p-6 pb-0">
+                  <div className="relative h-60 overflow-hidden rounded-xl">
                     {post.image ? (
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform group-hover:scale-105"></div>
+                      <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform duration-500 group-hover:scale-105"></div>
                     )}
+                    <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark">
+                      {post.category}
+                    </div>
                     {post.featured && (
                       <div className="absolute right-4 top-4 rounded-button bg-brand-orange px-3 py-1">
                         <i className="fa-solid fa-star text-white"></i>
                       </div>
                     )}
                   </div>
+                  </div>
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="mb-3 flex items-center gap-3 text-sm text-dark/60">
-                      <span className="rounded-button bg-brand-orange/10 px-3 py-1 font-bold text-brand-orange">
-                        {post.category}
-                      </span>
+                    <div className="mb-3 flex items-center gap-2 text-sm text-dark/60">
+                      <span>{post.publishedAt}</span>
+                      <span>·</span>
                       <span>{post.readTime}</span>
                     </div>
 
-                    <h3 className="mb-3 text-xl font-black text-dark transition-colors group-hover:text-brand-orange">
+                    <h3 className="mb-3 text-xl font-black text-dark">
                       {post.title}
                     </h3>
 
-                    <p className="mb-4 flex-1 text-dark/70">{post.excerpt}</p>
-
-                    <div className="flex items-center justify-between border-t border-dark/10 pt-4">
-                      <div className="flex items-center gap-2">
-                        {post.author.avatar ? (
-                          <img
-                            src={post.author.avatar}
-                            alt={post.author.name}
-                            className="h-8 w-8 rounded-full object-cover"
-                          />
-                        ) : (
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10">
-                            <i className="fa-solid fa-user text-sm text-brand-orange"></i>
-                          </div>
-                        )}
-                        <div className="text-sm">
-                          <div className="font-bold text-dark">{post.author.name}</div>
-                        </div>
-                      </div>
-
-                      <div className="text-sm text-dark/60">{post.publishedAt}</div>
-                    </div>
+                    <p className="flex-1 text-dark/70">{post.excerpt}</p>
                   </div>
                 </TransitionLink>
               ))}
@@ -291,8 +344,8 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
                 disabled={currentPage === 1}
                 className={`flex h-12 w-12 items-center justify-center rounded-button font-bold transition-all ${
                   currentPage === 1
-                    ? 'cursor-not-allowed bg-gray-100 text-dark/30'
-                    : 'bg-white text-dark shadow-md hover:bg-brand-orange hover:text-white'
+                    ? 'cursor-not-allowed border border-dark/10 bg-gray-100 text-dark/30'
+                    : 'border border-dark/10 bg-white text-dark hover:border-brand-orange hover:text-brand-orange'
                 }`}
               >
                 <i className="fa-solid fa-chevron-left"></i>
@@ -305,8 +358,8 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
                   onClick={() => handlePageChange(page)}
                   className={`flex h-12 w-12 items-center justify-center rounded-button font-bold transition-all ${
                     currentPage === page
-                      ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/30'
-                      : 'bg-white text-dark shadow-md hover:bg-brand-orange/10 hover:text-brand-orange'
+                      ? 'border border-brand-orange bg-brand-orange text-white'
+                      : 'border border-dark/10 bg-white text-dark hover:border-brand-orange hover:text-brand-orange'
                   }`}
                 >
                   {page}
@@ -319,8 +372,8 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
                 disabled={currentPage === totalPages}
                 className={`flex h-12 w-12 items-center justify-center rounded-button font-bold transition-all ${
                   currentPage === totalPages
-                    ? 'cursor-not-allowed bg-gray-100 text-dark/30'
-                    : 'bg-white text-dark shadow-md hover:bg-brand-orange hover:text-white'
+                    ? 'cursor-not-allowed border border-dark/10 bg-gray-100 text-dark/30'
+                    : 'border border-dark/10 bg-white text-dark hover:border-brand-orange hover:text-brand-orange'
                 }`}
               >
                 <i className="fa-solid fa-chevron-right"></i>

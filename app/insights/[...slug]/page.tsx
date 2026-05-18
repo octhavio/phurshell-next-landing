@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import TransitionLink from '../../../src/components/TransitionLink'
 import ShareButtons from '../../../src/components/ShareButtons'
+import ContactCTA from '../../../src/components/ContactCTA'
 import { getBlogPosts, getBlogPostBySlug } from '../../../src/lib/wordpress'
 import { BlogPost } from '../../../src/types/wordpress'
 
@@ -97,58 +98,59 @@ export default async function InsightPostPage({ params }: PageProps) {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-white pb-12 pt-16 sm:pt-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          {/* Category & Meta */}
-          <div className="mb-6 flex flex-wrap items-center gap-4 text-sm">
-            <span className="rounded-button bg-brand-orange/10 px-4 py-2 font-bold text-brand-orange">
-              {post.category}
-            </span>
-            <span className="text-dark/60">{post.publishedAt}</span>
-            <span className="text-dark/60">-</span>
-            <span className="text-dark/60">{post.readTime} de leitura</span>
+      <section className="bg-white pb-12 pt-12">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          {/* Breadcrumb */}
+          <div className="mb-6 flex items-center gap-2 text-sm font-bold text-dark/50">
+            <TransitionLink href="/" className="transition-colors hover:text-brand-orange">Home</TransitionLink>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <TransitionLink href="/insights" className="transition-colors hover:text-brand-orange">Insights</TransitionLink>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <a href={`/insights?categoria=${post.categorySlug}`} className="transition-colors hover:text-brand-orange">{post.category}</a>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+            <span className="max-w-xs truncate text-dark">{post.title}</span>
           </div>
 
           {/* Title - CONTEÚDO REAL NO HTML */}
-          <h1 className="mb-8 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl lg:text-6xl xl:text-7xl">
             {post.title}
           </h1>
 
-          {/* Author Info */}
-          <div className="mb-12 flex items-center gap-4 border-b border-dark/10 pb-8">
+          {/* Meta & Author */}
+          <div className="mb-12 flex flex-wrap items-center gap-3 text-sm font-bold text-dark/60">
+            <span>{post.publishedAt}</span>
+            <span>·</span>
+            <span>{post.readTime} de leitura</span>
+            <span>·</span>
             {post.author.avatar ? (
-              <img
-                src={post.author.avatar}
-                alt={post.author.name}
-                className="h-16 w-16 rounded-full object-cover"
-              />
+              <img src={post.author.avatar} alt={post.author.name} className="h-6 w-6 rounded-full object-cover" />
             ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
-                <i className="fa-solid fa-user text-2xl text-brand-orange"></i>
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-orange/10">
+                <i className="fa-solid fa-user text-xs text-brand-orange"></i>
               </div>
             )}
-            <div>
-              <div className="text-lg font-bold text-dark">{post.author.name}</div>
-              <div className="text-dark/60">{post.author.role}</div>
-            </div>
+            <span>{post.author.name}</span>
           </div>
 
           {/* Featured Image */}
           {post.image && (
-            <div className="mb-12 overflow-hidden rounded-button">
+            <div className="relative mb-0 overflow-hidden rounded-button">
               <img
                 src={post.image}
                 alt={post.title}
                 className="h-auto w-full object-cover lg:max-h-[600px]"
               />
+              <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark backdrop-blur-sm">
+                {post.category}
+              </div>
             </div>
           )}
         </div>
       </section>
 
       {/* Content - CONTEÚDO REAL NO HTML */}
-      <section className="bg-white pb-16 sm:pb-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
+      <section className="bg-white pt-8 pb-8">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
             {/* Main Content */}
             <div className="min-w-0 overflow-x-auto">
@@ -179,34 +181,45 @@ export default async function InsightPostPage({ params }: PageProps) {
             </div>
 
             {/* Sidebar */}
-            <aside className="space-y-8">
-              {/* Share */}
-              <ShareButtons title={post.title} slug={post.slug} />
-
-              {/* CTA */}
-              <div className="rounded-button bg-gradient-to-br from-brand-orange to-brand-orange-light p-6 text-white shadow-lg">
-                <h3 className="mb-3 text-xl font-black">Gostou do conteúdo?</h3>
-                <p className="mb-4 text-white/90">
-                  Entre em contato e vamos transformar sua ideia em realidade
+            <aside className="space-y-8 self-start sticky top-32">
+              {/* CTA Mini */}
+              <div className="rounded-button bg-brand-orange/10 p-6">
+                <h3 className="mb-2 text-lg font-black text-dark">
+                  Fale com um especialista e receba sua proposta em pouco tempo
+                </h3>
+                <p className="mb-4 text-sm text-dark/60">
+                  Nosso time entra em contato para entender seu projeto e enviar uma estimativa.
                 </p>
                 <TransitionLink
                   href="/contato"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-button bg-white px-6 py-3 font-bold text-brand-orange transition-smooth hover:scale-105"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-sm font-black text-white transition-smooth hover:bg-brand-orange-light"
                 >
-                  Solicitar proposta
+                  Falar com um especialista
                   <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
                 </TransitionLink>
+                <p className="mt-3 flex items-center justify-center gap-2 text-xs font-bold text-brand-orange">
+                  <i className="fa-solid fa-bolt"></i>
+                  Respondemos em minutos
+                </p>
               </div>
+
             </aside>
           </div>
         </div>
       </section>
 
+      {/* Share */}
+      <section className="bg-white pb-8">
+        <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+          <ShareButtons title={post.title} slug={post.slug} />
+        </div>
+      </section>
+
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="border-t border-dark/10 bg-gray-50 py-16 sm:py-24">
-          <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-            <h2 className="mb-12 text-center text-4xl font-black text-dark sm:text-5xl">
+        <section className="bg-white py-8">
+          <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
+            <h2 className="mb-8 text-4xl font-black text-dark sm:text-5xl">
               Artigos relacionados
             </h2>
 
@@ -215,56 +228,35 @@ export default async function InsightPostPage({ params }: PageProps) {
                 <TransitionLink
                   key={relatedPost.id}
                   href={`/insights/${relatedPost.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-button border border-dark/10 bg-white shadow-lg transition-smooth hover:-translate-y-2 hover:shadow-2xl"
+                  className="group flex flex-col rounded-button border border-dark/10 bg-white transition-smooth"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    {relatedPost.image ? (
-                      <img
-                        src={relatedPost.image}
-                        alt={relatedPost.title}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform group-hover:scale-105"></div>
-                    )}
+                  <div className="p-6 pb-0">
+                    <div className="relative h-60 overflow-hidden rounded-xl">
+                      {relatedPost.image ? (
+                        <img
+                          src={relatedPost.image}
+                          alt={relatedPost.title}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="h-full w-full bg-gradient-to-br from-brand-orange/20 to-brand-orange-light/20 transition-transform duration-500 group-hover:scale-105"></div>
+                      )}
+                      <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark">
+                        {relatedPost.category}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="mb-3 flex items-center gap-3 text-sm text-dark/60">
-                      <span className="rounded-button bg-brand-orange/10 px-3 py-1 font-bold text-brand-orange">
-                        {relatedPost.category}
-                      </span>
+                    <div className="mb-3 flex items-center gap-2 text-sm font-bold text-dark/60">
+                      <span>{relatedPost.publishedAt}</span>
+                      <span>·</span>
                       <span>{relatedPost.readTime}</span>
                     </div>
-
-                    <h3 className="mb-3 text-xl font-black text-dark transition-colors group-hover:text-brand-orange">
-                      {relatedPost.title}
-                    </h3>
-
-                    <p className="mb-4 flex-1 text-dark/70">{relatedPost.excerpt}</p>
-
-                    <div className="flex items-center justify-between border-t border-dark/10 pt-4">
-                      <div className="flex items-center gap-2">
-                        {relatedPost.author.avatar ? (
-                          <img
-                            src={relatedPost.author.avatar}
-                            alt={relatedPost.author.name}
-                            className="h-8 w-8 rounded-full object-cover"
-                          />
-                        ) : (
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10">
-                            <i className="fa-solid fa-user text-sm text-brand-orange"></i>
-                          </div>
-                        )}
-                        <div className="text-sm">
-                          <div className="font-bold text-dark">{relatedPost.author.name}</div>
-                        </div>
-                      </div>
-
-                      <div className="text-sm text-dark/60">{relatedPost.publishedAt}</div>
-                    </div>
+                    <h3 className="mb-3 text-xl font-black text-dark">{relatedPost.title}</h3>
+                    <p className="flex-1 text-dark/70">{relatedPost.excerpt}</p>
                   </div>
                 </TransitionLink>
               ))}
@@ -273,31 +265,7 @@ export default async function InsightPostPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Newsletter CTA */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="container mx-auto max-w-screen-2xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-2xl rounded-button border border-dark/10 bg-gradient-to-br from-white to-brand-orange/5 p-8 text-center shadow-xl sm:p-12">
-            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10">
-              <i className="fa-solid fa-envelope text-2xl text-brand-orange"></i>
-            </div>
-
-            <h2 className="mb-4 text-3xl font-black text-dark sm:text-4xl">
-              Receba nossos insights
-            </h2>
-            <p className="mb-8 text-lg text-dark/70">
-              Fique por dentro das últimas tendências em tecnologia e desenvolvimento de software
-            </p>
-
-            <TransitionLink
-              href="/contato"
-              className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
-            >
-              Falar com especialista
-              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-            </TransitionLink>
-          </div>
-        </div>
-      </section>
+      <ContactCTA />
     </div>
   )
 }
