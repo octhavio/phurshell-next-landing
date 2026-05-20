@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ServicosBlockchain() {
   const processStages: ProcessStage[] = [
@@ -332,7 +333,10 @@ export default function ServicosBlockchain() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="blockchain" categoryLabel="blockchain e Web3" description="Conteúdos sobre blockchain, contratos inteligentes, tokenização e como tecnologias Web3 estão criando novos modelos de negócio." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

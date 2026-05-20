@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ConsultoriaParaStartups() {
   const processStages: ProcessStage[] = [
@@ -335,7 +336,10 @@ export default function ConsultoriaParaStartups() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="startups" categoryLabel="startups" description="Conteúdos sobre ecossistema de startups, captação de investimento, crescimento de produto e como escalar um negócio digital com eficiência." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

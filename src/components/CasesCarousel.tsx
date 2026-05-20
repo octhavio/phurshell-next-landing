@@ -12,18 +12,21 @@ interface CasesCarouselProps {
   title?: string
   description?: string
   bgColor?: 'white' | 'dark'
+  segment?: string
 }
 
 export default function CasesCarousel({
   title = 'Grandes projetos que já construímos',
   description = 'Conheça alguns dos projetos que desenvolvemos do zero, desde a concepção da ideia até o lançamento e crescimento no mercado.',
   bgColor = 'white',
+  segment,
 }: CasesCarouselProps) {
   const swiperRef = useRef<SwiperType>()
   const bgClass = bgColor === 'dark' ? 'bg-dark' : 'bg-white'
   const titleClass = bgColor === 'dark' ? 'text-white' : 'text-dark'
   const descClass = bgColor === 'dark' ? 'text-white/70' : 'text-dark/60'
   const labelClass = bgColor === 'dark' ? 'text-brand-orange' : 'text-brand-orange'
+  const filteredCases = segment ? cases.filter(c => c.segment.toLowerCase() === segment.toLowerCase()) : cases
 
   return (
     <section className={`${bgClass} pt-16 sm:pt-24`}>
@@ -73,7 +76,7 @@ export default function CasesCarousel({
         style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem', cursor: 'grab' }}
         className="cases-carousel"
       >
-        {cases.map((caseItem, index) => (
+        {filteredCases.map((caseItem, index) => (
           <SwiperSlide key={index} className="cases-slide">
             <CaseCard
               caseItem={caseItem}

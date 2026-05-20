@@ -10,6 +10,7 @@ export default function Header() {
   const [isExiting, setIsExiting] = useState(false)
   const [servicosOpen, setServicosOpen] = useState(false)
   const [casesOpen, setCasesOpen] = useState(false)
+  const [segmentosOpen, setSegmentosOpen] = useState(false)
   const [shouldCollapse, setShouldCollapse] = useState(false)
 
   const headerRef = useRef<HTMLDivElement>(null)
@@ -122,6 +123,45 @@ export default function Header() {
     },
   ]
 
+  const segmentosDropdown = [
+    {
+      label: 'Healthtech',
+      href: '/segmentos/healthtech',
+      description: 'Saúde, medicina e bem-estar',
+      icon: 'plus',
+    },
+    {
+      label: 'Insurtech',
+      href: '/segmentos/insurtech',
+      description: 'Seguros e proteção digital',
+      icon: 'shield',
+    },
+    {
+      label: 'Social',
+      href: '/segmentos/social',
+      description: 'Comunidades e relacionamento',
+      icon: 'users',
+    },
+    {
+      label: 'Fintech',
+      href: '/segmentos/fintech',
+      description: 'Finanças e investimentos',
+      icon: 'chart-pie',
+    },
+    {
+      label: 'Varejo',
+      href: '/segmentos/varejo',
+      description: 'E-commerce e marketplace',
+      icon: 'bag-shopping',
+    },
+    {
+      label: 'Educação',
+      href: '/segmentos/educacao',
+      description: 'Edtech e aprendizado digital',
+      icon: 'book',
+    },
+  ]
+
   const casesDropdown = [
     {
       label: 'Psiapp',
@@ -207,6 +247,15 @@ export default function Header() {
             isActive={pathname.startsWith('/cases')}
             viewAllLabel="Ver todos os cases"
             viewAllDescription="Projetos que transformaram negócios"
+          />
+
+          <NavDropdown
+            label="Segmentos"
+            href="/segmentos"
+            items={segmentosDropdown}
+            isActive={pathname.startsWith('/segmentos')}
+            viewAllLabel="Ver todos os segmentos"
+            viewAllDescription="Mercados em que temos mais experiência"
           />
 
           <TransitionLink
@@ -435,6 +484,53 @@ export default function Header() {
                         <div className="flex-1">
                           <div className="font-bold text-dark">Ver todos os cases</div>
                           <div className="mt-1 text-sm text-dark/60">Projetos que transformaram negócios</div>
+                        </div>
+                      </TransitionLink>
+                    </div>
+                  )}
+                </div>
+
+                {/* Segmentos - Accordion */}
+                <div className="border-b border-dark/10">
+                  <button
+                    type="button"
+                    onClick={() => setSegmentosOpen(!segmentosOpen)}
+                    className="flex w-full items-center justify-between px-6 py-4 text-left text-base font-bold text-dark transition-colors hover:bg-dark/5"
+                  >
+                    <span className={pathname.startsWith('/segmentos') ? 'text-brand-orange' : 'text-dark'}>
+                      Segmentos
+                    </span>
+                    <i className={`fa-solid fa-chevron-down text-sm transition-transform ${segmentosOpen ? 'rotate-180' : ''}`}></i>
+                  </button>
+                  {segmentosOpen && (
+                    <div className="border-t border-dark/5 bg-gray-50">
+                      {segmentosDropdown.map((item) => (
+                        <TransitionLink
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className="flex items-start gap-3 border-b border-dark/5 px-6 py-4 transition-colors hover:bg-white"
+                        >
+                          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                            <i className={`fa-jelly fa-${item.icon} text-brand-orange`}></i>
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-bold text-dark">{item.label}</div>
+                            <div className="mt-1 text-sm text-dark/60">{item.description}</div>
+                          </div>
+                        </TransitionLink>
+                      ))}
+                      <TransitionLink
+                        href="/segmentos"
+                        onClick={closeMobileMenu}
+                        className="flex items-start gap-3 border-t border-dark/10 px-6 py-4 transition-colors hover:bg-white"
+                      >
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-button bg-brand-orange/10">
+                          <i className="fa-jelly fa-grid text-brand-orange"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-bold text-dark">Ver todos os segmentos</div>
+                          <div className="mt-1 text-sm text-dark/60">Mercados em que temos mais experiência</div>
                         </div>
                       </TransitionLink>
                     </div>

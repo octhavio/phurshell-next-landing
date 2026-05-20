@@ -77,6 +77,27 @@ export default function Footer() {
             </nav>
           </div>
 
+          {/* Segmentos */}
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-wider text-white/30">Segmentos</p>
+            <nav className="flex flex-wrap gap-x-6 gap-y-3">
+              {[
+                { href: '/segmentos/healthtech', icon: 'plus', label: 'Healthtech' },
+                { href: '/segmentos/insurtech', icon: 'shield', label: 'Insurtech' },
+                { href: '/segmentos/social', icon: 'users', label: 'Social' },
+                { href: '/segmentos/fintech', icon: 'chart-pie', label: 'Fintech' },
+                { href: '/segmentos/varejo', icon: 'bag-shopping', label: 'Varejo' },
+                { href: '/segmentos/educacao', icon: 'book', label: 'Educação' },
+                { href: '/segmentos', icon: 'grid', label: 'Ver todos os segmentos' },
+              ].map((item) => (
+                <TransitionLink key={item.href} href={item.href} className="flex items-center gap-2 text-xl font-bold text-white/60 transition-colors hover:text-brand-orange">
+                  <i className={`fa-jelly fa-${item.icon} text-sm`}></i>
+                  {item.label}
+                </TransitionLink>
+              ))}
+            </nav>
+          </div>
+
         </div>
 
         {/* Bottom Bar */}

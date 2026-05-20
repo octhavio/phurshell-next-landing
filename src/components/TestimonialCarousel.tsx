@@ -41,7 +41,14 @@ const testimonials = [
 
 const loopedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials]
 
-export default function TestimonialCarousel() {
+interface TestimonialCarouselProps {
+  label?: string
+  labelIcon?: string
+  title?: string
+  description?: string
+}
+
+export default function TestimonialCarousel({ label, labelIcon, title, description }: TestimonialCarouselProps = {}) {
   const swiperRef = useRef<SwiperType>()
 
   return (
@@ -64,6 +71,23 @@ export default function TestimonialCarousel() {
           transform: scale(1);
         }
       `}</style>
+
+      {(label || title || description) && (
+        <div className="container mx-auto mb-10 max-w-screen-2xl px-10 sm:px-14 lg:px-20 text-center">
+          {label && (
+            <h3 className="mb-4 flex items-center justify-center gap-3 text-lg font-black uppercase tracking-wider text-brand-orange">
+              {labelIcon && <i className={`fa-jelly fa-${labelIcon} fa-xl`}></i>}
+              {label}
+            </h3>
+          )}
+          {title && (
+            <h2 className="mb-6 text-5xl font-black tracking-tight text-dark sm:text-6xl">{title}</h2>
+          )}
+          {description && (
+            <p className="mx-auto max-w-4xl text-xl leading-relaxed text-dark/60">{description}</p>
+          )}
+        </div>
+      )}
 
       <div className="mb-8 flex justify-center gap-2">
         <button

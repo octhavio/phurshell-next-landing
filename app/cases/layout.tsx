@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Cases | Phurshell',
   description: 'Conheça alguns dos projetos que desenvolvemos do zero, desde a concepção da ideia até o lançamento e crescimento no mercado.',
+  alternates: { canonical: 'https://phurshell.com/cases/' },
 }
 
 export default function CasesLayout({

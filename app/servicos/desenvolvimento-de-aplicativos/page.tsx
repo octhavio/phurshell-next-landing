@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ServicosApps() {
   const processStages: ProcessStage[] = [
@@ -357,7 +358,10 @@ export default function ServicosApps() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="apps-mobile" categoryLabel="apps mobile" description="Conteúdos selecionados sobre desenvolvimento de apps, tendências mobile, arquitetura e boas práticas para construir produtos digitais de alta performance." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

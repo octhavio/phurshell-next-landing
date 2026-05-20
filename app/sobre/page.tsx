@@ -4,6 +4,7 @@ import ContactCTA from '../../src/components/ContactCTA'
 export const metadata: Metadata = {
   title: 'Sobre Nós',
   description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios.',
+  alternates: { canonical: 'https://phurshell.com/sobre/' },
 }
 
 const teamMembers = [

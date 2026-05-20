@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ServicosWeb() {
   const processStages: ProcessStage[] = [
@@ -345,7 +346,10 @@ export default function ServicosWeb() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="desenvolvimento-web" categoryLabel="desenvolvimento web" description="Conteúdos sobre desenvolvimento web, SaaS, arquitetura de sistemas e boas práticas para construir plataformas escaláveis e de alta disponibilidade." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ServicosQualidadeSeguranca() {
   const processStages: ProcessStage[] = [
@@ -338,7 +339,10 @@ export default function ServicosQualidadeSeguranca() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="qualidade" categoryLabel="qualidade e segurança" description="Conteúdos sobre testes automatizados, segurança de aplicações, compliance e como garantir qualidade em cada entrega do seu produto digital." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

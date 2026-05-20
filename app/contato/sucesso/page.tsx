@@ -4,6 +4,7 @@ import TransitionLink from '../../../src/components/TransitionLink'
 export const metadata: Metadata = {
   title: 'Contato Enviado',
   description: 'Sua solicitação de contato foi enviada com sucesso. Entraremos em contato em breve.',
+  robots: { index: false, follow: false },
 }
 
 export default function ContatoSucesso() {

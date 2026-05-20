@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contato',
   description: 'Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia. Desenvolvimento de apps mobile, web e soluções customizadas.',
+  alternates: { canonical: 'https://phurshell.com/contato/' },
 }
 
 export default function ContatoLayout({

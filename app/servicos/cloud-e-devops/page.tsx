@@ -7,6 +7,7 @@ import ContactCTA from '../../../src/components/ContactCTA'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
+import ServiceRelatedPosts from '../../../src/components/ServiceRelatedPosts'
 
 export default function ServicosCloudDevOps() {
   const processStages: ProcessStage[] = [
@@ -338,7 +339,10 @@ export default function ServicosCloudDevOps() {
       <CasesCarousel />
 
       {/* Testimonial */}
-      <TestimonialCarousel />
+      <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
+
+      {/* Related Posts */}
+      <ServiceRelatedPosts categorySlug="cloud-devops" categoryLabel="cloud e DevOps" description="Conteúdos sobre infraestrutura em nuvem, CI/CD, containers e como construir pipelines de entrega contínua que aceleram o time-to-market." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

@@ -195,14 +195,14 @@ export default function Cases() {
   // Icon mapping for segments
   const getSegmentIcon = (segment: string) => {
     const segmentIconMap: { [key: string]: string } = {
-      'Healthtech': 'fa-solid fa-heart-pulse',
-      'Insurtech': 'fa-solid fa-shield-halved',
-      'Social': 'fa-solid fa-users',
-      'Fintech': 'fa-solid fa-chart-line',
-      'Varejo': 'fa-solid fa-store',
-      'Educação': 'fa-solid fa-graduation-cap',
+      'Healthtech': 'fa-jelly fa-plus',
+      'Insurtech': 'fa-jelly fa-shield',
+      'Social': 'fa-jelly fa-users',
+      'Fintech': 'fa-jelly fa-chart-pie',
+      'Varejo': 'fa-jelly fa-bag-shopping',
+      'Educação': 'fa-jelly fa-book',
     }
-    return segmentIconMap[segment] || 'fa-solid fa-tag'
+    return segmentIconMap[segment] || 'fa-jelly fa-tag'
   }
 
   // Icon mapping for tags
@@ -373,7 +373,7 @@ export default function Cases() {
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {category.id !== 'all' && (
-                    <i className={`${getSegmentIcon(category.name)} text-xs`}></i>
+                    <i className={`${getSegmentIcon(category.name)} fa-sm`}></i>
                   )}
                   {category.name}
                 </span>

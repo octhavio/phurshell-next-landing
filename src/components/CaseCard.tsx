@@ -126,7 +126,7 @@ export default function CaseCard({ caseItem, hoverColor = '#8046FB1A', getSegmen
             </h4>
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white px-4 py-2 text-sm font-bold text-dark/60">
-                <i className={`${getSegmentIcon(caseItem.segment)} text-xs`}></i>
+                <i className={`${getSegmentIcon(caseItem.segment)} fa-sm`}></i>
                 {caseItem.segment}
               </span>
             </div>

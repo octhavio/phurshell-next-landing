@@ -5,6 +5,7 @@ import TransitionLink from '../../src/components/TransitionLink'
 export const metadata: Metadata = {
   title: 'Serviços | Phurshell',
   description: 'Soluções completas em desenvolvimento de software. Mobile, web, APIs e muito mais para transformar sua ideia em realidade.',
+  alternates: { canonical: 'https://phurshell.com/servicos/' },
 }
 
 export default function Servicos() {

@@ -11,6 +11,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Insights | Phurshell',
   description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
+  alternates: { canonical: 'https://phurshell.com/insights/' },
   openGraph: {
     title: 'Insights | Phurshell',
     description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',

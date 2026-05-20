@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Estratégia de Produto Digital',
   description: 'A Phurshell ajuda você a transformar sua ideia em um produto digital com direção clara, validação de mercado e um plano de execução sólido.',
+  alternates: { canonical: 'https://phurshell.com/servicos/estrategia-de-produto-digital/' },
   openGraph: {
     title: 'Estratégia de Produto Digital | Phurshell',
     description: 'A Phurshell ajuda você a transformar sua ideia em um produto digital com direção clara, validação de mercado e um plano de execução sólido.',

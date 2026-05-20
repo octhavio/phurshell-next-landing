@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Desenvolvimento Web & SaaS',
   description: 'A Phurshell é uma empresa especializada em desenvolvimento web e plataformas SaaS. Criamos soluções escaláveis e robustas utilizando as melhores tecnologias do mercado.',
+  alternates: { canonical: 'https://phurshell.com/servicos/desenvolvimento-web-e-saas/' },
   openGraph: {
     title: 'Desenvolvimento Web & SaaS | Phurshell',
     description: 'A Phurshell é uma empresa especializada em desenvolvimento web e plataformas SaaS. Criamos soluções escaláveis e robustas utilizando as melhores tecnologias do mercado.',
