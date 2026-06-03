@@ -10,6 +10,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Language redirect
+      { source: '/en', destination: '/', permanent: false },
+      { source: '/en/:path*', destination: '/:path*', permanent: false },
       // SEO Redirects - All legacy URLs to canonical service page
       { source: '/desenvolvimento-de-aplicativos', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/desenvolvimento-de-app', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
