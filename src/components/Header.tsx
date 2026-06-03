@@ -345,13 +345,13 @@ export default function Header() {
               variants={{
                 visible: {
                   transition: {
-                    staggerChildren: 0.15,
-                    delayChildren: 0.4,
+                    staggerChildren: 0.08,
+                    delayChildren: 0.2,
                   },
                 },
                 exit: {
                   transition: {
-                    staggerChildren: 0.15,
+                    staggerChildren: 0.05,
                     staggerDirection: -1,
                     delayChildren: 0,
                   },

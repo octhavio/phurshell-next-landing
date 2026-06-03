@@ -15,6 +15,15 @@ interface ClientLogosCarouselProps {
   className?: string
 }
 
+const logoNames: Record<number, string> = {
+  1: 'Zelo',
+  2: 'American Airlines',
+  3: 'Natura',
+  4: 'Apsen',
+  5: 'Grupo Ambipar',
+  6: 'Gente Seguradora',
+}
+
 export default function ClientLogosCarousel({
   logos,
   title,
@@ -73,7 +82,7 @@ export default function ClientLogosCarousel({
               <div key={`first-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
                 <img
                   src={`/images/clients/img-partner-${num}.webp`}
-                  alt={`Logo de empresa cliente da Phurshell`}
+                  alt={`Logo ${logoNames[num] ?? `cliente ${num}`} — cliente da Phurshell`}
                   width={192}
                   height={80}
                   loading="lazy"
@@ -86,7 +95,7 @@ export default function ClientLogosCarousel({
               <div key={`second-${num}`} className="relative h-16 w-40 flex-shrink-0 sm:h-20 sm:w-48">
                 <img
                   src={`/images/clients/img-partner-${num}.webp`}
-                  alt={`Logo de empresa cliente da Phurshell`}
+                  alt={`Logo ${logoNames[num] ?? `cliente ${num}`} — cliente da Phurshell`}
                   width={192}
                   height={80}
                   loading="lazy"

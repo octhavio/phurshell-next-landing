@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import TransitionLink from '../src/components/TransitionLink'
 import WhyPhurshell from '../src/components/WhyPhurshell'
 import ContactCTA from '../src/components/ContactCTA'
 import ClientLogosCarousel from '../src/components/ClientLogosCarousel'
 
 export default function Home() {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+  const cursorRef = useRef<HTMLDivElement>(null)
   const [isHoveringCard, setIsHoveringCard] = useState(false)
   const [expandedService, setExpandedService] = useState<number | null>(0)
 
@@ -287,23 +287,23 @@ export default function Home() {
   return (
     <div className="relative bg-white">
       {/* Custom Cursor */}
-      {isHoveringCard && (
-        <div
-          className="pointer-events-none fixed z-50 flex items-center gap-2 rounded-button bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-white shadow-xl transition-opacity duration-200"
-          style={{
-            left: `${cursorPosition.x}px`,
-            top: `${cursorPosition.y}px`,
-            transform: 'translate(-50%, -50%)',
-            outline: '5px solid rgba(255, 255, 255, 0.2)',
-            outlineOffset: '0px',
-            backdropFilter: 'blur(40px)',
-            WebkitBackdropFilter: 'blur(40px)',
-          }}
-        >
-          Ver case
-          <i className="fa-solid fa-arrow-right text-xs"></i>
-        </div>
-      )}
+      <div
+        ref={cursorRef}
+        className="pointer-events-none fixed z-50 flex items-center gap-2 rounded-button bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-white shadow-xl transition-opacity duration-200"
+        style={{
+          left: 'var(--cursor-x, -9999px)',
+          top: 'var(--cursor-y, -9999px)',
+          transform: 'translate(-50%, -50%)',
+          outline: '5px solid rgba(255, 255, 255, 0.2)',
+          outlineOffset: '0px',
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          opacity: isHoveringCard ? 1 : 0,
+        }}
+      >
+        Ver case
+        <i className="fa-solid fa-arrow-right text-xs"></i>
+      </div>
       {/* New Hero Section */}
       <section className="relative bg-gradient-to-b from-brand-orange/10 via-brand-orange/5 to-white py-16 sm:py-24 overflow-hidden -mt-28 pt-40 sm:pt-48">
 
@@ -323,6 +323,8 @@ export default function Home() {
               height={1016}
               className="relative z-10 drop-shadow-2xl"
               style={{ mixBlendMode: 'screen' }}
+              poster="/images/img-hero.webp"
+              preload="none"
             >
               <source src="/images/video-home-hero.webm" type="video/webm" />
             </video>
@@ -346,28 +348,39 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="mb-8 text-xl leading-relaxed text-dark/70 sm:text-2xl lg:max-w-xl">
-              <span className="word-wrapper"><span className="word word-delay-10">Desde</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-11">2015</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-12">ajudamos</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-13">startups</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-14">e</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-15">empresas</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-16">a</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-17">lançar</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-18">aplicativos</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-19">e</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-20">plataformas</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-21">digitais</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-22">que</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-23">crescem</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-24">com</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-25">o</span></span>{' '}
-              <span className="word-wrapper"><span className="word word-delay-26">negócio.</span></span>
+              <span className="word-wrapper"><span className="word word-delay-10">Somos</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-11">uma</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-12">software</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-13">house</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-14">com</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-15">mais</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-16">de</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-17">10</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-18">anos</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-19">de</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-20">mercado.</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-21">Desde</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-22">2015</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-23">ajudamos</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-24">startups</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-25">e</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-26">empresas</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-27">a</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-28">lançar</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-29">aplicativos</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-30">e</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-31">plataformas</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-32">digitais</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-33">que</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-34">crescem</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-35">com</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-36">o</span></span>{' '}
+              <span className="word-wrapper"><span className="word word-delay-37">negócio.</span></span>
             </p>
 
             {/* CTA Button */}
             <div className="mb-8">
-              <span className="word word-delay-27" style={{ display: 'inline-block' }}>
+              <span className="word word-delay-38" style={{ display: 'inline-block' }}>
                 <TransitionLink
                   href="/contato"
                   className="group inline-flex items-center gap-3 rounded-button bg-brand-orange px-10 py-5 text-lg font-bold text-white shadow-2xl shadow-brand-orange/30 transition-all duration-300 hover:scale-105 hover:bg-brand-orange-light hover:shadow-brand-orange/50"
@@ -434,11 +447,12 @@ export default function Home() {
 
                 {/* Accordion Content - Expandable */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    expandedService === index ? 'max-h-[2000px] pb-12' : 'max-h-0'
+                  className={`grid transition-all duration-300 ${
+                    expandedService === index ? 'grid-rows-[1fr] pb-12' : 'grid-rows-[0fr]'
                   }`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
+                  <div className="overflow-hidden">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
                     {/* Left Column - Text & Cards */}
                     <div>
                       {/* Long Description */}
@@ -488,6 +502,7 @@ export default function Home() {
                         />
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -558,7 +573,10 @@ export default function Home() {
                     : {}
                 }
                 onMouseMove={index <= 2 ? (e) => {
-                  setCursorPosition({ x: e.clientX, y: e.clientY })
+                  if (cursorRef.current) {
+                    cursorRef.current.style.setProperty('--cursor-x', `${e.clientX}px`)
+                    cursorRef.current.style.setProperty('--cursor-y', `${e.clientY}px`)
+                  }
                 } : undefined}
                 onMouseEnter={index <= 2 ? () => setIsHoveringCard(true) : undefined}
                 onMouseLeave={index <= 2 ? () => setIsHoveringCard(false) : undefined}
@@ -574,7 +592,7 @@ export default function Home() {
                           alt={caseItem.name}
                           width={120}
                           height={40}
-                          loading="lazy"
+                          fetchPriority="high"
                           className="h-auto relative z-10"
                         />
 
@@ -612,7 +630,7 @@ export default function Home() {
                           alt="Autoday"
                           width={120}
                           height={40}
-                          loading="lazy"
+                          fetchPriority="high"
                           className="h-auto relative z-10"
                         />
 
@@ -636,7 +654,6 @@ export default function Home() {
                             alt="Tela do aplicativo Autoday desenvolvido pela Phurshell"
                             width={800}
                             height={600}
-                            loading="lazy"
                             className="h-auto w-full max-w-4xl transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
@@ -651,7 +668,7 @@ export default function Home() {
                           alt={caseItem.name}
                           width={120}
                           height={40}
-                          loading="lazy"
+                          fetchPriority="high"
                           className="h-auto relative z-10"
                         />
 

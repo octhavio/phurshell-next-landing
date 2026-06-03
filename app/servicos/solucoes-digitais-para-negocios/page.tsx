@@ -164,14 +164,11 @@ export default function ServicosDigitais() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Soluções</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">digitais</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">para</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">negócios</span></span>
+            Desenvolvimento de soluções digitais personalizadas para empresas
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Desenvolvimento de soluções digitais personalizadas para empresas
+            Soluções digitais para negócios
           </h2>
 
           {/* Description */}
@@ -420,6 +417,79 @@ export default function ServicosDigitais() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de soluções digitais personalizadas para empresas", "item": "https://phurshell.com/servicos/solucoes-digitais-para-negocios" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Desenvolvimento de soluções digitais personalizadas para empresas",
+                "description": "Desenvolvimento de sistemas e plataformas digitais sob medida para digitalizar e automatizar processos de negócio.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/solucoes-digitais-para-negocios",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Como é feito o diagnóstico de processos antes de iniciar o projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O diagnóstico começa com entrevistas e workshops com os principais usuários e gestores da empresa. Mapeamos os processos atuais, identificamos gargalos, ineficiências e oportunidades de melhoria. A partir desse levantamento, definimos o escopo da solução e priorizamos as funcionalidades com maior impacto para o negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é feita a migração de dados do sistema antigo para o novo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A migração de dados é planejada com antecedência e realizada de forma segura e incremental. Mapeamos todas as fontes de dados existentes, tratamos inconsistências e validamos a integridade das informações antes e após a migração. O processo é executado com a empresa em operação, minimizando qualquer impacto no dia a dia do negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A solução pode se integrar com os sistemas que já utilizamos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Desenvolvemos integrações com os sistemas existentes da empresa — ERPs, CRMs, plataformas de e-commerce, sistemas financeiros e outros. Nossa equipe avalia as APIs e protocolos disponíveis de cada sistema e implementa as conexões necessárias para garantir que os dados fluam de forma consistente entre todas as plataformas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é o treinamento da equipe para usar a nova solução?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O treinamento é realizado antes do go-live e é adaptado para cada perfil de usuário — operadores, gestores e administradores do sistema. Combinamos sessões práticas, gravações de vídeo e materiais de apoio para garantir que a equipe tenha autonomia desde o primeiro dia. Também oferecemos suporte durante as primeiras semanas de operação para sanar dúvidas que surjam na prática."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o suporte oferecido após a implantação do sistema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Após o go-live, oferecemos planos de suporte e manutenção contínua que incluem correção de bugs, atualizações de segurança, monitoramento de performance e evolução funcional do sistema. O nível de suporte é definido conforme as necessidades da empresa, com SLAs customizados para sistemas críticos. Nossa equipe permanece como parceira de longo prazo na evolução da solução."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

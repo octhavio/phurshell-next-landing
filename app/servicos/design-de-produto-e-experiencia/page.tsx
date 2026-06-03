@@ -164,15 +164,11 @@ export default function ServicosDesign() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Design</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">produto</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">experiência</span></span>
+            Agência de UX/UI design para apps e sistemas web
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Agência de UX/UI design para apps e sistemas web
+            Design de produto & experiência
           </h2>
 
           {/* Description */}
@@ -420,6 +416,79 @@ export default function ServicosDesign() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Agência de UX/UI design para apps e sistemas web", "item": "https://phurshell.com/servicos/design-de-produto-e-experiencia" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Agência de UX/UI design para apps e sistemas web",
+                "description": "Design de produto digital centrado no usuário — UX research, UI design e prototipação para apps e plataformas web.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/design-de-produto-e-experiencia",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Como é o processo de design da Phurshell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosso processo começa com pesquisa aprofundada com usuários para entender necessidades reais antes de colocar qualquer pixel na tela. A partir dos insights coletados, criamos wireframes para validar fluxos e arquitetura da informação, evoluímos para protótipos interativos e, só então, desenvolvemos as interfaces visuais finais. Cada etapa é validada com você e com usuários reais para garantir que o produto final seja intuitivo, bonito e eficaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais ferramentas vocês utilizam no processo de design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilizamos Figma como nossa principal ferramenta de design e prototipação, por ser a plataforma mais moderna e colaborativa do mercado. Para pesquisa com usuários, usamos ferramentas como Maze e Hotjar para testes de usabilidade e análise de comportamento. Todo o processo é documentado e organizado para facilitar a colaboração com o time de desenvolvimento durante o handoff."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são os entregáveis ao final do projeto de design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ao final do projeto, você recebe os arquivos Figma organizados com todas as telas, componentes e estados documentados, um design system completo com tokens de design e guia de estilos, protótipos interativos para apresentação e validação, especificações técnicas para o time de desenvolvimento e, quando aplicável, assets exportados (ícones, imagens, ilustrações). Tudo é entregue de forma estruturada para facilitar a implementação e futuras evoluções do produto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quantas rodadas de revisão estão incluídas no projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada etapa do processo inclui uma rodada de revisão estruturada, onde apresentamos o trabalho, coletamos seu feedback e realizamos os ajustes necessários. Acreditamos que o melhor design nasce da colaboração, por isso mantemos comunicação constante ao longo do projeto. Rodadas adicionais de revisão podem ser acordadas conforme a complexidade e necessidade do projeto, sempre com alinhamento prévio sobre escopo e prazos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o handoff do design para a equipe de desenvolvimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O handoff é uma das etapas mais críticas do processo e levamos muito a sério. Organizamos o arquivo Figma com nomenclatura clara, componentes estruturados e anotações de comportamento. Documentamos medidas, espaçamentos, cores e tipografia com os valores exatos para implementação. Quando trabalhamos com o time de desenvolvimento da Phurshell, acompanhamos de perto a implementação para garantir fidelidade ao design. Para times externos, realizamos uma reunião de handoff para esclarecer dúvidas e garantir que tudo está documentado adequadamente."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

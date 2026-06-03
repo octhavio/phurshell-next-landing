@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Desenvolvimento de Aplicativos',
+  title: 'Desenvolvimento de Aplicativos | Apps iOS e Android Sob Medida',
   description: 'A Phurshell é uma empresa especializada em desenvolvimento de aplicativos customizados para iOS e Android. Criamos soluções sob medida que transformam suas ideias em produtos digitais de alta performance.',
   alternates: { canonical: 'https://phurshell.com/servicos/desenvolvimento-de-aplicativos/' },
   openGraph: {

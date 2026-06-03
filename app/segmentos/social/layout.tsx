@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Social',
+  title: 'Social | Plataformas e Redes Sociais Nichadas',
   description: 'A Phurshell desenvolve plataformas sociais e de comunidade: redes sociais nichadas, apps de conexão, fóruns e experiências que engajam e retêm usuários.',
   alternates: { canonical: 'https://phurshell.com/segmentos/social/' },
   openGraph: {

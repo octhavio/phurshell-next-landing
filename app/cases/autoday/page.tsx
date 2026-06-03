@@ -2,8 +2,21 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Autoday | Phurshell',
+  title: 'Case Autoday | App de Seguro Automotivo Sob Demanda',
   description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veículo.',
+  alternates: { canonical: 'https://phurshell.com/cases/autoday/' },
+  openGraph: {
+    title: 'Case Autoday | Phurshell',
+    description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veículo.',
+    url: 'https://phurshell.com/cases/autoday',
+    images: [{ url: '/images/img-autoday-hero.webp', width: 1200, height: 630, alt: 'Case Autoday - Phurshell' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Autoday | Phurshell',
+    description: 'MVP de insurtech que permite seguro automotivo sob demanda.',
+    images: ['/images/img-autoday-hero.webp'],
+  },
 }
 
 export default function CaseAutoday() {
@@ -23,6 +36,10 @@ export default function CaseAutoday() {
             <span className="word-wrapper"><span className="word word-delay-7">mais</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-8">acessível</span></span>
           </h1>
+
+          <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
+            Case de desenvolvimento de app insurtech
+          </h2>
 
           {/* Description */}
           <p className="mb-6 sm:mb-12 max-w-4xl text-xl leading-relaxed text-dark/70">
@@ -57,6 +74,7 @@ export default function CaseAutoday() {
                   src="/images/img-autoday-hero.webp"
                   alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
                   className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
                 />
 
                 {/* Overlay Content */}
@@ -415,6 +433,22 @@ export default function CaseAutoday() {
 
       {/* Contact CTA */}
       <ContactCTA />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Cases", "item": "https://phurshell.com/cases" },
+                  { "@type": "ListItem", "position": 3, "name": "Case Autoday — App de Seguro Automotivo Sob Demanda", "item": "https://phurshell.com/cases/autoday" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blockchain & Web3',
+  title: 'Blockchain & Web3 | Contratos Inteligentes e Soluções Descentralizadas',
   description: 'A Phurshell desenvolve soluções descentralizadas e contratos inteligentes para transparência e segurança nas transações.',
   alternates: { canonical: 'https://phurshell.com/servicos/blockchain-e-web3/' },
   openGraph: {

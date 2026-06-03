@@ -153,15 +153,11 @@ export default function Insurtech() {
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Insurtech</span></span>
+            Desenvolvimento de apps e plataformas insurtech
           </h1>
+
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            <span className="word-wrapper"><span className="word word-delay-2">Seguros</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">reinventados</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">para</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">o</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">mundo</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-7">digital</span></span>
+            Seguros reinventados para o mundo digital
           </h2>
           <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
             <span className="word-wrapper"><span className="word word-delay-6">O</span></span>{' '}
@@ -288,6 +284,22 @@ export default function Insurtech() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Segmentos", "item": "https://phurshell.com/segmentos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de apps e plataformas insurtech", "item": "https://phurshell.com/segmentos/insurtech" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

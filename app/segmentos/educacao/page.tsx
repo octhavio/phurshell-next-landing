@@ -153,16 +153,11 @@ export default function Educacao() {
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Educação</span></span>
+            Desenvolvimento de apps educacionais e plataformas EdTech
           </h1>
+
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            <span className="word-wrapper"><span className="word word-delay-2">Aprendizado</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">que</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">acontece</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">onde</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">o</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-7">aluno</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-8">está</span></span>
+            Aprendizado que acontece onde o aluno está
           </h2>
           <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
             <span className="word-wrapper"><span className="word word-delay-5">Educação</span></span>{' '}
@@ -278,6 +273,22 @@ export default function Educacao() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Segmentos", "item": "https://phurshell.com/segmentos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de apps educacionais e plataformas EdTech", "item": "https://phurshell.com/segmentos/educacao" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

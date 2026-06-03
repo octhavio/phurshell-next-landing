@@ -3,7 +3,7 @@ import TransitionLink from '../../src/components/TransitionLink'
 import ContactCTA from '../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Segmentos | Phurshell',
+  title: 'Segmentos | Apps Sob Medida para Cada Mercado',
   description: 'Conheça os segmentos em que a Phurshell atua — de healthtech a fintech, desenvolvemos apps sob medida para cada mercado.',
   alternates: { canonical: 'https://phurshell.com/segmentos/' },
   openGraph: {
@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description: 'Conheça os segmentos em que a Phurshell atua — de healthtech a fintech, desenvolvemos apps sob medida para cada mercado.',
     url: 'https://phurshell.com/segmentos',
     type: 'website',
+    images: [{ url: '/og-image.webp', width: 1200, height: 630, alt: 'Phurshell - Segmentos' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Segmentos | Phurshell',
+    description: 'De healthtech a fintech, desenvolvemos apps sob medida para cada mercado.',
+    images: ['/og-image.webp'],
   },
 }
 

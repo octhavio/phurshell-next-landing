@@ -3,10 +3,10 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Phurshell',
-    url: 'https://phurshell.com.br',
-    logo: 'https://phurshell.com.br/logos/img-navbar-logo-dark.svg',
+    url: 'https://phurshell.com',
+    logo: 'https://phurshell.com/logos/img-navbar-logo-dark.svg',
     description:
-      'Fábrica de aplicativos especializada em desenvolvimento mobile e web sob medida. Transformamos ideias em produtos digitais de alta performance.',
+      'Software house especializada em desenvolvimento de aplicativos e soluções digitais sob medida. Transformamos ideias em produtos digitais de alta performance.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'BR',
@@ -27,12 +27,12 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Phurshell',
-    url: 'https://phurshell.com.br',
+    url: 'https://phurshell.com',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://phurshell.com.br/insights?q={search_term_string}',
+        urlTemplate: 'https://phurshell.com/insights?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -45,7 +45,7 @@ export default function StructuredData() {
     provider: {
       '@type': 'Organization',
       name: 'Phurshell',
-      url: 'https://phurshell.com.br',
+      url: 'https://phurshell.com',
     },
     areaServed: {
       '@type': 'Country',

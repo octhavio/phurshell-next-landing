@@ -164,13 +164,11 @@ export default function ServicosApps() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Desenvolvimento</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">aplicativos</span></span>
+            Empresa de desenvolvimento de aplicativos iOS e Android
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Empresa de desenvolvimento de aplicativos iOS e Android
+            Desenvolvimento de aplicativos
           </h2>
 
           {/* Description */}
@@ -439,6 +437,79 @@ export default function ServicosApps() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Empresa de desenvolvimento de aplicativos iOS e Android", "item": "https://phurshell.com/servicos/desenvolvimento-de-aplicativos" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Empresa de desenvolvimento de aplicativos iOS e Android",
+                "description": "Desenvolvimento de aplicativos nativos e multiplataforma para iOS e Android, sob medida para startups e empresas.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/desenvolvimento-de-aplicativos",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Qual é o prazo estimado para o projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O prazo varia de acordo com a complexidade e escopo do projeto. Projetos simples podem levar de 2 a 3 meses, enquanto aplicativos mais complexos podem levar de 4 a 8 meses. Durante a reunião de validação da ideia, mapeamos todas as funcionalidades e criamos um cronograma detalhado com marcos e entregas específicas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é preciso para iniciar o desenvolvimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para iniciar, precisamos entender sua visão e objetivos de negócio. Começamos com uma reunião de validação da ideia para mapear requisitos, definir funcionalidades prioritárias e entender seu público-alvo. Você não precisa ter especificações técnicas detalhadas - nossa equipe ajuda a transformar sua ideia em um plano de desenvolvimento estruturado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como será a comunicação (reuniões, canais, frequência)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Realizamos uma reunião em cada etapa do nosso processo para apresentar o progresso, tirar dúvidas e alinhar próximos passos. Além disso, criamos um grupo no WhatsApp dedicado ao projeto para facilitar a comunicação rápida em caso de dúvidas ou qualquer outro assunto relacionado ao desenvolvimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como garantem que o software atenderá o escopo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilizamos metodologias ágeis com sprints bem definidos e entregas incrementais. Cada funcionalidade passa por validação com você antes de avançarmos. Mantemos documentação detalhada, realizamos code reviews constantes e testes automatizados. Você terá acesso ao projeto em desenvolvimento e poderá acompanhar cada etapa do progresso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Há suporte técnico após o encerramento do projeto? Qual o custo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, oferecemos planos de suporte e manutenção contínua. Isso inclui correção de bugs, atualizações de compatibilidade com novas versões do iOS/Android, monitoramento de performance e pequenas melhorias. O custo varia de acordo com o nível de suporte (básico, intermediário ou premium). Também oferecemos SLA customizado para aplicativos críticos."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

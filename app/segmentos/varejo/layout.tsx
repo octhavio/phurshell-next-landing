@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Varejo',
+  title: 'Varejo | Apps de E-commerce e Soluções para Varejo',
   description: 'A Phurshell desenvolve soluções digitais para o varejo: e-commerce, apps de compra, loyalty, PDV móvel e plataformas omnichannel que convertem e fidelizam clientes.',
   alternates: { canonical: 'https://phurshell.com/segmentos/varejo/' },
   openGraph: {

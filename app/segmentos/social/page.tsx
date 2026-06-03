@@ -153,15 +153,11 @@ export default function Social() {
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Social</span></span>
+            Desenvolvimento de apps sociais e plataformas de relacionamento
           </h1>
+
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            <span className="word-wrapper"><span className="word word-delay-2">Conexões</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">reais</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">em</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">plataformas</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">que</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-7">engajam</span></span>
+            Conexões reais em plataformas que engajam
           </h2>
           <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
             <span className="word-wrapper"><span className="word word-delay-5">Aplicativos</span></span>{' '}
@@ -279,6 +275,22 @@ export default function Social() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Segmentos", "item": "https://phurshell.com/segmentos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de apps sociais e plataformas de relacionamento", "item": "https://phurshell.com/segmentos/social" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

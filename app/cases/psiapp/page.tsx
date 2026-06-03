@@ -2,8 +2,21 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Psiapp | Phurshell',
+  title: 'Case Psiapp | App de Psicologia para iOS e Android',
   description: 'Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados.',
+  alternates: { canonical: 'https://phurshell.com/cases/psiapp/' },
+  openGraph: {
+    title: 'Case Psiapp | Phurshell',
+    description: 'Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados.',
+    url: 'https://phurshell.com/cases/psiapp',
+    images: [{ url: '/images/img-hero.webp', width: 1200, height: 630, alt: 'Case Psiapp - Phurshell' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Psiapp | Phurshell',
+    description: 'Conectando psicólogos e pacientes através da tecnologia.',
+    images: ['/images/img-hero.webp'],
+  },
 }
 
 export default function CasePsiapp() {
@@ -22,6 +35,10 @@ export default function CasePsiapp() {
             <span className="word-wrapper"><span className="word word-delay-6">da</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-7">tecnologia</span></span>
           </h1>
+
+          <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
+            Case de app de psicologia para iOS e Android
+          </h2>
 
           {/* Description */}
           <p className="mb-6 sm:mb-12 max-w-4xl text-xl leading-relaxed text-dark/70">
@@ -54,6 +71,7 @@ export default function CasePsiapp() {
                   src="/images/img-hero.webp"
                   alt="Interface de aplicativo mobile desenvolvido pela Phurshell mostrando design moderno e funcional"
                   className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
                 />
 
                 {/* Overlay Content */}
@@ -442,6 +460,22 @@ export default function CasePsiapp() {
 
       {/* Contact CTA */}
       <ContactCTA />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Cases", "item": "https://phurshell.com/cases" },
+                  { "@type": "ListItem", "position": 3, "name": "Case Psiapp — App de Psicologia para iOS e Android", "item": "https://phurshell.com/cases/psiapp" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import MultiStepForm from '../../src/components/MultiStepForm'
 import TransitionLink from '../../src/components/TransitionLink'
 
@@ -8,10 +9,11 @@ export default function Contato() {
     <div className="flex min-h-screen">
       {/* Left Side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        <img
+        <Image
           src="/images/img-contact-side.webp"
           alt="Phurshell - Entre em contato"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="absolute inset-0 object-cover"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
@@ -37,60 +39,17 @@ export default function Contato() {
                 Empresas que confiam em nós
               </p>
               <div className="grid grid-cols-3 gap-8 max-w-md">
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-1.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-2.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-3.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-4.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-5.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
-                  <img
-                    src="/images/clients/img-partner-6.webp"
-                    alt="Cliente"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert"
-                  />
-                </div>
+                {[1, 2, 3, 4, 5, 6].map((n) => (
+                  <div key={n} className="flex items-center justify-start opacity-70 hover:opacity-100 transition-opacity">
+                    <Image
+                      src={`/images/clients/img-partner-${n}.webp`}
+                      alt={`Cliente Phurshell ${n}`}
+                      width={100}
+                      height={40}
+                      className="h-8 w-auto object-contain brightness-0 invert"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -102,7 +61,7 @@ export default function Contato() {
         {/* Logo */}
         <div className="mb-12">
           <TransitionLink href="/" className="inline-block">
-            <img
+            <Image
               src="/logos/img-navbar-logo-dark.svg"
               alt="Phurshell"
               width={150}

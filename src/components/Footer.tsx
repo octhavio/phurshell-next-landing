@@ -136,7 +136,7 @@ export default function Footer() {
                 <i className="fa-brands fa-instagram fa-xl"></i>
               </a>
               <a
-                href="https://www.youtube.com/@octhavio"
+                href="https://youtube.com/@phurshell"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 transition-smooth hover:text-brand-orange"
@@ -152,15 +152,6 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <i className="fa-brands fa-facebook fa-xl"></i>
-              </a>
-              <a
-                href="https://dribbble.com/becampanha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 transition-smooth hover:text-brand-orange"
-                aria-label="Dribbble"
-              >
-                <i className="fa-brands fa-dribbble fa-xl"></i>
               </a>
             </div>
           </div>

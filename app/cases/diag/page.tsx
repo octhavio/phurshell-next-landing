@@ -2,8 +2,21 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Diag | Phurshell',
+  title: 'Case Diag | App de Gestão Clínica e Prontuário Médico',
   description: 'Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico.',
+  alternates: { canonical: 'https://phurshell.com/cases/diag/' },
+  openGraph: {
+    title: 'Case Diag | Phurshell',
+    description: 'Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico.',
+    url: 'https://phurshell.com/cases/diag',
+    images: [{ url: '/images/img-diag-hero.webp', width: 1200, height: 630, alt: 'Case Diag - Phurshell' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Diag | Phurshell',
+    description: 'Plataforma de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico.',
+    images: ['/images/img-diag-hero.webp'],
+  },
 }
 
 export default function CaseDiag() {
@@ -22,6 +35,10 @@ export default function CaseDiag() {
             <span className="word-wrapper"><span className="word word-delay-6">inteligência</span></span>{' '}
             <span className="word-wrapper"><span className="word word-delay-7">artificial</span></span>
           </h1>
+
+          <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
+            Case de app de gestão clínica com inteligência artificial
+          </h2>
 
           {/* Description */}
           <p className="mb-6 sm:mb-12 max-w-4xl text-xl leading-relaxed text-dark/70">
@@ -54,6 +71,7 @@ export default function CaseDiag() {
                   src="/images/img-diag-hero.webp"
                   alt="Interface do aplicativo Diag mostrando prontuários digitais e receitas médicas"
                   className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
                 />
 
                 {/* Overlay Content */}
@@ -421,6 +439,22 @@ export default function CaseDiag() {
 
       {/* Contact CTA */}
       <ContactCTA />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Cases", "item": "https://phurshell.com/cases" },
+                  { "@type": "ListItem", "position": 3, "name": "Case Diag — App de Gestão Clínica com IA", "item": "https://phurshell.com/cases/diag" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

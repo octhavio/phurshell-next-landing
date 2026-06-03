@@ -164,14 +164,11 @@ export default function ServicosEstrategiaProduto() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Estratégia</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">produto</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">digital</span></span>
+            Consultoria em estratégia e gestão de produto digital
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Consultoria em estratégia e gestão de produto digital
+            Estratégia de produto digital
           </h2>
 
           {/* Description */}
@@ -424,6 +421,79 @@ export default function ServicosEstrategiaProduto() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Consultoria em estratégia e gestão de produto digital", "item": "https://phurshell.com/servicos/estrategia-de-produto-digital" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Consultoria em estratégia e gestão de produto digital",
+                "description": "Consultoria em estratégia de produto digital — discovery, definição de MVP, roadmap e validação de ideias.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/estrategia-de-produto-digital",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "O que é discovery de produto e por que ele é importante?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discovery de produto é um processo estruturado de pesquisa e validação que acontece antes do desenvolvimento. Ele serve para entender profundamente o mercado, os usuários e as oportunidades, evitando que você invista tempo e dinheiro construindo algo que o mercado não quer. Um bom discovery reduz riscos, economiza recursos e aumenta significativamente as chances de sucesso do produto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é MVP e como vocês ajudam a defini-lo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MVP (Minimum Viable Product) é a versão mais enxuta do seu produto que ainda entrega valor real aos usuários e permite coletar aprendizados. Ajudamos a defini-lo mapeando todas as funcionalidades desejadas, priorizando pelo impacto para o usuário e viabilidade técnica, e separando o que é essencial para o lançamento do que pode vir em versões futuras. O objetivo é chegar ao mercado rápido, com o mínimo de risco."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o processo de validação de ideia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosso processo de validação envolve criar experimentos rápidos e de baixo custo para testar as principais hipóteses do seu negócio antes de investir em desenvolvimento. Isso inclui entrevistas com potenciais usuários, análise de concorrentes, criação de landing pages de teste e protótipos de baixa fidelidade. Ao final, você terá evidências concretas para tomar decisões com mais confiança."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o resultado entregue ao final da estratégia de produto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ao final do processo, você recebe um conjunto de entregáveis estratégicos que incluem: documento de discovery com insights de mercado e usuários, definição clara do MVP e suas funcionalidades prioritárias, wireframes dos principais fluxos do produto, roadmap de produto com milestones e um plano de go-to-market. Tudo documentado para guiar o desenvolvimento e as próximas decisões de negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Phurshell também desenvolve o produto após a estratégia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A Phurshell é uma empresa full-service de produto digital. Após a etapa de estratégia, podemos conduzir também o design UX/UI, o desenvolvimento web, mobile e de plataformas SaaS. Trabalhar com o mesmo time do início ao fim garante total alinhamento entre a estratégia definida e o produto que será construído, sem ruídos de comunicação ou retrabalho."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

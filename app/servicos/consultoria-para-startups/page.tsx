@@ -164,13 +164,11 @@ export default function ConsultoriaParaStartups() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Consultoria</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">para</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">Startups</span></span>
+            Consultoria para startups de tecnologia e produtos digitais
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Consultoria especializada em startups e produtos digitais
+            Consultoria para Startups
           </h2>
 
           {/* Description */}
@@ -417,6 +415,79 @@ export default function ConsultoriaParaStartups() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Consultoria para startups de tecnologia e produtos digitais", "item": "https://phurshell.com/servicos/consultoria-para-startups" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Consultoria para startups de tecnologia e produtos digitais",
+                "description": "Consultoria especializada para startups — estruturação de negócio, produto, captação e go-to-market.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/consultoria-para-startups",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Como funciona o processo de consultoria para startups?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O processo começa com um diagnóstico completo do negócio, onde analisamos o modelo de receita, estrutura de custos, estágio de crescimento e objetivos de curto e longo prazo. A partir daí, desenvolvemos o planejamento financeiro, definimos KPIs, construímos projeções e preparamos a startup para conversas com investidores — tudo de forma estruturada e progressiva."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Precisamos ter o financeiro organizado antes de começar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A maioria das startups que nos procura ainda não tem o financeiro organizado — e é exatamente por isso que a consultoria existe. Partimos do zero junto com você: estruturamos o fluxo de caixa, organizamos as categorias de custos e receitas, e construímos o modelo financeiro desde a base, independentemente do estágio atual da empresa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A consultoria ajuda diretamente na captação de investimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Preparamos os fundadores para conversar com investidores com segurança: revisamos o pitch deck sob a ótica financeira, estruturamos o data room, validamos o valuation e ajudamos a construir os indicadores que os investidores mais analisam — como CAC, LTV, MRR, margem e runway. Não fazemos a captação diretamente, mas garantimos que você chegue preparado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o prazo para ver os primeiros entregáveis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os primeiros entregáveis — diagnóstico e estrutura financeira inicial — costumam ser concluídos nas primeiras duas semanas. O planejamento financeiro completo com projeções e KPIs é entregue em até um mês. Para projetos voltados à captação, o cronograma varia conforme a complexidade, mas em geral trabalhamos com ciclos de 4 a 12 semanas dependendo do escopo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são os entregáveis concretos da consultoria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dependendo do escopo contratado, os entregáveis incluem: modelo financeiro em planilha, projeções de receita com cenários, dashboard de KPIs, business plan, revisão do pitch deck, estrutura de valuation e data room organizado. Todos os materiais são documentados e entregues de forma que você consiga utilizar e atualizar de forma autônoma após o encerramento da consultoria."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

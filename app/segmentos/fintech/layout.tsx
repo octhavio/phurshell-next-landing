@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fintech',
+  title: 'Fintech | Apps Financeiros e Plataformas de Crédito',
   description: 'A Phurshell desenvolve soluções digitais para fintechs: carteiras digitais, plataformas de crédito, open finance e apps financeiros com segurança e conformidade regulatória.',
   alternates: { canonical: 'https://phurshell.com/segmentos/fintech/' },
   openGraph: {

@@ -164,15 +164,11 @@ export default function ServicosEngenharia() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Engenharia</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">arquitetura</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">software</span></span>
+            Arquitetura de software escalável para empresas e startups
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Arquitetura de software escalável para empresas e startups
+            Engenharia & arquitetura de software
           </h2>
 
           {/* Description */}
@@ -421,6 +417,79 @@ export default function ServicosEngenharia() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Arquitetura de software escalável para empresas e startups", "item": "https://phurshell.com/servicos/engenharia-e-arquitetura-de-software" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Arquitetura de software escalável para empresas e startups",
+                "description": "Arquitetura e engenharia de software com foco em escalabilidade, manutenibilidade e boas práticas.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/engenharia-e-arquitetura-de-software",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Quais tecnologias vocês utilizam no desenvolvimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trabalhamos com as principais tecnologias do mercado, escolhendo a stack mais adequada para cada contexto. No backend, utilizamos Node.js, Python e Java. No frontend, React e Next.js. Para banco de dados, PostgreSQL, MySQL, MongoDB e Redis. A escolha da tecnologia é sempre baseada nos requisitos técnicos do projeto, não em preferências pessoais — o que garante a melhor solução para o seu negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como vocês definem a arquitetura do sistema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A definição da arquitetura começa pelo entendimento profundo dos requisitos de negócio e técnicos: volume de usuários, frequência de atualizações, integrações necessárias, orçamento de infraestrutura e time de manutenção disponível. Com essas informações, avaliamos as opções — monolito, microsserviços ou arquitetura híbrida — e documentamos as decisões com justificativas claras para que toda a equipe esteja alinhada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o prazo estimado para um projeto de engenharia de software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O prazo depende diretamente da complexidade e do escopo do projeto. Um sistema simples com uma API e banco de dados pode ser entregue em 4 a 8 semanas. Projetos maiores com múltiplas integrações, microsserviços e alta escalabilidade podem levar de 3 a 6 meses. Durante o levantamento de requisitos técnicos, criamos um cronograma detalhado com entregas incrementais para que você acompanhe o progresso em cada etapa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês fazem code review em projetos já existentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Oferecemos um serviço completo de code review e auditoria técnica para projetos em andamento ou já em produção. Analisamos qualidade do código, segurança, performance, cobertura de testes, aderência a boas práticas e potenciais gargalos. Ao final, entregamos um relatório detalhado com os pontos críticos e um plano de ação priorizado para correção e melhoria do codebase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a manutenção após a entrega do projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oferecemos planos de manutenção contínua que incluem monitoramento de performance, correção de bugs, atualizações de segurança e evolução do sistema conforme as necessidades do negócio crescem. Trabalhamos com SLA customizado para sistemas críticos, garantindo tempo de resposta e resolução adequados ao nível de impacto de cada incidente. A manutenção proativa evita problemas antes que eles afetem seus usuários."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

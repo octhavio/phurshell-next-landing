@@ -164,15 +164,11 @@ export default function ServicosQualidadeSeguranca() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Qualidade</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">de</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">software</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">segurança</span></span>
+            Testes de software, QA e segurança para aplicações digitais
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Testes de software, QA e segurança para aplicações digitais
+            Qualidade de software & segurança
           </h2>
 
           {/* Description */}
@@ -420,6 +416,79 @@ export default function ServicosQualidadeSeguranca() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Testes de software, QA e segurança para aplicações digitais", "item": "https://phurshell.com/servicos/qualidade-de-software-e-seguranca" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Testes de software, QA e segurança para aplicações digitais",
+                "description": "Serviços de QA, testes automatizados, pentesting e auditoria de segurança para aplicações digitais.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/qualidade-de-software-e-seguranca",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Quais tipos de testes a Phurshell realiza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Realizamos testes unitários, de integração, end-to-end (E2E), de performance, de carga, de regressão e testes de segurança. Nossa abordagem cobre toda a pirâmide de testes, garantindo qualidade em todos os níveis do sistema — desde funções individuais até fluxos completos do usuário. Também realizamos testes manuais exploratórios quando necessário para cenários críticos de negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é pentesting e quando devo contratar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pentesting (teste de penetração) é uma simulação controlada de ataques reais ao seu sistema, realizada por especialistas em segurança ofensiva. O objetivo é identificar vulnerabilidades antes que agentes maliciosos o façam. Recomendamos pentesting antes de lançamentos importantes, após mudanças significativas na arquitetura, periodicamente em sistemas críticos ou quando exigido por regulamentações como LGPD, PCI-DSS ou ISO 27001."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como a Phurshell ajuda na conformidade com a LGPD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Realizamos uma auditoria completa do fluxo de dados pessoais no seu sistema, identificando coleta, armazenamento, processamento e compartilhamento de dados. A partir disso, mapeamos as lacunas em relação aos requisitos da LGPD e implementamos controles técnicos como criptografia, anonimização, gestão de consentimento, logs de auditoria e mecanismos para exercício dos direitos dos titulares de dados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o processo de QA no meu projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Integramos o QA ao longo de todo o ciclo de desenvolvimento, não apenas no final. Começamos com o levantamento de requisitos de qualidade, definimos critérios de aceitação claros, implementamos testes automatizados junto com o código e realizamos revisões de qualidade a cada entrega. Isso garante que problemas sejam identificados e corrigidos o mais cedo possível, reduzindo custo e tempo de correção."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que tipo de relatório recebo ao final de uma auditoria ou pentesting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entregamos relatórios detalhados com sumário executivo para gestores e análise técnica aprofundada para a equipe de desenvolvimento. O relatório inclui todas as vulnerabilidades encontradas, classificadas por severidade (crítica, alta, média, baixa), evidências, descrição do impacto, passos para reprodução e recomendações de correção priorizadas. Após a correção, realizamos uma validação para confirmar que as vulnerabilidades foram devidamente tratadas."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Inteligência Artificial & Automação',
+  title: 'Inteligência Artificial & Automação | IA Aplicada a Produtos Digitais',
   description: 'A Phurshell cria soluções inteligentes que automatizam processos, geram insights e criam experiências personalizadas para seus usuários.',
   alternates: { canonical: 'https://phurshell.com/servicos/inteligencia-artificial-e-automacao/' },
   openGraph: {

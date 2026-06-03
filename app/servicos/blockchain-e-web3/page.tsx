@@ -164,13 +164,11 @@ export default function ServicosBlockchain() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Blockchain</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">Web3</span></span>
+            Desenvolvimento de contratos inteligentes e aplicações Web3
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Desenvolvimento de contratos inteligentes e aplicações Web3
+            Blockchain & Web3
           </h2>
 
           {/* Description */}
@@ -414,6 +412,79 @@ export default function ServicosBlockchain() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de contratos inteligentes e aplicações Web3", "item": "https://phurshell.com/servicos/blockchain-e-web3" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Desenvolvimento de contratos inteligentes e aplicações Web3",
+                "description": "Desenvolvimento de smart contracts, DApps e soluções blockchain para empresas e projetos Web3.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/blockchain-e-web3",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Qual blockchain devo escolher para o meu projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A escolha da blockchain depende dos requisitos específicos do seu projeto. Ethereum oferece o maior ecossistema e segurança comprovada, sendo ideal para contratos complexos e DeFi. Solana se destaca em velocidade e baixo custo para aplicações com alto volume de transações. Polygon é uma excelente opção para projetos que precisam de compatibilidade com Ethereum a custos reduzidos. Durante a fase de definição de casos de uso, analisamos juntos os trade-offs de cada rede para encontrar a mais adequada ao seu negócio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são os custos de gas e como eles impactam o projeto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os custos de gas são taxas pagas para executar transações e contratos na blockchain. Eles variam conforme a rede escolhida e a complexidade das operações. Durante o desenvolvimento, otimizamos os contratos para minimizar o consumo de gas sem comprometer funcionalidade ou segurança. Também orientamos sobre estratégias como o uso de Layer 2 (Polygon, Arbitrum, Optimism) para reduzir custos em até 99% em comparação com a mainnet Ethereum. Estimamos os custos operacionais na fase de arquitetura para que você tenha previsibilidade financeira."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como garantem a segurança dos contratos inteligentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A segurança é nossa prioridade máxima em projetos blockchain. Seguimos as melhores práticas da indústria, utilizamos padrões auditados como os da OpenZeppelin, e implementamos mecanismos de controle de acesso rigorosos. Realizamos análise estática com ferramentas como Slither e MythX, além de revisão manual por especialistas focados em vulnerabilidades comuns como reentrância, overflow aritmético e manipulação de oráculos. Nenhum contrato é implantado em mainnet sem passar pela nossa etapa de auditoria de segurança."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A auditoria de smart contracts é obrigatória?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a auditoria de segurança é uma etapa obrigatória no nosso processo para qualquer contrato que será implantado em mainnet. Contratos inteligentes são imutáveis após o deploy — uma vulnerabilidade não corrigida pode resultar em perda irreversível de fundos. Realizamos auditoria interna em todos os projetos e, para contratos que gerenciam valores expressivos, recomendamos também uma auditoria externa por empresas especializadas como Trail of Bits, OpenZeppelin ou CertiK. O custo da auditoria é sempre menor do que o risco de um exploit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "É possível integrar blockchain em sistemas existentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, é totalmente possível e é um dos nossos serviços mais demandados. A integração Web3 permite adicionar funcionalidades blockchain — como pagamentos em criptomoedas, autenticação por carteira, rastreabilidade on-chain ou tokenização de ativos — em sistemas já existentes sem a necessidade de refatorar toda a aplicação. Utilizamos bibliotecas como ethers.js e web3.js para conectar o frontend, e desenvolvemos APIs intermediárias quando necessário para garantir compatibilidade com backends legados. O processo começa com uma análise técnica do sistema atual para definir a melhor estratégia de integração."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

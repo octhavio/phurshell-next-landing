@@ -1,10 +1,23 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import ContactCTA from '../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Sobre Nós',
+  title: 'Sobre Nós | Software House com 10 Anos de Mercado',
   description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios.',
   alternates: { canonical: 'https://phurshell.com/sobre/' },
+  openGraph: {
+    title: 'Sobre Nós | Phurshell',
+    description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios.',
+    url: 'https://phurshell.com/sobre',
+    images: [{ url: '/og-image.webp', width: 1200, height: 630, alt: 'Phurshell - Sobre Nós' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sobre Nós | Phurshell',
+    description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais.',
+    images: ['/og-image.webp'],
+  },
 }
 
 const teamMembers = [
@@ -126,7 +139,7 @@ export default function Sobre() {
                 <div className="flex items-center gap-4">
                   {/* Team photo */}
                   <div className="relative h-12 w-auto overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/images/img-cta-especialist.webp"
                       alt="Equipe de especialistas em desenvolvimento mobile da Phurshell"
                       width={120}
@@ -165,9 +178,11 @@ export default function Sobre() {
               </p>
             </div>
             <div className="overflow-hidden rounded-button shadow-lg">
-              <img
+              <Image
                 src="/images/team-1.webp"
                 alt="Equipe Phurshell"
+                width={800}
+                height={600}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -204,27 +219,17 @@ export default function Sobre() {
       <section className="bg-white py-16 sm:py-24">
         <div className="container mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
-            <div className="overflow-hidden rounded-button shadow-lg">
-              <img
-                src="/images/phurshell-team-1.webp"
-                alt="Equipe Phurshell 1"
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-button shadow-lg">
-              <img
-                src="/images/phurshell-team-2.webp"
-                alt="Equipe Phurshell 2"
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-button shadow-lg">
-              <img
-                src="/images/phurshell-team-3.webp"
-                alt="Equipe Phurshell 3"
-                className="h-auto w-full object-cover"
-              />
-            </div>
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="overflow-hidden rounded-button shadow-lg">
+                <Image
+                  src={`/images/phurshell-team-${n}.webp`}
+                  alt={`Equipe Phurshell trabalhando`}
+                  width={600}
+                  height={400}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -245,9 +250,11 @@ export default function Sobre() {
                 className="flex flex-col items-center rounded-button border border-dark/10 bg-white p-6 text-center shadow-sm"
               >
                 <div className="mb-4 overflow-hidden rounded-button">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    width={200}
+                    height={200}
                     className="h-auto w-full object-cover"
                   />
                 </div>

@@ -164,14 +164,11 @@ export default function ServicosIA() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Inteligência</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">artificial</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">automação</span></span>
+            Desenvolvimento de soluções com inteligência artificial e automação
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Desenvolvimento de soluções com inteligência artificial e automação
+            Inteligência artificial & automação
           </h2>
 
           {/* Description */}
@@ -416,6 +413,79 @@ export default function ServicosIA() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de soluções com inteligência artificial e automação", "item": "https://phurshell.com/servicos/inteligencia-artificial-e-automacao" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Desenvolvimento de soluções com inteligência artificial e automação",
+                "description": "Desenvolvimento de soluções de IA, machine learning, automação de processos e integração de LLMs.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/inteligencia-artificial-e-automacao",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Que tipo de dados são necessários para desenvolver uma solução de IA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os dados necessários variam conforme o tipo de solução. Para modelos preditivos, precisamos de histórico de eventos relevantes para o problema (vendas, comportamentos, transações). Para NLP, precisamos de textos e exemplos rotulados. Para visão computacional, precisamos de imagens anotadas. Durante a fase de mapeamento, fazemos um diagnóstico completo dos dados disponíveis na sua empresa e definimos o que precisa ser coletado ou enriquecido antes de iniciar o desenvolvimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como garantem a privacidade e segurança dos nossos dados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Levamos a privacidade e segurança dos dados muito a sério. Trabalhamos em conformidade com a LGPD e outras regulamentações aplicáveis. Os dados são processados em ambientes seguros, com criptografia em trânsito e em repouso. Firmamos acordos de confidencialidade (NDA) antes de qualquer acesso a dados sensíveis. Sempre que possível, trabalhamos com dados anonimizados ou pseudonimizados durante o desenvolvimento e testes dos modelos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o processo de treinamento e quanto tempo leva para um modelo ficar pronto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O processo de treinamento envolve preparação dos dados, seleção de algoritmos, experimentação e ajuste fino dos hiperparâmetros. O tempo varia muito conforme a complexidade do problema e a quantidade de dados disponíveis. Soluções mais simples, como modelos de classificação com dados estruturados, podem estar prontos em 4 a 8 semanas. Modelos mais complexos, como sistemas de recomendação ou modelos de linguagem customizados, podem levar de 2 a 4 meses. Apresentamos cronogramas detalhados ao início de cada projeto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como as soluções de IA se integram aos nossos sistemas existentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As soluções de IA são expostas como APIs REST ou microserviços, o que permite integração com praticamente qualquer sistema moderno — ERPs, CRMs, plataformas web, aplicativos mobile ou qualquer outro software que consuma APIs. Também desenvolvemos conectores específicos para sistemas legados quando necessário. O objetivo é sempre minimizar o impacto na operação existente, entregando a inteligência artificial como uma camada adicional que potencializa o que você já tem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Os modelos precisam de manutenção após o lançamento? Como funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, modelos de IA precisam de manutenção contínua. Com o tempo, os dados do mundo real mudam — um fenômeno chamado de data drift ou concept drift — e os modelos podem perder precisão. Oferecemos planos de monitoramento e retreinamento periódico, onde acompanhamos métricas de performance, detectamos degradação e realizamos atualizações com novos dados. Também ajustamos os modelos conforme o seu negócio evolui e novos padrões emergem, garantindo que a solução permaneça eficaz a longo prazo."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

@@ -164,13 +164,11 @@ export default function ServicosCloudDevOps() {
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           {/* Title */}
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Cloud</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-2">&</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">DevOps</span></span>
+            Serviços de cloud computing, infraestrutura e DevOps
           </h1>
 
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            Serviços de cloud computing, infraestrutura e DevOps
+            Cloud & DevOps
           </h2>
 
           {/* Description */}
@@ -420,6 +418,79 @@ export default function ServicosCloudDevOps() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://phurshell.com/servicos" },
+                  { "@type": "ListItem", "position": 3, "name": "Serviços de cloud computing, infraestrutura e DevOps", "item": "https://phurshell.com/servicos/cloud-e-devops" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Serviços de cloud computing, infraestrutura e DevOps",
+                "description": "Infraestrutura em nuvem, CI/CD, monitoramento e DevOps para produtos digitais escaláveis e de alta disponibilidade.",
+                "provider": { "@type": "Organization", "name": "Phurshell", "url": "https://phurshell.com" },
+                "url": "https://phurshell.com/servicos/cloud-e-devops",
+                "areaServed": { "@type": "Country", "name": "Brasil" }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+          "@type": "Question",
+          "name": "Quais provedores de nuvem vocês trabalham?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trabalhamos com os três principais provedores de nuvem do mercado: AWS (Amazon Web Services), Google Cloud Platform e Microsoft Azure. A escolha do provedor depende das necessidades do seu produto, integrações existentes, exigências de compliance e otimização de custos. Nossa equipe ajuda a avaliar qual opção faz mais sentido para o seu contexto antes de qualquer implementação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a migração de infraestrutura existente para a nuvem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A migração começa com uma auditoria completa da infraestrutura atual para mapear dependências, riscos e o estado dos sistemas. A partir disso, elaboramos um plano de migração faseado que minimiza o impacto no produto em produção. Realizamos migrações com estratégias de blue-green deployment ou migração incremental por serviço, garantindo que não haja downtime inesperado durante o processo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como garantem alta disponibilidade e uptime do produto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilizamos arquiteturas multi-zona e multi-região para eliminar pontos únicos de falha. Implementamos load balancers, auto-scaling e health checks automáticos para que o sistema se recupere sozinho de falhas. Configuramos pipelines de CI/CD com rollback automático e monitoramos continuamente com alertas proativos para reagir antes que qualquer problema afete os usuários."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como ajudam a controlar e reduzir custos na nuvem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auditamos regularmente o uso de recursos para identificar serviços ociosos, instâncias superdimensionadas e oportunidades de economia. Aplicamos estratégias como reserved instances, spot instances para cargas não críticas, auto-scaling ajustado e rightsizing. Além disso, implementamos dashboards de custos em tempo real para que você tenha visibilidade total dos gastos e possa tomar decisões informadas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que está incluído no monitoramento e como funciona o suporte a incidentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Configuramos sistemas de observabilidade completos com coleta de métricas, logs centralizados e rastreamento de erros. Alertas proativos notificam a equipe imediatamente quando qualquer indicador sai do padrão esperado. Para incidentes, temos playbooks documentados com procedimentos de resposta e escalonamento. O nível de suporte (horário comercial, 24/7 ou SLA customizado) é definido conforme o plano contratado."
+          }
+        }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

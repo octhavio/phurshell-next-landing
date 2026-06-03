@@ -9,7 +9,7 @@ import { getCategories } from '../../src/lib/wordpress'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Insights | Phurshell',
+  title: 'Insights | Blog sobre Desenvolvimento de Apps e Tecnologia',
   description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
   alternates: { canonical: 'https://phurshell.com/insights/' },
   openGraph: {

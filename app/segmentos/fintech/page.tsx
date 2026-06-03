@@ -153,15 +153,11 @@ export default function Fintech() {
       <section className="relative overflow-hidden bg-white py-12">
         <div className="container relative z-10 mx-auto max-w-screen-2xl px-10 sm:px-14 lg:px-20">
           <h1 className="mb-6 text-balance text-4xl font-black leading-[1.1] tracking-tight text-dark sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="word-wrapper"><span className="word word-delay-1">Fintech</span></span>
+            Desenvolvimento de apps e soluções fintech
           </h1>
+
           <h2 className="mb-6 flex items-center gap-3 text-xl font-black uppercase tracking-wider text-brand-orange">
-            <span className="word-wrapper"><span className="word word-delay-2">Finanças</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-3">acessíveis</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-4">na</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-5">palma</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-6">da</span></span>{' '}
-            <span className="word-wrapper"><span className="word word-delay-7">mão</span></span>
+            Finanças acessíveis na palma da mão
           </h2>
           <p className="mb-8 max-w-4xl text-xl leading-relaxed text-dark/70">
             <span className="word-wrapper"><span className="word word-delay-6">Dinheiro</span></span>{' '}
@@ -281,6 +277,22 @@ export default function Fintech() {
           </div>
         </div>
       </section>
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://phurshell.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Segmentos", "item": "https://phurshell.com/segmentos" },
+                  { "@type": "ListItem", "position": 3, "name": "Desenvolvimento de apps e soluções fintech", "item": "https://phurshell.com/segmentos/fintech" }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }
