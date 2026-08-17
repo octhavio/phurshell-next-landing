@@ -9,6 +9,13 @@ import { WPPage, WPPost, WPCase, WPCategory, BlogPost } from '../types/wordpress
 const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
 const WP_API_URL = `${WP_BASE_URL}/wp-json/wp/v2`
 
+// Sem isto o fetch cai no force-cache do Next e a entrada fica no Data Cache
+// por 1 ano. generateMetadata e generateStaticParams nao herdam o
+// `export const revalidate = 60` das paginas, entao 33 chamadas estavam
+// cacheadas ate 2027: post editado no WordPress so aparecia se o webhook
+// /api/revalidate disparasse.
+const REVALIDATE_SECONDS = 60
+
 /**
  * Fetch genérico para WordPress API com tratamento de erros
  */
@@ -27,6 +34,7 @@ async function fetchWordPress<T>(
       headers: {
         'Content-Type': 'application/json',
       },
+      next: { revalidate: REVALIDATE_SECONDS },
     })
 
     if (!response.ok) {
