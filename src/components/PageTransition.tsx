@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTransition } from '../context/TransitionContext'
 
-export default function PageTransition({ children }: { children: React.ReactNode }) {
+export default function PageTransition() {
   const { isTransitioning, showLogo } = useTransition()
 
   return (
@@ -54,8 +54,6 @@ export default function PageTransition({ children }: { children: React.ReactNode
           </motion.div>
         )}
       </AnimatePresence>
-
-      {children}
     </>
   )
 }

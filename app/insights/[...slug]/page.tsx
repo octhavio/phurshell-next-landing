@@ -4,7 +4,7 @@ import Image from 'next/image'
 import TransitionLink from '../../../src/components/TransitionLink'
 import ShareButtons from '../../../src/components/ShareButtons'
 import ContactCTA from '../../../src/components/ContactCTA'
-import { getBlogPosts, getBlogPostBySlug } from '../../../src/lib/wordpress'
+import { getBlogPosts, getBlogPostBySlug, getBlogPostSlugs } from '../../../src/lib/wordpress'
 import { BlogPost } from '../../../src/types/wordpress'
 
 // ISR: Revalida a cada 60 segundos
@@ -20,9 +20,9 @@ interface PageProps {
 // Gera posts existentes no build time
 export async function generateStaticParams() {
   try {
-    const posts = await getBlogPosts(100)
-    return posts.map((post) => ({
-      slug: [post.slug],
+    const slugs = await getBlogPostSlugs(100)
+    return slugs.map((slug) => ({
+      slug: [slug],
     }))
   } catch (error) {
     console.error('Erro ao gerar static params:', error)

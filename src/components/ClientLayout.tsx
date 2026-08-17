@@ -9,11 +9,10 @@ const PageTransition = dynamic(() => import('./PageTransition'), { ssr: false })
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <TransitionProvider>
-      <PageTransition>
-        <ConditionalLayout>
-          {children}
-        </ConditionalLayout>
-      </PageTransition>
+      <PageTransition />
+      <ConditionalLayout>
+        {children}
+      </ConditionalLayout>
     </TransitionProvider>
   )
 }

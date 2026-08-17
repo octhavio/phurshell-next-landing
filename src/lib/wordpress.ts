@@ -235,6 +235,23 @@ export async function getBlogPosts(perPage: number = 100): Promise<BlogPost[]> {
 }
 
 /**
+ * Busca só os slugs dos posts (para generateStaticParams).
+ * Query leve de proposito: getBlogPosts usa _embed e traz ~1.4MB, o que
+ * ja fez o socket morrer no meio do build e o Next cair no cache antigo,
+ * gerando menos posts do que existem.
+ */
+export async function getBlogPostSlugs(perPage: number = 100): Promise<string[]> {
+  const posts = await fetchWordPress<{ slug: string }[]>('/posts', {
+    per_page: perPage,
+    _fields: 'slug',
+    orderby: 'date',
+    order: 'desc',
+  })
+
+  return posts.map((post) => post.slug)
+}
+
+/**
  * Busca um post do blog pelo slug
  */
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
