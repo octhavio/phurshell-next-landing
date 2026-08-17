@@ -113,7 +113,7 @@ export default function Segmentos() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <TransitionLink
-              href="/contato"
+              href="/contato/"
               className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
             >
               Solicitar proposta

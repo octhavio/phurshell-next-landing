@@ -162,7 +162,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
                   Entre em contato e vamos transformar sua ideia em realidade
                 </p>
                 <TransitionLink
-                  href="/contato"
+                  href="/contato/"
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-button bg-white px-6 py-3 font-bold text-brand-orange transition-smooth hover:scale-105"
                 >
                   Solicitar proposta
@@ -261,7 +261,7 @@ export default function InsightPostClient({ slug }: InsightPostClientProps) {
             </p>
 
             <TransitionLink
-              href="/contato"
+              href="/contato/"
               className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
             >
               Falar com especialista

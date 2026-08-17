@@ -4,7 +4,7 @@ import Image from 'next/image'
 import TransitionLink from '../../../src/components/TransitionLink'
 import ShareButtons from '../../../src/components/ShareButtons'
 import ContactCTA from '../../../src/components/ContactCTA'
-import { getBlogPosts, getBlogPostBySlug, getBlogPostSlugs } from '../../../src/lib/wordpress'
+import { getBlogPosts, getBlogPostBySlug, getBlogPostIndex } from '../../../src/lib/wordpress'
 import { BlogPost } from '../../../src/types/wordpress'
 
 // ISR: Revalida a cada 60 segundos
@@ -20,9 +20,9 @@ interface PageProps {
 // Gera posts existentes no build time
 export async function generateStaticParams() {
   try {
-    const slugs = await getBlogPostSlugs(100)
-    return slugs.map((slug) => ({
-      slug: [slug],
+    const index = await getBlogPostIndex(100)
+    return index.map((post) => ({
+      slug: [post.slug],
     }))
   } catch (error) {
     console.error('Erro ao gerar static params:', error)
@@ -118,7 +118,7 @@ export default async function InsightPostPage({ params }: PageProps) {
             <i className="fa-solid fa-chevron-right text-xs"></i>
             <TransitionLink href="/insights" className="transition-colors hover:text-brand-orange">Insights</TransitionLink>
             <i className="fa-solid fa-chevron-right text-xs"></i>
-            <a href={`/insights?categoria=${post.categorySlug}`} className="transition-colors hover:text-brand-orange">{post.category}</a>
+            <a href={`/insights/?categoria=${post.categorySlug}`} className="transition-colors hover:text-brand-orange">{post.category}</a>
             <i className="fa-solid fa-chevron-right text-xs"></i>
             <span className="max-w-xs truncate text-dark">{post.title}</span>
           </div>
@@ -183,7 +183,7 @@ export default async function InsightPostPage({ params }: PageProps) {
                   Nosso time entra em contato para entender seu projeto e enviar uma estimativa.
                 </p>
                 <TransitionLink
-                  href="/contato"
+                  href="/contato/"
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-sm font-black text-white transition-smooth hover:bg-brand-orange-light"
                 >
                   Falar com um especialista

@@ -273,7 +273,7 @@ export default function Header() {
         {/* CTA Button */}
         <div ref={ctaRef} className="flex items-center space-x-4">
           <TransitionLink
-            href="/contato"
+            href="/contato/"
             className={`group items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light ${
               shouldCollapse ? 'hidden' : 'hidden md:inline-flex'
             }`}
@@ -558,7 +558,7 @@ export default function Header() {
                 }}
               >
                 <TransitionLink
-                  href="/contato"
+                  href="/contato/"
                   onClick={closeMobileMenu}
                   className="group mt-6 flex w-full items-center justify-center gap-2 rounded-button bg-brand-orange px-6 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
                 >

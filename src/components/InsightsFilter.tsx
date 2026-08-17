@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useSearchParams } from 'next/navigation'
 import TransitionLink from './TransitionLink'
 import { BlogPost, WPCategory } from '../types/wordpress'
 
@@ -31,6 +30,9 @@ function getCategoryIcon(name: string): string | null {
 
 interface InsightsFilterProps {
   categories: WPCategory[]
+  /** Primeira pagina vinda do servidor, para os cards saírem no HTML (SEO). */
+  initialPosts: BlogPost[]
+  initialTotalPages: number
 }
 
 function stripHtmlTags(html: string): string {
@@ -81,19 +83,22 @@ function transformWPPost(post: any): BlogPost {
   }
 }
 
-export default function InsightsFilter({ categories }: InsightsFilterProps) {
-  const searchParams = useSearchParams()
-  const [posts, setPosts] = useState<BlogPost[]>([])
+export default function InsightsFilter({ categories, initialPosts, initialTotalPages }: InsightsFilterProps) {
+  const [posts, setPosts] = useState<BlogPost[]>(initialPosts)
   const [selectedCategory, setSelectedCategory] = useState('todos')
 
+  // Le ?categoria=X do window em vez de useSearchParams: o hook obriga o Next a
+  // renderizar esta arvore so no client, e ai os cards nao saem no HTML.
   useEffect(() => {
-    const categoria = searchParams.get('categoria')
+    const categoria = new URLSearchParams(window.location.search).get('categoria')
     if (categoria) setSelectedCategory(categoria)
-  }, [searchParams])
+  }, [])
   const [currentPage, setCurrentPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(1)
-  const [loading, setLoading] = useState(true)
+  const [totalPages, setTotalPages] = useState(initialTotalPages)
+  const [loading, setLoading] = useState(false)
   const [isFirstPage, setIsFirstPage] = useState(true)
+  // A primeira pagina ja veio do servidor; so busca quando o usuario mexe.
+  const hasServerPosts = useRef(true)
   const filterRef = useRef<HTMLDivElement>(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
@@ -119,6 +124,10 @@ export default function InsightsFilter({ categories }: InsightsFilterProps) {
 
   // Busca posts paginados
   useEffect(() => {
+    if (hasServerPosts.current) {
+      hasServerPosts.current = false
+      return
+    }
     async function fetchPosts() {
       setLoading(true)
       try {

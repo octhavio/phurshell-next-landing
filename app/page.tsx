@@ -382,7 +382,7 @@ export default function Home() {
             <div className="mb-8">
               <span className="word word-delay-38" style={{ display: 'inline-block' }}>
                 <TransitionLink
-                  href="/contato"
+                  href="/contato/"
                   className="group inline-flex items-center gap-3 rounded-button bg-brand-orange px-10 py-5 text-lg font-bold text-white shadow-2xl shadow-brand-orange/30 transition-all duration-300 hover:scale-105 hover:bg-brand-orange-light hover:shadow-brand-orange/50"
                 >
                   Solicitar proposta

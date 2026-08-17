@@ -23,7 +23,7 @@ export default function Footer() {
               <TransitionLink href="/insights" className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange">
                 Insights
               </TransitionLink>
-              <TransitionLink href="/contato" className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange">
+              <TransitionLink href="/contato/" className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange">
                 Contato
               </TransitionLink>
               <TransitionLink href="/calculadora" className="text-xl font-bold text-white/60 transition-colors hover:text-brand-orange">

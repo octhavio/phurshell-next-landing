@@ -41,7 +41,7 @@ export default function ContactCTA() {
               {/* CTA Button */}
               <div className="pt-4">
                 <TransitionLink
-                  href="/contato"
+                  href="/contato/"
                   className="group inline-flex items-center justify-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-base font-black tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
                 >
                   Solicitar proposta

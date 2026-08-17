@@ -201,7 +201,7 @@ export default function ServicosBlockchain() {
           <div className="mb-6 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <span className="word word-delay-26" style={{ display: 'inline-block' }}>
               <TransitionLink
-                href="/contato"
+                href="/contato/"
                 className="group inline-flex items-center gap-2 rounded-button bg-brand-orange px-6 py-3 text-base font-bold tracking-wider text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light"
               >
                 Solicitar proposta
