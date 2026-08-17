@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cloud & DevOps | Infraestrutura e Entrega Contínua',
+  title: 'Cloud & DevOps | Infraestrutura Escalável',
   description: 'A Phurshell fornece infraestrutura moderna e automatizada para que seus produtos rodem com alta disponibilidade e entregas contínuas.',
   alternates: { canonical: 'https://phurshell.com/servicos/cloud-e-devops/' },
   openGraph: {
+    type: 'website',
     title: 'Cloud & DevOps | Phurshell',
     description: 'A Phurshell fornece infraestrutura moderna e automatizada para que seus produtos rodem com alta disponibilidade e entregas contínuas.',
     url: 'https://phurshell.com/servicos/cloud-e-devops',

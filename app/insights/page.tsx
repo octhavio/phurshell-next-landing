@@ -12,14 +12,15 @@ const POSTS_PER_PAGE = 10
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Insights | Blog sobre Desenvolvimento de Apps e Tecnologia',
-  description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
+  title: 'Insights | Blog de Tecnologia e Software',
+  description: 'Artigos sobre desenvolvimento de software, apps mobile, arquitetura e inovação digital, escritos pelo time de engenharia da Phurshell.',
   alternates: { canonical: 'https://phurshell.com/insights/' },
   openGraph: {
     title: 'Insights | Phurshell',
     description: 'Artigos sobre tecnologia, desenvolvimento de software e inovação digital',
     url: 'https://phurshell.com/insights',
     type: 'website',
+    images: [{ url: '/og-image.webp', width: 1200, height: 630 }],
   },
 }
 

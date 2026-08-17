@@ -3,10 +3,11 @@ import ContactCTA from '../../src/components/ContactCTA'
 import TransitionLink from '../../src/components/TransitionLink'
 
 export const metadata: Metadata = {
-  title: 'Serviços | Desenvolvimento de Apps e Software Sob Medida',
+  title: 'Serviços | Desenvolvimento de Apps e Software',
   description: 'Soluções completas em desenvolvimento de software. Mobile, web, APIs e muito mais para transformar sua ideia em realidade.',
   alternates: { canonical: 'https://phurshell.com/servicos/' },
   openGraph: {
+    type: 'website',
     title: 'Serviços | Phurshell',
     description: 'Soluções completas em desenvolvimento de software. Mobile, web, APIs e muito mais para transformar sua ideia em realidade.',
     url: 'https://phurshell.com/servicos',

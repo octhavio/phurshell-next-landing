@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Insurtech | Plataformas Digitais para Seguros',
-  description: 'A Phurshell desenvolve soluções digitais para insurtechs: cotação online, gestão de apólices, sinistros digitais e plataformas de seguros com experiência moderna.',
+  description: 'A Phurshell desenvolve soluções para insurtechs: cotação online, gestão de apólices, sinistros digitais e plataformas de seguros modernas.',
   alternates: { canonical: 'https://phurshell.com/segmentos/insurtech/' },
   openGraph: {
+    type: 'website',
     title: 'Insurtech | Phurshell',
     description: 'A Phurshell desenvolve soluções digitais para insurtechs: cotação online, gestão de apólices, sinistros digitais e plataformas de seguros com experiência moderna.',
     url: 'https://phurshell.com/segmentos/insurtech',

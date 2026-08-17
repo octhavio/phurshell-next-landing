@@ -2,10 +2,11 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Autoday | App de Seguro Automotivo Sob Demanda',
+  title: 'Case Autoday | App de Seguro Sob Demanda',
   description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veículo.',
   alternates: { canonical: 'https://phurshell.com/cases/autoday/' },
   openGraph: {
+    type: 'website',
     title: 'Case Autoday | Phurshell',
     description: 'Revolucionando o mercado de seguros com tecnologia. MVP de insurtech que permite seguro automotivo sob demanda — pague apenas pelos dias que usar o veículo.',
     url: 'https://phurshell.com/cases/autoday',

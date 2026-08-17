@@ -2,10 +2,11 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Psiapp | App de Psicologia para iOS e Android',
+  title: 'Case Psiapp | App de Psicologia iOS e Android',
   description: 'Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados.',
   alternates: { canonical: 'https://phurshell.com/cases/psiapp/' },
   openGraph: {
+    type: 'website',
     title: 'Case Psiapp | Phurshell',
     description: 'Conectando psicólogos e pacientes através da tecnologia. Desenvolvimento completo dos aplicativos iOS e Android, backoffice e análise de dados.',
     url: 'https://phurshell.com/cases/psiapp',

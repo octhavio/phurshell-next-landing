@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       url: `https://phurshell.com/insights/${post.slug}`,
       type: 'article',
-      images: post.image ? [{ url: post.image, width: 1200, height: 630 }] : [],
+      images: [{ url: post.image || '/og-image.webp', width: 1200, height: 630 }],
       publishedTime: post.publishedAt,
       authors: [post.author.name],
     },
@@ -78,7 +78,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 function sanitizeContent(html: string): string {
-  return html.replace(/<h2([^>]*)>/g, (match, attrs) => {
+  // O <h1> da pagina ja e o titulo do post. Varios posts repetem o titulo como
+  // <h1> dentro do corpo vindo do WordPress, gerando um segundo H1: vira <h2>.
+  return html
+    .replace(/<(\/?)h1([^>]*)>/g, '<$1h2$2>')
+    .replace(/<h2([^>]*)>/g, (match, attrs) => {
     const cleaned = attrs
       .replace(/class="[^"]*"/g, '')
       .replace(/style="[^"]*"/g, '')

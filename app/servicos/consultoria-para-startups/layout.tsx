@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Consultoria para Startups | Do MVP ao Crescimento',
+  title: 'Consultoria para Startups | MVP e Crescimento',
   description: 'A Phurshell ajuda startups a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
   alternates: { canonical: 'https://phurshell.com/servicos/consultoria-para-startups/' },
   openGraph: {
+    type: 'website',
     title: 'Consultoria para Startups | Phurshell',
     description: 'A Phurshell ajuda startups a estruturar negócios sustentáveis, preparados para crescer e captar investimento.',
     url: 'https://phurshell.com/servicos/consultoria-para-startups',

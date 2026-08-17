@@ -356,7 +356,7 @@ export default function Calculadora() {
               <article>
                 <div className="mb-6 flex flex-col items-start gap-6">
                   <Image src="/images/img-calculator-hero.webp" alt="Calculadora" width={80} height={80} className="h-20 w-auto" />
-                  <h2 className="text-4xl font-black text-dark">Quanto custa desenvolver um app com um time de especialistas?</h2>
+                  <h1 className="text-4xl font-black text-dark">Quanto custa desenvolver um app com um time de especialistas?</h1>
                 </div>
                 <p className="mb-6 text-xl leading-relaxed text-dark/70">
                   O desenvolvimento de aplicativos é um processo complexo que envolve várias etapas, desde a concepção

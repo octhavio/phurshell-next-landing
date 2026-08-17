@@ -2,10 +2,11 @@ import { Metadata } from 'next'
 import ContactCTA from '../../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Case Diag | App de Gestão Clínica e Prontuário Médico',
+  title: 'Case Diag | App de Gestão Clínica e Prontuário',
   description: 'Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico.',
   alternates: { canonical: 'https://phurshell.com/cases/diag/' },
   openGraph: {
+    type: 'website',
     title: 'Case Diag | Phurshell',
     description: 'Transformando a rotina médica com tecnologia. Plataforma completa de gestão clínica com prontuários, receitas médicas e IA para suporte diagnóstico.',
     url: 'https://phurshell.com/cases/diag',

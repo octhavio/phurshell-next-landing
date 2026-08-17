@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Healthtech | Apps e Plataformas para Saúde Digital',
-  description: 'A Phurshell desenvolve soluções digitais para healthtech: prontuário eletrônico, telemedicina, agendamento inteligente e plataformas de saúde com conformidade LGPD e CFM.',
+  title: 'Healthtech | Apps para Saúde Digital',
+  description: 'A Phurshell desenvolve soluções para healthtech: prontuário eletrônico, telemedicina e agendamento inteligente com conformidade LGPD e CFM.',
   alternates: { canonical: 'https://phurshell.com/segmentos/healthtech/' },
   openGraph: {
+    type: 'website',
     title: 'Healthtech | Phurshell',
     description: 'A Phurshell desenvolve soluções digitais para healthtech: prontuário eletrônico, telemedicina, agendamento inteligente e plataformas de saúde com conformidade LGPD e CFM.',
     url: 'https://phurshell.com/segmentos/healthtech',

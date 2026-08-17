@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Educação | Apps e Plataformas de Aprendizado Digital',
-  description: 'A Phurshell desenvolve soluções edtech: plataformas LMS, apps de aprendizado, gamificação, gestão escolar e experiências educacionais que funcionam em qualquer dispositivo.',
+  title: 'Educação | Apps e Plataformas de Ensino',
+  description: 'A Phurshell desenvolve soluções edtech: plataformas LMS, apps de aprendizado, gamificação e gestão escolar que rodam em qualquer dispositivo.',
   alternates: { canonical: 'https://phurshell.com/segmentos/educacao/' },
   openGraph: {
+    type: 'website',
     title: 'Educação | Phurshell',
     description: 'A Phurshell desenvolve soluções edtech: plataformas LMS, apps de aprendizado, gamificação, gestão escolar e experiências educacionais que funcionam em qualquer dispositivo.',
     url: 'https://phurshell.com/segmentos/educacao',

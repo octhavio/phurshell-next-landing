@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Soluções Digitais para Negócios | Sistemas e Ferramentas Sob Medida',
+  title: 'Soluções Digitais para Negócios | Sistemas',
   description: 'A Phurshell cria sistemas e ferramentas que modernizam operações, melhoram a gestão e impulsionam resultados do seu negócio.',
   alternates: { canonical: 'https://phurshell.com/servicos/solucoes-digitais-para-negocios/' },
   openGraph: {
+    type: 'website',
     title: 'Soluções Digitais para Negócios | Phurshell',
     description: 'A Phurshell cria sistemas e ferramentas que modernizam operações, melhoram a gestão e impulsionam resultados do seu negócio.',
     url: 'https://phurshell.com/servicos/solucoes-digitais-para-negocios',

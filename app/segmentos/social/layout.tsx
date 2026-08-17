@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: 'A Phurshell desenvolve plataformas sociais e de comunidade: redes sociais nichadas, apps de conexão, fóruns e experiências que engajam e retêm usuários.',
   alternates: { canonical: 'https://phurshell.com/segmentos/social/' },
   openGraph: {
+    type: 'website',
     title: 'Social | Phurshell',
     description: 'A Phurshell desenvolve plataformas sociais e de comunidade: redes sociais nichadas, apps de conexão, fóruns e experiências que engajam e retêm usuários.',
     url: 'https://phurshell.com/segmentos/social',

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: 'Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia. Desenvolvimento de apps mobile, web e soluções customizadas.',
   alternates: { canonical: 'https://phurshell.com/contato/' },
   openGraph: {
+    type: 'website',
     title: 'Contato | Phurshell',
     description: 'Entre em contato com a Phurshell para discutir seu próximo projeto de tecnologia.',
     url: 'https://phurshell.com/contato',

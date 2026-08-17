@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: 'Conheça alguns dos projetos que desenvolvemos do zero, desde a concepção da ideia até o lançamento e crescimento no mercado.',
   alternates: { canonical: 'https://phurshell.com/cases/' },
   openGraph: {
+    type: 'website',
     title: 'Cases | Phurshell',
     description: 'Conheça alguns dos projetos que desenvolvemos do zero, desde a concepção da ideia até o lançamento e crescimento no mercado.',
     url: 'https://phurshell.com/cases',

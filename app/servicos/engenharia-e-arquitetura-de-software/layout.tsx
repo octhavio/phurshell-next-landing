@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Engenharia & Arquitetura de Software | Sistemas Escaláveis e Robustos',
+  title: 'Engenharia e Arquitetura de Software',
   description: 'A Phurshell constrói a base técnica sólida que seus produtos precisam para escalar com segurança e performance.',
   alternates: { canonical: 'https://phurshell.com/servicos/engenharia-e-arquitetura-de-software/' },
   openGraph: {
+    type: 'website',
     title: 'Engenharia & Arquitetura de Software | Phurshell',
     description: 'A Phurshell constrói a base técnica sólida que seus produtos precisam para escalar com segurança e performance.',
     url: 'https://phurshell.com/servicos/engenharia-e-arquitetura-de-software',

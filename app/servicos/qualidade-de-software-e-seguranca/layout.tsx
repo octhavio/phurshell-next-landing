@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Qualidade de Software & Segurança | QA e Testes para Apps e Sistemas',
+  title: 'Qualidade de Software & Segurança | QA e Testes',
   description: 'A Phurshell garante que seu produto funcione com excelência, segurança e confiabilidade em qualquer cenário.',
   alternates: { canonical: 'https://phurshell.com/servicos/qualidade-de-software-e-seguranca/' },
   openGraph: {
+    type: 'website',
     title: 'Qualidade de Software & Segurança | Phurshell',
     description: 'A Phurshell garante que seu produto funcione com excelência, segurança e confiabilidade em qualquer cenário.',
     url: 'https://phurshell.com/servicos/qualidade-de-software-e-seguranca',

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Design de Produto & Experiência | UX e UI para Apps Mobile e Web',
+  title: 'Design de Produto | UX e UI para Apps e Web',
   description: 'A Phurshell cria interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
   alternates: { canonical: 'https://phurshell.com/servicos/design-de-produto-e-experiencia/' },
   openGraph: {
+    type: 'website',
     title: 'Design de Produto & Experiência | Phurshell',
     description: 'A Phurshell cria interfaces bonitas e funcionais que encantam usuários e convertem visitantes em clientes.',
     url: 'https://phurshell.com/servicos/design-de-produto-e-experiencia',
