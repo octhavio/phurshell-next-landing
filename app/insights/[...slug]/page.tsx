@@ -166,13 +166,17 @@ export default async function InsightPostPage({ params }: PageProps) {
           {/* Featured Image */}
           {post.image && (
             <div className="relative mb-0 overflow-hidden rounded-button">
-              <Image
+              {/* <img> cru de proposito: o otimizador da Vercel consome cota de
+                  transformacao no plano gratuito. A compressao e feita na origem,
+                  no upload para o WordPress. width/height evitam CLS e
+                  fetchPriority marca o LCP. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={post.image}
                 alt={post.title}
                 width={1200}
                 height={630}
-                priority
-                sizes="(max-width: 1024px) 100vw, 1200px"
+                fetchPriority="high"
                 className="h-auto w-full object-cover lg:max-h-[600px]"
               />
               <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark backdrop-blur-sm">
