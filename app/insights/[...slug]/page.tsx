@@ -166,9 +166,13 @@ export default async function InsightPostPage({ params }: PageProps) {
           {/* Featured Image */}
           {post.image && (
             <div className="relative mb-0 overflow-hidden rounded-button">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                width={1200}
+                height={630}
+                priority
+                sizes="(max-width: 1024px) 100vw, 1200px"
                 className="h-auto w-full object-cover lg:max-h-[600px]"
               />
               <div className="absolute left-4 top-4 rounded-button bg-white/80 px-3 py-1 text-sm font-bold text-dark backdrop-blur-sm">

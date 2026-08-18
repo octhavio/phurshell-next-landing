@@ -22,6 +22,7 @@ const nextConfig = {
       { source: '/desenvolvimento-de-aplicativo-mobile', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/fabrica-de-aplicativos', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/fabrica-de-apps', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
+      { source: '/fabrica-de-software-brasil', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/empresa-de-aplicativos', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/empresa-de-desenvolvimento-de-aplicativos', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/empresa-de-desenvolvimento-de-app', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },

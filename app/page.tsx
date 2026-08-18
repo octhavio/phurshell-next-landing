@@ -258,7 +258,7 @@ export default function Home() {
       icon: 'sparkles',
       iconType: 'fa-jelly',
       slug: 'inteligencia-artificial-e-automacao',
-      image: 'https://images.unsplash.com/photo-1714036838363-f678d928915b?w=600&h=800&fit=crop',
+      image: '/images/img-hero-ai.webp',
       services: [
         {
           title: 'Implementação de IA',
