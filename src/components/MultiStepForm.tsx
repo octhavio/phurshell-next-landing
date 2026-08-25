@@ -496,6 +496,8 @@ export default function MultiStepForm() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
                   { id: 'google', label: 'Busca no Google', icon: 'magnifying-glass' },
+                  { id: 'bing', label: 'Busca no Bing', icon: 'globe' },
+                  { id: 'chatgpt', label: 'ChatGPT ou outra IA', icon: 'sparkles' },
                   { id: 'redes-sociais', label: 'Redes Sociais', icon: 'share-nodes' },
                   { id: 'indicacao', label: 'Indicação de alguém', icon: 'user-group' },
                   { id: 'portfolio', label: 'Vi um projeto seu', icon: 'briefcase' },
