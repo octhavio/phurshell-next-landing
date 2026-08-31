@@ -223,11 +223,12 @@ export default function MultiStepForm() {
         // e nao na pagina de sucesso: assim nao dispara de novo se o usuario
         // recarregar /contato/sucesso.
         if (typeof window !== 'undefined' && (window as any).oaiq) {
-          ;(window as any).oaiq('measure', 'registration_completed', {
-            type: 'customer_action',
-            amount: 0,
-            currency: 'USD',
-          })
+          ;(window as any).oaiq(
+            'measure',
+            'custom',
+            { type: 'custom' },
+            { custom_event_name: 'gpt_track_form' }
+          )
         }
 
         setFormData(initialFormData)
