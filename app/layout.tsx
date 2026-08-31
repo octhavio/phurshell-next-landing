@@ -86,6 +86,17 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-NF9RL69');
           `}
         </Script>
+
+        {/* OpenAI Pixel */}
+        <Script id="openai-pixel" strategy="afterInteractive">
+          {`
+            !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};
+            q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;
+            var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)
+            }(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
+            oaiq("init",{pixelId:"Rnsw4MXAY9XimgtaSEYAf8"});
+          `}
+        </Script>
       </head>
       <body className="antialiased">
         {/* Google Tag Manager (noscript) */}

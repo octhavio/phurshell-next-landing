@@ -219,6 +219,17 @@ export default function MultiStepForm() {
       const data = await response.json()
 
       if (data.status) {
+        // Conversao do OpenAI Pixel. Fica aqui, no envio confirmado pela API,
+        // e nao na pagina de sucesso: assim nao dispara de novo se o usuario
+        // recarregar /contato/sucesso.
+        if (typeof window !== 'undefined' && (window as any).oaiq) {
+          ;(window as any).oaiq('measure', 'registration_completed', {
+            type: 'customer_action',
+            amount: 0,
+            currency: 'USD',
+          })
+        }
+
         setFormData(initialFormData)
         localStorage.removeItem('phurshell_form_software')
         router.push('/contato/sucesso')
