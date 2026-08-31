@@ -4,6 +4,7 @@
  */
 
 import { WPPage, WPPost, WPCase, WPCategory, BlogPost } from '../types/wordpress'
+import { decodeEntities } from './html'
 
 // URL base do WordPress - facilmente alterável
 const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
@@ -53,7 +54,7 @@ async function fetchWordPress<T>(
  * Remove tags HTML de uma string
  */
 function stripHtmlTags(html: string): string {
-  return html.replace(/<[^>]*>/g, '').trim()
+  return decodeEntities(html.replace(/<[^>]*>/g, '')).trim()
 }
 
 /**
@@ -92,10 +93,10 @@ function transformWPPost(post: WPPost): BlogPost {
   return {
     id: post.id,
     slug: post.slug,
-    title: post.title.rendered,
+    title: decodeEntities(post.title.rendered),
     excerpt: stripHtmlTags(post.excerpt.rendered),
     content: post.content.rendered,
-    category: category?.name || 'Sem categoria',
+    category: decodeEntities(category?.name || 'Sem categoria'),
     categorySlug: category?.slug || 'sem-categoria',
     author: {
       name: author?.name || 'Phurshell',
@@ -282,8 +283,10 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
  * Busca todas as categorias
  */
 export async function getCategories(): Promise<WPCategory[]> {
-  return fetchWordPress<WPCategory[]>('/categories', {
+  const categories = await fetchWordPress<WPCategory[]>('/categories', {
     per_page: 100,
     hide_empty: 1,
   })
+
+  return categories.map((c) => ({ ...c, name: decodeEntities(c.name) }))
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import TransitionLink from './TransitionLink'
+import { decodeEntities } from '../lib/html'
 import { BlogPost, WPCategory } from '../types/wordpress'
 
 const WP_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://wp-api.phurshell.com'
@@ -18,7 +19,7 @@ const categoryIconMap: { [key: string]: string } = {
   'geral': 'fa-solid fa-layer-group',
   'inteligência artificial': 'fa-solid fa-sparkles',
   'produto digital': 'fa-solid fa-compass',
-  'qualidade & segurança': 'fa-solid fa-shield',
+  'qualidade e segurança': 'fa-solid fa-shield',
   'startups': 'fa-solid fa-chart-pie',
   'transformação digital': 'fa-solid fa-suitcase',
   'ux/ui design': 'fa-solid fa-palette',
@@ -36,7 +37,7 @@ interface InsightsFilterProps {
 }
 
 function stripHtmlTags(html: string): string {
-  return html.replace(/<[^>]*>/g, '').trim()
+  return decodeEntities(html.replace(/<[^>]*>/g, '')).trim()
 }
 
 function calculateReadTime(content: string): string {
@@ -66,10 +67,10 @@ function transformWPPost(post: any): BlogPost {
   return {
     id: post.id,
     slug: post.slug,
-    title: post.title.rendered,
+    title: decodeEntities(post.title.rendered),
     excerpt: stripHtmlTags(post.excerpt.rendered),
     content: post.content.rendered,
-    category: category?.name || 'Sem categoria',
+    category: decodeEntities(category?.name || 'Sem categoria'),
     categorySlug: category?.slug || 'sem-categoria',
     author: {
       name: author?.name || 'Phurshell',
