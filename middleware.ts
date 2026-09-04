@@ -15,9 +15,23 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  // /contato/sucesso so e acessivel logo apos um envio. Sem o marcador, manda
+  // de volta pro formulario: assim o GTM nem chega a carregar nessa URL, e nao
+  // ha como inflar contagem por acesso direto, link salvo, aba anonima ou bot.
+  // O gate fica no middleware, na borda, porque redirect client-side nao serve:
+  // o GTM carrega com afterInteractive e dispara antes de qualquer useEffect.
+  if (pathname.startsWith('/contato/sucesso')) {
+    if (request.nextUrl.searchParams.get('ok') !== '1') {
+      const url = request.nextUrl.clone()
+      url.pathname = '/contato'
+      url.search = ''
+      return NextResponse.redirect(url)
+    }
+  }
+
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/propostas/:code+'],
+  matcher: ['/propostas/:code+', '/contato/sucesso'],
 }

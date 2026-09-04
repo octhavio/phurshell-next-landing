@@ -233,7 +233,7 @@ export default function MultiStepForm() {
 
         setFormData(initialFormData)
         localStorage.removeItem('phurshell_form_software')
-        router.push('/contato/sucesso')
+        router.push('/contato/sucesso/?ok=1')
       } else {
         alert('Erro ao enviar formulário. Tente novamente.')
       }
