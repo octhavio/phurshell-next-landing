@@ -118,6 +118,15 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center space-x-6">
               <a
+                href="https://wa.me/5511991341871"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 transition-smooth hover:text-brand-orange"
+                aria-label="WhatsApp"
+              >
+                <i className="fa-brands fa-whatsapp fa-xl"></i>
+              </a>
+              <a
                 href="https://linkedin.com/company/phurshell"
                 target="_blank"
                 rel="noopener noreferrer"
