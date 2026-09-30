@@ -667,7 +667,7 @@ export default function PropostaClientComponent() {
               <div className="mb-8 rounded-button border border-gray-100 p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="font-bold text-dark">Custo de infraestrutura</p>
+                    <p className="font-bold text-dark">Manutenção de Infraestrutura (AWS)</p>
                     <p className="text-sm text-gray-500">Servidores, banco de dados e serviços</p>
                   </div>
                   <p className="text-xl font-black text-dark">

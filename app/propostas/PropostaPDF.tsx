@@ -530,8 +530,8 @@ const SimplePDF = ({ proposta }: { proposta: PropostaData }) => (
       {proposta.project.infrastructure && (
         <View style={styles.investmentSecondary}>
           <View>
-            <Text style={styles.investmentSecLabel}>Infraestrutura</Text>
-            <Text style={styles.investmentSecSublabel}>Servidores e serviços cloud</Text>
+            <Text style={styles.investmentSecLabel}>Manutenção de Infraestrutura (AWS)</Text>
+            <Text style={styles.investmentSecSublabel}>Servidores, banco de dados e serviços</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
             <Text style={styles.investmentSecValue}>{formatCurrency(proposta.project.infrastructure)}</Text>
@@ -775,8 +775,8 @@ const CompletePDF = ({ proposta }: { proposta: PropostaData }) => (
       {proposta.project.infrastructure && (
         <View style={styles.investmentSecondary}>
           <View>
-            <Text style={styles.investmentSecLabel}>Infraestrutura</Text>
-            <Text style={styles.investmentSecSublabel}>Servidores e serviços cloud</Text>
+            <Text style={styles.investmentSecLabel}>Manutenção de Infraestrutura (AWS)</Text>
+            <Text style={styles.investmentSecSublabel}>Servidores, banco de dados e serviços</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
             <Text style={styles.investmentSecValue}>{formatCurrency(proposta.project.infrastructure)}</Text>
