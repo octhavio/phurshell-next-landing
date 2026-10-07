@@ -338,7 +338,7 @@ export default function ServicosQualidadeSeguranca() {
       <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
 
       {/* Related Posts */}
-      <ServiceRelatedPosts categorySlug="qualidade" categoryLabel="qualidade e segurança" description="Conteúdos sobre testes automatizados, segurança de aplicações, compliance e como garantir qualidade em cada entrega do seu produto digital." />
+      <ServiceRelatedPosts categorySlug="qualidade-seguranca" categoryLabel="qualidade e segurança" description="Conteúdos sobre testes automatizados, segurança de aplicações, compliance e como garantir qualidade em cada entrega do seu produto digital." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

@@ -334,7 +334,7 @@ export default function ServicosBlockchain() {
       <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
 
       {/* Related Posts */}
-      <ServiceRelatedPosts categorySlug="blockchain" categoryLabel="blockchain e Web3" description="Conteúdos sobre blockchain, contratos inteligentes, tokenização e como tecnologias Web3 estão criando novos modelos de negócio." />
+      <ServiceRelatedPosts categorySlug="blockchain-web3" categoryLabel="blockchain e Web3" description="Conteúdos sobre blockchain, contratos inteligentes, tokenização e como tecnologias Web3 estão criando novos modelos de negócio." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

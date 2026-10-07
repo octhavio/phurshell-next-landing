@@ -24,6 +24,16 @@ async function fetchWordPress<T>(
   endpoint: string,
   params: Record<string, string | number> = {}
 ): Promise<T> {
+  return (await fetchWordPressPage<T>(endpoint, params)).data
+}
+
+/**
+ * Igual ao fetchWordPress, mas devolve tambem o X-WP-TotalPages para paginar.
+ */
+async function fetchWordPressPage<T>(
+  endpoint: string,
+  params: Record<string, string | number> = {}
+): Promise<{ data: T; totalPages: number }> {
   const queryParams = new URLSearchParams(
     Object.entries(params).map(([key, value]) => [key, String(value)])
   )
@@ -43,7 +53,10 @@ async function fetchWordPress<T>(
     }
 
     const data = await response.json()
-    return data as T
+    return {
+      data: data as T,
+      totalPages: Number(response.headers.get('X-WP-TotalPages')) || 1,
+    }
   } catch (error) {
     console.error('Erro ao buscar dados do WordPress:', error)
     throw error
@@ -249,21 +262,53 @@ export async function getBlogPosts(perPage: number = 100): Promise<BlogPost[]> {
  * Query leve de proposito: getBlogPosts usa _embed e traz ~1.4MB, o que
  * ja fez o socket morrer no meio do build e o Next cair no cache antigo,
  * gerando menos posts do que existem.
+ * Percorre todas as paginas (WP limita per_page a 100). Se uma pagina falhar,
+ * lanca em vez de devolver indice parcial.
  */
-export async function getBlogPostIndex(
-  perPage: number = 100
-): Promise<{ slug: string; title: string }[]> {
-  const posts = await fetchWordPress<{ slug: string; title: { rendered: string } }[]>('/posts', {
-    per_page: perPage,
-    _fields: 'slug,title',
-    orderby: 'date',
-    order: 'desc',
-  })
+export async function getBlogPostIndex(): Promise<{ slug: string; title: string }[]> {
+  type IndexPost = { slug: string; title: { rendered: string } }
+  const params = { per_page: 100, _fields: 'slug,title', orderby: 'date', order: 'desc' }
+
+  const first = await fetchWordPressPage<IndexPost[]>('/posts', { ...params, page: 1 })
+  const rest = await Promise.all(
+    Array.from({ length: first.totalPages - 1 }, (_, i) =>
+      fetchWordPress<IndexPost[]>('/posts', { ...params, page: i + 2 })
+    )
+  )
+  const posts = [first.data, ...rest].flat()
 
   return posts.map((post) => ({
     slug: post.slug,
     title: stripHtmlTags(post.title.rendered),
   }))
+}
+
+/**
+ * Ultimos posts de uma categoria (pelo slug), filtrando no WordPress em vez de
+ * baixar 100 posts com _embed para ficar com 3.
+ */
+export async function getBlogPostsByCategory(
+  categorySlug: string,
+  limit: number = 3,
+  excludeId?: number
+): Promise<BlogPost[]> {
+  const [category] = await fetchWordPress<{ id: number }[]>('/categories', {
+    slug: categorySlug,
+    _fields: 'id',
+  })
+  if (!category) return []
+
+  const params: Record<string, string | number> = {
+    categories: category.id,
+    per_page: limit,
+    _embed: 1,
+    orderby: 'date',
+    order: 'desc',
+  }
+  if (excludeId) params.exclude = excludeId
+
+  const posts = await fetchWordPress<WPPost[]>('/posts', params)
+  return posts.map(transformWPPost)
 }
 
 /**
@@ -289,4 +334,28 @@ export async function getCategories(): Promise<WPCategory[]> {
   })
 
   return categories.map((c) => ({ ...c, name: decodeEntities(c.name) }))
+}
+
+export interface RelatedSitePage {
+  href: string
+  type: 'servico' | 'segmento' | 'case'
+  title: string
+  description: string
+}
+
+/**
+ * Paginas do site (servico/segmento/case) que a IA escolheu para o post.
+ * Vem do backend, nao do WordPress: o WP nao expoe meta customizada.
+ * Falha vira lista vazia, a secao some e o post continua no ar.
+ */
+export async function getRelatedSitePages(slug: string): Promise<RelatedSitePage[]> {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.phurshell.com'
+  try {
+    const res = await fetch(`${apiUrl}/api/insights/${encodeURIComponent(slug)}/related-pages`, {
+      next: { revalidate: REVALIDATE_SECONDS },
+    })
+    return res.ok ? await res.json() : []
+  } catch {
+    return []
+  }
 }

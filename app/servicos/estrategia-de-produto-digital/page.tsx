@@ -343,7 +343,7 @@ export default function ServicosEstrategiaProduto() {
       <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
 
       {/* Related Posts */}
-      <ServiceRelatedPosts categorySlug="estrategia" categoryLabel="estratégia de produto" description="Conteúdos sobre discovery, roadmap, validação de mercado e como tomar as decisões certas para construir um produto digital de sucesso." />
+      <ServiceRelatedPosts categorySlug="produto-digital" categoryLabel="estratégia de produto" description="Conteúdos sobre discovery, roadmap, validação de mercado e como tomar as decisões certas para construir um produto digital de sucesso." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

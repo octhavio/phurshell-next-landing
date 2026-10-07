@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Se o WordPress falhar, o sitemap sai so com as rotas fixas em vez de 500.
   let postEntries: MetadataRoute.Sitemap = []
   try {
-    const index = await getBlogPostIndex(100)
+    const index = await getBlogPostIndex()
     postEntries = index.map((post) => ({
       url: `${BASE_URL}/insights/${post.slug}/`,
       lastModified,

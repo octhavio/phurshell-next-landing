@@ -4,7 +4,8 @@ import Image from 'next/image'
 import TransitionLink from '../../../src/components/TransitionLink'
 import ShareButtons from '../../../src/components/ShareButtons'
 import ContactCTA from '../../../src/components/ContactCTA'
-import { getBlogPosts, getBlogPostBySlug, getBlogPostIndex } from '../../../src/lib/wordpress'
+import { getBlogPostsByCategory, getBlogPostBySlug, getBlogPostIndex, getRelatedSitePages } from '../../../src/lib/wordpress'
+import RelatedSitePages from '../../../src/components/RelatedSitePages'
 import { BlogPost } from '../../../src/types/wordpress'
 
 // ISR: Revalida a cada 60 segundos
@@ -20,7 +21,7 @@ interface PageProps {
 // Gera posts existentes no build time
 export async function generateStaticParams() {
   try {
-    const index = await getBlogPostIndex(100)
+    const index = await getBlogPostIndex()
     return index.map((post) => ({
       slug: [post.slug],
     }))
@@ -105,10 +106,7 @@ async function getPost(slug: string): Promise<BlogPost | null> {
 // Fetch de posts relacionados no BUILD TIME
 async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
   try {
-    const allPosts = await getBlogPosts(100)
-    return allPosts
-      .filter((p) => p.id !== post.id && p.categorySlug === post.categorySlug)
-      .slice(0, 3)
+    return await getBlogPostsByCategory(post.categorySlug, 3, post.id)
   } catch (error) {
     console.error('Erro ao buscar posts relacionados:', error)
     return []
@@ -124,7 +122,10 @@ export default async function InsightPostPage({ params }: PageProps) {
     notFound()
   }
 
-  const relatedPosts = await getRelatedPosts(post)
+  const [relatedPosts, sitePages] = await Promise.all([
+    getRelatedPosts(post),
+    getRelatedSitePages(post.slug),
+  ])
 
   return (
     <div className="bg-white">
@@ -226,6 +227,9 @@ export default async function InsightPostPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Cards de servico/segmento/case escolhidos pela IA no backend */}
+      <RelatedSitePages pages={sitePages} />
 
       {/* Share */}
       <section className="bg-white pb-8">

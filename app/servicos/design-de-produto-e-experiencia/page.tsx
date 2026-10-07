@@ -338,7 +338,7 @@ export default function ServicosDesign() {
       <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
 
       {/* Related Posts */}
-      <ServiceRelatedPosts categorySlug="design" categoryLabel="design de produto" description="Conteúdos sobre UX, UI, design systems e como criar experiências digitais que encantam usuários e geram resultados reais para o negócio." />
+      <ServiceRelatedPosts categorySlug="ux-ui-design" categoryLabel="design de produto" description="Conteúdos sobre UX, UI, design systems e como criar experiências digitais que encantam usuários e geram resultados reais para o negócio." />
 
       {/* Excellence Section */}
       <WhyPhurshell />

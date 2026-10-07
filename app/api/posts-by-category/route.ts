@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getBlogPosts } from '../../../src/lib/wordpress'
+import { getBlogPostsByCategory } from '../../../src/lib/wordpress'
 
 export const revalidate = 60
 
@@ -12,11 +12,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const allPosts = await getBlogPosts(100)
-    const filtered = allPosts
-      .filter((p) => p.categorySlug === categorySlug)
-      .slice(0, 3)
-    return NextResponse.json(filtered)
+    return NextResponse.json(await getBlogPostsByCategory(categorySlug, 3))
   } catch {
     return NextResponse.json([])
   }

@@ -29,7 +29,7 @@ export default async function Insights() {
   const [categories, initialPosts, index] = await Promise.all([
     getCategories(),
     getBlogPosts(POSTS_PER_PAGE),
-    getBlogPostIndex(100),
+    getBlogPostIndex(),
   ])
 
   return (

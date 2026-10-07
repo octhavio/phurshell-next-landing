@@ -339,7 +339,7 @@ export default function ServicosDigitais() {
       <TestimonialCarousel label="Depoimentos" labelIcon="comment" title="O que nossos clientes dizem" description="Construímos parcerias de longo prazo com founders e times de produto que confiam na nossa capacidade de transformar ideias em produtos digitais de alto impacto." />
 
       {/* Related Posts */}
-      <ServiceRelatedPosts categorySlug="solucoes-digitais" categoryLabel="soluções digitais" description="Conteúdos sobre transformação digital, automação de processos e como tecnologia pode resolver desafios reais e gerar crescimento para o negócio." />
+      <ServiceRelatedPosts categorySlug="transformacao-digital" categoryLabel="soluções digitais" description="Conteúdos sobre transformação digital, automação de processos e como tecnologia pode resolver desafios reais e gerar crescimento para o negócio." />
 
       {/* Excellence Section */}
       <WhyPhurshell />
