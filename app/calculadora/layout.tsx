@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Quanto Custa um App | Calculadora de Custo',
+  title: 'Quanto Custa um App? Calculadora de Custo em 2 Minutos',
   description: 'Estime o custo do seu aplicativo com a calculadora da Phurshell. Responda algumas perguntas sobre o projeto e receba uma estimativa em minutos.',
   alternates: { canonical: 'https://phurshell.com/calculadora/' },
   openGraph: {
