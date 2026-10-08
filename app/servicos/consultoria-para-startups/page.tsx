@@ -4,6 +4,7 @@ import TransitionLink from '../../../src/components/TransitionLink'
 import ProcessCarousel, { ProcessStage } from '../../../src/components/ProcessCarousel'
 import WhyPhurshell from '../../../src/components/WhyPhurshell'
 import ContactCTA from '../../../src/components/ContactCTA'
+import LeiaTambem from '../../../src/components/LeiaTambem'
 import ClientLogosCarousel from '../../../src/components/ClientLogosCarousel'
 import CasesCarousel from '../../../src/components/CasesCarousel'
 import TestimonialCarousel from '../../../src/components/TestimonialCarousel'
@@ -341,6 +342,8 @@ export default function ConsultoriaParaStartups() {
 
       {/* Excellence Section */}
       <WhyPhurshell />
+
+      <LeiaTambem servico="consultoria-para-startups" />
 
       {/* Contact CTA */}
       <ContactCTA />
