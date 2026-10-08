@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 
+import { APP_STORE_URL, PLAY_STORE_URL } from './stores'
+
 // Lojas: sem href = "Em breve".
 const stores: { icon: string; label: string; hint: string; href?: string }[] = [
-  { icon: 'fa-apple', label: 'App Store', hint: 'iPhone', href: 'https://apps.apple.com/br/app/wealthcraft/id6819423807' },
-  { icon: 'fa-google-play', label: 'Google Play', hint: 'Android' },
+  { icon: 'fa-apple', label: 'App Store', hint: 'iPhone', href: APP_STORE_URL },
+  { icon: 'fa-google-play', label: 'Google Play', hint: 'Android', href: PLAY_STORE_URL ?? undefined },
 ]
 
 export const metadata: Metadata = {
