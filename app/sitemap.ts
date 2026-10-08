@@ -36,6 +36,8 @@ const STATIC_ROUTES: [string, MetadataRoute.Sitemap[number]['changeFrequency'], 
   ['/cases/diag/', 'monthly', 0.7],
   ['/cases/autoday/', 'monthly', 0.7],
   ['/insights/', 'weekly', 0.8],
+  ['/politica-de-privacidade/', 'yearly', 0.3],
+  ['/termos-de-uso/', 'yearly', 0.3],
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -112,9 +112,19 @@ export default function Footer() {
                 className="h-8 w-auto transition-smooth group-hover:opacity-80"
               />
             </TransitionLink>
-            <p className="text-xl text-white/50">
-              © 2015-{currentYear} Phurshell. Todos os direitos reservados.
-            </p>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-xl text-white/50">
+                © 2015-{currentYear} Phurshell. Todos os direitos reservados.
+              </p>
+              <div className="flex gap-4 text-sm font-bold text-white/50">
+                <TransitionLink href="/politica-de-privacidade/" className="transition-colors hover:text-brand-orange">
+                  Política de Privacidade
+                </TransitionLink>
+                <TransitionLink href="/termos-de-uso/" className="transition-colors hover:text-brand-orange">
+                  Termos de Uso
+                </TransitionLink>
+              </div>
+            </div>
             {/* Social Links */}
             <div className="flex items-center space-x-6">
               <a
