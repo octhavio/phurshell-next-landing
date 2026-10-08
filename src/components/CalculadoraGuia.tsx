@@ -15,7 +15,7 @@ const EXEMPLOS = [
     nome: 'App de média complexidade',
     valor: 'cerca de R$ 89 mil',
     prazo: '18 semanas',
-    escopo: 'iOS e Android, interface própria, login, perfil, notificações, pagamentos, chat, buscas e filtros, além do painel administrativo.',
+    escopo: 'iOS e Android, interface própria, login, perfil, notificações, pagamentos, buscas e filtros, além do painel administrativo.',
   },
   {
     nome: 'Marketplace ou app de entrega',
