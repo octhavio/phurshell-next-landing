@@ -231,6 +231,9 @@ export default function MultiStepForm() {
           )
         }
 
+        // Lead para o GTM/GA4 (evento-chave generate_lead), mesmo motivo acima.
+        ;(window as any).dataLayer?.push({ event: 'generate_lead', form: 'contato' })
+
         setFormData(initialFormData)
         localStorage.removeItem('phurshell_form_software')
         router.push('/contato/sucesso/?ok=1')

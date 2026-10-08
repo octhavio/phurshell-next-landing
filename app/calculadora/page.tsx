@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import TransitionLink from '../../src/components/TransitionLink'
+import CalculadoraGuia from '../../src/components/CalculadoraGuia'
 
 interface Answer {
   text: string
@@ -261,6 +262,7 @@ export default function Calculadora() {
       const data = await response.json()
       setLoading(false)
       setSuccess(data.status)
+      if (data.status) (window as any).dataLayer?.push({ event: 'generate_lead', form: 'calculadora' })
     } catch (error) {
       console.error('Error:', error)
       setLoading(false)
@@ -812,6 +814,8 @@ export default function Calculadora() {
           )}
         </div>
       </div>
+
+      <CalculadoraGuia />
     </div>
   )
 }
