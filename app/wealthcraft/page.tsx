@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
-// Lojas: ficam como "Em breve" até o app ser publicado (a App Store já tem o id: apps.apple.com/app/id6819423807).
-const stores = [
-  { icon: 'fa-apple', label: 'App Store', hint: 'iPhone' },
+// Lojas: sem href = "Em breve".
+const stores: { icon: string; label: string; hint: string; href?: string }[] = [
+  { icon: 'fa-apple', label: 'App Store', hint: 'iPhone', href: 'https://apps.apple.com/br/app/wealthcraft/id6819423807' },
   { icon: 'fa-google-play', label: 'Google Play', hint: 'Android' },
 ]
 
@@ -73,24 +73,29 @@ export default function WealthCraftPage() {
             fica rico antes dos seus amigos?
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-            {stores.map((s) => (
-              <div
+            {stores.map((s) => {
+              const Tag = s.href ? 'a' : 'div'
+              return (
+              <Tag
                 key={s.label}
-                aria-disabled="true"
-                className="relative inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-[#111713] px-6 py-3 text-left"
+                {...(s.href ? { href: s.href, target: '_blank', rel: 'noopener noreferrer' } : { 'aria-disabled': true })}
+                className={`relative inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-[#111713] px-6 py-3 text-left${s.href ? ' transition hover:border-[#C8F169]' : ''}`}
               >
                 <i className={`fa-brands ${s.icon} text-2xl text-[#C8F169]`} aria-hidden="true" />
                 <span className="flex flex-col leading-tight">
                   <span className="text-xs text-[#8A938C]">{s.hint}</span>
                   <span className="text-lg font-extrabold">{s.label}</span>
                 </span>
-                <span className="absolute -right-2 -top-2 rounded-full bg-[#E9C46A] px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-[#3B2C08]">
-                  Em breve
-                </span>
-              </div>
-            ))}
+                {!s.href && (
+                  <span className="absolute -right-2 -top-2 rounded-full bg-[#E9C46A] px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-[#3B2C08]">
+                    Em breve
+                  </span>
+                )}
+              </Tag>
+              )
+            })}
           </div>
-          <p className="mt-3 text-sm text-[#8A938C]">Grátis para iPhone e Android · lançamento em breve</p>
+          <p className="mt-3 text-sm text-[#8A938C]">Grátis no iPhone · Android em breve</p>
         </div>
         <div className="flex flex-1 justify-center gap-4">
           {shots.slice(0, 2).map((s, i) => (
