@@ -12,7 +12,7 @@ Font.register({
   ],
 })
 
-const colors = {
+export const colors = {
   orange: '#FF5100',
   dark: '#19191A',
   gray: '#6B7280',
@@ -59,7 +59,7 @@ interface PropostaPDFProps {
 }
 
 // Helper functions
-const formatCurrency = (value: number) => {
+export const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
@@ -122,7 +122,7 @@ const hardcodedData = {
 // SHARED STYLES - Clean document style
 // ============================================
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   page: {
     fontFamily: 'Inter',
     fontSize: 10,
@@ -440,7 +440,7 @@ const Header = ({ proposta }: { proposta: PropostaData }) => (
   </View>
 )
 
-const Footer = () => (
+export const Footer = () => (
   <View style={styles.footer} fixed>
     <Text style={styles.footerText}>phurshell.com | contato@phurshell.com | (11) 99134-1871</Text>
     <Text

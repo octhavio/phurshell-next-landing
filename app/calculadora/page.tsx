@@ -12,6 +12,17 @@ interface Answer {
   selected: boolean
 }
 
+// Títulos curtos das perguntas, na mesma ordem de `content`, para o PDF da estimativa.
+const SECTION_TITLES = [
+  'Plataforma',
+  'Identidade visual',
+  'Categoria',
+  'Funcionalidades',
+  'Sistema administrativo',
+  'Site institucional',
+  'Integrações com outros sistemas',
+]
+
 interface Question {
   q: string
   description: string
@@ -26,6 +37,7 @@ export default function Calculadora() {
   const [scheduleCount, setScheduleCount] = useState(12)
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [pdfLoading, setPdfLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -264,6 +276,61 @@ export default function Calculadora() {
     } catch (error) {
       console.error('Error:', error)
       setLoading(false)
+    }
+  }
+
+  // react-pdf só carrega no clique: pesa demais para quem só simula.
+  const downloadEstimate = async () => {
+    setPdfLoading(true)
+    try {
+      const [{ pdf }, { default: EstimativaPDF }] = await Promise.all([
+        import('@react-pdf/renderer'),
+        import('./EstimativaPDF'),
+      ])
+      // Perguntas de sim/não viram um bloco só ("Também incluído"), com o título da pergunta como item.
+      // A categoria não tem custo próprio: vai como etiqueta, fora da lista.
+      const extras: { label: string; value: number }[] = []
+      let category = ''
+      const sections = content
+        .map((question, index) => {
+          const title = SECTION_TITLES[index] ?? question.q
+          const selected = question.a.filter((answer) => answer.selected && answer.text !== 'Não')
+          if (title === 'Categoria') {
+            category = selected.map((answer) => answer.text).join(', ')
+            return { title, items: [] }
+          }
+          const yes = selected.find((answer) => answer.text === 'Sim')
+          if (yes) {
+            extras.push({ label: title, value: yes.value })
+            return { title, items: [] }
+          }
+          return { title, items: selected.map((answer) => ({ label: answer.text, value: answer.value })) }
+        })
+        .filter((section) => section.items.length > 0)
+      if (extras.length > 0) sections.push({ title: 'Também incluído', items: extras })
+
+      const blob = await pdf(
+        <EstimativaPDF
+          name={formData.name}
+          description={formData.project_description}
+          category={category}
+          value={value}
+          weeks={scheduleCount}
+          sections={sections}
+        />
+      ).toBlob()
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'estimativa-app-phurshell.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Erro ao gerar PDF:', error)
+    } finally {
+      setPdfLoading(false)
     }
   }
 
@@ -753,6 +820,18 @@ export default function Calculadora() {
                     <p className="mb-6 text-xl leading-relaxed text-dark/70">
                       Obrigado por compartilhar seu projeto conosco! Entraremos em contato com você pelo Whatsapp ainda hoje para começar a trabalhar na sua ideia.
                     </p>
+                    <button
+                      onClick={downloadEstimate}
+                      disabled={pdfLoading}
+                      className="inline-flex items-center gap-2 rounded-button bg-brand-orange px-8 py-4 text-xl font-bold text-white shadow-lg shadow-brand-orange/30 transition-smooth hover:bg-brand-orange-light disabled:opacity-50"
+                    >
+                      {pdfLoading ? (
+                        <span className="inline-block h-6 w-6 animate-spin rounded-full border-4 border-white border-t-transparent"></span>
+                      ) : (
+                        <i className="fa-solid fa-file-pdf"></i>
+                      )}
+                      Baixar estimativa em PDF
+                    </button>
                     <hr className="my-6" />
                     <div className="flex gap-4">
                       <button
