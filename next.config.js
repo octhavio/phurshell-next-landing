@@ -1,3 +1,32 @@
+// Slugs dos posts que vieram do WordPress. O blog antigo publicava em /{slug}/;
+// o site novo, em /insights/{slug}/. Lista explicita em vez de /:slug coringa,
+// que capturaria /sobre, /contato, /calculadora etc.
+const insightSlugs = require('./src/data/insight-slugs.json')
+
+const insights = (slug) => `/insights/${slug}/`
+
+// URLs do site antigo sem slug igual em /insights/ (Search Console, out/2026).
+const manualRedirects = [
+  ['/psiapp-revolucao-na-psicoterapia-digital-com-ia-e-seguranca-conectando-60-mil-pacientes-a-2-mil-psicologos', '/cases/psiapp/'],
+  ['/parceria-phurshell-e-grupo-ambipar-transforma-gestao-de-incentivos-com-projeto-inovador-de-quotas-globalmente', '/cases/'],
+  ['/quanto-custa-um-app', '/calculadora/'],
+  ['/contato-ecommerce', '/contato/'],
+  ['/empresa-criadora-de-app-com-ia-inovacao-e-inteligencia-em-aplicativos', '/servicos/desenvolvimento-de-aplicativos/'],
+  ['/desenvolvimento-de-aplicativos-moveis-experiencia-em-android-e-ios', '/servicos/desenvolvimento-de-aplicativos/'],
+  ['/desenvolvimento-de-aplicativos-low-code-rapidez-e-eficiencia-para-seu-projeto', insights('diferenca-entre-app-low-code-e-app-no-code-e-quando-usar-cada-um')],
+  ['/empresa-de-desenvolvimento-de-app-no-code-solucoes-ageis-e-sem-programacao', insights('diferenca-entre-app-low-code-e-app-no-code-e-quando-usar-cada-um')],
+  ['/desenvolvimento-de-software-multiplataforma-apps-para-web-android-e-ios', insights('desenvolvimento-de-software-multiplataforma-vantagens-e-desvantagens')],
+  ['/passo-a-passo-para-desenvolver-um-app-para-android-e-ios-do-zero', insights('guia-completo-sobre-desenvolvimento-de-aplicativos-android-para-empresas')],
+  ['/br/pages/services/:path*', '/servicos/'],
+  ['/br/:path*', '/'],
+  // Restos do WordPress
+  ['/blog/:path*', '/insights/'],
+  ['/author/:path*', '/insights/'],
+  ['/category/:path*', '/insights/'],
+  ['/tag/:path*', '/insights/'],
+  ['/:y(\\d{4})/:path*', '/insights/'],
+]
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
@@ -32,6 +61,8 @@ const nextConfig = {
       { source: '/software-sob-medida', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/desenvolvimento-de-software-sob-medida', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/desenvolvimento-de-aplicativos-brasil', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
+      ...insightSlugs.map((slug) => ({ source: `/${slug}`, destination: insights(slug), permanent: true })),
+      ...manualRedirects.map(([source, destination]) => ({ source, destination, permanent: true })),
     ]
   },
 }
