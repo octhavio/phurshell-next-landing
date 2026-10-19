@@ -31,9 +31,9 @@ export async function generateStaticParams() {
   }
 }
 
-// Titulo e excerpt vindos do WordPress passam dos limites que o Ahrefs/Google
-// usam (60 para title, 160 para description). Corta na ultima palavra inteira.
-const TITLE_MAX = 60
+// Excerpt vindo do WordPress passa do limite de 160 da description. Corta na
+// ultima palavra inteira. O title NAO e cortado: o "…" literal ia para a tag e o
+// Google ja trunca sozinho na exibicao.
 const DESCRIPTION_MAX = 160
 
 function truncate(text: string, max: number): string {
@@ -56,9 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    // absolute: escapa do template '%s | Phurshell' do root layout, que somava
-    // 12 caracteres e estourava o limite em praticamente todo post.
-    title: { absolute: truncate(post.title, TITLE_MAX) },
+    title: post.title,
     description: truncate(post.excerpt, DESCRIPTION_MAX),
     alternates: { canonical: `https://phurshell.com/insights/${post.slug}/` },
     openGraph: {
