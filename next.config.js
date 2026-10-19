@@ -3,7 +3,11 @@
 // que capturaria /sobre, /contato, /calculadora etc.
 const insightSlugs = require('./src/data/insight-slugs.json')
 
-const insights = (slug) => `/insights/${slug}/`
+// Artigos fundidos em outro (plano SEO, item 10): slug que saiu -> slug que ficou.
+// A URL antiga do WordPress também vai direto para o que ficou, sem cadeia.
+const mergedInto = require('./src/data/merged-posts.json')
+
+const insights = (slug) => `/insights/${mergedInto[slug] ?? slug}/`
 
 // URLs do site antigo sem slug igual em /insights/ (Search Console, out/2026).
 // URL antiga com slug igual a um post de /insights/ cai na regra dos slugs acima.
@@ -55,6 +59,7 @@ const nextConfig = {
       { source: '/desenvolvimento-de-software-sob-medida', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       { source: '/desenvolvimento-de-aplicativos-brasil', destination: '/servicos/desenvolvimento-de-aplicativos', permanent: true },
       ...insightSlugs.map((slug) => ({ source: `/${slug}`, destination: insights(slug), permanent: true })),
+      ...Object.keys(mergedInto).map((slug) => ({ source: `/insights/${slug}`, destination: insights(slug), permanent: true })),
       ...manualRedirects.map(([source, destination]) => ({ source, destination, permanent: true })),
     ]
   },
