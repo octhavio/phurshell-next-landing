@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Empresa de Desenvolvimento de Aplicativos | +100 apps',
-  description: 'Software house com 10 anos e +100 apps entregues. Apps iOS e Android sob medida, do MVP à escala, com escopo e prazo definidos. Peça sua proposta.',
+  description: 'Software house com 11 anos e +100 apps entregues. Apps iOS e Android sob medida, do MVP à escala, com escopo e prazo definidos. Peça sua proposta.',
   alternates: { canonical: 'https://phurshell.com/servicos/desenvolvimento-de-aplicativos/' },
   openGraph: {
     type: 'website',

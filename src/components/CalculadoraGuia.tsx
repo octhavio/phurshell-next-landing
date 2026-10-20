@@ -289,7 +289,7 @@ export default function CalculadoraGuia() {
             <TransitionLink href="/servicos/desenvolvimento-de-aplicativos/" className="font-bold text-brand-orange underline">
               empresa de desenvolvimento de aplicativos
             </TransitionLink>{' '}
-            com 10 anos de mercado e mais de 100 apps entregues. Conte sua ideia e devolvemos uma proposta com escopo, prazo e
+            com 11 anos de mercado e mais de 100 apps entregues. Conte sua ideia e devolvemos uma proposta com escopo, prazo e
             custo definidos.
           </p>
           <TransitionLink

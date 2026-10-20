@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ContactCTA from '../../src/components/ContactCTA'
 
 export const metadata: Metadata = {
-  title: 'Sobre Nós | Software House há 10 Anos',
+  title: 'Sobre Nós | Software House há 11 Anos',
   description: 'Conheça a Phurshell: uma equipe de especialistas apaixonados por criar aplicativos excepcionais que transformam negócios.',
   alternates: { canonical: 'https://phurshell.com/sobre/' },
   openGraph: {

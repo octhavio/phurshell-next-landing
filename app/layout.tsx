@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: 'Phurshell | Software House em São Paulo: Apps e Sistemas Sob Medida',
     template: '%s | Phurshell',
   },
-  description: 'Software house em São Paulo com 10 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
+  description: 'Software house em São Paulo com 11 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
   keywords: ['software house', 'desenvolvimento de aplicativos', 'fabrica de apps', 'desenvolvimento mobile', 'iOS', 'Android', 'React Native', 'Flutter', 'startup', 'MVP'],
   authors: [{ name: 'Phurshell' }],
   creator: 'Phurshell',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: 'https://phurshell.com',
     siteName: 'Phurshell',
     title: 'Phurshell | Software House em São Paulo: Apps e Sistemas Sob Medida',
-    description: 'Software house em São Paulo com 10 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
+    description: 'Software house em São Paulo com 11 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
     images: [
       {
         url: '/og-image.webp',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Phurshell | Software House em São Paulo: Apps e Sistemas Sob Medida',
-    description: 'Software house em São Paulo com 10 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
+    description: 'Software house em São Paulo com 11 anos e +100 produtos digitais lançados. Apps, sistemas web e SaaS sob medida, da ideia ao produto lucrativo.',
     images: ['/og-image.webp'],
   },
   verification: {

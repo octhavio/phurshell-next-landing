@@ -297,7 +297,7 @@ export default function EstimativaPDF({ name, description, category, value, week
 
         <View style={s.stats}>
           {[
-            ['10+', 'anos de mercado'],
+            ['11', 'anos de mercado'],
             ['100+', 'apps desenvolvidos'],
             ['50+', 'projetos entregues'],
           ].map(([v, l]) => (
