@@ -612,3 +612,22 @@
   margin-top: 0 !important;
   margin-bottom: 0.75rem;
 }
+
+/* Bolinha da barra de progresso do BrandVideoPlayer */
+.brand-video-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 81, 0, 0.45);
+}
+.brand-video-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 81, 0, 0.45);
+}

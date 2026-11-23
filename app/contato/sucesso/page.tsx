@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import TransitionLink from '../../../src/components/TransitionLink'
+import BrandVideoPlayer from '../../../src/components/BrandVideoPlayer'
 
 export const metadata: Metadata = {
   title: 'Contato Enviado',
@@ -7,10 +8,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
+const VIDEO_BASE = 'https://phurshell.s3-sa-east-1.amazonaws.com/videos'
+
 export default function ContatoSucesso() {
   return (
     <div className="flex items-center justify-center bg-gradient-to-br from-white via-brand-orange/5 to-white px-6 py-24">
-      <div className="max-w-2xl text-center">
+      <div className="w-full max-w-3xl text-center">
         <div className="mb-8 inline-flex h-24 w-24 items-center justify-center rounded-full bg-brand-orange/10">
           <i className="fa-solid fa-check text-5xl text-brand-orange"></i>
         </div>
@@ -19,9 +22,20 @@ export default function ContatoSucesso() {
           Solicitação de contato enviada com sucesso
         </h1>
 
-        <div className="mb-12 flex items-center justify-center gap-3 text-xl text-dark/70">
+        <div className="mb-14 flex items-center justify-center gap-3 text-xl text-dark/70">
           <i className="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
           <span>Fique de olho no seu WhatsApp</span>
+        </div>
+
+        <div className="mb-14">
+          <p className="mb-2 text-sm font-bold uppercase tracking-widest text-brand-orange">Enquanto isso</p>
+          <h2 className="mb-6 text-2xl font-black text-dark sm:text-3xl">Veja em 1 minuto por que a Phurshell</h2>
+          <BrandVideoPlayer
+            src={`${VIDEO_BASE}/por-que-a-phurshell.mp4`}
+            poster={`${VIDEO_BASE}/por-que-a-phurshell-poster.jpg`}
+            title="Por que a Phurshell?"
+            trackingName="por-que-a-phurshell"
+          />
         </div>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
